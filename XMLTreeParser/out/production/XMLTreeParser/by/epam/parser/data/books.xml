@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<books>
+    <book id="1" fullid="001">
+        <title>Southern Star</title>
+        <author>Verne</author>
+        <category>
+            <year>1860</year>
+            <genre>adventure</genre>
+            <pages>450</pages>
+            <age>child</age>
+        </category>
+        <description>some text</description>
+        <publish pid="50"/>
+    </book>
+    <book id="2" fullid="002">
+        <title>IT</title>
+        <author>King</author>
+        <category>
+            <year>1996</year>
+            <genre>thriller</genre>
+            <pages>600</pages>
+            <age>adult</age>
+        </category>
+        <description>some new text</description>
+        <publish pid="62"/>
+    </book>
+</books>
