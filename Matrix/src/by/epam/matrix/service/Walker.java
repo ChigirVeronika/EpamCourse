@@ -1,18 +1,18 @@
-package by.epam.matrix.thread;
+package by.epam.matrix.service;
 
-import by.epam.matrix.util.Matrix;
-import by.epam.matrix.util.MatrixWithBlock;
+import by.epam.matrix.entity.Matrix;
 
 /**
  * Created by Вероника on 17.12.2015.
  */
 public class Walker extends Thread {
 
-    public int ownNumber;
+    private int ownNumber;
 
     private Matrix matrix;
 
-    public Walker(int ownNumber,Matrix matrix){
+    public Walker(String s,int ownNumber,Matrix matrix){
+        super(s);
         this.ownNumber=ownNumber;
         this.matrix = matrix;
     }

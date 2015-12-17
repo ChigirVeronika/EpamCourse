@@ -1,4 +1,4 @@
-package by.epam.matrix.util;
+package by.epam.matrix.entity;
 
 import java.util.Arrays;
 

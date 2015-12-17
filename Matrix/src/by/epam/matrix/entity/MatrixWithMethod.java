@@ -1,4 +1,4 @@
-package by.epam.matrix.util;
+package by.epam.matrix.entity;
 
 import java.util.Arrays;
 
@@ -39,7 +39,8 @@ public class MatrixWithMethod extends Matrix{
     @Override
     public String toString() {
         return "MatrixWithMethod{" +
-                "inner=" + Arrays.toString(inner) +
+                "dimension=" + dimension +
+                ", inner=" + Arrays.toString(inner) +
                 '}';
     }
 
@@ -47,15 +48,20 @@ public class MatrixWithMethod extends Matrix{
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
 
-        MatrixWithMethod matrixWithMethod = (MatrixWithMethod) o;
+        MatrixWithBlock that = (MatrixWithBlock) o;
 
-        return Arrays.deepEquals(inner, matrixWithMethod.inner);
+        if (dimension != that.dimension) return false;
+        return Arrays.deepEquals(inner, that.inner);
 
     }
 
     @Override
     public int hashCode() {
-        return inner != null ? Arrays.deepHashCode(inner) : 0;
+        int result = super.hashCode();
+        result = 31 * result + dimension;
+        result = 31 * result + (inner != null ? Arrays.deepHashCode(inner) : 0);
+        return result;
     }
 }

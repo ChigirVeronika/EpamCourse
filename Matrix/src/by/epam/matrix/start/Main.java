@@ -1,13 +1,11 @@
 package by.epam.matrix.start;
 
-import by.epam.matrix.util.Matrix;
-import by.epam.matrix.util.MatrixWithBlock;
-import by.epam.matrix.util.MatrixWithMethod;
-import by.epam.matrix.thread.Walker;
+import by.epam.matrix.entity.Matrix;
+import by.epam.matrix.entity.MatrixWithBlock;
+import by.epam.matrix.entity.MatrixWithMethod;
+import by.epam.matrix.service.Walker;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import static by.epam.matrix.util.InputOutputUtility.*;
 
 /**
  * Created by Вероника on 17.12.2015.
@@ -15,77 +13,41 @@ import java.io.InputStreamReader;
 public class Main {
 
     public static  void main(String args[]){
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
-        //to create and output matrix
-        String dimensionString;
-        int n=0;
-        //to choose way
-        String solutionString;
-        int way;
-        //to choose number of threads
-        String threadString;
-        int threadNumber;
-        try {
-            System.out.println("Enter dimension of matrix");
-            dimensionString = reader.readLine();
-            n=Integer.parseInt(dimensionString);
+        int matrixDimension;
+        int wayToReplace;
+        int numberOfThreads;
 
-            System.out.println("Enter way of solution: 1 - with blocks, 2 - with methods");
-            solutionString = reader.readLine();
-            way=Integer.parseInt(solutionString);
-
-            System.out.println("Enter number of threads");
-            threadString = reader.readLine();
-            threadNumber=Integer.parseInt(threadString);
-
-        } catch (Exception e) {
-            e.printStackTrace();
-            throw new RuntimeException(e);//stop running
-        }
+        System.out.println("Enter dimension of matrix");
+        matrixDimension=inputIntegerValidation();
+        System.out.println("Enter way to replace zeros: 1 - with synchronized block, 2 - with method");
+        wayToReplace=inputWayValidation();
+        System.out.println("Enter number of threads");
+        numberOfThreads=inputIntegerValidation();
 
         Matrix matrix = null;
-        switch (way){
+        switch (wayToReplace){
             case 1:
-                matrix = new MatrixWithBlock(n);
+                matrix = new MatrixWithBlock(matrixDimension);
                 break;
             case 2:
-                matrix = new MatrixWithMethod(n);
+                matrix = new MatrixWithMethod(matrixDimension);
                 break;
         }
-        printMatrix(n, matrix);
+        printMatrix(matrixDimension, matrix);
 
-        int threadFirstNumber=1;
-        int threadSecondNumber=2;
-
-        Walker walker1 = new Walker(threadFirstNumber, matrix);
-        Walker walker2 = new Walker(threadSecondNumber, matrix);
-
-        walker1.start();
-        walker2.start();
-
-        try {
-            walker1.join();
-            walker2.join();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+        Walker walker=null;
+        for (int i = 0; i < numberOfThreads; i++) {
+            walker = new Walker("Thread"+i,i+1,matrix);
+            walker.start();
         }
-
-
-        printMatrix(n, matrix);
-
-
-
-    }
-
-    public static void printMatrix(int n,Matrix m){
-        System.out.println("matrix "+n+" x "+n);
-        for(int i=0;i<n;i++){
-            for (int j = 0; j <n ; j++) {
-                System.out.print(m.getInner()[i][j]+" ");
+        for (int i = 0; i < numberOfThreads; i++) {
+            try {
+                walker.join();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
-            System.out.println();
         }
-        System.out.println();
+        printMatrix(matrixDimension, matrix);
     }
 }
