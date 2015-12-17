@@ -3,7 +3,12 @@ package by.epam.matrix.entity;
 import java.util.Arrays;
 
 /**
- * Created by Вероника on 17.12.2015.
+ * Class extends Matrix and has
+ * synchronized method which changes zeros
+ * on main diagonal of matrix.
+ *
+ * @author Veronika
+ * @see by.epam.matrix.entity.Matrix
  */
 public class MatrixWithMethod extends Matrix{
     public int dimension;

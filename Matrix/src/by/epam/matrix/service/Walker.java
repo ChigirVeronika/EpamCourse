@@ -3,10 +3,16 @@ package by.epam.matrix.service;
 import by.epam.matrix.entity.Matrix;
 
 /**
- * Created by Вероника on 17.12.2015.
+ * Service class realizes thread logic.
+ *
+ * @author Veronika
+ * @see java.lang.Thread
  */
 public class Walker extends Thread {
 
+    /**
+     * Number to put in matrix instead of zero
+     */
     private int ownNumber;
 
     private Matrix matrix;
@@ -17,13 +23,16 @@ public class Walker extends Thread {
         this.matrix = matrix;
     }
 
+    /**
+     * Try to replace zero on matrix main diagonal and sleep 5 seconds.
+     */
     public void run(){
-        int secondsToSleep=500;
+        int millisecondsToSleep=500;
 
         for(int i=0;i< matrix.getDimension();i++){
             matrix.changeZeroOnMainDiagonal(ownNumber, i);
             try{
-                Thread.sleep(secondsToSleep);
+                Thread.sleep(millisecondsToSleep);
             }catch (InterruptedException e){
                 System.out.print(e);
             }

@@ -5,11 +5,24 @@ import by.epam.matrix.entity.Matrix;
 import java.util.Scanner;
 
 /**
- * Created by Вероника on 17.12.2015.
+ * <p>Util class for input and output in application.</p>
+ *
+ * @author Veronika
+ * @version 1.0
  */
 public class InputOutputUtility {
+
+    public InputOutputUtility(){}
+
+    /**
+     * Print number of matrix in matrix view.
+     *
+     * @param n dimension of matrix
+     * @param m Matrix class object
+     * @see Matrix
+     */
     public static void printMatrix(int n,Matrix m){
-        System.out.println("matrix "+n+" x "+n);
+        System.out.println("Matrix "+n+" x "+n);
         for(int i=0;i<n;i++){
             for (int j = 0; j <n ; j++) {
                 System.out.print(m.getInner()[i][j]+" ");
@@ -19,8 +32,16 @@ public class InputOutputUtility {
         System.out.println();
     }
 
+    /**
+     * Process user input and validate it.
+     * In case of incorrect input show
+     * appropriate message and give another try.
+     * Let positive integer only.
+     *
+     * @return number user entered
+     */
     public static int inputIntegerValidation(){
-        int number=0;
+        int number;
         Scanner scanner = new Scanner(System.in);
         do{
             while (!scanner.hasNextInt()) {
@@ -36,6 +57,14 @@ public class InputOutputUtility {
         return number;
     }
 
+    /**
+     * Process user input and validate it.
+     * In case of incorrect input show
+     * appropriate message and give another try.
+     * Let only 1 or 2 according to ways user has.
+     *
+     * @return number user entered
+     */
     public static int inputWayValidation(){
         int number=0;
         Scanner scanner = new Scanner(System.in);

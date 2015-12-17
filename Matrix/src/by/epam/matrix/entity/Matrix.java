@@ -3,7 +3,9 @@ package by.epam.matrix.entity;
 import java.util.Arrays;
 
 /**
- * Created by Вероника on 17.12.2015.
+ * Class contains matrix n x n.
+ *
+ * @author Veronika
  */
 public class Matrix {
     public int dimension;

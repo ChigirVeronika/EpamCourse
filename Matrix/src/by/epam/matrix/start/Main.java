@@ -8,7 +8,10 @@ import by.epam.matrix.service.Walker;
 import static by.epam.matrix.util.InputOutputUtility.*;
 
 /**
- * Created by Вероника on 17.12.2015.
+ * <p>Main class of application.</p>
+ *
+ * @author Veronika
+ * @version 1.0
  */
 public class Main {
 
@@ -20,8 +23,10 @@ public class Main {
 
         System.out.println("Enter dimension of matrix");
         matrixDimension=inputIntegerValidation();
+
         System.out.println("Enter way to replace zeros: 1 - with synchronized block, 2 - with method");
         wayToReplace=inputWayValidation();
+
         System.out.println("Enter number of threads");
         numberOfThreads=inputIntegerValidation();
 
