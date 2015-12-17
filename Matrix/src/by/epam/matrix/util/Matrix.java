@@ -1,5 +1,4 @@
-package by.epam.matrix.block;
-
+package by.epam.matrix.util;
 
 import java.util.Arrays;
 
@@ -7,10 +6,10 @@ import java.util.Arrays;
  * Created by Вероника on 17.12.2015.
  */
 public class Matrix {
+    public int dimension;
     public int [][] inner;
 
-    Matrix(int n){
-        inner=new int[n][n];
+    public Matrix() {
     }
 
     public int[][] getInner() {
@@ -21,14 +20,21 @@ public class Matrix {
         this.inner = inner;
     }
 
-    public void changeNumber(){
-        
+    public int getDimension() {
+        return dimension;
     }
+
+    public void setDimension(int dimension) {
+        this.dimension = dimension;
+    }
+
+    public void changeZeroOnMainDiagonal(int changeNumber,int i){}
 
     @Override
     public String toString() {
         return "Matrix{" +
-                "inner=" + Arrays.toString(inner) +
+                "dimension=" + dimension +
+                ", inner=" + Arrays.toString(inner) +
                 '}';
     }
 
@@ -39,12 +45,15 @@ public class Matrix {
 
         Matrix matrix = (Matrix) o;
 
+        if (dimension != matrix.dimension) return false;
         return Arrays.deepEquals(inner, matrix.inner);
 
     }
 
     @Override
     public int hashCode() {
-        return inner != null ? Arrays.deepHashCode(inner) : 0;
+        int result = dimension;
+        result = 31 * result + (inner != null ? Arrays.deepHashCode(inner) : 0);
+        return result;
     }
 }
