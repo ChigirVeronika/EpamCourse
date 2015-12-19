@@ -1,6 +1,7 @@
-package by.epam.matrix.service;
+package by.epam.matrix.methodlogic.service;
 
-import by.epam.matrix.entity.Matrix;
+import by.epam.matrix.blocklogic.entity.MatrixForBlock;
+import by.epam.matrix.methodlogic.entity.MatrixWithMethod;
 
 /**
  * Service class realizes thread logic.
@@ -15,9 +16,9 @@ public class Walker extends Thread {
      */
     private int ownNumber;
 
-    private Matrix matrix;
+    private MatrixWithMethod matrix;
 
-    public Walker(String s,int ownNumber,Matrix matrix){
+    public Walker(String s,int ownNumber,MatrixWithMethod matrix){
         super(s);
         this.ownNumber=ownNumber;
         this.matrix = matrix;

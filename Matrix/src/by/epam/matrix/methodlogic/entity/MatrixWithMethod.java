@@ -1,18 +1,21 @@
-package by.epam.matrix.entity;
+package by.epam.matrix.methodlogic.entity;
+
+import by.epam.matrix.blocklogic.entity.MatrixForBlock;
+import by.epam.matrix.entity.Matrix;
 
 import java.util.Arrays;
 
 /**
- * Class extends Matrix and has
+ * Class extends MatrixForBlock and has
  * synchronized method which changes zeros
  * on main diagonal of matrix.
  *
  * @author Veronika
- * @see by.epam.matrix.entity.Matrix
+ * @see MatrixForBlock
  */
-public class MatrixWithMethod extends Matrix{
-    public int dimension;
-    public int [][] inner;
+public class MatrixWithMethod extends Matrix {
+    private int dimension;
+    private int [][] inner;
 
     public MatrixWithMethod(int dimension) {
         this.dimension = dimension;
@@ -55,7 +58,7 @@ public class MatrixWithMethod extends Matrix{
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
 
-        MatrixWithBlock that = (MatrixWithBlock) o;
+        MatrixWithMethod that = (MatrixWithMethod) o;
 
         if (dimension != that.dimension) return false;
         return Arrays.deepEquals(inner, that.inner);

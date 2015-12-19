@@ -1,20 +1,19 @@
-package by.epam.matrix.entity;
+package by.epam.matrix.blocklogic.entity;
+
+import by.epam.matrix.entity.Matrix;
 
 import java.util.Arrays;
 
 /**
- * Class extends Matrix and has method with
- * synchronized block which changes zeros
- * on main diagonal of matrix.
+ * Class contains matrix n x n.
  *
  * @author Veronika
- * @see by.epam.matrix.entity.Matrix
  */
-public class MatrixWithBlock extends Matrix{
-    public int dimension;
-    public int [][] inner;
+public class MatrixForBlock extends Matrix{
+    private int dimension;
+    private int [][] inner;
 
-    public MatrixWithBlock(int dimension) {
+    public MatrixForBlock(int dimension) {
         this.dimension = dimension;
         inner = new int[dimension][dimension];
     }
@@ -36,16 +35,14 @@ public class MatrixWithBlock extends Matrix{
     }
 
     public void changeZeroOnMainDiagonal(int changeNumber,int i){
-        synchronized (this) {
-            if (inner[i][i] == 0) {
-                inner[i][i] = changeNumber;
-            }
+        if (inner[i][i] == 0) {
+            inner[i][i] = changeNumber;
         }
     }
 
     @Override
     public String toString() {
-        return "MatrixWithBlock{" +
+        return "MatrixForBlock{" +
                 "dimension=" + dimension +
                 ", inner=" + Arrays.toString(inner) +
                 '}';
@@ -55,19 +52,17 @@ public class MatrixWithBlock extends Matrix{
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        if (!super.equals(o)) return false;
 
-        MatrixWithBlock that = (MatrixWithBlock) o;
+        MatrixForBlock matrix = (MatrixForBlock) o;
 
-        if (dimension != that.dimension) return false;
-        return Arrays.deepEquals(inner, that.inner);
+        if (dimension != matrix.dimension) return false;
+        return Arrays.deepEquals(inner, matrix.inner);
 
     }
 
     @Override
     public int hashCode() {
-        int result = super.hashCode();
-        result = 31 * result + dimension;
+        int result = dimension;
         result = 31 * result + (inner != null ? Arrays.deepHashCode(inner) : 0);
         return result;
     }

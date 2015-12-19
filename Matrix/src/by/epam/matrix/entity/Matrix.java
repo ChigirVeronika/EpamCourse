@@ -3,15 +3,18 @@ package by.epam.matrix.entity;
 import java.util.Arrays;
 
 /**
- * Class contains matrix n x n.
- *
- * @author Veronika
+ * Created by Вероника on 19.12.2015.
  */
 public class Matrix {
-    public int dimension;
-    public int [][] inner;
+    private int dimension;
+    private int [][] inner;
 
     public Matrix() {
+    }
+
+    public Matrix(int dimension) {
+        this.dimension = dimension;
+        inner = new int[dimension][dimension];
     }
 
     public int[][] getInner() {
@@ -29,8 +32,6 @@ public class Matrix {
     public void setDimension(int dimension) {
         this.dimension = dimension;
     }
-
-    public void changeZeroOnMainDiagonal(int changeNumber,int i){}
 
     @Override
     public String toString() {
