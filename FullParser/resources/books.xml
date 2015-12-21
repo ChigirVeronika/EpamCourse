@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<books xmlns="http://bsuir.by/lab03/books">
+    <book id="Nina">
+        <title>Southern Star</title>
+        <author>Verne</author>
+        <category>
+            <year>1860</year>
+            <genre>adventure</genre>
+            <pages>450</pages>
+        </category>
+        <description>some text</description>
+    </book>
+    <book id="Ann">
+        <title>IT</title>
+        <author>King</author>
+        <category>
+            <year>1996</year>
+            <genre>thriller</genre>
+            <pages>600</pages>
+        </category>
+        <description>some new text</description>
+    </book>
+    <book id="Sam">
+        <title>Southern Star</title>
+        <author>Verne</author>
+        <category>
+            <year>1860</year>
+            <genre>adventure</genre>
+            <pages>450</pages>
+        </category>
+        <description>some text</description>
+    </book>
+    <book id="Anna">
+        <title>IT</title>
+        <author>King</author>
+        <category>
+            <year>1996</year>
+            <genre>thriller</genre>
+            <pages>600</pages>
+        </category>
+        <description>some new text</description>
+    </book>
+    <book id="Sasha">
+        <title>Southern Star</title>
+        <author>Verne</author>
+        <category>
+            <year>1860</year>
+            <genre>adventure</genre>
+            <pages>450</pages>
+        </category>
+        <description>some text</description>
+    </book>
+    <book id="Frodo">
+        <title>IT</title>
+        <author>King</author>
+        <category>
+            <year>1996</year>
+            <genre>thriller</genre>
+            <pages>600</pages>
+        </category>
+        <description>some new text</description>
+    </book>
+    <book id="Harry">
+        <title>Southern Star</title>
+        <author>Verne</author>
+        <category>
+            <year>1860</year>
+            <genre>adventure</genre>
+            <pages>450</pages>
+        </category>
+        <description>some text</description>
+    </book>
+    <book id="Severus">
+        <title>IT</title>
+        <author>King</author>
+        <category>
+            <year>1996</year>
+            <genre>thriller</genre>
+            <pages>600</pages>
+        </category>
+        <description>some new text</description>
+    </book>
+    <book id="Ron">
+        <title>Southern Star</title>
+        <author>Verne</author>
+        <category>
+            <year>1860</year>
+            <genre>adventure</genre>
+            <pages>450</pages>
+        </category>
+        <description>some text</description>
+    </book>
+    <book id="Fred">
+        <title>IT</title>
+        <author>King</author>
+        <category>
+            <year>1996</year>
+            <genre>thriller</genre>
+            <pages>600</pages>
+        </category>
+        <description>some new text</description>
+    </book>
+    <book id="Ban">
+        <title>Southern Star</title>
+        <author>Verne</author>
+        <category>
+            <year>1860</year>
+            <genre>adventure</genre>
+            <pages>450</pages>
+        </category>
+        <description>some text</description>
+    </book>
+    <book id="Ban1">
+        <title>IT</title>
+        <author>King</author>
+        <category>
+            <year>1996</year>
+            <genre>thriller</genre>
+            <pages>600</pages>
+        </category>
+        <description>some new text</description>
+    </book>
+    <book id="Ban2">
+        <title>Southern Star</title>
+        <author>Verne</author>
+        <category>
+            <year>1860</year>
+            <genre>adventure</genre>
+            <pages>450</pages>
+        </category>
+        <description>some text</description>
+    </book>
+    <book id="Ban3">
+        <title>IT</title>
+        <author>King</author>
+        <category>
+            <year>1996</year>
+            <genre>thriller</genre>
+            <pages>600</pages>
+        </category>
+        <description>some new text</description>
+    </book>
+    <book id="Severus2">
+        <title>Southern Star</title>
+        <author>Verne</author>
+        <category>
+            <year>1860</year>
+            <genre>adventure</genre>
+            <pages>450</pages>
+        </category>
+        <description>some text</description>
+    </book>
+    <book id="Harry1">
+        <title>IT</title>
+        <author>King</author>
+        <category>
+            <year>1996</year>
+            <genre>thriller</genre>
+            <pages>600</pages>
+        </category>
+        <description>some new text</description>
+    </book>
+    <book id="Harry2">
+        <title>Southern Star</title>
+        <author>Verne</author>
+        <category>
+            <year>1860</year>
+            <genre>adventure</genre>
+            <pages>450</pages>
+        </category>
+        <description>some text</description>
+    </book>
+        <book id="Veronika">
+        <title>IT</title>
+        <author>King</author>
+        <category>
+            <year>1996</year>
+            <genre>thriller</genre>
+            <pages>600</pages>
+        </category>
+        <description>some new text</description>
+    </book>
+    <book id="Alan">
+        <title>Southern Star</title>
+        <author>Verne</author>
+        <category>
+            <year>1860</year>
+            <genre>adventure</genre>
+            <pages>450</pages>
+        </category>
+        <description>some text</description>
+    </book>
+    <book id="Monika">
+        <title>IT</title>
+        <author>King</author>
+        <category>
+            <year>1996</year>
+            <genre>thriller</genre>
+            <pages>600</pages>
+        </category>
+        <description>some new text</description>
+    </book>
+    <book id="my">
+        <title>Southern Star</title>
+        <author>Verne</author>
+        <category>
+            <year>1860</year>
+            <genre>adventure</genre>
+            <pages>450</pages>
+        </category>
+        <description>some text</description>
+    </book>
+    <book id="friend">
+        <title>IT</title>
+        <author>King</author>
+        <category>
+            <year>1996</year>
+            <genre>thriller</genre>
+            <pages>600</pages>
+        </category>
+        <description>some new text</description>
+    </book>
+</books>
