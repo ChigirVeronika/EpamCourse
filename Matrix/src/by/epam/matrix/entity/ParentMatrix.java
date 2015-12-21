@@ -3,18 +3,17 @@ package by.epam.matrix.entity;
 import java.util.Arrays;
 
 /**
- * Created by Вероника on 19.12.2015.
+ * Class ParentMatrix for another
+ * matrix and to improve utilities
+ * and output.
+ *
+ * @author Veronika
  */
-public class Matrix {
+public class ParentMatrix {
     private int dimension;
     private int [][] inner;
 
-    public Matrix() {
-    }
-
-    public Matrix(int dimension) {
-        this.dimension = dimension;
-        inner = new int[dimension][dimension];
+    public ParentMatrix() {
     }
 
     public int[][] getInner() {
@@ -35,7 +34,7 @@ public class Matrix {
 
     @Override
     public String toString() {
-        return "Matrix{" +
+        return "ParentMatrix{" +
                 "dimension=" + dimension +
                 ", inner=" + Arrays.toString(inner) +
                 '}';
@@ -46,10 +45,10 @@ public class Matrix {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Matrix matrix = (Matrix) o;
+        ParentMatrix parentMatrix = (ParentMatrix) o;
 
-        if (dimension != matrix.dimension) return false;
-        return Arrays.deepEquals(inner, matrix.inner);
+        if (dimension != parentMatrix.dimension) return false;
+        return Arrays.deepEquals(inner, parentMatrix.inner);
 
     }
 

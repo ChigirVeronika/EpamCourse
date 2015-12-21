@@ -1,6 +1,6 @@
 package by.epam.matrix.util;
 
-import by.epam.matrix.entity.Matrix;
+import by.epam.matrix.entity.ParentMatrix;
 
 import java.util.Scanner;
 
@@ -19,9 +19,9 @@ public class InputOutputUtility {
      *
      * @param n dimension of matrix
      * @param m Matrix class object
-     * @see Matrix
+     * @see ParentMatrix
      */
-    public static void printMatrix(int n,Matrix m){
+    public static void printMatrix(int n,ParentMatrix m){
         System.out.println("Matrix "+n+" x "+n);
         for(int i=0;i<n;i++){
             for (int j = 0; j <n ; j++) {

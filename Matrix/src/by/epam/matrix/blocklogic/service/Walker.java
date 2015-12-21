@@ -1,10 +1,6 @@
 package by.epam.matrix.blocklogic.service;
 
-/**
- * Created by Вероника on 19.12.2015.
- */
-
-import by.epam.matrix.blocklogic.entity.MatrixForBlock;
+import by.epam.matrix.blocklogic.entity.Matrix;
 
 /**
  * Service class realizes thread logic.
@@ -12,23 +8,23 @@ import by.epam.matrix.blocklogic.entity.MatrixForBlock;
  * @author Veronika
  * @see java.lang.Thread
  */
-public class WalkerWithBlock extends Thread {
+public class Walker extends Thread {
 
     /**
      * Number to put in matrix instead of zero
      */
     private int ownNumber;
 
-    private MatrixForBlock matrix;
+    private Matrix matrix;
 
-    public WalkerWithBlock(String s,int ownNumber,MatrixForBlock matrix){
+    public Walker(String s, int ownNumber, Matrix matrix){
         super(s);
         this.ownNumber=ownNumber;
         this.matrix = matrix;
     }
 
     /**
-     * Try to replace zero on matrix main diagonal and sleep 5 seconds.
+     * Try to replace zero on matrix main diagonal and sleep 1,5 seconds.
      */
     public void run(){
         int millisecondsToSleep=150;

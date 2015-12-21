@@ -1,14 +1,12 @@
 package by.epam.matrix.methodlogic.start;
 
-import by.epam.matrix.blocklogic.service.WalkerWithBlock;
-import by.epam.matrix.methodlogic.entity.MatrixWithMethod;
+import by.epam.matrix.methodlogic.entity.Matrix;
 import by.epam.matrix.methodlogic.service.Walker;
 
-import static by.epam.matrix.util.InputOutputUtility.inputIntegerValidation;
-import static by.epam.matrix.util.InputOutputUtility.printMatrix;
+import static by.epam.matrix.util.InputOutputUtility.*;
 
 /**
- * <p>Main class of application.</p>
+ * <p>Main class of part with synchronized method.</p>
  *
  * @author Veronika
  * @version 1.0
@@ -16,17 +14,15 @@ import static by.epam.matrix.util.InputOutputUtility.printMatrix;
 public class Main {
 
     public static  void main(String args[]){
-
-        int matrixDimension;
-        int numberOfThreads;
+        System.out.println("Matrix changing with synchronized method.");
 
         System.out.println("Enter dimension of matrix");
-        matrixDimension=inputIntegerValidation();
+        int matrixDimension=inputIntegerValidation();
 
         System.out.println("Enter number of threads");
-        numberOfThreads=inputIntegerValidation();
+        int numberOfThreads=inputIntegerValidation();
 
-        MatrixWithMethod matrix = new MatrixWithMethod(matrixDimension);
+        Matrix matrix = new Matrix(matrixDimension);
 
         printMatrix(matrixDimension, matrix);
 

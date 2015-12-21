@@ -1,12 +1,12 @@
 package by.epam.matrix.blocklogic.start;
 
-import by.epam.matrix.blocklogic.entity.MatrixForBlock;
-import by.epam.matrix.blocklogic.service.WalkerWithBlock;
+import by.epam.matrix.blocklogic.entity.Matrix;
+import by.epam.matrix.blocklogic.service.Walker;
 
 import static by.epam.matrix.util.InputOutputUtility.*;
 
 /**
- * <p>Main class of application.</p>
+ * <p>Main class of part with synchronized block.</p>
  *
  * @author Veronika
  * @version 1.0
@@ -14,23 +14,21 @@ import static by.epam.matrix.util.InputOutputUtility.*;
 public class Main {
 
     public static  void main(String args[]){
-
-        int matrixDimension;
-        int numberOfThreads;
+        System.out.println("Matrix changing with synchronized block.");
 
         System.out.println("Enter dimension of matrix");
-        matrixDimension=inputIntegerValidation();
+        int matrixDimension=inputIntegerValidation();
 
         System.out.println("Enter number of threads");
-        numberOfThreads=inputIntegerValidation();
+        int numberOfThreads=inputIntegerValidation();
 
-        MatrixForBlock matrix = new MatrixForBlock(matrixDimension);
+        Matrix matrix = new Matrix(matrixDimension);
 
         printMatrix(matrixDimension, matrix);
 
-        WalkerWithBlock walker=null;
+        Walker walker=null;
         for (int i = 0; i < numberOfThreads; i++) {
-            walker = new WalkerWithBlock("Thread"+i,i+1,matrix);
+            walker = new Walker("Thread"+i,i+1,matrix);
             walker.start();
         }
         for (int i = 0; i < numberOfThreads; i++) {

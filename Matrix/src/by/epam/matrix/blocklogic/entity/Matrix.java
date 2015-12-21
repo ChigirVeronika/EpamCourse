@@ -1,19 +1,20 @@
 package by.epam.matrix.blocklogic.entity;
 
-import by.epam.matrix.entity.Matrix;
+import by.epam.matrix.entity.ParentMatrix;
 
 import java.util.Arrays;
 
 /**
- * Class contains matrix n x n.
+ * Class contains matrix n x n with method
+ * to replace zeros on main diagonal.
  *
  * @author Veronika
  */
-public class MatrixForBlock extends Matrix{
+public class Matrix extends ParentMatrix {
     private int dimension;
     private int [][] inner;
 
-    public MatrixForBlock(int dimension) {
+    public Matrix(int dimension) {
         this.dimension = dimension;
         inner = new int[dimension][dimension];
     }
@@ -42,7 +43,7 @@ public class MatrixForBlock extends Matrix{
 
     @Override
     public String toString() {
-        return "MatrixForBlock{" +
+        return "Matrix{" +
                 "dimension=" + dimension +
                 ", inner=" + Arrays.toString(inner) +
                 '}';
@@ -53,7 +54,7 @@ public class MatrixForBlock extends Matrix{
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        MatrixForBlock matrix = (MatrixForBlock) o;
+        Matrix matrix = (Matrix) o;
 
         if (dimension != matrix.dimension) return false;
         return Arrays.deepEquals(inner, matrix.inner);
