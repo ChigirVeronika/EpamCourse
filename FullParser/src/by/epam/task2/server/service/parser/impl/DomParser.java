@@ -2,6 +2,7 @@ package by.epam.task2.server.service.parser.impl;
 
 import by.epam.task2.entity.Book;
 import by.epam.task2.entity.Category;
+import by.epam.task2.server.service.parser.Parser;
 import by.epam.task2.server.service.parser.ParserException;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -25,8 +26,9 @@ import java.util.List;
 /**
  * Created by Вероника on 21.12.2015.
  */
-public class DomParser {
+public class DomParser implements Parser{
     private static final String XSD_PATH = "resources/book.xsd";
+    @Override
     public List<Book> parse(String fileName) throws ParserException {
         List<Book> books;
         try{
