@@ -60,6 +60,14 @@ public class DomParser {
 
     private Book getBook(Element element){
         Book book = new Book();
-        book.setId(element.getAttributes("id"));
+        book.setId(element.getAttribute("id"));
+        book.setTitle(element.getAttribute("title"));
+        book.setAuthor(element.getAttribute("author"));
+        book.setCategory();
+        book.setDescription(element.getAttribute("description"));
+
+        return book;
     }
+
+    private
 }

@@ -5,7 +5,8 @@ import by.epam.matrix.entity.ParentMatrix;
 import java.util.Scanner;
 
 /**
- * <p>Util class for input and output in application.</p>
+ * <p>Util class for user input
+ * and output matrix in application.</p>
  *
  * @author Veronika
  * @version 1.0
