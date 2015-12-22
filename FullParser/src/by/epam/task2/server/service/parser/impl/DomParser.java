@@ -5,10 +5,9 @@ import by.epam.task2.entity.Category;
 import by.epam.task2.server.service.parser.ParserException;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
+import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-import org.xml.sax.ErrorHandler;
 import org.xml.sax.SAXException;
-import org.xml.sax.SAXParseException;
 
 import javax.xml.XMLConstants;
 import javax.xml.parsers.DocumentBuilder;
@@ -18,6 +17,7 @@ import javax.xml.transform.stream.StreamSource;
 import javax.xml.validation.SchemaFactory;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -47,7 +47,7 @@ public class DomParser {
             Document document = documentBuilder.parse(file);
             document.getDocumentElement().normalize();
             NodeList nodeList = document.getElementsByTagName("book");
-            //books=transformTo
+            books=transformToList(nodeList);
 
         }catch (ParserConfigurationException | IOException | SAXException e) {
             throw new ParserException("Parse error occurred.", e);
@@ -56,8 +56,14 @@ public class DomParser {
     }
 
     private List<Book> transformToList(NodeList nodeList){
-        
-
+        List<Book> books = new ArrayList<>(nodeList.getLength());
+        for(int i=0;i<nodeList.getLength();i++){
+            Node node = nodeList.item(i);
+            Element element = (Element)node;
+            Book book = getBook(element);
+            books.add(book);
+        }
+        return books;
     }
 
     private Book getBook(Element element){
