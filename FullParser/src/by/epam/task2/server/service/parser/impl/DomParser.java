@@ -1,6 +1,7 @@
 package by.epam.task2.server.service.parser.impl;
 
 import by.epam.task2.entity.Book;
+import by.epam.task2.entity.Category;
 import by.epam.task2.server.service.parser.ParserException;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -61,13 +62,20 @@ public class DomParser {
     private Book getBook(Element element){
         Book book = new Book();
         book.setId(element.getAttribute("id"));
-        book.setTitle(element.getAttribute("title"));
-        book.setAuthor(element.getAttribute("author"));
-        book.setCategory();
-        book.setDescription(element.getAttribute("description"));
+        book.setTitle(element.getElementsByTagName("title").item(0).getTextContent());
+        book.setAuthor(element.getElementsByTagName("author").item(0).getTextContent());
+        book.setCategory(element.getAttribute());
+        book.setDescription(element.getElementsByTagName("description").item(0).getTextContent());
 
         return book;
     }
 
-    private
+    private Category getCategory(Element element){
+        Category category = new Category();
+        category.setGenre(element.getAttribute("genre"));
+        category.setPages(Integer.parseInt(element.getAttribute("pages")));
+        category.setYear(Integer.parseInt(element.getAttribute("year")));
+
+        return category;
+    }
 }
