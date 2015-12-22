@@ -24,10 +24,18 @@ import java.util.List;
 
 
 /**
- * Created by Вероника on 21.12.2015.
+ * Parse book.xml by DomParse.
  */
 public class DomParser implements Parser{
     private static final String XSD_PATH = "resources/book.xsd";
+
+    /**
+     * Method parses xml file.
+     *
+     * @param fileName xml file path
+     * @return list of elements of xml file
+     * @throws ParserException if parsing is deprecated
+     */
     @Override
     public List<Book> parse(String fileName) throws ParserException {
         List<Book> books;

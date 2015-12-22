@@ -1,6 +1,7 @@
 package by.epam.task2.server.service.parser.impl;
 
 import by.epam.task2.entity.Book;
+import by.epam.task2.entity.Category;
 import by.epam.task2.server.service.parser.Parser;
 import by.epam.task2.server.service.parser.ParserException;
 import org.xml.sax.SAXException;
@@ -18,12 +19,19 @@ import java.io.IOException;
 import java.util.List;
 
 /**
- * Created by Вероника on 21.12.2015.
+ * Parse book.xml by SaxParse.
  */
 public class SaxParser implements Parser{
     private static final String XSD_PATH = "resources/book.xsd";
     private List<Book> books;
 
+    /**
+     * Method parses xml file.
+     *
+     * @param fileName xml file path
+     * @return list of elements of xml file
+     * @throws ParserException if parsing is deprecated
+     */
     @Override
     public List<Book> parse(String fileName) throws ParserException {
         try {
@@ -47,6 +55,10 @@ public class SaxParser implements Parser{
     }
 
     class Handler extends DefaultHandler{
+        private String elementName;
+        private Book book;
+        private Category category;
+
 
 
         @Override
