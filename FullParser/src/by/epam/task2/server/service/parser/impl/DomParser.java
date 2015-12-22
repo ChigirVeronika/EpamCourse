@@ -56,6 +56,7 @@ public class DomParser {
     }
 
     private List<Book> transformToList(NodeList nodeList){
+        
 
     }
 
@@ -64,7 +65,10 @@ public class DomParser {
         book.setId(element.getAttribute("id"));
         book.setTitle(element.getElementsByTagName("title").item(0).getTextContent());
         book.setAuthor(element.getElementsByTagName("author").item(0).getTextContent());
-        book.setCategory(element.getAttribute());
+
+        Element category = (Element) element.getElementsByTagName("category").item(0);
+        book.setCategory(getCategory(category));
+
         book.setDescription(element.getElementsByTagName("description").item(0).getTextContent());
 
         return book;
@@ -72,9 +76,9 @@ public class DomParser {
 
     private Category getCategory(Element element){
         Category category = new Category();
-        category.setGenre(element.getAttribute("genre"));
-        category.setPages(Integer.parseInt(element.getAttribute("pages")));
-        category.setYear(Integer.parseInt(element.getAttribute("year")));
+        category.setGenre(element.getElementsByTagName("genre").item(0).getTextContent());
+        category.setPages(Integer.parseInt(element.getElementsByTagName("pages").item(0).getTextContent()));
+        category.setYear(Integer.parseInt(element.getElementsByTagName("year").item(0).getTextContent()));
 
         return category;
     }
