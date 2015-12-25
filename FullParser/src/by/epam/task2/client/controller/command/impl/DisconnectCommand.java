@@ -1,11 +1,10 @@
 package by.epam.task2.client.controller.command.impl;
 
-import by.bsuir.lab03.client.bean.Request;
-import by.bsuir.lab03.client.bean.Response;
-import by.bsuir.lab03.client.controller.command.Command;
-import by.bsuir.lab03.client.controller.command.CommandException;
-import by.bsuir.lab03.client.service.NetworkService;
-import by.bsuir.lab03.client.service.ServiceException;
+import by.epam.task2.client.bean.Request;
+import by.epam.task2.client.bean.Response;
+import by.epam.task2.client.controller.command.Command;
+import by.epam.task2.client.controller.command.CommandException;
+import by.epam.task2.server.service.ServiceException;
 
 public class DisconnectCommand implements Command {
     @Override

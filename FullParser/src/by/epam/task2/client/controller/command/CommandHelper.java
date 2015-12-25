@@ -1,8 +1,8 @@
 package by.epam.task2.client.controller.command;
 
-import by.bsuir.lab03.client.controller.command.impl.ConnectCommand;
-import by.bsuir.lab03.client.controller.command.impl.DisconnectCommand;
-import by.bsuir.lab03.client.controller.command.impl.FileSendCommand;
+import by.epam.task2.client.controller.command.impl.ConnectCommand;
+import by.epam.task2.client.controller.command.impl.DisconnectCommand;
+import by.epam.task2.client.controller.command.impl.FileSendCommand;
 
 import java.util.HashMap;
 

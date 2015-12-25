@@ -2,8 +2,8 @@ package by.epam.task2.client.controller;
 
 import by.epam.task2.client.bean.Request;
 import by.epam.task2.client.bean.Response;
-import by.bsuir.lab03.client.controller.command.CommandException;
-import by.bsuir.lab03.client.controller.command.CommandHelper;
+import by.epam.task2.client.controller.command.CommandException;
+import by.epam.task2.client.controller.command.CommandHelper;
 
 public class Controller {
     private final CommandHelper helper = new CommandHelper();
