@@ -6,9 +6,11 @@ import by.epam.task2.client.bean.Request;
 import by.epam.task2.client.bean.Response;
 import by.epam.task2.client.controller.command.Command;
 import by.epam.task2.client.controller.command.CommandException;
-import by.epam.task2.server.service.ServiceException;
+import by.epam.task2.client.service.NetworkService;
+import by.epam.task2.client.service.ServiceException;
 
-public class ConnectCommand implements Command {
+public class
+        ConnectCommand implements Command {
     @Override
     public Response execute(Request request) throws CommandException {
         try {

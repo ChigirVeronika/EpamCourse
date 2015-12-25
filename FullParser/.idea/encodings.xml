@@ -13,6 +13,12 @@
     <file url="file://$PROJECT_DIR$/src/by/epam/task2/client/controller/command/impl/ConnectCommand.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/by/epam/task2/client/controller/command/impl/DisconnectCommand.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/by/epam/task2/client/controller/command/impl/FileSendCommand.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/by/epam/task2/client/dao/DaoException.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/by/epam/task2/client/dao/NetworkDao.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/by/epam/task2/client/dao/factory/DaoFactory.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/by/epam/task2/client/dao/factory/impl/FileDaoFactory.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/by/epam/task2/client/service/NetworkService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/by/epam/task2/client/service/ServiceException.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/by/epam/task2/entity/Book.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/by/epam/task2/entity/Category.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/by/epam/task2/entity/ParserType.java" charset="UTF-8" />
