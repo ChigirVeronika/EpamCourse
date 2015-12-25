@@ -7,6 +7,7 @@ import by.epam.task2.server.service.parser.ParserException;
 import org.xml.sax.SAXException;
 import org.xml.sax.SAXParseException;
 import org.xml.sax.helpers.DefaultHandler;
+import org.xml.sax.Attributes;
 
 import javax.xml.XMLConstants;
 import javax.xml.parsers.ParserConfigurationException;
@@ -16,6 +17,7 @@ import javax.xml.transform.stream.StreamSource;
 import javax.xml.validation.SchemaFactory;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -58,6 +60,67 @@ public class SaxParser implements Parser{
         private String elementName;
         private Book book;
         private Category category;
+
+        @Override
+        public void startElement(String uri, String localName,
+                                 String qName, Attributes attributes) throws SAXException{
+            elementName=qName;
+            switch (qName){
+                case "book":{
+                    book = new Book();
+                    book.setId(attributes.getValue("id"));
+                    break;
+                }
+                case "category":{
+                    category = new Category();
+                    break;
+                }
+                case "books":{
+                    books= new ArrayList<>();
+                    break;
+                }
+            }
+        }
+
+        @Override
+        public void endElement(String uri, String localName, String qName)
+                throws SAXException {
+            switch (qName){
+                case "book":{
+                    books.add(book);
+                    break;
+                }
+                case "category":{
+                    book.setCategory(category);
+                    break;
+                }
+            }
+        }
+
+        @Override
+        public void characters(char[] ch, int start, int length) throws SAXException {
+            switch (elementName) {
+                case "title":
+                    book.setTitle(new String(ch,start,length));
+                    break;
+                case "author":
+                    book.setAuthor(new String(ch, start, length));
+                    break;
+                case "year":
+                    category.setYear(Integer.parseInt(new String(ch, start, length)));
+                    break;
+                case "genre":
+                    category.setGenre(new String(ch, start, length));
+                    break;
+                case "pages":
+                    category.setPages(Integer.parseInt(new String(ch, start, length)));
+                    break;
+                case "phone":
+                    book.setDescription(new String(ch, start, length));
+                    break;
+            }
+            elementName = "";
+        }
 
 
 

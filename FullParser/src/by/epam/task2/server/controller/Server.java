@@ -5,26 +5,26 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 public class Server {
-	private ServerSocket server;
+	private final static int PORT = 58457;//4825
+	private ServerSocket serverSocket;
 
 	public void start() {
 		try {
-			server = new ServerSocket(4825);
-
+			serverSocket = new ServerSocket(PORT);
 			while (true) {
-				System.out.println("Ожидаем подключения.");
-				Socket socket = server.accept();
+				System.out.println("Waiting connection...");
+				Socket socket = serverSocket.accept();
 
-				Thread newClient = new Thread(new ClientManager(socket));
-				newClient.start();
+				new Thread(new ClientManager(socket)).start();
 			}
 		} catch (IOException e) {
-			e.printStackTrace();
+			//e.printStackTrace();
+			System.err.println("Start server failed.");
 		} finally {
 
 			try {
-				if (server != null) {
-					server.close();
+				if (serverSocket != null) {
+					serverSocket.close();
 				}
 			} catch (IOException e) {
 				e.printStackTrace();
