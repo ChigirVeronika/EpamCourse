@@ -4,6 +4,7 @@ import by.epam.task2.entity.Book;
 import by.epam.task2.entity.Category;
 import by.epam.task2.server.service.parser.Parser;
 import by.epam.task2.server.service.parser.ParserException;
+import org.apache.logging.log4j.Logger;
 import org.xml.sax.SAXException;
 import org.xml.sax.SAXParseException;
 import org.xml.sax.helpers.DefaultHandler;
@@ -60,6 +61,8 @@ public class SaxParser implements Parser{
         private String elementName;
         private Book book;
         private Category category;
+
+
 
         @Override
         public void startElement(String uri, String localName,

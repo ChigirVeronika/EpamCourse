@@ -43,7 +43,9 @@ public class ClientManager implements Runnable {
 			try {
 				ObjectOutputStream objOut = new ObjectOutputStream(out);
 				objOut.writeObject(response);
-			} catch (IOException e) {}
+			} catch (IOException e) {
+
+			}
 			try {
 				socket.close();
 			} catch (IOException e) {}
@@ -79,11 +81,11 @@ public class ClientManager implements Runnable {
 
 		return response;
 	}
-	
+
 	private void sendResponseToClient(byte[] response) throws IOException{
 		out.write(response);
 	}
-	
+
 	private void sendCloseConfirmationToClient() throws IOException{
 		out.write(new byte[]{0});
 	}
