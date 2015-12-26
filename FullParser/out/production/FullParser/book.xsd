@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://bsuir.by/lab03/books"
+        xmlns:tns="http://bsuir.by/lab03/books"
+        elementFormDefault="qualified">
+    <element name="books">
+        <complexType>
+            <sequence>
+                <element name="book"
+                         type="tns:Book"
+                         minOccurs="2"
+                         maxOccurs="unbounded" />
+            </sequence>
+        </complexType>
+    </element>
+
+    <complexType name="Book">
+        <sequence>
+            <element name="title" type="string"/>
+            <element name="author" type="string"/>
+            <element name="category" type="tns:Category"/>
+            <element name="description" type="string"/>
+        </sequence>
+        <attribute name="id" type="ID" use="optional"/>
+    </complexType>
+    <complexType name="Category">
+        <sequence>
+            <element name="year" type="tns:Year"/>
+            <element name="genre">
+                <simpleType>
+                    <restriction base="string">
+                        <enumeration value="adventure"></enumeration>
+                        <enumeration value="thriller"></enumeration>
+                        <enumeration value="fantasy"></enumeration>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element name="pages" type="tns:Pages"></element>
+        </sequence>
+    </complexType>
+    <simpleType name="Year">
+        <restriction base="string">
+            <pattern value="([0-9]){4}"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="Pages">
+        <restriction base="string">
+            <pattern value="([0-9]){1,}"/>
+        </restriction>
+    </simpleType>
+</schema>
