@@ -9,6 +9,8 @@ public class Category implements Serializable{
     private String genre;
     private int pages;
 
+    public Category(){}
+
     public int getYear() {
         return year;
     }

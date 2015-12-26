@@ -11,6 +11,8 @@ public class Controller {
     private static final Logger LOGGER = Logger.getLogger( Controller.class);
     private final CommandHelper helper = new CommandHelper();
 
+    public Controller(){}
+
     public Response execute(Request request) {
         Response response;
         try {

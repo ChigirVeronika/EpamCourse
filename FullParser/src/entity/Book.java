@@ -9,6 +9,8 @@ public class Book implements Serializable{
     protected Category category;
     protected String description;
 
+    public Book(){}
+
     public String getTitle() {
         return title;
     }

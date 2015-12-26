@@ -14,6 +14,8 @@ import java.util.Date;
 public class FileService {
     private final static FileDao dao = FileDao.getInstance();
 
+    public FileService(){}
+
     public static void createFile() throws ServiceException {
         try {
             String fileName = String.valueOf("resources/" + new Date().getTime() + ".xml");

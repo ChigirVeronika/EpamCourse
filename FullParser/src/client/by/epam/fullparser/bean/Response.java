@@ -4,6 +4,8 @@ public class Response {
     private String message;
     private boolean success = true;
 
+    public Response(){}
+
     public boolean isSuccess() {
         return success;
     }

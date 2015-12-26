@@ -7,6 +7,8 @@ public class ServerRequest implements Serializable {
     private long fileLength;
     private ParserType parserType;
 
+    public ServerRequest(){}
+
     public long getFileLength() {
         return fileLength;
     }

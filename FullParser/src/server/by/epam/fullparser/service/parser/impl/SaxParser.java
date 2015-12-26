@@ -8,6 +8,7 @@ import org.xml.sax.SAXException;
 import org.xml.sax.SAXParseException;
 import org.xml.sax.helpers.DefaultHandler;
 import org.xml.sax.Attributes;
+import static server.by.epam.fullparser.util.BookConstant.*;
 
 import javax.xml.XMLConstants;
 import javax.xml.parsers.ParserConfigurationException;
@@ -27,6 +28,8 @@ public class SaxParser implements Parser {
     private static final String XSD_PATH = "resources/book.xsd";
     private List<Book> books;
 
+    public SaxParser(){}
+
     /**
      * Method parses xml file.
      *
@@ -45,7 +48,7 @@ public class SaxParser implements Parser {
 
             SchemaFactory schemaFactory =
                     SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
-            factory.setSchema(schemaFactory.newSchema(new StreamSource("resources/book.xsd")));
+            factory.setSchema(schemaFactory.newSchema(new StreamSource(XSD_PATH)));
 
             SAXParser saxParser = factory.newSAXParser();
             Handler handler = new Handler();
@@ -68,16 +71,16 @@ public class SaxParser implements Parser {
                                  String qName, Attributes attributes) throws SAXException{
             elementName=qName;
             switch (qName){
-                case "book":{
+                case BOOK:{
                     book = new Book();
                     book.setId(attributes.getValue("id"));
                     break;
                 }
-                case "category":{
+                case CATEGORY:{
                     category = new Category();
                     break;
                 }
-                case "books":{
+                case BOOKS:{
                     books= new ArrayList<>();
                     break;
                 }
@@ -88,11 +91,11 @@ public class SaxParser implements Parser {
         public void endElement(String uri, String localName, String qName)
                 throws SAXException {
             switch (qName){
-                case "book":{
+                case BOOK:{
                     books.add(book);
                     break;
                 }
-                case "category":{
+                case CATEGORY:{
                     book.setCategory(category);
                     break;
                 }
@@ -102,22 +105,22 @@ public class SaxParser implements Parser {
         @Override
         public void characters(char[] ch, int start, int length) throws SAXException {
             switch (elementName) {
-                case "title":
+                case TITLE:
                     book.setTitle(new String(ch,start,length));
                     break;
-                case "author":
+                case AUTHOR:
                     book.setAuthor(new String(ch, start, length));
                     break;
-                case "year":
+                case YEAR:
                     category.setYear(Integer.parseInt(new String(ch, start, length)));
                     break;
-                case "genre":
+                case GENRE:
                     category.setGenre(new String(ch, start, length));
                     break;
-                case "pages":
+                case PAGES:
                     category.setPages(Integer.parseInt(new String(ch, start, length)));
                     break;
-                case "phone":
+                case DESCRIPTION:
                     book.setDescription(new String(ch, start, length));
                     break;
             }

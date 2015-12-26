@@ -12,6 +12,7 @@ import org.apache.log4j.Logger;
 
 public class ConnectCommand implements Command {
     private static final Logger LOGGER = Logger.getLogger( ConnectCommand.class);
+    public ConnectCommand(){}
     @Override
     public Response execute(Request request) throws CommandException {
         try {

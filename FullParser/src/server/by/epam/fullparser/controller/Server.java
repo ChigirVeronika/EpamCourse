@@ -8,6 +8,8 @@ public class Server {
 	private final static int PORT = 58457;//4825
 	private ServerSocket serverSocket;
 
+	public Server(){}
+
 	public void start() {
 		try {
 			serverSocket = new ServerSocket(PORT);

@@ -18,6 +18,8 @@ public class NetworkService {
     private static final Logger LOGGER = Logger.getLogger( NetworkService.class);
     private static final NetworkDao networkDao = DaoFactory.getDaoFactory().getNetworkDao();
 
+    public NetworkService(){}
+
     public static void connect(String host, int port) throws ServiceException {
         try {
             networkDao.connectTo(host, port);

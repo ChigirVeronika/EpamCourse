@@ -10,6 +10,7 @@ import org.apache.log4j.Logger;
 
 public class DisconnectCommand implements Command {
     private static final Logger LOGGER = Logger.getLogger( DisconnectCommand.class);
+    public DisconnectCommand(){}
     @Override
     public Response execute(Request request) throws CommandException {
         Response response = new Response();

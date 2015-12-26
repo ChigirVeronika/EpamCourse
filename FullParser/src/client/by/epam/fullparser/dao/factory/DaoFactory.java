@@ -8,8 +8,9 @@ public abstract class DaoFactory {
 
     public static DaoFactory getDaoFactory() {
         switch (DAO_TYPE) {
-            case "file":
+            case "file": {
                 return FileDaoFactory.getInstance();
+            }
         }
         return null;
     }

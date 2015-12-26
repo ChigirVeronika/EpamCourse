@@ -9,6 +9,8 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
+import static server.by.epam.fullparser.util.BookConstant.*;
+
 
 import javax.xml.XMLConstants;
 import javax.xml.parsers.DocumentBuilder;
@@ -28,6 +30,8 @@ import java.util.List;
  */
 public class DomParser implements Parser {
     private static final String XSD_PATH = "resources/book.xsd";
+
+    public DomParser(){}
 
     /**
      * Method parses xml file.
@@ -78,23 +82,23 @@ public class DomParser implements Parser {
 
     private Book getBook(Element element){
         Book book = new Book();
-        book.setId(element.getAttribute("id"));
-        book.setTitle(element.getElementsByTagName("title").item(0).getTextContent());
-        book.setAuthor(element.getElementsByTagName("author").item(0).getTextContent());
+        book.setId(element.getAttribute(ID));
+        book.setTitle(element.getElementsByTagName(TITLE).item(0).getTextContent());
+        book.setAuthor(element.getElementsByTagName(AUTHOR).item(0).getTextContent());
 
-        Element category = (Element) element.getElementsByTagName("category").item(0);
+        Element category = (Element) element.getElementsByTagName(CATEGORY).item(0);
         book.setCategory(getCategory(category));
 
-        book.setDescription(element.getElementsByTagName("description").item(0).getTextContent());
+        book.setDescription(element.getElementsByTagName(DESCRIPTION).item(0).getTextContent());
 
         return book;
     }
 
     private Category getCategory(Element element){
         Category category = new Category();
-        category.setGenre(element.getElementsByTagName("genre").item(0).getTextContent());
-        category.setPages(Integer.parseInt(element.getElementsByTagName("pages").item(0).getTextContent()));
-        category.setYear(Integer.parseInt(element.getElementsByTagName("year").item(0).getTextContent()));
+        category.setGenre(element.getElementsByTagName(GENRE).item(0).getTextContent());
+        category.setPages(Integer.parseInt(element.getElementsByTagName(PAGES).item(0).getTextContent()));
+        category.setYear(Integer.parseInt(element.getElementsByTagName(YEAR).item(0).getTextContent()));
 
         return category;
     }

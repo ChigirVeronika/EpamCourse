@@ -7,6 +7,8 @@ import java.util.List;
 public class FileAskResponse extends Response {
     private List<Book> books;
 
+    public FileAskResponse(){}
+
     public List<Book> getBooks() {
         return books;
     }

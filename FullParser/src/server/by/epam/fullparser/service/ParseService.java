@@ -15,6 +15,9 @@ import java.util.List;
  * Choice of parser type.
  */
 public class ParseService {
+
+    public ParseService(){}
+
     public static List<Book> parse(ParserType type, String fileName) throws ServiceException {
         try {
             switch (type) {

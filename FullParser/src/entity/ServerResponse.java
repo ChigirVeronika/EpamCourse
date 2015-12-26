@@ -10,6 +10,8 @@ public class ServerResponse implements Serializable {
     private List<Book> books;
     private String message;
 
+    public ServerResponse(){}
+
     public boolean isSuccess() {
         return success;
     }

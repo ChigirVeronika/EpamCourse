@@ -9,6 +9,8 @@ public class FileAskRequest extends Request {
     private long fileLength;
     private FileInputStream fileInputStream;
 
+    public FileAskRequest(){}
+
     public ParserType getParserType() {
         return parserType;
     }

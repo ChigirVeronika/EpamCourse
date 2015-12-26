@@ -4,6 +4,8 @@ public class ConnectRequest extends Request {
     private String host;
     private int port;
 
+    public ConnectRequest(){}
+
     public String getHost() {
         return host;
     }

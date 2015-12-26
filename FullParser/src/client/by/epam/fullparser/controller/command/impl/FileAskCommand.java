@@ -16,6 +16,7 @@ import java.io.FileInputStream;
 
 public class FileAskCommand implements Command {
     private static final Logger LOGGER = Logger.getLogger( FileAskCommand.class);
+    public FileAskCommand(){}
     @Override
     public Response execute(Request request) throws CommandException {
         FileAskResponse response = new FileAskResponse();
