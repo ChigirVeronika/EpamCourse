@@ -12,6 +12,15 @@ public class InputFile extends File {
         super(path);
     }
 
+    public void doWork(){
+        //откроем файл
+        //прочитаем первое число
+        //выполним мат. операцию
+        //закинем результат в out.dat
+        System.out.println("Doing work");
+        System.out.println("Doing work");
+    }
+
     @Override
     public InputFile[] listFiles() {
         File[] theFiles = super.listFiles();
@@ -23,17 +32,6 @@ public class InputFile extends File {
         }
         return myFiles;
     }
-
-    public void doWork(){
-        //откроем файл
-        //прочитаем первое число
-        //выполним мат. операцию
-        //закинем результат в out.dat
-        System.out.println("Doing work");
-        System.out.println("Doing work");
-    }
-
-
 
 
 }

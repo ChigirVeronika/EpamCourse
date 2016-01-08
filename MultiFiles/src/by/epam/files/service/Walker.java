@@ -3,9 +3,6 @@ package by.epam.files.service;
 import by.epam.files.entity.InputFile;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.util.Scanner;
 
 /**
  * Service class realizes thread logic.
@@ -19,12 +16,12 @@ public class Walker extends Thread {
      * Number to put in matrix instead of zero
      */
     private int ownNumber;
-    private InputFile file;
+    private InputFile[] files;
 
-    public Walker(String s, int ownNumber, InputFile file){
+    public Walker(String s, int ownNumber, InputFile[] files){
         super(s);
         this.ownNumber=ownNumber;
-        this.file = file;
+        this.files = files;
     }
 
     /**
@@ -38,14 +35,10 @@ public class Walker extends Thread {
         synchronized(this) {
             File outFile = new File("E:\\EpamCourse\\MultiFiles\\src\\by\\epam\\files\\resource\\release\\out.dat");
             int outCount =  FileService.getStringCount(outFile);
-        }
 
-        //берем из массива файл[outCount] - ведь вроде с 0 нумерация
+        //берем из массива файлс[outCount] - ведь вроде с 0 нумерация
+            files[outCount].doWork();
 
-
-        synchronized (file) {
-
-            file.doWork();
             try {
                 Thread.sleep(millisecondsToSleep);
             } catch (InterruptedException e) {

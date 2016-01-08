@@ -24,12 +24,14 @@ public class Main {
         System.out.println("Enter number of threads");
         int numberOfThreads=inputIntegerValidation();
 
-        InputFile file = new InputFile(PATH+"in_1.dat");
+        InputFile f = new InputFile(PATH);
+        InputFile[] files = f.listFiles();
+        System.out.println();
 
 
         Walker walker=null;
         for (int i = 0; i < numberOfThreads; i++) {
-            walker = new Walker("Thread"+i,i+1,file);
+            walker = new Walker("Thread"+i,i+1,files);
             walker.start();
         }
         for (int i = 0; i < numberOfThreads; i++) {
