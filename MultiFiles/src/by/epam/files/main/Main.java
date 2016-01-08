@@ -1,4 +1,4 @@
-package by.epam.files;
+package by.epam.files.main;
 
 /**
  * Created by Вероника on 02.01.2016.
