@@ -1,5 +1,7 @@
 package by.epam.files.service;
 
+import by.epam.files.entity.InputFile;
+
 import java.io.File;
 
 /**
@@ -14,9 +16,9 @@ public class Walker extends Thread {
      * Number to put in matrix instead of zero
      */
     private int ownNumber;
-    private File file;
+    private InputFile file;
 
-    public Walker(String s, int ownNumber, File file){
+    public Walker(String s, int ownNumber, InputFile file){
         super(s);
         this.ownNumber=ownNumber;
         this.file = file;
@@ -28,8 +30,10 @@ public class Walker extends Thread {
     public void run(){
         int millisecondsToSleep=500;
 
+
         synchronized (file) {
-            //file.SomeMethod();
+
+            file.doWork();
             try {
                 Thread.sleep(millisecondsToSleep);
             } catch (InterruptedException e) {

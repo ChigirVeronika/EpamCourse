@@ -1,9 +1,8 @@
 package by.epam.files.main;
 
+import by.epam.files.entity.InputFile;
 import by.epam.files.service.FileService;
 import by.epam.files.service.Walker;
-
-import java.io.File;
 
 import static by.epam.files.util.InputOutputUtility.*;
 
@@ -25,12 +24,20 @@ public class Main {
         System.out.println("Enter number of threads");
         int numberOfThreads=inputIntegerValidation();
 
-        File file = new File(PATH+"in_1.dat");
+        InputFile file = new InputFile(PATH+"in_1.dat");
+
 
         Walker walker=null;
         for (int i = 0; i < numberOfThreads; i++) {
             walker = new Walker("Thread"+i,i+1,file);
             walker.start();
+        }
+        for (int i = 0; i < numberOfThreads; i++) {
+            try {
+                walker.join();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
 
         FileService s = new FileService();
