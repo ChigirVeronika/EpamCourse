@@ -37,7 +37,10 @@ public class Walker extends Thread {
             int outCount =  FileService.getStringCount(outFile);
 
         //берем из массива файлс[outCount] - ведь вроде с 0 нумерация
-            files[outCount].doWork();
+            if(outCount<files.length) {
+                String path=files[outCount].getPath();
+                files[outCount].doWork(path);
+            }
 
             try {
                 Thread.sleep(millisecondsToSleep);

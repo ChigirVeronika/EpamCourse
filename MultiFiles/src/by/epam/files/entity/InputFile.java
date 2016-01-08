@@ -1,6 +1,10 @@
 package by.epam.files.entity;
 
+import by.epam.files.service.FileService;
+
 import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Вероника on 08.01.2016.
@@ -12,10 +16,31 @@ public class InputFile extends File {
         super(path);
     }
 
-    public void doWork(){
-        //откроем файл
-        //прочитаем первое число
+    public void doWork(String fullPath){
+        //откроем файл и прочитаем первое число
+        List<String> fileLines = null;
+        try {
+            fileLines = FileService.readFileToList(fullPath);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
         //выполним мат. операцию
+        String operationNumber = fileLines.get(0);
+        switch (operationNumber){
+            case "1":{
+                //сложение
+                break;
+            }
+            case "2":{
+                //умножение
+                break;
+            }
+            case "3":{
+                //сумма квадратов
+                break;
+            }
+
+        }
         //закинем результат в out.dat
         System.out.println("Doing work");
         System.out.println("Doing work");
@@ -32,6 +57,4 @@ public class InputFile extends File {
         }
         return myFiles;
     }
-
-
 }

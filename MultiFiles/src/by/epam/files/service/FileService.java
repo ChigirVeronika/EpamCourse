@@ -3,6 +3,9 @@ package by.epam.files.service;
 import by.epam.files.entity.InputFile;
 
 import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
 /**
  * Created by Вероника on 08.01.2016.
@@ -19,7 +22,7 @@ public class FileService {
         return s;
     }
 
-    public int fileCount(String path) {
+    public int filesInDirectoryCount(String path) {
         InputFile inputFile = new InputFile(path);
         InputFile[] s = inputFile.listFiles();
 
@@ -27,29 +30,21 @@ public class FileService {
             if(!s[i].isDirectory())
                 c++;
             if (s[i].isDirectory())
-                fileCount(s[i].getPath());
+                filesInDirectoryCount(s[i].getPath());
         }
         return c;
     }
 
-    public static String read(String fileName) throws FileNotFoundException {
+    public static List<String> readFileToList(String fileName) throws FileNotFoundException {
         //Этот спец. объект для построения строки
-        StringBuilder sb = new StringBuilder();
-        try {
-            BufferedReader in = new BufferedReader(new FileReader(fileName));
-            try {
-                String s;
-                while ((s = in.readLine()) != null) {
-                    sb.append(s);
-                    sb.append("\n");
-                }
-            } finally {
-                in.close();
-            }
-        } catch(IOException e) {
-            throw new RuntimeException(e);
+        Scanner sc = new Scanner(new File(fileName));
+        List<String> lines = new ArrayList<>();
+        while (sc.hasNextLine()) {
+            lines.add(sc.nextLine());
         }
-        return sb.toString();
+
+        //String[] arr = lines.toArray(new String[0]);
+        return lines;
     }
 
     public static int getStringCount(File file)

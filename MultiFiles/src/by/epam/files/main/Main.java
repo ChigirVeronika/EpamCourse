@@ -21,6 +21,9 @@ public class Main {
 //            System.out.println("Invalid path.");
 //        }
 
+        FileService s = new FileService();
+        System.out.println("In directory "+s.filesInDirectoryCount(PATH)+" files.");
+
         System.out.println("Enter number of threads");
         int numberOfThreads=inputIntegerValidation();
 
@@ -31,7 +34,7 @@ public class Main {
 
         Walker walker=null;
         for (int i = 0; i < numberOfThreads; i++) {
-            walker = new Walker("Thread"+i,i+1,files);
+            walker = new Walker("Thread"+i,i,files);
             walker.start();
         }
         for (int i = 0; i < numberOfThreads; i++) {
@@ -41,9 +44,6 @@ public class Main {
                 e.printStackTrace();
             }
         }
-
-        FileService s = new FileService();
-        System.out.println(s.fileCount(PATH));
 
     }
 }
