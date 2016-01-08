@@ -2,10 +2,7 @@ package by.epam.files.service;
 
 import by.epam.files.entity.InputFile;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 
 /**
  * Created by Вероника on 08.01.2016.
@@ -58,6 +55,20 @@ public class FileService {
 
         //Возвращаем полученный текст с файла
         return sb.toString();
+    }
+
+    public static int getStringCount(File file)
+    {
+        int i=0;
+        BufferedReader bufferedReader;
+        try{
+            FileReader fileReader = new FileReader(file);
+            bufferedReader = new BufferedReader(fileReader);
+            while(bufferedReader.readLine()!=null)
+                i++;
+            bufferedReader.close();
+        }catch(Exception e){}
+        return i;
     }
 
 
