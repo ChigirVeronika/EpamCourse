@@ -17,12 +17,15 @@ public class Walker extends Thread {
      */
     private double ownNumber;
     private InputFile[] files;
+    private boolean[] used;
 
-    public Walker(String s, int ownNumber, InputFile[] files){
+    public Walker(String s, double ownNumber, InputFile[] files, boolean[] used){
         super(s);
 
         this.ownNumber=ownNumber;
         this.files = files;
+        this.used = used;
+
     }
 
     public double getOwnNumber() {
@@ -33,22 +36,32 @@ public class Walker extends Thread {
         this.ownNumber = ownNumber;
     }
 
+    public boolean[] getUsed() {
+        return used;
+    }
+
+    public void setUsed(boolean[] used) {
+        this.used = used;
+    }
+
     /**
      * .
      */
     public void run(){
         int millisecondsToSleep=500;
-        int count=0;
 
-        //открыть файл output.dat и посчитать количество строк todo ТЕПЕРЬ НЕ НАДО
         synchronized(this) {
-            File outFile = new File("E:\\EpamCourse\\MultiFiles\\src\\by\\epam\\files\\resource\\release\\out.dat");
-            int outCount =  FileService.getStringCount(outFile);
-
-        //берем из массива файлс[outCount] - ведь вроде с 0 нумерация
-            if(outCount<files.length) {//todo не та логика!!!! надо массив boolean!!!!
-                String path=files[outCount].getPath();
-                ownNumber=files[outCount].doWork(path);
+            //открыть файл output.dat и посчитать количество строк todo ТЕПЕРЬ НЕ НАДО
+//            File outFile = new File("E:\\EpamCourse\\MultiFiles\\src\\by\\epam\\files\\resource\\release\\out.dat");
+//            int outCount =  FileService.getStringCount(outFile);
+            for (int i = 0; i < files.length; i++) {//todo ЗАМЕНИТЬ НА while В МАССИВЕ НЕ НАЙДЕТСЯ false
+                if(used[i]==false){
+                    String path=files[i].getPath();
+                    System.out.println(files[i]);
+                    ownNumber=files[i].doWork(path);
+                    used[i]=true;
+                    //break;
+                }
             }
 
             try {

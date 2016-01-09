@@ -36,7 +36,7 @@ public class FileService {
     }
 
     public static List<String> readFileToList(String fileName) throws FileNotFoundException {
-        //Этот спец. объект для построения строки
+        //этот спец. объект для построения строки
         Scanner sc = new Scanner(new File(fileName));
         List<String> lines = new ArrayList<>();
         while (sc.hasNextLine()) {
