@@ -45,21 +45,23 @@ public class Walker extends Thread {
     }
 
     /**
-     * .
+     *
      */
     public void run(){
         int millisecondsToSleep=500;
 
-        synchronized(this) {
+        synchronized(files) {
             //открыть файл output.dat и посчитать количество строк todo ТЕПЕРЬ НЕ НАДО
 //            File outFile = new File("E:\\EpamCourse\\MultiFiles\\src\\by\\epam\\files\\resource\\release\\out.dat");
 //            int outCount =  FileService.getStringCount(outFile);
             for (int i = 0; i < files.length; i++) {//todo ЗАМЕНИТЬ НА while В МАССИВЕ НЕ НАЙДЕТСЯ false
                 if(used[i]==false){
                     String path=files[i].getPath();
-                    System.out.println(files[i]);
+                    System.out.println("CURRENT FLAG"+used[i]);
+                    System.out.println("CURRENT FILE IN RUN METHOD "+files[i]);
                     ownNumber=files[i].doWork(path);
                     used[i]=true;
+                    System.out.println("CURRENT FLAG AFTER TRUE"+used[i]);
                     //break;
                 }
             }

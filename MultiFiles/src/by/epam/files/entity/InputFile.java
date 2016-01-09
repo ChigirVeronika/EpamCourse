@@ -17,7 +17,7 @@ public class InputFile extends File {
         super(path);
     }
 
-    public double doWork(String fullPath){
+    public synchronized double doWork(String fullPath){
         //открыли файл и прочитали  в fileLinesList
         List<String> fileLinesList = null;
         try {
@@ -33,18 +33,20 @@ public class InputFile extends File {
         switch (operationNumber){
             case "1":{
 //                сложение
-                System.out.println("SUM");
+                System.out.println("a+b");
                 number=10;
                 break;
             }
             case "2":{
                 //умножение
-                System.out.println("***");
+                System.out.println("a*b");
                 number=20;
                 break;
             }
             case "3":{
+
                 //сумма квадратов
+                System.out.println("a^2+b^2");
                 number=30;
                 break;
             }
