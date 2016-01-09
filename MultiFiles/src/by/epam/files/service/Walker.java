@@ -13,19 +13,28 @@ import java.io.File;
 public class Walker extends Thread {
 
     /**
-     * Number to put in matrix instead of zero
+     * Number to calculate from file
      */
-    private int ownNumber;
+    private double ownNumber;
     private InputFile[] files;
 
     public Walker(String s, int ownNumber, InputFile[] files){
         super(s);
+
         this.ownNumber=ownNumber;
         this.files = files;
     }
 
+    public double getOwnNumber() {
+        return ownNumber;
+    }
+
+    public void setOwnNumber(int ownNumber) {
+        this.ownNumber = ownNumber;
+    }
+    
     /**
-     * Try to replace zero on matrix main diagonal and sleep 5 seconds.
+     * .
      */
     public void run(){
         int millisecondsToSleep=500;
@@ -39,7 +48,7 @@ public class Walker extends Thread {
         //берем из массива файлс[outCount] - ведь вроде с 0 нумерация
             if(outCount<files.length) {
                 String path=files[outCount].getPath();
-                files[outCount].doWork(path);
+                ownNumber=files[outCount].doWork(path);
             }
 
             try {

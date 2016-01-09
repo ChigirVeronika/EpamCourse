@@ -12,8 +12,9 @@ import static by.epam.files.util.InputOutputUtility.*;
 public class Main {
     private static String PATH ="src\\by\\epam\\files\\resource\\";
 
-    public static void main(String[] args){
 
+    public static void main(String[] args){
+        double mainSumValue=0;
 //        if(args[0]=="src\\by\\epam\\files\\resource\\"){
 //
 //        }
@@ -29,21 +30,23 @@ public class Main {
 
         InputFile f = new InputFile(PATH);
         InputFile[] files = f.listFiles();
-        System.out.println();
+        System.out.println("List of files created.");
 
 
         Walker walker=null;
         for (int i = 0; i < numberOfThreads; i++) {
-            walker = new Walker("Thread"+i,i,files);
+            walker = new Walker("Thread"+i,0,files);
             walker.start();
         }
         for (int i = 0; i < numberOfThreads; i++) {
             try {
                 walker.join();
+                mainSumValue = mainSumValue + walker.getOwnNumber();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }
+        System.out.println(mainSumValue);
 
     }
 }

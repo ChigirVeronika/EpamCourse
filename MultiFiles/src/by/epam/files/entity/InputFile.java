@@ -16,7 +16,7 @@ public class InputFile extends File {
         super(path);
     }
 
-    public void doWork(String fullPath){
+    public double doWork(String fullPath){
         //откроем файл и прочитаем первое число
         List<String> fileLines = null;
         try {
@@ -44,6 +44,8 @@ public class InputFile extends File {
         //закинем результат в out.dat
         System.out.println("Doing work");
         System.out.println("Doing work");
+
+        return 1.89;
     }
 
     @Override
