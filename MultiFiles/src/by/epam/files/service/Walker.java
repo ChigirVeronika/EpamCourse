@@ -32,7 +32,7 @@ public class Walker extends Thread {
     public void setOwnNumber(int ownNumber) {
         this.ownNumber = ownNumber;
     }
-    
+
     /**
      * .
      */
@@ -40,13 +40,13 @@ public class Walker extends Thread {
         int millisecondsToSleep=500;
         int count=0;
 
-        //открыть файл output.dat и посчитать количество строк
+        //открыть файл output.dat и посчитать количество строк todo ТЕПЕРЬ НЕ НАДО
         synchronized(this) {
             File outFile = new File("E:\\EpamCourse\\MultiFiles\\src\\by\\epam\\files\\resource\\release\\out.dat");
             int outCount =  FileService.getStringCount(outFile);
 
         //берем из массива файлс[outCount] - ведь вроде с 0 нумерация
-            if(outCount<files.length) {
+            if(outCount<files.length) {//todo не та логика!!!! надо массив boolean!!!!
                 String path=files[outCount].getPath();
                 ownNumber=files[outCount].doWork(path);
             }

@@ -10,7 +10,7 @@ import java.util.List;
  * Created by Вероника on 08.01.2016.
  */
 public class InputFile extends File {
-    private static final long serialVersionUID = 1L;
+    private int[] f = {};
 
     public InputFile(String path){
         super(path);
@@ -41,8 +41,7 @@ public class InputFile extends File {
             }
 
         }
-        //закинем результат в out.dat
-        System.out.println("Doing work");
+        //
         System.out.println("Doing work");
 
         return 1.89;
