@@ -1,4 +1,4 @@
-package by.epam.files.service;
+package by.epam.multifile.service;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
- * Contains methods to work with files.
+ * Contains methods to work with multifile.
  */
 public class FileService {
     public FileService(){}

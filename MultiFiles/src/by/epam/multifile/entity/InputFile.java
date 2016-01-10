@@ -1,6 +1,6 @@
-package by.epam.files.entity;
+package by.epam.multifile.entity;
 
-import by.epam.files.service.FileService;
+import by.epam.multifile.service.FileService;
 
 import java.io.*;
 import java.util.List;

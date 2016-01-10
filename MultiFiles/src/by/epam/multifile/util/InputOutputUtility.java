@@ -1,4 +1,4 @@
-package by.epam.files.util;
+package by.epam.multifile.util;
 
 import java.util.Scanner;
 

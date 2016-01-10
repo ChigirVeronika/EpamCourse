@@ -1,6 +1,6 @@
-package by.epam.files.service;
+package by.epam.multifile.service;
 
-import by.epam.files.entity.InputFile;
+import by.epam.multifile.entity.InputFile;
 
 import java.io.*;
 import java.util.Arrays;
@@ -13,7 +13,7 @@ import java.util.Arrays;
  */
 public class Walker extends Thread {
 
-    private static String OUT_FILE_PATH = "E:\\EpamCourse\\MultiFiles\\src\\by\\epam\\files\\release\\out.dat";
+    private static String OUT_FILE_PATH = "E:\\EpamCourse\\MultiFiles\\src\\by\\epam\\multifile\\release\\out.dat";
 
     private double ownNumber;
     private InputFile[] files;
@@ -87,7 +87,7 @@ public class Walker extends Thread {
     public String toString() {
         return "Walker{" +
                 "ownNumber=" + ownNumber +
-                ", files=" + Arrays.toString(files) +
+                ", multifile=" + Arrays.toString(files) +
                 ", used=" + Arrays.toString(used) +
                 '}';
     }

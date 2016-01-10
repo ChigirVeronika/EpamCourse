@@ -1,20 +1,20 @@
-package by.epam.files.main;
+package by.epam.multifile.main;
 
-import by.epam.files.entity.InputFile;
-import by.epam.files.service.FileService;
-import by.epam.files.service.Walker;
+import by.epam.multifile.entity.InputFile;
+import by.epam.multifile.service.FileService;
+import by.epam.multifile.service.Walker;
 
 import java.io.FileNotFoundException;
 import java.util.List;
 
-import static by.epam.files.util.InputOutputUtility.*;
+import static by.epam.multifile.util.InputOutputUtility.*;
 
 /**
  * Main class of application.
  */
 public class Main {
-    private static String WORK_PATH ="src\\by\\epam\\files\\resource\\";
-    private static String OUT_FILE_PATH = "E:\\EpamCourse\\MultiFiles\\src\\by\\epam\\files\\release\\out.dat";
+    private static String WORK_PATH ="src\\by\\epam\\multifile\\resource\\";
+    private static String OUT_FILE_PATH = "E:\\EpamCourse\\MultiFiles\\src\\by\\epam\\multifile\\release\\out.dat";
     private static String EMPTY_STRING="";
 
     public static void main(String[] args){
@@ -28,7 +28,7 @@ public class Main {
 
         InputFile f = new InputFile(userPath);
         InputFile[] files = f.listFiles();
-        System.out.println("In directory "+ files.length +" files.");
+        System.out.println("In directory "+ files.length +" multifile.");
         boolean[] flags = new boolean[files.length];
 
         System.out.println("Enter number of threads");
