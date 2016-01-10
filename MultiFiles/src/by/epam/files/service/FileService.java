@@ -22,6 +22,24 @@ public class FileService {
         return s;
     }
 
+    public static void writeToOutFile(double value, String path){
+        FileWriter fileWriter=null;
+        try {
+            fileWriter = new FileWriter(new File(path));
+            PrintWriter printer = new PrintWriter(fileWriter);
+            printer.append(value+"\n");
+            printer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }finally {
+            try {
+                fileWriter.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
     public int filesInDirectoryCount(String path) {
         InputFile inputFile = new InputFile(path);
         InputFile[] s = inputFile.listFiles();
@@ -36,14 +54,11 @@ public class FileService {
     }
 
     public static List<String> readFileToList(String fileName) throws FileNotFoundException {
-        //этот спец. объект для построения строки
         Scanner sc = new Scanner(new File(fileName));
         List<String> lines = new ArrayList<>();
         while (sc.hasNextLine()) {
             lines.add(sc.nextLine());
         }
-
-        //String[] arr = lines.toArray(new String[0]);
         return lines;
     }
 

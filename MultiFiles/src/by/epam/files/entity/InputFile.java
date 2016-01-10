@@ -1,10 +1,8 @@
 package by.epam.files.entity;
 
 import by.epam.files.service.FileService;
-import com.sun.org.apache.xpath.internal.SourceTree;
 
 import java.io.*;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -17,7 +15,7 @@ public class InputFile extends File {
         super(path);
     }
 
-    public synchronized double doWork(String fullPath){
+    public double doWork(String fullPath){
         //открыли файл и прочитали  в fileLinesList
         List<String> fileLinesList = null;
         try {
@@ -25,36 +23,36 @@ public class InputFile extends File {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-        //todo выполним мат. операцию
         String operationNumber = fileLinesList.get(0);
-        System.out.println(operationNumber);
-
         double number=0;
-        switch (operationNumber){
-            case "1":{
-//                сложение
-                System.out.println("a+b");
-                number=10;
-                break;
-            }
-            case "2":{
-                //умножение
-                System.out.println("a*b");
-                number=20;
-                break;
-            }
-            case "3":{
-
-                //сумма квадратов
-                System.out.println("a^2+b^2");
-                number=30;
-                break;
-            }
-
+        String [] oneStrings = fileLinesList.get(1).split("\\s+");
+        double[] one = new double[oneStrings.length];
+        for (int i = 0; i < one.length; i++) {
+            one[i]=Double.parseDouble(oneStrings[i]);
         }
-        //
-        System.out.println("Doing work");
-
+        switch (operationNumber){
+            case "1":{//сложение
+                for (int i = 0; i < one.length; i++) {
+                    number=number+one[i];
+                }
+                break;
+            }
+            case "2":{//умножение
+                for (int i = 0; i < one.length; i++) {
+                    number=number*one[i];
+                }
+                break;
+            }
+            case "3":{//сумма квадратов
+                for (int i = 0; i < one.length; i++) {
+                    one[i]=Math.pow(one[i],2);
+                }
+                for (int i = 0; i < one.length; i++) {
+                    number=number+one[i];
+                }
+                break;
+            }
+        }
         return number;
     }
 

@@ -2,7 +2,7 @@ package by.epam.files.service;
 
 import by.epam.files.entity.InputFile;
 
-import java.io.File;
+import java.io.*;
 
 /**
  * Service class realizes thread logic.
@@ -12,10 +12,9 @@ import java.io.File;
  */
 public class Walker extends Thread {
 
-    /**
-     * Number to calculate from file
-     */
-    private double ownNumber;
+    private static String OUT_FILE_PATH = "E:\\EpamCourse\\MultiFiles\\src\\by\\epam\\files\\release\\out.dat";
+
+    public double ownNumber;
     private InputFile[] files;
     private boolean[] used;
 
@@ -32,7 +31,7 @@ public class Walker extends Thread {
         return ownNumber;
     }
 
-    public void setOwnNumber(int ownNumber) {
+    public void setOwnNumber(double ownNumber) {
         this.ownNumber = ownNumber;
     }
 
@@ -47,30 +46,36 @@ public class Walker extends Thread {
     /**
      *
      */
+    @Override
     public void run(){
-        int millisecondsToSleep=500;
+        int millisecondsToSleep=3000;
+        for (int i = 0; i < files.length; i++) {//todo ÇÀÌÅÍÈÒÜ ÍÀ while Â ÌÀÑÑÈÂÅ ÍÅ ÍÀÉÄÅÒÑß false
+            synchronized(files[i]) {
+                if (used[i] == false) {
+                    String path = files[i].getPath();
+                    ownNumber = files[i].doWork(path);
+                    setOwnNumber(ownNumber);
+                    PrintWriter out = null;
+                    try {
+                        out = new PrintWriter(new BufferedWriter(new FileWriter(OUT_FILE_PATH, true)));
+                        out.println(ownNumber);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }finally {
+                        out.close();
+                    }
 
-        synchronized(files) {
-            //îòêðûòü ôàéë output.dat è ïîñ÷èòàòü êîëè÷åñòâî ñòðîê todo ÒÅÏÅÐÜ ÍÅ ÍÀÄÎ
-//            File outFile = new File("E:\\EpamCourse\\MultiFiles\\src\\by\\epam\\files\\resource\\release\\out.dat");
-//            int outCount =  FileService.getStringCount(outFile);
-            for (int i = 0; i < files.length; i++) {//todo ÇÀÌÅÍÈÒÜ ÍÀ while Â ÌÀÑÑÈÂÅ ÍÅ ÍÀÉÄÅÒÑß false
-                if(used[i]==false){
-                    String path=files[i].getPath();
-                    System.out.println("CURRENT FLAG"+used[i]);
-                    System.out.println("CURRENT FILE IN RUN METHOD "+files[i]);
-                    ownNumber=files[i].doWork(path);
-                    used[i]=true;
-                    System.out.println("CURRENT FLAG AFTER TRUE"+used[i]);
-                    //break;
+                    used[i] = true;
+                }
+
+                try {
+                    Thread.sleep(millisecondsToSleep);
+                } catch (InterruptedException e) {
+                    System.out.print(e);
                 }
             }
 
-            try {
-                Thread.sleep(millisecondsToSleep);
-            } catch (InterruptedException e) {
-                System.out.print(e);
-            }
         }
+
     }
 }
