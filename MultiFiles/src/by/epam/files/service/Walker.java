@@ -3,6 +3,7 @@ package by.epam.files.service;
 import by.epam.files.entity.InputFile;
 
 import java.io.*;
+import java.util.Arrays;
 
 /**
  * Service class realizes thread logic.
@@ -14,7 +15,7 @@ public class Walker extends Thread {
 
     private static String OUT_FILE_PATH = "E:\\EpamCourse\\MultiFiles\\src\\by\\epam\\files\\release\\out.dat";
 
-    public double ownNumber;
+    private double ownNumber;
     private InputFile[] files;
     private boolean[] used;
 
@@ -43,13 +44,18 @@ public class Walker extends Thread {
         this.used = used;
     }
 
-    /**
-     *
-     */
+    public InputFile[] getFiles() {
+        return files;
+    }
+
+    public void setFiles(InputFile[] files) {
+        this.files = files;
+    }
+
     @Override
     public void run(){
         int millisecondsToSleep=3000;
-        for (int i = 0; i < files.length; i++) {//todo ÇÀÌÅÍÈÒÜ ÍÀ while Â ÌÀÑÑÈÂÅ ÍÅ ÍÀÉÄÅÒÑß false
+        for (int i = 0; i < files.length; i++) {
             synchronized(files[i]) {
                 if (used[i] == false) {
                     String path = files[i].getPath();
@@ -74,8 +80,40 @@ public class Walker extends Thread {
                     System.out.print(e);
                 }
             }
-
         }
+    }
 
+    @Override
+    public String toString() {
+        return "Walker{" +
+                "ownNumber=" + ownNumber +
+                ", files=" + Arrays.toString(files) +
+                ", used=" + Arrays.toString(used) +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Walker walker = (Walker) o;
+
+        if (Double.compare(walker.ownNumber, ownNumber) != 0) return false;
+        // Probably incorrect - comparing Object[] arrays with Arrays.equals
+        if (!Arrays.equals(files, walker.files)) return false;
+        return Arrays.equals(used, walker.used);
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result;
+        long temp;
+        temp = Double.doubleToLongBits(ownNumber);
+        result = (int) (temp ^ (temp >>> 32));
+        result = 31 * result + (files != null ? Arrays.hashCode(files) : 0);
+        result = 31 * result + (used != null ? Arrays.hashCode(used) : 0);
+        return result;
     }
 }

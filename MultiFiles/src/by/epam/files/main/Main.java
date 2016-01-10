@@ -5,7 +5,6 @@ import by.epam.files.service.FileService;
 import by.epam.files.service.Walker;
 
 import java.io.FileNotFoundException;
-import java.io.PrintWriter;
 import java.util.List;
 
 import static by.epam.files.util.InputOutputUtility.*;
@@ -16,12 +15,12 @@ import static by.epam.files.util.InputOutputUtility.*;
 public class Main {
     private static String WORK_PATH ="src\\by\\epam\\files\\resource\\";
     private static String OUT_FILE_PATH = "E:\\EpamCourse\\MultiFiles\\src\\by\\epam\\files\\release\\out.dat";
+    private static String EMPTY_STRING="";
 
     public static void main(String[] args){
-        //String userPath=args[0];//todo ›“Œ œŒ◊»Õ»“‹
-        String userPath=WORK_PATH;//todo ›“Œ ”ƒ¿À»“‹
-        double mainSumValue=0;
-        if(userPath!="src\\by\\epam\\files\\resource\\"){
+        String userPath=args[0];
+
+        if(userPath!=WORK_PATH){
             System.out.println("Invalid path.");
             userPath=WORK_PATH;
             System.out.println("System path is "+WORK_PATH);
@@ -40,17 +39,21 @@ public class Main {
             walker = new Walker("Thread"+i,0,files,flags);
             walker.start();
         }
-
         for (int i = 0; i < numberOfThreads; i++) {
             try {
                 walker.join();
-                System.out.println(walker.getOwnNumber());
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }
 
-        double result=0;
+        double r=0;
+        double result=sumResultsDoubles(r);
+
+        FileService.rewriteFile(OUT_FILE_PATH,EMPTY_STRING,result);
+    }
+
+    private static double sumResultsDoubles(double res){
         List<String> fileLinesList = null;
         try {
             fileLinesList = FileService.readFileToList(OUT_FILE_PATH);
@@ -60,22 +63,8 @@ public class Main {
         double[] one = new double[fileLinesList.size()];
         for (int i = 0; i < one.length; i++) {
             one[i]=Double.parseDouble(fileLinesList.get(i));
-            result=result+one[i];
+            res=res+one[i];
         }
-
-
-        PrintWriter writer = null;
-        try {
-            writer = new PrintWriter(OUT_FILE_PATH);
-            writer.print("");
-            writer.print(result);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-        finally {
-            writer.close();
-        }
-
-
+        return res;
     }
 }

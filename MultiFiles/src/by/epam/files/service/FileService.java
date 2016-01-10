@@ -1,57 +1,15 @@
 package by.epam.files.service;
 
-import by.epam.files.entity.InputFile;
-
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 /**
- * Created by Вероника on 08.01.2016.
+ * Contains methods to work with files.
  */
 public class FileService {
-    private InputFile file;
-    private InputFile[] structure;
-    private int c;
-
-    public InputFile[] getFileArray(String path){
-        InputFile inputFile = new InputFile(path);
-        InputFile[] s = inputFile.listFiles();
-
-        return s;
-    }
-
-    public static void writeToOutFile(double value, String path){
-        FileWriter fileWriter=null;
-        try {
-            fileWriter = new FileWriter(new File(path));
-            PrintWriter printer = new PrintWriter(fileWriter);
-            printer.append(value+"\n");
-            printer.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }finally {
-            try {
-                fileWriter.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-
-    public int filesInDirectoryCount(String path) {
-        InputFile inputFile = new InputFile(path);
-        InputFile[] s = inputFile.listFiles();
-
-        for (int i = 0; i < s.length; i++) {
-            if(!s[i].isDirectory())
-                c++;
-            if (s[i].isDirectory())
-                filesInDirectoryCount(s[i].getPath());
-        }
-        return c;
-    }
+    public FileService(){}
 
     public static List<String> readFileToList(String fileName) throws FileNotFoundException {
         Scanner sc = new Scanner(new File(fileName));
@@ -62,21 +20,17 @@ public class FileService {
         return lines;
     }
 
-    public static int getStringCount(File file)
-    {
-        int i=0;
-        BufferedReader bufferedReader;
-        try{
-            FileReader fileReader = new FileReader(file);
-            bufferedReader = new BufferedReader(fileReader);
-            while(bufferedReader.readLine()!=null)
-                i++;
-            bufferedReader.close();
-        }catch(Exception e){}
-        return i;
+    public static void rewriteFile(String filePath, String emptyString, double newString){
+        PrintWriter writer = null;
+        try {
+            writer = new PrintWriter(filePath);
+            writer.print(emptyString);
+            writer.print(newString);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        finally {
+            writer.close();
+        }
     }
-
-
-
-
 }

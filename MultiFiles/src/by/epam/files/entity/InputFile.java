@@ -6,17 +6,16 @@ import java.io.*;
 import java.util.List;
 
 /**
- * Created by Вероника on 08.01.2016.
+ * File class for thread Walker.
  */
 public class InputFile extends File {
-    private double[] f = {};
+    private static String SPACE = "\\s+";
 
     public InputFile(String path){
         super(path);
     }
 
     public double doWork(String fullPath){
-        //открыли файл и прочитали  в fileLinesList
         List<String> fileLinesList = null;
         try {
             fileLinesList = FileService.readFileToList(fullPath);
@@ -25,7 +24,7 @@ public class InputFile extends File {
         }
         String operationNumber = fileLinesList.get(0);
         double number=0;
-        String [] oneStrings = fileLinesList.get(1).split("\\s+");
+        String [] oneStrings = fileLinesList.get(1).split(SPACE);
         double[] one = new double[oneStrings.length];
         for (int i = 0; i < one.length; i++) {
             one[i]=Double.parseDouble(oneStrings[i]);
