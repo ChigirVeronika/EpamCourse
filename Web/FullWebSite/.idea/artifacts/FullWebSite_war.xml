@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="FullWebSite:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="FullWebSite.war">
+      <element id="artifact" artifact-name="FullWebSite:war exploded" />
+    </root>
+  </artifact>
+</component>
