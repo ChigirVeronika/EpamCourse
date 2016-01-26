@@ -18,8 +18,8 @@ public class Main {
     private static final Logger LOGGER = Logger.getLogger( Main.class);
 
     public static void main(String[] args){
-//        String userPath=args[0];
-        String userPath=WORK_PATH;
+        String userPath=args[0];
+
         if(userPath!=WORK_PATH){
             System.out.println("Invalid path.");
             userPath=WORK_PATH;

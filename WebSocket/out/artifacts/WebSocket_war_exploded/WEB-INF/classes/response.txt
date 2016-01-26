@@ -1,0 +1,17 @@
+HTTP/1.1 400 Bad Request
+Date: Tue, 26 Jan 2016 16:48:49 GMT
+Server: Apache
+Content-Length: 295
+Connection: close
+Content-Type: text/html; charset=iso-8859-1
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>400 Bad Request</title>
+</head><body>
+<h1>Bad Request</h1>
+<p>Your browser sent a request that this server could not understand.<br />
+</p>
+<hr>
+<address>Apache Server at www.devresource.org Port 80</address>
+</body></html>

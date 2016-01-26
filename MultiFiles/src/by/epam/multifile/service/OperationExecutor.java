@@ -57,13 +57,12 @@ public class OperationExecutor extends Thread {
 
     @Override
     public void run(){
-        int millisecondsToSleep=200;
+        int millisecondsToSleep=1000;
         for (int i = 0; i < files.length; i++) {
-            //lock.lock();
-            synchronized(files[i]) {
+            lock.lock();{
                 if (used[i] == false) {
                     String path = files[i].getPath();
-                    ownNumber = ownNumber+files[i].executeOperation(path);//app doesn't how many threads will be here
+                    ownNumber = ownNumber + files[i].executeOperation(path);//app doesn't how many threads will be here
                     used[i] = true;
                 }
                 try {
@@ -72,7 +71,7 @@ public class OperationExecutor extends Thread {
                     LOGGER.error(e);
                 }
             }
-            //lock.unlock();
+            lock.unlock();
         }
     }
 

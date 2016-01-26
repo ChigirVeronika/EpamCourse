@@ -12,15 +12,11 @@
   <title>Index page</title>
 </head>
 <body>
-<h2>Hello World!:)</h2>
 <form action="controller" method="post">
   <input type="hidden" name="command" value="do_anything_command"/>
   <input type="hidden" name="filename" value="myfile"/>
   <input type="text" name="xxx" value=""/>
   <input type="submit" value="SAX"/>
 </form>
-
-<h6>Visits</h6>
-
 </body>
 </html>
