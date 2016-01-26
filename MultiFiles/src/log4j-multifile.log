@@ -1,0 +1,383 @@
+
+2016-01-26 02:48:29 INFO  Main:43 - Thread0 started
+2016-01-26 02:48:29 INFO  Main:43 - Thread1 started
+2016-01-26 02:48:29 INFO  Main:43 - Thread2 started
+2016-01-26 02:48:29 INFO  Main:43 - Thread3 started
+2016-01-26 02:48:29 INFO  OperationExecutor:78 - Thread011.4
+2016-01-26 02:48:32 INFO  OperationExecutor:78 - Thread10.0
+2016-01-26 02:48:35 INFO  OperationExecutor:78 - Thread247.050000000000004
+2016-01-26 02:48:41 INFO  Main:48 - Thread0 joined successfully
+2016-01-26 02:48:41 INFO  Main:48 - Thread1 joined successfully
+2016-01-26 02:48:41 INFO  Main:48 - Thread2 joined successfully
+2016-01-26 02:48:41 INFO  Main:48 - Thread3 joined successfully
+2016-01-26 02:48:41 INFO  Main:64 - Summary list in out file created
+2016-01-26 02:48:41 INFO  FileService:33 - File rewrote
+2016-01-26 02:54:55 INFO  Main:46 - Thread0 startedOperationExecutor{ownNumber=0.0, multifile=[E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_1.dat, E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_2.dat, E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_3.dat], used=[false, false, false]}
+2016-01-26 02:54:55 INFO  Main:46 - Thread1 startedOperationExecutor{ownNumber=0.0, multifile=[E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_1.dat, E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_2.dat, E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_3.dat], used=[false, false, false]}
+2016-01-26 02:54:55 INFO  Main:46 - Thread2 startedOperationExecutor{ownNumber=0.0, multifile=[E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_1.dat, E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_2.dat, E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_3.dat], used=[false, false, false]}
+2016-01-26 02:54:55 INFO  Main:46 - Thread3 startedOperationExecutor{ownNumber=0.0, multifile=[E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_1.dat, E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_2.dat, E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_3.dat], used=[false, false, false]}
+2016-01-26 02:54:55 INFO  OperationExecutor:78 - Thread011.4
+2016-01-26 02:54:58 INFO  OperationExecutor:78 - Thread10.0
+2016-01-26 02:55:01 INFO  OperationExecutor:78 - Thread247.050000000000004
+2016-01-26 02:55:07 INFO  Main:52 - 47.050000000000004
+2016-01-26 02:55:07 INFO  Main:53 - Thread0 joined successfully
+2016-01-26 02:55:07 INFO  Main:52 - 0.0
+2016-01-26 02:55:07 INFO  Main:53 - Thread1 joined successfully
+2016-01-26 02:55:07 INFO  Main:52 - 0.0
+2016-01-26 02:55:07 INFO  Main:53 - Thread2 joined successfully
+2016-01-26 02:55:07 INFO  Main:52 - 0.0
+2016-01-26 02:55:07 INFO  Main:53 - Thread3 joined successfully
+2016-01-26 02:55:07 INFO  Main:69 - Summary list in out file created
+2016-01-26 02:55:32 INFO  Main:46 - Thread0 startedOperationExecutor{ownNumber=0.0, multifile=[E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_1.dat, E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_2.dat, E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_3.dat], used=[false, false, false]}
+2016-01-26 02:55:32 INFO  Main:46 - Thread1 startedOperationExecutor{ownNumber=0.0, multifile=[E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_1.dat, E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_2.dat, E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_3.dat], used=[false, false, false]}
+2016-01-26 02:55:32 INFO  Main:46 - Thread2 startedOperationExecutor{ownNumber=0.0, multifile=[E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_1.dat, E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_2.dat, E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_3.dat], used=[false, false, false]}
+2016-01-26 02:55:32 INFO  Main:46 - Thread3 startedOperationExecutor{ownNumber=0.0, multifile=[E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_1.dat, E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_2.dat, E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_3.dat], used=[false, false, false]}
+2016-01-26 02:55:32 INFO  OperationExecutor:78 - Thread011.4
+2016-01-26 02:55:35 INFO  OperationExecutor:78 - Thread10.0
+2016-01-26 02:55:38 INFO  OperationExecutor:78 - Thread247.050000000000004
+2016-01-26 02:55:44 INFO  Main:52 - 47.050000000000004
+2016-01-26 02:55:44 INFO  Main:53 - Thread0 joined successfully
+2016-01-26 02:55:44 INFO  Main:52 - 0.0
+2016-01-26 02:55:44 INFO  Main:53 - Thread1 joined successfully
+2016-01-26 02:55:44 INFO  Main:52 - 0.0
+2016-01-26 02:55:44 INFO  Main:53 - Thread2 joined successfully
+2016-01-26 02:55:44 INFO  Main:52 - 0.0
+2016-01-26 02:55:44 INFO  Main:53 - Thread3 joined successfully
+2016-01-26 02:55:45 INFO  Main:69 - Summary list in out file created
+2016-01-26 02:55:45 INFO  FileService:33 - File rewrote
+2016-01-26 03:12:30 INFO  FileService:49 - File E:\EpamCourse\MultiFiles\src\by\epam\multifile\release\out.dat is epmty
+2016-01-26 03:12:52 INFO  FileService:49 - File E:\EpamCourse\MultiFiles\src\by\epam\multifile\release\out.dat is epmty
+2016-01-26 03:13:02 INFO  Main:48 - Thread0 startedOperationExecutor{ownNumber=0.0, multifile=[E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_1.dat, E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_2.dat, E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_3.dat], used=[false, false, false]}
+2016-01-26 03:13:02 INFO  Main:48 - Thread1 startedOperationExecutor{ownNumber=0.0, multifile=[E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_1.dat, E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_2.dat, E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_3.dat], used=[false, false, false]}
+2016-01-26 03:13:02 INFO  Main:48 - Thread2 startedOperationExecutor{ownNumber=0.0, multifile=[E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_1.dat, E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_2.dat, E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_3.dat], used=[false, false, false]}
+2016-01-26 03:13:02 INFO  Main:48 - Thread3 startedOperationExecutor{ownNumber=0.0, multifile=[E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_1.dat, E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_2.dat, E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_3.dat], used=[false, false, false]}
+2016-01-26 03:13:02 INFO  OperationExecutor:79 - Thread011.4
+2016-01-26 03:13:02 INFO  OperationExecutor:79 - Thread011.4
+2016-01-26 03:13:02 INFO  OperationExecutor:79 - Thread011.4
+2016-01-26 03:13:02 INFO  OperationExecutor:79 - Thread011.4
+2016-01-26 03:13:05 INFO  OperationExecutor:79 - Thread10.0
+2016-01-26 03:13:05 INFO  OperationExecutor:79 - Thread10.0
+2016-01-26 03:13:05 INFO  OperationExecutor:79 - Thread10.0
+2016-01-26 03:13:05 INFO  OperationExecutor:79 - Thread10.0
+2016-01-26 03:13:08 INFO  OperationExecutor:79 - Thread247.050000000000004
+2016-01-26 03:13:08 INFO  OperationExecutor:79 - Thread247.050000000000004
+2016-01-26 03:13:08 INFO  OperationExecutor:79 - Thread247.050000000000004
+2016-01-26 03:13:08 INFO  OperationExecutor:79 - Thread247.050000000000004
+2016-01-26 03:13:11 INFO  Main:54 - 47.050000000000004
+2016-01-26 03:13:11 INFO  Main:55 - Thread0 joined successfully
+2016-01-26 03:13:11 INFO  Main:54 - 47.050000000000004
+2016-01-26 03:13:11 INFO  Main:55 - Thread1 joined successfully
+2016-01-26 03:13:11 INFO  Main:54 - 47.050000000000004
+2016-01-26 03:13:11 INFO  Main:55 - Thread2 joined successfully
+2016-01-26 03:13:11 INFO  Main:54 - 47.050000000000004
+2016-01-26 03:13:11 INFO  Main:55 - Thread3 joined successfully
+2016-01-26 03:13:11 INFO  Main:71 - Summary list in out file created
+2016-01-26 03:13:11 INFO  FileService:35 - File E:\EpamCourse\MultiFiles\src\by\epam\multifile\release\out.dat rewrote
+2016-01-26 03:22:25 INFO  FileService:49 - File E:\EpamCourse\MultiFiles\src\by\epam\multifile\release\out.dat is epmty
+2016-01-26 03:22:28 INFO  Main:48 - Thread0 startedOperationExecutor{ownNumber=0.0, multifile=[E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_1.dat, E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_2.dat, E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_3.dat], used=[false, false, false]}
+2016-01-26 03:22:28 INFO  Main:48 - Thread1 startedOperationExecutor{ownNumber=0.0, multifile=[E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_1.dat, E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_2.dat, E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_3.dat], used=[false, false, false]}
+2016-01-26 03:22:28 INFO  Main:48 - Thread2 startedOperationExecutor{ownNumber=0.0, multifile=[E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_1.dat, E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_2.dat, E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_3.dat], used=[false, false, false]}
+2016-01-26 03:22:28 INFO  Main:48 - Thread3 startedOperationExecutor{ownNumber=0.0, multifile=[E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_1.dat, E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_2.dat, E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_3.dat], used=[false, false, false]}
+2016-01-26 03:22:28 INFO  OperationExecutor:79 - Thread011.4
+2016-01-26 03:22:28 INFO  OperationExecutor:79 - Thread011.4
+2016-01-26 03:22:28 INFO  OperationExecutor:79 - Thread011.4
+2016-01-26 03:22:28 INFO  OperationExecutor:79 - Thread011.4
+2016-01-26 03:22:31 INFO  OperationExecutor:79 - Thread10.0
+2016-01-26 03:22:31 INFO  OperationExecutor:79 - Thread10.0
+2016-01-26 03:22:31 INFO  OperationExecutor:79 - Thread10.0
+2016-01-26 03:22:34 INFO  OperationExecutor:79 - Thread247.050000000000004
+2016-01-26 03:22:34 INFO  OperationExecutor:79 - Thread247.050000000000004
+2016-01-26 03:22:34 INFO  OperationExecutor:79 - Thread247.050000000000004
+2016-01-26 03:22:37 INFO  Main:54 - 47.050000000000004
+2016-01-26 03:22:37 INFO  Main:55 - Thread0 joined successfully
+2016-01-26 03:22:37 INFO  Main:54 - 47.050000000000004
+2016-01-26 03:22:37 INFO  Main:55 - Thread1 joined successfully
+2016-01-26 03:22:37 INFO  Main:54 - 47.050000000000004
+2016-01-26 03:22:37 INFO  Main:55 - Thread2 joined successfully
+2016-01-26 03:22:37 INFO  Main:54 - 0.0
+2016-01-26 03:22:37 INFO  Main:55 - Thread3 joined successfully
+2016-01-26 03:22:37 INFO  Main:71 - Summary list in out file created
+2016-01-26 03:22:37 INFO  FileService:35 - File E:\EpamCourse\MultiFiles\src\by\epam\multifile\release\out.dat rewrote
+2016-01-26 03:25:45 INFO  FileService:49 - File E:\EpamCourse\MultiFiles\src\by\epam\multifile\release\out.dat is epmty
+2016-01-26 03:25:47 INFO  Main:48 - Thread0 startedOperationExecutor{ownNumber=0.0, multifile=[E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_1.dat, E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_2.dat, E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_3.dat], used=[false, false, false]}
+2016-01-26 03:25:47 INFO  Main:48 - Thread1 startedOperationExecutor{ownNumber=0.0, multifile=[E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_1.dat, E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_2.dat, E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_3.dat], used=[false, false, false]}
+2016-01-26 03:25:47 INFO  Main:48 - Thread2 startedOperationExecutor{ownNumber=0.0, multifile=[E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_1.dat, E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_2.dat, E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_3.dat], used=[false, false, false]}
+2016-01-26 03:25:47 INFO  Main:48 - Thread3 startedOperationExecutor{ownNumber=0.0, multifile=[E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_1.dat, E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_2.dat, E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_3.dat], used=[false, false, false]}
+2016-01-26 03:25:47 INFO  OperationExecutor:82 - Thread011.4
+2016-01-26 03:25:47 INFO  OperationExecutor:82 - Thread011.4
+2016-01-26 03:25:47 INFO  OperationExecutor:82 - Thread011.4
+2016-01-26 03:25:47 INFO  OperationExecutor:82 - Thread011.4
+2016-01-26 03:25:50 INFO  OperationExecutor:82 - Thread10.0
+2016-01-26 03:25:50 INFO  OperationExecutor:82 - Thread10.0
+2016-01-26 03:25:50 INFO  OperationExecutor:82 - Thread10.0
+2016-01-26 03:25:50 INFO  OperationExecutor:82 - Thread10.0
+2016-01-26 03:25:53 INFO  OperationExecutor:82 - Thread247.050000000000004
+2016-01-26 03:25:53 INFO  OperationExecutor:82 - Thread247.050000000000004
+2016-01-26 03:25:53 INFO  OperationExecutor:82 - Thread247.050000000000004
+2016-01-26 03:25:53 INFO  OperationExecutor:82 - Thread247.050000000000004
+2016-01-26 03:25:56 INFO  Main:54 - 47.050000000000004
+2016-01-26 03:25:56 INFO  Main:55 - Thread0 joined successfully
+2016-01-26 03:25:56 INFO  Main:54 - 47.050000000000004
+2016-01-26 03:25:56 INFO  Main:55 - Thread1 joined successfully
+2016-01-26 03:25:56 INFO  Main:54 - 47.050000000000004
+2016-01-26 03:25:56 INFO  Main:55 - Thread2 joined successfully
+2016-01-26 03:25:56 INFO  Main:54 - 47.050000000000004
+2016-01-26 03:25:56 INFO  Main:55 - Thread3 joined successfully
+2016-01-26 03:25:56 INFO  Main:71 - Summary list in out file created
+2016-01-26 03:25:56 INFO  FileService:35 - File E:\EpamCourse\MultiFiles\src\by\epam\multifile\release\out.dat rewrote
+2016-01-26 03:26:45 INFO  FileService:49 - File E:\EpamCourse\MultiFiles\src\by\epam\multifile\release\out.dat is epmty
+2016-01-26 03:26:48 INFO  Main:48 - Thread0 startedOperationExecutor{ownNumber=0.0, multifile=[E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_1.dat, E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_2.dat, E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_3.dat], used=[false, false, false]}
+2016-01-26 03:26:48 INFO  Main:48 - Thread1 startedOperationExecutor{ownNumber=0.0, multifile=[E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_1.dat, E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_2.dat, E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_3.dat], used=[false, false, false]}
+2016-01-26 03:26:48 INFO  Main:48 - Thread2 startedOperationExecutor{ownNumber=0.0, multifile=[E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_1.dat, E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_2.dat, E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_3.dat], used=[false, false, false]}
+2016-01-26 03:26:48 INFO  OperationExecutor:82 - Thread011.4
+2016-01-26 03:26:48 INFO  OperationExecutor:82 - Thread011.4
+2016-01-26 03:26:48 INFO  OperationExecutor:82 - Thread011.4
+2016-01-26 03:26:51 INFO  OperationExecutor:82 - Thread10.0
+2016-01-26 03:26:51 INFO  OperationExecutor:82 - Thread10.0
+2016-01-26 03:26:51 INFO  OperationExecutor:82 - Thread10.0
+2016-01-26 03:26:54 INFO  OperationExecutor:82 - Thread247.050000000000004
+2016-01-26 03:26:54 INFO  OperationExecutor:82 - Thread247.050000000000004
+2016-01-26 03:26:54 INFO  OperationExecutor:82 - Thread247.050000000000004
+2016-01-26 03:26:57 INFO  Main:54 - 47.050000000000004
+2016-01-26 03:26:57 INFO  Main:55 - Thread0 joined successfully
+2016-01-26 03:26:57 INFO  Main:54 - 47.050000000000004
+2016-01-26 03:26:57 INFO  Main:55 - Thread1 joined successfully
+2016-01-26 03:26:57 INFO  Main:54 - 47.050000000000004
+2016-01-26 03:26:57 INFO  Main:55 - Thread2 joined successfully
+2016-01-26 03:26:57 INFO  Main:71 - Summary list in out file created
+2016-01-26 03:26:57 INFO  FileService:35 - File E:\EpamCourse\MultiFiles\src\by\epam\multifile\release\out.dat rewrote
+2016-01-26 03:27:05 INFO  FileService:49 - File E:\EpamCourse\MultiFiles\src\by\epam\multifile\release\out.dat is epmty
+2016-01-26 03:27:07 INFO  Main:48 - Thread0 startedOperationExecutor{ownNumber=0.0, multifile=[E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_1.dat, E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_2.dat, E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_3.dat], used=[false, false, false]}
+2016-01-26 03:27:07 INFO  Main:48 - Thread1 startedOperationExecutor{ownNumber=0.0, multifile=[E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_1.dat, E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_2.dat, E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_3.dat], used=[false, false, false]}
+2016-01-26 03:27:07 INFO  OperationExecutor:82 - Thread011.4
+2016-01-26 03:27:07 INFO  OperationExecutor:82 - Thread011.4
+2016-01-26 03:27:10 INFO  OperationExecutor:82 - Thread10.0
+2016-01-26 03:27:10 INFO  OperationExecutor:82 - Thread10.0
+2016-01-26 03:27:13 INFO  OperationExecutor:82 - Thread247.050000000000004
+2016-01-26 03:27:13 INFO  OperationExecutor:82 - Thread247.050000000000004
+2016-01-26 03:27:16 INFO  Main:54 - 47.050000000000004
+2016-01-26 03:27:16 INFO  Main:55 - Thread0 joined successfully
+2016-01-26 03:27:16 INFO  Main:54 - 47.050000000000004
+2016-01-26 03:27:16 INFO  Main:55 - Thread1 joined successfully
+2016-01-26 03:27:16 INFO  Main:71 - Summary list in out file created
+2016-01-26 03:27:16 INFO  FileService:35 - File E:\EpamCourse\MultiFiles\src\by\epam\multifile\release\out.dat rewrote
+2016-01-26 03:27:25 INFO  FileService:49 - File E:\EpamCourse\MultiFiles\src\by\epam\multifile\release\out.dat is epmty
+2016-01-26 03:27:29 INFO  Main:48 - Thread0 startedOperationExecutor{ownNumber=0.0, multifile=[E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_1.dat, E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_2.dat, E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_3.dat], used=[false, false, false]}
+2016-01-26 03:27:29 INFO  OperationExecutor:82 - Thread011.4
+2016-01-26 03:27:32 INFO  OperationExecutor:82 - Thread10.0
+2016-01-26 03:27:35 INFO  OperationExecutor:82 - Thread247.050000000000004
+2016-01-26 03:27:38 INFO  Main:54 - 47.050000000000004
+2016-01-26 03:27:38 INFO  Main:55 - Thread0 joined successfully
+2016-01-26 03:27:38 INFO  Main:71 - Summary list in out file created
+2016-01-26 03:27:38 INFO  FileService:35 - File E:\EpamCourse\MultiFiles\src\by\epam\multifile\release\out.dat rewrote
+2016-01-26 03:31:15 INFO  FileService:49 - File E:\EpamCourse\MultiFiles\src\by\epam\multifile\release\out.dat is epmty
+2016-01-26 03:31:19 INFO  Main:48 - Thread0 startedOperationExecutor{ownNumber=0.0, multifile=[E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_1.dat, E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_2.dat, E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_3.dat], used=[false, false, false]}
+2016-01-26 03:31:19 INFO  Main:48 - Thread1 startedOperationExecutor{ownNumber=0.0, multifile=[E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_1.dat, E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_2.dat, E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_3.dat], used=[false, false, false]}
+2016-01-26 03:31:19 INFO  OperationExecutor:82 - Thread011.4
+2016-01-26 03:31:22 INFO  OperationExecutor:82 - Thread10.0
+2016-01-26 03:31:25 INFO  OperationExecutor:82 - Thread247.050000000000004
+2016-01-26 03:31:31 INFO  Main:54 - 47.050000000000004
+2016-01-26 03:31:31 INFO  Main:55 - Thread0 joined successfully
+2016-01-26 03:31:31 INFO  Main:54 - 0.0
+2016-01-26 03:31:31 INFO  Main:55 - Thread1 joined successfully
+2016-01-26 03:31:31 INFO  Main:71 - Summary list in out file created
+2016-01-26 03:31:31 INFO  FileService:35 - File E:\EpamCourse\MultiFiles\src\by\epam\multifile\release\out.dat rewrote
+2016-01-26 03:36:56 INFO  FileService:49 - File E:\EpamCourse\MultiFiles\src\by\epam\multifile\release\out.dat is epmty
+2016-01-26 03:36:58 INFO  Main:48 - Thread0 startedOperationExecutor{ownNumber=0.0, multifile=[E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_1.dat, E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_2.dat, E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_3.dat], used=[false, false, false]}
+2016-01-26 03:36:58 INFO  Main:49 - 0.0
+2016-01-26 03:36:58 INFO  Main:48 - Thread1 startedOperationExecutor{ownNumber=0.0, multifile=[E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_1.dat, E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_2.dat, E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_3.dat], used=[false, false, false]}
+2016-01-26 03:36:58 INFO  Main:49 - 0.0
+2016-01-26 03:36:58 INFO  OperationExecutor:82 - Thread011.4
+2016-01-26 03:37:01 INFO  OperationExecutor:82 - Thread10.0
+2016-01-26 03:37:04 INFO  OperationExecutor:82 - Thread247.050000000000004
+2016-01-26 03:37:10 INFO  Main:56 - Thread0 joined successfully
+2016-01-26 03:37:10 INFO  Main:56 - Thread1 joined successfully
+2016-01-26 03:37:10 INFO  Main:72 - Summary list in out file created
+2016-01-26 03:37:10 INFO  FileService:35 - File E:\EpamCourse\MultiFiles\src\by\epam\multifile\release\out.dat rewrote
+2016-01-26 03:40:46 INFO  FileService:49 - File E:\EpamCourse\MultiFiles\src\by\epam\multifile\release\out.dat is epmty
+2016-01-26 03:40:48 INFO  Main:48 - Thread0 startedOperationExecutor{ownNumber=0.0, multifile=[E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_1.dat, E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_2.dat, E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_3.dat], used=[false, false, false]}
+2016-01-26 03:40:48 INFO  OperationExecutor:82 - Thread011.4
+2016-01-26 03:40:51 INFO  OperationExecutor:82 - Thread10.0
+2016-01-26 03:40:54 INFO  OperationExecutor:82 - Thread247.050000000000004
+2016-01-26 03:40:57 INFO  Main:51 - 47.050000000000004
+2016-01-26 03:40:57 INFO  Main:52 - Thread0 joined successfully
+2016-01-26 03:40:57 INFO  Main:48 - Thread1 startedOperationExecutor{ownNumber=0.0, multifile=[E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_1.dat, E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_2.dat, E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_3.dat], used=[true, true, true]}
+2016-01-26 03:41:06 INFO  Main:51 - 0.0
+2016-01-26 03:41:06 INFO  Main:52 - Thread1 joined successfully
+2016-01-26 03:41:06 INFO  Main:48 - Thread2 startedOperationExecutor{ownNumber=0.0, multifile=[E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_1.dat, E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_2.dat, E:\EpamCourse\MultiFiles\src\by\epam\multifile\resource\in_3.dat], used=[true, true, true]}
+2016-01-26 03:41:15 INFO  Main:51 - 0.0
+2016-01-26 03:41:15 INFO  Main:52 - Thread2 joined successfully
+2016-01-26 03:41:15 INFO  Main:68 - Summary list in out file created
+2016-01-26 03:41:15 INFO  FileService:35 - File E:\EpamCourse\MultiFiles\src\by\epam\multifile\release\out.dat rewrote
+2016-01-26 03:43:35 INFO  FileService:49 - File E:\EpamCourse\MultiFiles\src\by\epam\multifile\release\out.dat is epmty
+2016-01-26 03:43:41 INFO  OperationExecutor:82 - Thread011.4
+2016-01-26 03:43:44 INFO  OperationExecutor:82 - Thread10.0
+2016-01-26 03:43:47 INFO  OperationExecutor:82 - Thread247.050000000000004
+2016-01-26 03:44:43 INFO  FileService:49 - File E:\EpamCourse\MultiFiles\src\by\epam\multifile\release\out.dat is epmty
+2016-01-26 03:45:07 INFO  Main:47 - Thread0 started
+2016-01-26 03:45:07 INFO  OperationExecutor:82 - Thread011.4
+2016-01-26 03:45:10 INFO  OperationExecutor:82 - Thread10.0
+2016-01-26 03:45:13 INFO  OperationExecutor:82 - Thread247.050000000000004
+2016-01-26 03:45:16 INFO  Main:51 - Thread0 own number is 47.050000000000004
+2016-01-26 03:45:16 INFO  Main:52 - Thread0 joined successfully
+2016-01-26 03:45:16 INFO  Main:47 - Thread1 started
+2016-01-26 03:45:25 INFO  Main:51 - Thread1 own number is 0.0
+2016-01-26 03:45:25 INFO  Main:52 - Thread1 joined successfully
+2016-01-26 03:45:25 INFO  Main:47 - Thread2 started
+2016-01-26 03:45:34 INFO  Main:51 - Thread2 own number is 0.0
+2016-01-26 03:45:34 INFO  Main:52 - Thread2 joined successfully
+2016-01-26 03:45:34 INFO  Main:68 - Summary list in out file created
+2016-01-26 03:45:34 INFO  FileService:35 - File E:\EpamCourse\MultiFiles\src\by\epam\multifile\release\out.dat rewrote
+2016-01-26 03:51:16 INFO  FileService:49 - File E:\EpamCourse\MultiFiles\src\by\epam\multifile\release\out.dat is epmty
+2016-01-26 03:51:19 INFO  Main:47 - Thread0 started
+2016-01-26 03:51:19 INFO  OperationExecutor:82 - Thread011.4
+2016-01-26 03:51:24 INFO  OperationExecutor:82 - Thread10.0
+2016-01-26 03:51:29 INFO  OperationExecutor:82 - Thread247.050000000000004
+2016-01-26 03:51:34 INFO  Main:51 - Thread0 own number is 47.050000000000004
+2016-01-26 03:51:34 INFO  Main:52 - Thread0 joined successfully
+2016-01-26 03:51:34 INFO  Main:47 - Thread1 started
+2016-01-26 03:51:49 INFO  Main:51 - Thread1 own number is 0.0
+2016-01-26 03:51:49 INFO  Main:52 - Thread1 joined successfully
+2016-01-26 03:51:49 INFO  Main:68 - Summary list in out file created
+2016-01-26 03:51:49 INFO  FileService:35 - File E:\EpamCourse\MultiFiles\src\by\epam\multifile\release\out.dat rewrote
+2016-01-26 03:52:15 INFO  FileService:49 - File E:\EpamCourse\MultiFiles\src\by\epam\multifile\release\out.dat is epmty
+2016-01-26 03:52:19 INFO  Main:47 - Thread0 started
+2016-01-26 03:52:19 INFO  OperationExecutor:82 - Thread011.4
+2016-01-26 03:52:24 INFO  OperationExecutor:82 - Thread111.4
+2016-01-26 03:52:29 INFO  OperationExecutor:82 - Thread258.45
+2016-01-26 03:52:34 INFO  Main:51 - Thread0 own number is 58.45
+2016-01-26 03:52:34 INFO  Main:52 - Thread0 joined successfully
+2016-01-26 03:52:34 INFO  Main:47 - Thread1 started
+2016-01-26 03:52:49 INFO  Main:51 - Thread1 own number is 0.0
+2016-01-26 03:52:49 INFO  Main:52 - Thread1 joined successfully
+2016-01-26 03:52:49 INFO  Main:68 - Summary list in out file created
+2016-01-26 03:52:49 INFO  FileService:35 - File E:\EpamCourse\MultiFiles\src\by\epam\multifile\release\out.dat rewrote
+2016-01-26 03:53:19 INFO  FileService:49 - File E:\EpamCourse\MultiFiles\src\by\epam\multifile\release\out.dat is epmty
+2016-01-26 03:53:21 INFO  Main:47 - Thread0 started
+2016-01-26 03:53:21 INFO  Main:47 - Thread1 started
+2016-01-26 03:53:21 INFO  OperationExecutor:82 - Thread011.4
+2016-01-26 03:53:26 INFO  OperationExecutor:82 - Thread111.4
+2016-01-26 03:53:31 INFO  OperationExecutor:82 - Thread258.45
+2016-01-26 03:53:41 INFO  Main:53 - Thread0 own number is 0.0
+2016-01-26 03:53:41 INFO  Main:54 - Thread0 joined successfully
+2016-01-26 03:53:41 INFO  Main:53 - Thread1 own number is 0.0
+2016-01-26 03:53:41 INFO  Main:54 - Thread1 joined successfully
+2016-01-26 03:53:41 INFO  Main:70 - Summary list in out file created
+2016-01-26 03:53:41 INFO  FileService:35 - File E:\EpamCourse\MultiFiles\src\by\epam\multifile\release\out.dat rewrote
+2016-01-26 03:54:21 INFO  FileService:49 - File E:\EpamCourse\MultiFiles\src\by\epam\multifile\release\out.dat is epmty
+2016-01-26 03:54:24 INFO  Main:47 - Thread0 started
+2016-01-26 03:54:24 INFO  Main:47 - Thread1 started
+2016-01-26 03:54:24 INFO  Main:47 - Thread2 started
+2016-01-26 03:54:24 INFO  OperationExecutor:82 - Thread011.4
+2016-01-26 03:54:29 INFO  OperationExecutor:82 - Thread10.0
+2016-01-26 03:54:34 INFO  OperationExecutor:82 - Thread247.050000000000004
+2016-01-26 03:54:44 INFO  Main:53 - Thread0 own number is 0.0
+2016-01-26 03:54:44 INFO  Main:54 - Thread0 joined successfully
+2016-01-26 03:54:44 INFO  Main:53 - Thread1 own number is 0.0
+2016-01-26 03:54:44 INFO  Main:54 - Thread1 joined successfully
+2016-01-26 03:54:44 INFO  Main:53 - Thread2 own number is 0.0
+2016-01-26 03:54:44 INFO  Main:54 - Thread2 joined successfully
+2016-01-26 03:54:44 INFO  Main:70 - Summary list in out file created
+2016-01-26 03:54:44 INFO  FileService:35 - File E:\EpamCourse\MultiFiles\src\by\epam\multifile\release\out.dat rewrote
+2016-01-26 03:56:00 INFO  FileService:49 - File E:\EpamCourse\MultiFiles\src\by\epam\multifile\release\out.dat is epmty
+2016-01-26 03:56:03 INFO  Main:47 - Thread0 started
+2016-01-26 03:56:03 INFO  Main:47 - Thread1 started
+2016-01-26 03:56:03 INFO  OperationExecutor:82 - Thread011.4
+2016-01-26 03:56:13 INFO  Main:53 - Thread0 own number is 0.0
+2016-01-26 03:56:13 INFO  Main:54 - Thread0 joined successfully
+2016-01-26 03:56:13 INFO  Main:53 - Thread1 own number is 0.0
+2016-01-26 03:56:13 INFO  Main:54 - Thread1 joined successfully
+2016-01-26 03:56:13 INFO  Main:70 - Summary list in out file created
+2016-01-26 03:56:13 INFO  FileService:35 - File E:\EpamCourse\MultiFiles\src\by\epam\multifile\release\out.dat rewrote
+2016-01-26 03:57:36 INFO  FileService:49 - File E:\EpamCourse\MultiFiles\src\by\epam\multifile\release\out.dat is epmty
+2016-01-26 03:57:57 INFO  FileService:49 - File E:\EpamCourse\MultiFiles\src\by\epam\multifile\release\out.dat is epmty
+2016-01-26 03:58:00 INFO  Main:47 - Thread0 started
+2016-01-26 03:58:00 INFO  Main:47 - Thread1 started
+2016-01-26 03:58:00 INFO  Main:47 - Thread2 started
+2016-01-26 03:58:00 INFO  OperationExecutor:82 - Thread011.4
+2016-01-26 03:58:05 INFO  OperationExecutor:82 - Thread135.948
+2016-01-26 03:58:10 INFO  OperationExecutor:82 - Thread247.050000000000004
+2016-01-26 03:58:20 INFO  Main:53 - Thread0 own number is 0.0
+2016-01-26 03:58:20 INFO  Main:54 - Thread0 joined successfully
+2016-01-26 03:58:20 INFO  Main:53 - Thread1 own number is 0.0
+2016-01-26 03:58:20 INFO  Main:54 - Thread1 joined successfully
+2016-01-26 03:58:20 INFO  Main:53 - Thread2 own number is 0.0
+2016-01-26 03:58:20 INFO  Main:54 - Thread2 joined successfully
+2016-01-26 03:58:20 INFO  Main:70 - Summary list in out file created
+2016-01-26 03:58:20 INFO  FileService:35 - File E:\EpamCourse\MultiFiles\src\by\epam\multifile\release\out.dat rewrote
+2016-01-26 04:04:30 INFO  FileService:49 - File E:\EpamCourse\MultiFiles\src\by\epam\multifile\release\out.dat is epmty
+2016-01-26 04:04:32 INFO  Main:47 - Thread0 started
+2016-01-26 04:04:32 INFO  Main:47 - Thread1 started
+2016-01-26 04:04:32 INFO  Main:47 - Thread2 started
+2016-01-26 04:04:32 INFO  OperationExecutor:82 - Thread011.4
+2016-01-26 04:04:37 INFO  OperationExecutor:82 - Thread135.948
+2016-01-26 04:04:42 INFO  OperationExecutor:82 - Thread247.050000000000004
+2016-01-26 04:04:52 INFO  Main:55 - Thread0 joined successfully
+2016-01-26 04:04:52 INFO  Main:55 - Thread1 joined successfully
+2016-01-26 04:04:52 INFO  Main:55 - Thread2 joined successfully
+2016-01-26 04:04:52 INFO  Main:71 - Summary list in out file created
+2016-01-26 04:04:52 INFO  FileService:35 - File E:\EpamCourse\MultiFiles\src\by\epam\multifile\release\out.dat rewrote
+2016-01-26 04:05:18 INFO  FileService:49 - File E:\EpamCourse\MultiFiles\src\by\epam\multifile\release\out.dat is epmty
+2016-01-26 04:05:21 INFO  Main:47 - Thread0 started
+2016-01-26 04:05:21 INFO  Main:47 - Thread1 started
+2016-01-26 04:05:21 INFO  Main:47 - Thread2 started
+2016-01-26 04:05:21 INFO  OperationExecutor:82 - Thread011.4
+2016-01-26 04:05:26 INFO  OperationExecutor:82 - Thread135.948
+2016-01-26 04:05:31 INFO  OperationExecutor:82 - Thread247.050000000000004
+2016-01-26 04:05:41 INFO  Main:56 - Thread0 joined successfully
+2016-01-26 04:05:41 INFO  Main:56 - Thread1 joined successfully
+2016-01-26 04:05:41 INFO  Main:56 - Thread2 joined successfully
+2016-01-26 04:05:41 INFO  Main:72 - Summary list in out file created
+2016-01-26 04:05:41 INFO  FileService:35 - File E:\EpamCourse\MultiFiles\src\by\epam\multifile\release\out.dat rewrote
+2016-01-26 04:08:34 INFO  FileService:49 - File E:\EpamCourse\MultiFiles\src\by\epam\multifile\release\out.dat is epmty
+2016-01-26 04:08:40 INFO  Main:47 - Thread0 started
+2016-01-26 04:08:40 INFO  Main:47 - Thread1 started
+2016-01-26 04:08:40 INFO  Main:47 - Thread2 started
+2016-01-26 04:08:40 INFO  OperationExecutor:82 - Thread011.4
+2016-01-26 04:08:45 INFO  OperationExecutor:82 - Thread147.348
+2016-01-26 04:08:50 INFO  OperationExecutor:82 - Thread294.398
+2016-01-26 04:09:00 INFO  Main:54 - Thread0 joined successfully
+2016-01-26 04:09:00 INFO  Main:54 - Thread1 joined successfully
+2016-01-26 04:09:00 INFO  Main:54 - Thread2 joined successfully
+2016-01-26 04:09:00 INFO  Main:70 - Summary list in out file created
+2016-01-26 04:09:00 INFO  FileService:35 - File E:\EpamCourse\MultiFiles\src\by\epam\multifile\release\out.dat rewrote
+2016-01-26 04:09:43 INFO  FileService:49 - File E:\EpamCourse\MultiFiles\src\by\epam\multifile\release\out.dat is epmty
+2016-01-26 04:09:45 INFO  Main:47 - Thread0 started
+2016-01-26 04:09:45 INFO  Main:47 - Thread1 started
+2016-01-26 04:09:45 INFO  Main:47 - Thread2 started
+2016-01-26 04:09:45 INFO  OperationExecutor:82 - Thread011.4
+2016-01-26 04:09:50 INFO  OperationExecutor:82 - Thread147.348
+2016-01-26 04:09:55 INFO  OperationExecutor:82 - Thread294.398
+2016-01-26 04:10:05 INFO  Main:56 - Thread0 joined successfully
+2016-01-26 04:10:05 INFO  Main:56 - Thread1 joined successfully
+2016-01-26 04:10:05 INFO  Main:56 - Thread2 joined successfully
+2016-01-26 04:10:05 INFO  Main:72 - Summary list in out file created
+2016-01-26 04:10:05 INFO  FileService:35 - File E:\EpamCourse\MultiFiles\src\by\epam\multifile\release\out.dat rewrote
+2016-01-26 04:10:43 INFO  FileService:49 - File E:\EpamCourse\MultiFiles\src\by\epam\multifile\release\out.dat is epmty
+2016-01-26 04:10:46 INFO  Main:47 - Thread0 started
+2016-01-26 04:10:46 INFO  Main:47 - Thread1 started
+2016-01-26 04:10:46 INFO  Main:47 - Thread2 started
+2016-01-26 04:10:46 INFO  OperationExecutor:82 - Thread011.4
+2016-01-26 04:10:51 INFO  OperationExecutor:82 - Thread147.348
+2016-01-26 04:10:56 INFO  OperationExecutor:82 - Thread294.398
+2016-01-26 04:11:06 INFO  Main:54 - Thread0 joined successfully
+2016-01-26 04:11:06 INFO  Main:54 - Thread1 joined successfully
+2016-01-26 04:11:06 INFO  Main:54 - Thread2 joined successfully
+2016-01-26 04:11:06 INFO  Main:72 - Summary list in out file created
+2016-01-26 04:11:06 INFO  FileService:35 - File E:\EpamCourse\MultiFiles\src\by\epam\multifile\release\out.dat rewrote
+2016-01-26 04:16:54 INFO  FileService:49 - File E:\EpamCourse\MultiFiles\src\by\epam\multifile\release\out.dat is epmty
+2016-01-26 04:17:03 INFO  Main:47 - Thread0 started
+2016-01-26 04:17:03 INFO  Main:47 - Thread1 started
+2016-01-26 04:17:03 INFO  Main:47 - Thread2 started
+2016-01-26 04:17:23 INFO  Main:53 - Thread0 joined successfully
+2016-01-26 04:17:23 INFO  Main:53 - Thread1 joined successfully
+2016-01-26 04:17:23 INFO  Main:53 - Thread2 joined successfully
+2016-01-26 04:17:23 INFO  FileService:35 - File E:\EpamCourse\MultiFiles\src\by\epam\multifile\release\out.dat rewrote
+2016-01-26 04:26:57 INFO  FileService:49 - File E:\EpamCourse\MultiFiles\src\by\epam\multifile\release\out.dat is epmty
+2016-01-26 04:27:01 INFO  Main:44 - Thread0 started
+2016-01-26 04:27:01 INFO  Main:44 - Thread1 started
+2016-01-26 04:27:01 INFO  Main:44 - Thread2 started
+2016-01-26 04:27:16 INFO  Main:50 - Thread0 joined successfully
+2016-01-26 04:27:16 INFO  Main:50 - Thread1 joined successfully
+2016-01-26 04:27:16 INFO  Main:50 - Thread2 joined successfully
+2016-01-26 04:27:16 INFO  FileService:35 - File E:\EpamCourse\MultiFiles\src\by\epam\multifile\release\out.dat rewrote

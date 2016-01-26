@@ -1,13 +1,12 @@
 package by.epam.multifile.main;
 
-import by.epam.multifile.entity.InputFile;
-import by.epam.multifile.service.FileService;
-import by.epam.multifile.service.Walker;
+import by.epam.multifile.service.InputFile;
+import by.epam.multifile.service.OperationExecutor;
+import org.apache.log4j.Logger;
 
-import java.io.FileNotFoundException;
-import java.util.List;
+import java.util.Scanner;
 
-import static by.epam.multifile.util.InputOutputUtility.*;
+import static by.epam.multifile.service.FileService.*;
 
 /**
  * Main class of application.
@@ -15,11 +14,12 @@ import static by.epam.multifile.util.InputOutputUtility.*;
 public class Main {
     private static String WORK_PATH ="src\\by\\epam\\multifile\\resource\\";
     private static String OUT_FILE_PATH = "E:\\EpamCourse\\MultiFiles\\src\\by\\epam\\multifile\\release\\out.dat";
-    private static String EMPTY_STRING="";
+
+    private static final Logger LOGGER = Logger.getLogger( Main.class);
 
     public static void main(String[] args){
-        String userPath=args[0];
-
+//        String userPath=args[0];
+        String userPath=WORK_PATH;
         if(userPath!=WORK_PATH){
             System.out.println("Invalid path.");
             userPath=WORK_PATH;
@@ -34,37 +34,52 @@ public class Main {
         System.out.println("Enter number of threads");
         int numberOfThreads=inputIntegerValidation();
 
-        Walker walker=null;
+        OperationExecutor executors[] = new OperationExecutor[numberOfThreads];
+
+        OperationExecutor operationExecutor = null;
         for (int i = 0; i < numberOfThreads; i++) {
-            walker = new Walker("Thread"+i,0,files,flags);
-            walker.start();
+            operationExecutor = new OperationExecutor("Thread" + i, 0, files, flags);
+            operationExecutor.start();
+            LOGGER.info("Thread" + i + " started");
+            executors[i] = operationExecutor;
         }
-        for (int i = 0; i < numberOfThreads; i++) {
+        for(int i = 0; i < numberOfThreads; i++) {
             try {
-                walker.join();
+                operationExecutor.join();
+                LOGGER.info("Thread"+i+" joined successfully");
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                LOGGER.error(e);
             }
         }
-
-        double r=0;
-        double result=sumResultsDoubles(r);
-
-        FileService.rewriteFile(OUT_FILE_PATH,EMPTY_STRING,result);
+        double result=0;
+        for(int i = 0; i < numberOfThreads; i++){
+            result=result+executors[i].getOwnNumber();
+        }
+        rewriteFile(OUT_FILE_PATH,result);
     }
 
-    private static double sumResultsDoubles(double res){
-        List<String> fileLinesList = null;
-        try {
-            fileLinesList = FileService.readFileToList(OUT_FILE_PATH);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-        double[] one = new double[fileLinesList.size()];
-        for (int i = 0; i < one.length; i++) {
-            one[i]=Double.parseDouble(fileLinesList.get(i));
-            res=res+one[i];
-        }
-        return res;
+    /**
+     * Process user input and validate it.
+     * In case of incorrect input show
+     * appropriate message and give another try.
+     * Let positive integer only.
+     *
+     * @return number user entered
+     */
+    public static int inputIntegerValidation(){
+        int number;
+        Scanner scanner = new Scanner(System.in);
+        do{
+            while (!scanner.hasNextInt()) {
+                System.out.println("Not a number. Try again:");
+                scanner.next();
+            }
+            number = scanner.nextInt();
+            if(number<1) {
+                System.out.println("Enter positive integer please:");
+            }
+        }while (number<1);
+        System.out.println("Got it!");
+        return number;
     }
 }

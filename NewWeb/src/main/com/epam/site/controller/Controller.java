@@ -48,6 +48,8 @@ public class Controller extends HttpServlet {
         }else{
             errorMessageDirectlyFormResponse(resp);
         }
+
+       // resp.sendRedirect("http://www.bsuir.by/schedule/schedule.xhtml?id=351001");
     }
     private void errorMessageDirectlyFormResponse(HttpServletResponse r) throws IOException{
         r.setContentType("text/html");

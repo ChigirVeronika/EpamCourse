@@ -9,6 +9,12 @@
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
 
+    <context-param>
+        <param-name>a</param-name>
+        <param-value>123</param-value>
+    </context-param>//доступно через объект ServetContext - контест приложения
+    //нужно при конфигурации
+
     <servlet>
         <servlet-name>Controller</servlet-name>
         <servlet-class>main.com.epam.site.controller.Controller</servlet-class>
