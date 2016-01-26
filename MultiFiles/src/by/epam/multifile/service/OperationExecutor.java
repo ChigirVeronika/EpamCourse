@@ -4,7 +4,9 @@ import org.apache.log4j.Logger;
 
 import java.io.*;
 import java.util.Arrays;
+import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReadWriteLock;
+import java.util.concurrent.locks.ReentrantLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 /**
@@ -19,7 +21,7 @@ public class OperationExecutor extends Thread {
     private InputFile[] files;
     private boolean[] used;
 
-    private ReadWriteLock rwLock = new ReentrantReadWriteLock();
+    private Lock lock = new ReentrantLock();
     private static final Logger LOGGER = Logger.getLogger( OperationExecutor.class);
 
     public OperationExecutor(String s, double ownNumber, InputFile[] files, boolean[] used){
@@ -55,10 +57,10 @@ public class OperationExecutor extends Thread {
 
     @Override
     public void run(){
-        int millisecondsToSleep=5000;
+        int millisecondsToSleep=200;
         for (int i = 0; i < files.length; i++) {
-            rwLock.writeLock().lock();
-            //synchronized(files[i]) {
+            //lock.lock();
+            synchronized(files[i]) {
                 if (used[i] == false) {
                     String path = files[i].getPath();
                     ownNumber = ownNumber+files[i].executeOperation(path);//app doesn't how many threads will be here
@@ -69,8 +71,8 @@ public class OperationExecutor extends Thread {
                 } catch (InterruptedException e) {
                     LOGGER.error(e);
                 }
-            //}
-            rwLock.writeLock().unlock();
+            }
+            //lock.unlock();
         }
     }
 

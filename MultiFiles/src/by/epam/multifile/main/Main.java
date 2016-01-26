@@ -46,6 +46,7 @@ public class Main {
         for(int i = 0; i < numberOfThreads; i++) {
             try {
                 operationExecutor.join();
+                LOGGER.info(executors[i].getOwnNumber());
                 LOGGER.info("Thread"+i+" joined successfully");
             } catch (InterruptedException e) {
                 LOGGER.error(e);

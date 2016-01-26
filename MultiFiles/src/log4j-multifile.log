@@ -381,3 +381,120 @@
 2016-01-26 04:27:16 INFO  Main:50 - Thread1 joined successfully
 2016-01-26 04:27:16 INFO  Main:50 - Thread2 joined successfully
 2016-01-26 04:27:16 INFO  FileService:35 - File E:\EpamCourse\MultiFiles\src\by\epam\multifile\release\out.dat rewrote
+2016-01-26 04:39:07 INFO  Main:43 - Thread0 started
+2016-01-26 04:39:07 INFO  Main:43 - Thread1 started
+2016-01-26 04:39:07 INFO  Main:43 - Thread2 started
+2016-01-26 04:39:22 INFO  Main:49 - Thread0 joined successfully
+2016-01-26 04:39:22 INFO  Main:49 - Thread1 joined successfully
+2016-01-26 04:39:22 INFO  Main:49 - Thread2 joined successfully
+2016-01-26 04:39:22 INFO  FileService:35 - File E:\EpamCourse\MultiFiles\src\by\epam\multifile\release\out.dat rewrote
+2016-01-26 04:39:57 INFO  Main:43 - Thread0 started
+2016-01-26 04:39:57 INFO  Main:43 - Thread1 started
+2016-01-26 04:39:57 INFO  Main:43 - Thread2 started
+2016-01-26 04:40:12 INFO  Main:49 - Thread0 joined successfully
+2016-01-26 04:40:12 INFO  Main:49 - Thread1 joined successfully
+2016-01-26 04:40:12 INFO  Main:49 - Thread2 joined successfully
+2016-01-26 04:40:12 INFO  FileService:35 - File E:\EpamCourse\MultiFiles\src\by\epam\multifile\release\out.dat rewrote
+2016-01-26 04:42:23 INFO  Main:43 - Thread0 started
+2016-01-26 04:42:23 INFO  Main:43 - Thread1 started
+2016-01-26 04:42:23 INFO  Main:43 - Thread2 started
+2016-01-26 04:43:18 INFO  Main:43 - Thread0 started
+2016-01-26 04:43:18 INFO  Main:43 - Thread1 started
+2016-01-26 04:43:18 INFO  Main:43 - Thread2 started
+2016-01-26 04:43:18 INFO  Main:49 - Thread0 joined successfully
+2016-01-26 04:43:18 INFO  Main:49 - Thread1 joined successfully
+2016-01-26 04:43:18 INFO  Main:49 - Thread2 joined successfully
+2016-01-26 04:43:18 INFO  FileService:35 - File E:\EpamCourse\MultiFiles\src\by\epam\multifile\release\out.dat rewrote
+2016-01-26 04:46:52 INFO  Main:43 - Thread0 started
+2016-01-26 04:46:52 INFO  Main:43 - Thread1 started
+2016-01-26 04:46:52 INFO  Main:43 - Thread2 started
+2016-01-26 04:46:52 INFO  Main:49 - Thread0 joined successfully
+2016-01-26 04:46:52 INFO  Main:49 - Thread1 joined successfully
+2016-01-26 04:46:52 INFO  Main:49 - Thread2 joined successfully
+2016-01-26 04:46:52 INFO  FileService:35 - File E:\EpamCourse\MultiFiles\src\by\epam\multifile\release\out.dat rewrote
+2016-01-26 04:48:16 INFO  Main:43 - Thread0 started
+2016-01-26 04:48:16 INFO  Main:43 - Thread1 started
+2016-01-26 04:48:16 INFO  Main:43 - Thread2 started
+2016-01-26 04:48:17 INFO  Main:49 - Thread0 joined successfully
+2016-01-26 04:48:17 INFO  Main:49 - Thread1 joined successfully
+2016-01-26 04:48:17 INFO  Main:49 - Thread2 joined successfully
+2016-01-26 04:48:17 INFO  FileService:35 - File E:\EpamCourse\MultiFiles\src\by\epam\multifile\release\out.dat rewrote
+2016-01-26 04:48:32 INFO  Main:43 - Thread0 started
+2016-01-26 04:48:32 INFO  Main:43 - Thread1 started
+2016-01-26 04:48:32 INFO  Main:43 - Thread2 started
+2016-01-26 04:48:32 INFO  Main:49 - Thread0 joined successfully
+2016-01-26 04:48:32 INFO  Main:49 - Thread1 joined successfully
+2016-01-26 04:48:32 INFO  Main:49 - Thread2 joined successfully
+2016-01-26 04:48:32 INFO  FileService:35 - File E:\EpamCourse\MultiFiles\src\by\epam\multifile\release\out.dat rewrote
+2016-01-26 04:49:26 INFO  Main:43 - Thread0 started
+2016-01-26 04:49:26 INFO  Main:43 - Thread1 started
+2016-01-26 04:49:26 INFO  Main:43 - Thread2 started
+2016-01-26 04:49:26 INFO  OperationExecutor:68 - 11.4
+2016-01-26 04:49:26 INFO  OperationExecutor:68 - 35.948
+2016-01-26 04:49:26 INFO  OperationExecutor:68 - 35.948
+2016-01-26 04:49:27 INFO  OperationExecutor:68 - 82.998
+2016-01-26 04:49:27 INFO  Main:49 - Thread0 joined successfully
+2016-01-26 04:49:27 INFO  Main:49 - Thread1 joined successfully
+2016-01-26 04:49:27 INFO  Main:49 - Thread2 joined successfully
+2016-01-26 04:49:27 INFO  FileService:35 - File E:\EpamCourse\MultiFiles\src\by\epam\multifile\release\out.dat rewrote
+2016-01-26 04:50:15 INFO  Main:43 - Thread0 started
+2016-01-26 04:50:15 INFO  Main:43 - Thread1 started
+2016-01-26 04:50:15 INFO  Main:43 - Thread2 started
+2016-01-26 04:50:15 INFO  OperationExecutor:68 - 11.4
+2016-01-26 04:50:15 INFO  OperationExecutor:68 - 11.4
+2016-01-26 04:50:15 INFO  OperationExecutor:68 - 11.4
+2016-01-26 04:50:16 INFO  OperationExecutor:68 - 35.948
+2016-01-26 04:50:16 INFO  OperationExecutor:68 - 35.948
+2016-01-26 04:50:16 INFO  OperationExecutor:68 - 47.050000000000004
+2016-01-26 04:50:16 INFO  OperationExecutor:68 - 47.050000000000004
+2016-01-26 04:50:16 INFO  OperationExecutor:68 - 47.050000000000004
+2016-01-26 04:50:16 INFO  Main:49 - Thread0 joined successfully
+2016-01-26 04:50:16 INFO  Main:49 - Thread1 joined successfully
+2016-01-26 04:50:16 INFO  Main:49 - Thread2 joined successfully
+2016-01-26 04:50:16 INFO  FileService:35 - File E:\EpamCourse\MultiFiles\src\by\epam\multifile\release\out.dat rewrote
+2016-01-26 04:52:22 INFO  Main:43 - Thread0 started
+2016-01-26 04:52:22 INFO  Main:43 - Thread1 started
+2016-01-26 04:52:22 INFO  Main:43 - Thread2 started
+2016-01-26 04:52:23 INFO  Main:49 - 47.050000000000004
+2016-01-26 04:52:23 INFO  Main:50 - Thread0 joined successfully
+2016-01-26 04:52:23 INFO  Main:49 - 47.050000000000004
+2016-01-26 04:52:23 INFO  Main:50 - Thread1 joined successfully
+2016-01-26 04:52:23 INFO  Main:49 - 47.050000000000004
+2016-01-26 04:52:23 INFO  Main:50 - Thread2 joined successfully
+2016-01-26 04:52:23 INFO  FileService:35 - File E:\EpamCourse\MultiFiles\src\by\epam\multifile\release\out.dat rewrote
+2016-01-26 04:53:20 INFO  Main:43 - Thread0 started
+2016-01-26 04:53:20 INFO  Main:43 - Thread1 started
+2016-01-26 04:53:20 INFO  Main:43 - Thread2 started
+2016-01-26 04:53:21 INFO  Main:49 - 94.398
+2016-01-26 04:53:21 INFO  Main:50 - Thread0 joined successfully
+2016-01-26 04:53:21 INFO  Main:49 - 0.0
+2016-01-26 04:53:21 INFO  Main:50 - Thread1 joined successfully
+2016-01-26 04:53:21 INFO  Main:49 - 0.0
+2016-01-26 04:53:21 INFO  Main:50 - Thread2 joined successfully
+2016-01-26 04:53:21 INFO  FileService:35 - File E:\EpamCourse\MultiFiles\src\by\epam\multifile\release\out.dat rewrote
+2016-01-26 04:58:33 INFO  Main:43 - Thread0 started
+2016-01-26 04:58:33 INFO  Main:43 - Thread1 started
+2016-01-26 04:58:33 INFO  Main:43 - Thread2 started
+2016-01-26 04:58:33 INFO  Main:43 - Thread3 started
+2016-01-26 04:58:34 INFO  Main:49 - 94.398
+2016-01-26 04:58:34 INFO  Main:50 - Thread0 joined successfully
+2016-01-26 04:58:34 INFO  Main:49 - 47.348
+2016-01-26 04:58:34 INFO  Main:50 - Thread1 joined successfully
+2016-01-26 04:58:34 INFO  Main:49 - 47.348
+2016-01-26 04:58:34 INFO  Main:50 - Thread2 joined successfully
+2016-01-26 04:58:34 INFO  Main:49 - 94.398
+2016-01-26 04:58:34 INFO  Main:50 - Thread3 joined successfully
+2016-01-26 04:58:34 INFO  FileService:35 - File E:\EpamCourse\MultiFiles\src\by\epam\multifile\release\out.dat rewrote
+2016-01-26 04:59:18 INFO  Main:43 - Thread0 started
+2016-01-26 04:59:18 INFO  Main:43 - Thread1 started
+2016-01-26 04:59:18 INFO  Main:43 - Thread2 started
+2016-01-26 04:59:18 INFO  Main:43 - Thread3 started
+2016-01-26 04:59:19 INFO  Main:49 - 94.398
+2016-01-26 04:59:19 INFO  Main:50 - Thread0 joined successfully
+2016-01-26 04:59:19 INFO  Main:49 - 58.45
+2016-01-26 04:59:19 INFO  Main:50 - Thread1 joined successfully
+2016-01-26 04:59:19 INFO  Main:49 - 11.4
+2016-01-26 04:59:19 INFO  Main:50 - Thread2 joined successfully
+2016-01-26 04:59:19 INFO  Main:49 - 11.4
+2016-01-26 04:59:19 INFO  Main:50 - Thread3 joined successfully
+2016-01-26 04:59:19 INFO  FileService:35 - File E:\EpamCourse\MultiFiles\src\by\epam\multifile\release\out.dat rewrote
