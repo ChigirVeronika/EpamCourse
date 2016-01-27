@@ -25,7 +25,6 @@ public class HttpClient {
 
             InputStream in = socket.getInputStream();
             OutputStream out = socket.getOutputStream();
-
             //System.out.println("ADDED:"+request);
             out.write(request.getBytes());
 
