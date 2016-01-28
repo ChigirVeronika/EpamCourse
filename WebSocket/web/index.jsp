@@ -27,6 +27,7 @@
         <article>
             <form method="post">
                 <input type="text" name="nik" value=""/>
+                <input type="text" name="password" value=""/>
                 <input type="submit" value="Send"/>
             </form>
         </article>

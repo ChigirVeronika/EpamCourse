@@ -13,6 +13,7 @@ public class Main {
     private static final int ONE = 1;
     private static final int TWO = 2;
     private static final String GET_REQUEST_FILEPATH="E:\\EpamCourse\\WebSocket\\resource\\request\\getrequest.txt";
+    private static final String POST_REQUEST_FILEPATH="E:\\EpamCourse\\WebSocket\\resource\\request\\postrequest.txt";
 
     public static void main(String args[]) {
         System.out.println("Choose request type: 1-GET, 2-POST");
@@ -24,13 +25,13 @@ public class Main {
                 break;
             }
             case TWO:{
-
+                request = FileService.readFile(POST_REQUEST_FILEPATH);
                 break;
             }
         }
 
         HttpClient httpClient = new HttpClient();
-        String response = httpClient.sendRequest(request);
+        String response = httpClient.sendRequestAndGetResponse(request);
 
         System.out.println(HttpResponseParser.parse(response));
     }

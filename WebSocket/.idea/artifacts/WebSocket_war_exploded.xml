@@ -1,13 +1,18 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" name="WebSocket:war exploded">
+  <artifact type="war" build-on-make="true" name="WebSocket:war exploded">
     <output-path>$PROJECT_DIR$/out/artifacts/WebSocket_war_exploded</output-path>
-    <root id="root">
+    <root id="archive" name="WebSocket_war exploded.war">
       <element id="javaee-facet-resources" facet="WebSocket/web/Web" />
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="WebSocket" />
         </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="log4j-core-2.5" />
+          <element id="library" level="project" name="log4j-api-2.5" />
+        </element>
       </element>
+      <element id="module-output" name="WebSocket" />
     </root>
   </artifact>
 </component>

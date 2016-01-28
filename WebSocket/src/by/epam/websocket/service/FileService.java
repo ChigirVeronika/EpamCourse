@@ -10,7 +10,7 @@ import java.util.Scanner;
  * Operations with files.
  */
 public class FileService {
-    private static final String END_INPUT = "\\Z";
+    private static final String TILL_END = "\\Z";
     private static final String NEXT_LINE="\n\n";
     private static final Logger LOGGER = Logger.getLogger( HttpClient.class);
 
@@ -19,7 +19,7 @@ public class FileService {
     public static String readFile(String filepath){
         String content = null;
         try {
-            content = new Scanner(new File(filepath)).useDelimiter(END_INPUT).next();
+            content = new Scanner(new File(filepath)).useDelimiter(TILL_END).next();
         } catch (FileNotFoundException e) {
             LOGGER.error(e);
         }

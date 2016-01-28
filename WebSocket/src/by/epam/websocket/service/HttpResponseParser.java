@@ -8,35 +8,32 @@ import java.util.regex.Pattern;
  * Parse header of http response.
  */
 public class HttpResponseParser {
-    private static final String HTTP_STRING = "(HTTP/\\d\\.\\d)\\s(\\d+)\\s([a-zA-Z&&[^HTTP]]+)";
+    private final static String HTTP_STRING = "(HTTP/\\d\\.\\d)\\s(\\d+)\\s([a-zA-Z&&[^HTTP]]+)";
 
-    private static final String NEXT_LINE="\n";
-    private static final String EMPTY_SIGN="\r";
-    private static final String HTTP ="HTTP";
-    private static final String COLON =": ";
-    private static final String NAME ="Name: ";
-    private static final String VALUE =" Value: ";
+    private final static String NEXT_LINE = "\n";
+    private final static String EMPTY_SIGN = "\r";
+    private final static String HTTP = "HTTP";
+    private final static String COLON = ": ";
+    private final static String NAME = "Name: ";
+    private final static String VALUE = " Value: ";
+    private final static String INVALID ="Invalid response!";
+
+    private final static String HTTP_PROTOCOL_VERSION = " The protocol version that web server is using\n";
+    private final static String HTTP_CODE_STATUS = " The http response status code\n";
+    private final static String HTTP_TEXT_STATUS = " The text version of status code\n";
 
     public HttpResponseParser(){}
 
     public static String parse(String input){
         List<String> list = Arrays.asList(input.split(NEXT_LINE));
 
-        List<String> headerList =new ArrayList<>();
-        int j = 0;
-        do {//try to find empty string - means border between header and body
-            headerList.add(list.get(j));
-            j++;
-        }while (!list.get(j).equals(EMPTY_SIGN));
-//        List<String> bodyList =new ArrayList<>();
-//        for (int i=headerList.size();i<list.size();i++){
-//            bodyList.add(list.get(i));
-//        }
+        List<String> headerList=formHeaderList(list);
+
         if(!headerList.get(0).contains(HTTP)){
-            return "Invalid response!";
+            return INVALID;
         }
 
-        return parseHttpString(headerList.get(0))+parseHeaderStrings(headerList)+formBody(list);
+        return parseHttpString(headerList.get(0))+parseHeaderStrings(headerList)+formBody(list,headerList);
     }
 
     private static String parseHttpString(String input){
@@ -45,13 +42,13 @@ public class HttpResponseParser {
         Matcher matcher=pattern.matcher(input);
         while (matcher.find()){
             if (matcher.group(1) != null) {
-                sb.append(matcher.group(1)+" The protocol version that web server is using\n");
+                sb.append(matcher.group(1)+HTTP_PROTOCOL_VERSION);
             }
             if (matcher.group(2) != null) {
-                sb.append(matcher.group(2)+" The http response status code\n");
+                sb.append(matcher.group(2)+HTTP_CODE_STATUS);
             }
             if (matcher.group(3) != null) {
-                sb.append(matcher.group(3)+" The text version of status code\n");
+                sb.append(matcher.group(3)+HTTP_TEXT_STATUS);
             }
         }
         return sb.toString();
@@ -67,14 +64,26 @@ public class HttpResponseParser {
         return sb.toString();
     }
 
-    private static String formBody(List<String > l){
-        StringBuilder sb = new StringBuilder();
-        for (int i=l.size();i<l.size();i++){
-            sb.append(l.get(i));
-            sb.append(NEXT_LINE);
-
+    private static String formBody(List<String> list,List<String> header){
+        List<String > body = new ArrayList<>();
+        for (int i=header.size();i<list.size();i++){
+            body.add(list.get(i));
         }
-        System.out.println(sb.toString());
+        StringBuilder sb = new StringBuilder();
+        for (String s:body){
+            sb.append(s);
+            sb.append(NEXT_LINE);
+        }
         return sb.toString();
+    }
+
+    private static List<String> formHeaderList(List<String> list){
+        List<String> headerList =new ArrayList<>();
+        int j = 0;
+        do {//try to find empty string - means border between header and body
+            headerList.add(list.get(j));
+            j++;
+        }while (!list.get(j).equals(EMPTY_SIGN));
+        return headerList;
     }
 }
