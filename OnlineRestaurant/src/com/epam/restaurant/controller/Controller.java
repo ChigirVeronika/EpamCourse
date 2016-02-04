@@ -1,4 +1,4 @@
-package com.epam.webstore.controller;
+package com.epam.restaurant.controller;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
