@@ -33,7 +33,7 @@
         </article>
     </section>
     <footer>
-        <p>&copy; 2016 VeronikaChigir. All rights reserved.</p>
+        <p>&copy; 2016 Veronika Chigir. All rights reserved.</p>
     </footer>
   </body>
 </html>

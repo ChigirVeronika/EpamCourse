@@ -10,3 +10,15 @@
 <fmt:setLocale value="${language}"/>
 <fmt:setBundle basename="localization.restaurant" var="lang"/>
 
+<div class="inner">
+    <h3 class="trendhead-brand">
+        <fmt:message key="header.title" bundle="${lang}"/>
+    </h3>
+    <nav>
+        <ul class="nav trendhead-nav">
+            <li><a href="../index.jsp"><fmt:message key="header.home" bundle="${lang}"/></a> </li>
+
+            <li></li>
+        </ul>
+    </nav>
+</div>
