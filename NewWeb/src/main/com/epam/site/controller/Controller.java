@@ -32,7 +32,7 @@ public class Controller extends HttpServlet {
         String commandName=req.getParameter(RequestParameterName.COMMAND_NAME);
 
         ICommand command = CommandHelper.getInstance().getCommand(commandName);
-        String page = null;
+        String page;
         try{
             page = command.execute(req);
         }catch (CommandException e){

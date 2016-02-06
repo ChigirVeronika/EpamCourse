@@ -7,5 +7,5 @@ import javax.servlet.http.HttpServletResponse;
  * Created by Вероника on 22.01.2016.
  */
 public interface ICommand {
-    public String execute(HttpServletRequest request) throws CommandException;
+    String execute(HttpServletRequest request) throws CommandException;
 }

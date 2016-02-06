@@ -18,10 +18,17 @@
         <ul class="nav trendhead-nav">
             <li><a href="../index.jsp"><fmt:message key="header.home" bundle="${lang}"/></a> </li>
 
-            <li><a href="/main?action=catalog"><fmt:message key="header.catalog" bundle="${lang}"/></a></li>
+            <li><a href="/main?command=dishes"><fmt:message key="header.catalog" bundle="${lang}"/></a></li>
+
+
+
 
             <c:if test="${user == null}">
                 <li><a href="../login.jsp"><fmt:message key="header.login" bundle="${lang}"/></a></li>
+            </c:if>
+
+            <c:if test="${user != null}">
+                <li><a href="/main?command=logout"><fmt:message key="header.logout" bundle="${lang}"/></a></li>
             </c:if>
 
         </ul>
