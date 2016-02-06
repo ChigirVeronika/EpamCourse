@@ -7,7 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-<%@ taglib prefix="core" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 
 <html>
@@ -16,11 +16,11 @@
 </head>
 <body>
 <table>
-    <core:forEach var="movie" items = "${simpleinfo}">
+    <c:forEach var="i" items = "${dish}">
         <tr>
-            <td>${movie}</td>
+            <td>${i}</td>
         </tr>
-    </core:forEach>
+    </c:forEach>
 </table>
 </body>
 </html>

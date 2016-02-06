@@ -1,17 +1,18 @@
-package com.epam.restaurant.dao.pool.connect;
+package com.epam.restaurant.dao.connectionpool;
 
-import com.epam.restaurant.dao.pool.config.DAOConfigManager;
-import com.epam.restaurant.exception.ProjectException;
+import org.apache.log4j.Logger;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLDataException;
 import java.sql.SQLException;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.locks.ReentrantLock;
 
-//Connection Pool, ��� ���������� � ��
 public class ConnectionPool {
+
+    private static final Logger LOGGER = Logger.getLogger( ConnectionPool.class);
 
     private static ReentrantLock reentrantLock = new ReentrantLock();
     private static ConnectionPool instance;
@@ -28,7 +29,7 @@ public class ConnectionPool {
             try{
                 reentrantLock.lock();
                 if(instance==null) {
-                    instance = new ConnectionPool();//pul created
+                    instance = new ConnectionPool();//connection pool created
                 }
             } finally {
                 reentrantLock.unlock();
@@ -38,31 +39,31 @@ public class ConnectionPool {
         return instance;
     }
 
-    public Connection getConnection() throws ProjectException {//todo
+    public Connection getConnection() throws SQLException {//todo
         Connection connection = null;
         if (working) {
             try {
                 connection = connections.take();
             } catch (InterruptedException e) {
-                throw new ProjectException ("DAO Exception",e);//todo
+                throw new SQLDataException ("Pool Exception",e);//todo
             }
         }
 
         return connection;
     }
 
-    public void returnConnection(Connection connection) throws ProjectException  {
+    public void returnConnection(Connection connection) throws SQLException  {
         try {
             if (!connection.isClosed()) {
                 if (!connections.offer(connection)) {
-                   // LOGGER.error("Error while trying to return the connection to the pool");
+                    LOGGER.error("Error while trying to return the connection to the connectionpool");
                 }
             } else {
-               // LOGGER.error("Connection has been closed");
+                LOGGER.error("Connection has been closed");
             }
         } catch (SQLException e) {
-          //  LOGGER.error("SQL Exception " + e);
-            throw new ProjectException ("DAO Exception",e);
+            LOGGER.error("SQL Exception " + e);
+            throw new SQLException ("Exception",e);
         }
     }
 
@@ -74,7 +75,7 @@ public class ConnectionPool {
             try {
                 connection = connections.take();
             } catch (InterruptedException e) {
-               // LOGGER.error("Error while trying to take the connection from the pool");
+                LOGGER.error("Error while trying to take the connection from the connectionpool");
             }
             if (connection != null) {
                 try {
@@ -82,12 +83,12 @@ public class ConnectionPool {
                         connection.close();
                     }
                 } catch (SQLException e) {
-                  //  LOGGER.error("SQL Exception " + e);
+                    LOGGER.error("SQL Exception " + e);
                 }
                 realSize--;
             }
         }
-        //LOGGER.info("Pool has been released");
+        LOGGER.info("Pool has been released");
     }
 
     private void initialize(){
@@ -107,6 +108,6 @@ public class ConnectionPool {
             throw new RuntimeException(e);
         }
 
-      //  LOGGER.info("Pool has been initialized");
+        LOGGER.info("Pool has been initialized");
     }
 }
