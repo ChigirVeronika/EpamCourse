@@ -5,6 +5,7 @@ import com.epam.restaurant.controller.command.CommandException;
 import com.epam.restaurant.controller.command.ICommand;
 import com.epam.restaurant.service.OrderService;
 import com.epam.restaurant.service.UserService;
+import org.apache.log4j.Logger;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,6 +17,8 @@ public class LoginCommand implements ICommand {
 
     private static final String LOGIN= "login";
     private static final String PASSWORD= "password";
+
+    private static final Logger LOGGER = Logger.getLogger( LoginCommand.class);
 
     //todo менеджеры не написаны
 
