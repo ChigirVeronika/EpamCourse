@@ -16,7 +16,7 @@
 </head>
 <body>
 <table>
-    <c:forEach var="i" items = "${dish}">
+    <c:forEach var="i" items = "${simpleinfo}">
         <tr>
             <td>${i}</td>
         </tr>

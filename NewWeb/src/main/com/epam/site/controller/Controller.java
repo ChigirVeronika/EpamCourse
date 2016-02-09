@@ -1,8 +1,8 @@
 package main.com.epam.site.controller;
 
-import main.com.epam.site.service.CommandException;
-import main.com.epam.site.service.CommandHelper;
-import main.com.epam.site.service.ICommand;
+import main.com.epam.site.controller.command.CommandException;
+import main.com.epam.site.controller.command.CommandHelper;
+import main.com.epam.site.controller.command.ICommand;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;

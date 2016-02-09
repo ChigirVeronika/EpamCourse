@@ -13,13 +13,31 @@
        value="${not empty param.language ? param.language : not empty language ? language : 'en'}"
        scope="session"/>
 <fmt:setLocale value="${language}"/>
-<fmt:setBundle basename="localization.restaurant" var="lang"/>
+<fmt:setBundle basename="i18n.restaurant" var="lang"/>
 
 <html lang="${language}">
 <head>
     <jsp:include page="layout/resources.jsp" />
 </head>
 <body>
+<div class="restaurant-wrapper">
+    <div class="restaurant-wrapper-inner">
+        <div class="cover-container">
+            <div>
+                <jsp:include page="layout/header.jsp"/>
+            </div>
+
+            <div>
+                <h1 class="cover-heading"><fmt:message key="hello.welcome" bundle="${lang}"/><c:out value="${user.login}"/></h1>
+
+            </div>
+
+            <div class="trendfoot">
+                <jsp:include page="layout/footer.jsp"/>
+            </div>
+        </div>
+    </div>
+</div>
 
 </body>
 </html>

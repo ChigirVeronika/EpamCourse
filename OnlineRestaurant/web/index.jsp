@@ -6,7 +6,7 @@
        value="${not empty param.language ? param.language : not empty language ? language : 'en'}"
        scope="session"/>
 <fmt:setLocale value="${language}"/>
-<fmt:setBundle basename="localization.restaurant" var="lang"/>
+<fmt:setBundle basename="i18n.restaurant" var="lang"/>
 
 <html lang="${language}">
     <head>
@@ -24,7 +24,11 @@
                     <div>
                         <h1 class="cover-heading"><fmt:message key="index.welcome" bundle="${lang}"/></h1>
                         <p class="lead"><fmt:message key="lorem.short" bundle="${lang}"/></p>
-                        <p class="lead"><a href="/dishes.jsp" class="btn btn-lg btn-default"><fmt:message key="index.start" bundle="${lang}"/></a></p>
+                        <form action="/main" method="POST">
+                            <input type="hidden" name="command" value="dishes_command"/>
+                            <input type="hidden" name="filename" value="myfile"/>
+                            <input type="submit" value="<fmt:message key="index.start" bundle="${lang}"/>" class="btn btn-default btn-block"/>
+                        </form>
                     </div>
 
                     <div class="trendfoot">

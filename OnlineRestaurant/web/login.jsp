@@ -25,7 +25,7 @@
 
             <div class="inner cover">
                 <form action="/main" method="POST">
-                    <input type="hidden" name="action" value="login"/>
+                    <input type="hidden" name="command" value="login_command"/>
                     <c:if test="${message ne null}">
                         <div class="row"><h4><span class="label label-danger">
 							<c:out value='${message}'/>

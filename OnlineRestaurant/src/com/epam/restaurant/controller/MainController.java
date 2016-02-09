@@ -1,11 +1,10 @@
 package com.epam.restaurant.controller;
 
-import com.epam.restaurant.controller.command.CommandException;
+import com.epam.restaurant.controller.command.exception.CommandException;
 import com.epam.restaurant.controller.command.CommandHelper;
-import com.epam.restaurant.controller.command.ICommand;
+import com.epam.restaurant.controller.command.Command;
 import com.epam.restaurant.controller.name.JspPageName;
 import com.epam.restaurant.controller.name.RequestParameterName;
-import com.epam.restaurant.service.ServiceException;
 import org.apache.log4j.Logger;
 
 import javax.servlet.RequestDispatcher;
@@ -43,12 +42,13 @@ public class MainController extends HttpServlet{
     private void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String commandName=request.getParameter(RequestParameterName.COMMAND_NAME);
 
-        ICommand command = CommandHelper.getInstance().getCommand(commandName);
+        Command command = CommandHelper.getInstance().getCommand(commandName);
+        System.out.println("CONTROLLER: COMMAND"+commandName);
 
         String page;
         try {
-            page = command.execute(request, response);
-            //todo logger
+              page = command.execute(request, response);
+
             LOGGER.info("page: " + page);
         }catch (CommandException e){
             LOGGER.error(e);

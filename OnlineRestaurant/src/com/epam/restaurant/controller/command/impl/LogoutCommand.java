@@ -1,22 +1,25 @@
 package com.epam.restaurant.controller.command.impl;
 
 import com.epam.restaurant.controller.name.JspPageName;
-import com.epam.restaurant.controller.command.CommandException;
-import com.epam.restaurant.controller.command.ICommand;
+import com.epam.restaurant.controller.command.exception.CommandException;
+import com.epam.restaurant.controller.command.Command;
 import org.apache.log4j.Logger;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Created by Вероника on 04.02.2016.
  */
-public class LogoutCommand implements ICommand {
+public class LogoutCommand implements Command {
     private static final Logger LOGGER = Logger.getLogger(LogoutCommand.class);
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws CommandException {
-        //todo
+        HttpSession currentSession = request.getSession(false);
+        if (currentSession != null)
+            currentSession.invalidate();
 
-        return JspPageName.LOGOUT_JSP;
+        return JspPageName.INDEX_JSP;
     }
 }

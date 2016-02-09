@@ -7,7 +7,7 @@
        scope="session"/>
 
 <fmt:setLocale value="${language}"/>
-<fmt:setBundle basename="localization.restaurant" var="lang"/>
+<fmt:setBundle basename="i18n.restaurant" var="lang"/>
 
 <div class="inner">
     <form>

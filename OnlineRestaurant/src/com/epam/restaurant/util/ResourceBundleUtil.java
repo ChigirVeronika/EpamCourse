@@ -13,7 +13,7 @@ public class ResourceBundleUtil {
      * @return resource bundle for some language
      */
     public static ResourceBundle getResourceBundle(String language){
-        String path = "localization.restaurant";
+        String path = "i18n.restaurant";
 
         if(language!=null && !language.equals("en")){
             path+="_"+language;

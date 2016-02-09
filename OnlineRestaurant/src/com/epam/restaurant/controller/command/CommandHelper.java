@@ -14,25 +14,25 @@ import java.util.Map;
 public class CommandHelper {
     private static final CommandHelper instance = new CommandHelper();
 
-    private Map<CommandName,ICommand> commandMap = new HashMap<>();
+    private Map<CommandName,Command> commandMap = new HashMap<>();
 
     public CommandHelper(){
-        commandMap.put(CommandName.DEFAULT,new DefaultCommand());
+        commandMap.put(CommandName.DEFAULT_COMMAND,new DefaultCommand());
 
         //todo классы не реализованы
-        commandMap.put(CommandName.LOGIN, new LoginCommand());
-        commandMap.put(CommandName.LOGOUT,new LogoutCommand());
-        commandMap.put(CommandName.DISHES, new DishesCommand());
+        commandMap.put(CommandName.LOGIN_COMMAND, new LoginCommand());
+        commandMap.put(CommandName.LOGOUT_COMMAND,new LogoutCommand());
+        commandMap.put(CommandName.DISHES_COMMAND, new DishesCommand());
         //todo остальные комманды
     }
 
-    public ICommand getCommand(String commandName){
+    public Command getCommand(String commandName){
         CommandName name = CommandName.valueOf(commandName.toUpperCase());
-        ICommand command;
+        Command command;
         if(null!=name){
             command = commandMap.get(name);
         }else{
-            command=commandMap.get(CommandName.DEFAULT);
+            command=commandMap.get(CommandName.DEFAULT_COMMAND);
         }
         return command;
     }

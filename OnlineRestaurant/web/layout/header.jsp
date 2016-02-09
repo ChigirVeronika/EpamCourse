@@ -8,7 +8,7 @@
 
 
 <fmt:setLocale value="${language}"/>
-<fmt:setBundle basename="localization.restaurant" var="lang"/>
+<fmt:setBundle basename="i18n.restaurant" var="lang"/>
 
 <div class="inner">
     <h3 class="trendhead-brand">
@@ -18,9 +18,7 @@
         <ul class="nav trendhead-nav">
             <li><a href="../index.jsp"><fmt:message key="header.home" bundle="${lang}"/></a> </li>
 
-            <li><a href="/main?command=dishes"><fmt:message key="header.catalog" bundle="${lang}"/></a></li>
-
-
+            <li><a href="/main?command=dishes_command"><fmt:message key="header.catalog" bundle="${lang}"/></a></li>
 
 
             <c:if test="${user == null}">
@@ -28,7 +26,7 @@
             </c:if>
 
             <c:if test="${user != null}">
-                <li><a href="/main?command=logout"><fmt:message key="header.logout" bundle="${lang}"/></a></li>
+                <li><a href="/main?command=logout_command"><fmt:message key="header.logout" bundle="${lang}"/></a></li>
             </c:if>
 
         </ul>
