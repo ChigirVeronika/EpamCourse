@@ -24,3 +24,4 @@
 2016-02-09 03:57:22 INFO  MainController:52 - page: hello.jsp
 2016-02-09 03:57:36 INFO  MainController:52 - page: dishes.jsp
 2016-02-09 03:57:42 INFO  MainController:52 - page: index.jsp
+2016-02-09 14:16:40 INFO  ConnectionPoolImpl:117 - Pool has been initialized

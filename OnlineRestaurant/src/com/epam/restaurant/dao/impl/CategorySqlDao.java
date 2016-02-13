@@ -4,6 +4,7 @@ import com.epam.restaurant.dao.AbstractSqlDao;
 import com.epam.restaurant.dao.connectionpool.ConnectionPool;
 import com.epam.restaurant.dao.connectionpool.exception.ConnectionPoolException;
 import com.epam.restaurant.dao.connectionpool.impl.ConnectionPoolImpl;
+import com.epam.restaurant.dao.exception.DaoException;
 import com.epam.restaurant.dao.factory.DaoFactory;
 import com.epam.restaurant.entity.Category;
 
@@ -60,46 +61,51 @@ public class CategorySqlDao extends AbstractSqlDao<Category, Long> {
     }
 
     @Override
-    public Category create() throws SQLException {
+    public Category create() throws DaoException {
         Category category = new Category();
         return persist(category);
     }
 
     @Override
-    protected List<Category> parseResultSet(ResultSet rs) throws SQLException {
+    protected List<Category> parseResultSet(ResultSet rs) throws DaoException {
         LinkedList<Category> result = new LinkedList<>();
-
-        while (rs.next()) {
-            PersistCategory category = new PersistCategory();
-            category.setId(rs.getInt("id"));
-            category.setName(rs.getString("name"));
-            category.setDescription(rs.getString("description"));
-            result.add(category);
+        try {
+            while (rs.next()) {
+                PersistCategory category = new PersistCategory();
+                category.setId(rs.getInt("id"));
+                category.setName(rs.getString("name"));
+                category.setDescription(rs.getString("description"));
+                result.add(category);
+            }
+        }catch(SQLException e){
+            throw new DaoException("Exception",e);
         }
 
         return result;
     }
 
     @Override
-    protected void prepareStatementForUpdate(PreparedStatement statement, Category object) throws SQLException {
-        statement.setString(1, object.getName());
-        statement.setString(2, object.getDescription());
-        statement.setInt(3, object.getId());
+    protected void prepareStatementForUpdate(PreparedStatement statement, Category object) throws DaoException {
+        try {
+            statement.setString(1, object.getName());
+            statement.setString(2, object.getDescription());
+            statement.setInt(3, object.getId());
+        } catch (SQLException e) {
+            throw new DaoException("Exception",e);
+        }
     }
 
     @Override
-    protected void prepareStatementForInsert(PreparedStatement statement, Category object) throws SQLException {
-        statement.setString(1, object.getName());
-        statement.setString(2, object.getDescription());
+    protected void prepareStatementForInsert(PreparedStatement statement, Category object) throws DaoException {
+        try {
+            statement.setString(1, object.getName());
+            statement.setString(2, object.getDescription());
+        } catch (SQLException e) {
+            throw new DaoException("Exception",e);
+        }
     }
 
-    /**
-     * Get category from MySQL database with specific name
-     * @param name category name
-     * @return category with this name or null (if doesn't exist)
-     * @throws SQLException
-     */
-    public Category getByName(String name) throws SQLException {
+    public Category getByName(String name) throws DaoException {
         List<Category> list;
         try (Connection connection = pool.getConnection()) {
             String sql = dbBundle.getString("CATEGORIES.WITH_NAME");
@@ -112,10 +118,10 @@ public class CategorySqlDao extends AbstractSqlDao<Category, Long> {
                 return null;
             }
             if (list.size() > 1) {
-                throw new SQLException("Received more than one record.");
+                throw new DaoException("Received more than one record.");
             }
         }catch (ConnectionPoolException |SQLException e) {
-            throw new SQLException(e);//TODO!!!
+            throw new DaoException("Exception",e);
         }
         return list.iterator().next();
     }

@@ -6,6 +6,8 @@ import java.io.Serializable;
  * Entity is user in online restaurant.
  */
 public class User implements Serializable{
+    public static final long serialVersionUID = 1;
+
     public enum Role{
         USER,ADMIN,BLOCKED
     }

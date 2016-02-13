@@ -24,8 +24,6 @@
             <div class="inner cover">
                 <form action="/main" method="POST">
                     <input type="hidden" name="action" value="register"/>
-
-
                 </form>
             </div>
 

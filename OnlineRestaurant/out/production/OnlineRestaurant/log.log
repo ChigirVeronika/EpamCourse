@@ -20,3 +20,7 @@
 2016-02-09 03:46:37 INFO  MainController:52 - page: hello.jsp
 2016-02-09 03:47:15 INFO  MainController:52 - page: logout.jsp
 2016-02-09 03:55:05 INFO  MainController:52 - page: logout.jsp
+2016-02-09 03:57:22 INFO  ConnectionPoolImpl:117 - Pool has been initialized
+2016-02-09 03:57:22 INFO  MainController:52 - page: hello.jsp
+2016-02-09 03:57:36 INFO  MainController:52 - page: dishes.jsp
+2016-02-09 03:57:42 INFO  MainController:52 - page: index.jsp

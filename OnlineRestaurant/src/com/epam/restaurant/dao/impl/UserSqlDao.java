@@ -60,53 +60,58 @@ public class UserSqlDao extends AbstractSqlDao<User, Long> {
     }
 
     @Override
-    public User create() throws SQLException {
+    public User create() throws DaoException {
         User user = new User();
         return persist(user);
     }
 
     @Override
-    protected List<User> parseResultSet(ResultSet rs) throws SQLException {
+    protected List<User> parseResultSet(ResultSet rs) throws DaoException {
         LinkedList<User> result = new LinkedList<>();
+        try {
+            while (rs.next()) {
+                PersistUser student = new PersistUser();
 
-        while (rs.next()) {
-            PersistUser student = new PersistUser();
-            student.setId(rs.getInt("id"));
-            student.setLogin(rs.getString("login"));
-            student.setHash(rs.getString("password"));
-            student.setEmail(rs.getString("email"));
-            student.setRole(User.Role.valueOf(rs.getString("role")));
-            result.add(student);
+                student.setId(rs.getInt("id"));
+                student.setLogin(rs.getString("login"));
+                student.setHash(rs.getString("password"));
+                student.setEmail(rs.getString("email"));
+                student.setRole(User.Role.valueOf(rs.getString("role")));
+                result.add(student);
+            }
+        } catch (SQLException e) {
+            throw new DaoException("Exception",e);
         }
 
         return result;
     }
 
     @Override
-    protected void prepareStatementForUpdate(PreparedStatement statement, User object) throws SQLException {
-        statement.setString(1, object.getLogin());
-        statement.setString(2, object.getHash());
-        statement.setString(3, object.getEmail());
-        statement.setString(4, object.getRole().toString());
-        statement.setInt(5, object.getId());
+    protected void prepareStatementForUpdate(PreparedStatement statement, User object) throws DaoException {
+        try {
+            statement.setString(1, object.getLogin());
+            statement.setString(2, object.getHash());
+            statement.setString(3, object.getEmail());
+            statement.setString(4, object.getRole().toString());
+            statement.setInt(5, object.getId());
+        } catch (SQLException e) {
+            throw new DaoException("Exception",e);
+        }
     }
 
     @Override
-    protected void prepareStatementForInsert(PreparedStatement statement, User object) throws SQLException {
-        statement.setString(1, object.getLogin());
-        statement.setString(2, object.getHash());
-        statement.setString(3, object.getEmail());
-        statement.setString(4, object.getRole().toString());
+    protected void prepareStatementForInsert(PreparedStatement statement, User object) throws DaoException {
+        try {
+            statement.setString(1, object.getLogin());
+            statement.setString(2, object.getHash());
+            statement.setString(3, object.getEmail());
+            statement.setString(4, object.getRole().toString());
+        } catch (SQLException e) {
+        throw new DaoException("Exception",e);
+        }
     }
 
-
-    /**
-     * Get user from MySQL database with specific login
-     * @param login user login
-     * @return user with specific login or null if user with such login doesn't exist
-     * @throws SQLException
-     */
-    public User getByLogin(String login) throws SQLException {
+    public User getByLogin(String login) throws DaoException {
         List<User> list;
         try (Connection connection = pool.getConnection()) {
 
@@ -124,7 +129,7 @@ public class UserSqlDao extends AbstractSqlDao<User, Long> {
             }
 
         }catch (ConnectionPoolException |SQLException e) {
-            throw new SQLException(e);//TODO!!!
+            throw new DaoException("Exception",e);
         }
         return list.iterator().next();
     }

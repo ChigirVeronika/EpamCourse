@@ -68,8 +68,8 @@ public class LoginCommand implements Command {
             }
 
             }
-        } catch (SQLException e) {
-            e.printStackTrace();
+        } catch (Exception e) {
+            throw new CommandException("Exception",e);
         }
         return JspPageName.HELLO_JSP;
     }

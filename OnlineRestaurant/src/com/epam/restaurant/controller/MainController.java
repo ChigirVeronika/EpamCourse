@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.math.BigInteger;
 
 /**
  * Main HTTP servlet control all actions in system.
@@ -42,14 +43,12 @@ public class MainController extends HttpServlet{
     private void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String commandName=request.getParameter(RequestParameterName.COMMAND_NAME);
 
+
         Command command = CommandHelper.getInstance().getCommand(commandName);
-        System.out.println("CONTROLLER: COMMAND"+commandName);
 
         String page;
         try {
               page = command.execute(request, response);
-
-            LOGGER.info("page: " + page);
         }catch (CommandException e){
             LOGGER.error(e);
             page = JspPageName.ERROR_JSP;
