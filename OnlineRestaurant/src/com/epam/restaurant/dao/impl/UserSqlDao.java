@@ -80,7 +80,7 @@ public class UserSqlDao extends AbstractSqlDao<User, Long> {
                 student.setHash(rs.getString("password"));
                 student.setEmail(rs.getString("email"));
                 student.setRole(User.Role.valueOf(rs.getString("role")));
-                student.setPayCardId(rs.getString("pay_card_id"));
+                student.setPayCard(rs.getString("pay_card_id"));
                 result.add(student);
             }
         } catch (SQLException e) {
@@ -99,8 +99,8 @@ public class UserSqlDao extends AbstractSqlDao<User, Long> {
             statement.setString(4, object.getHash());
             statement.setString(5, object.getEmail());
             statement.setString(6, object.getRole().toString());
-            statement.setString(7, object.getPayCardId());
-            statement.setInt(8, object.getId());
+            statement.setString(7, object.getPayCard());
+            statement.setLong(8, object.getId());
         } catch (SQLException e) {
             throw new DaoException("Exception",e);
         }
@@ -115,7 +115,7 @@ public class UserSqlDao extends AbstractSqlDao<User, Long> {
             statement.setString(4, object.getHash());
             statement.setString(5, object.getEmail());
             statement.setString(6, object.getRole().toString());
-            statement.setString(7, object.getPayCardId());
+            statement.setString(7, object.getPayCard());
         } catch (SQLException e) {
         throw new DaoException("Exception",e);
         }
@@ -143,4 +143,11 @@ public class UserSqlDao extends AbstractSqlDao<User, Long> {
         }
         return list.iterator().next();
     }
+
+    @Override
+    public List<User> getAllFromRecord(Long key) throws DaoException {
+        return null;
+    }
+
+
 }

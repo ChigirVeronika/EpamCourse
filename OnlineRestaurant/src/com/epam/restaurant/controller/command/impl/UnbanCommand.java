@@ -19,6 +19,8 @@ import static com.epam.restaurant.controller.name.RequestParameterName.*;
 public class UnbanCommand implements Command {
     private static final UserService userService = UserService.getInstance();
 
+    public UnbanCommand(){}
+
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws CommandException {
         String result = JspPageName.USERS_JSP;

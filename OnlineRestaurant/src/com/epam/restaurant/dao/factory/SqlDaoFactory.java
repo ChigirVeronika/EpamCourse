@@ -33,7 +33,7 @@ public class SqlDaoFactory{
     }
 
     public enum DaoType{
-        DISH, USER, CATEGORY, BILL
+        DISH, USER, CATEGORY, BILL, ORDER
     }
 
 }

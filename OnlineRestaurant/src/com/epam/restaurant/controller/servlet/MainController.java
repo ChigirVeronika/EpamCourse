@@ -1,4 +1,4 @@
-package com.epam.restaurant.controller;
+package com.epam.restaurant.controller.servlet;
 
 import com.epam.restaurant.controller.command.exception.CommandException;
 import com.epam.restaurant.controller.command.CommandHelper;
@@ -13,7 +13,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.math.BigInteger;
 
 /**
  * Main HTTP servlet control all actions in system.
@@ -60,7 +59,6 @@ public class MainController extends HttpServlet{
         try {
             requestDispatcher.forward(request,response);
         } catch (IOException e) {
-            e.printStackTrace();//// TODO: 18.02.2016
             LOGGER.error(e);
         }
     }

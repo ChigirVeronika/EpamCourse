@@ -3,40 +3,38 @@ package com.epam.restaurant.entity;
 import java.io.Serializable;
 
 /**
- * Created by Вероника on 04.02.2016.
+ *
  */
 public class OrderDish implements Serializable {
     public static final long serialVersionUID = 1;
 
-    private int id;
-    private int dishId;
-    private int orderId;
+    private long id;
+    private long dishId;
+    private long orderId;
     private int quantity;
 
-    public OrderDish(){}
-
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
-    public int getDishId() {
+    public long getDishId() {
         return dishId;
     }
 
-    public void setDishId(int dish_id) {
-        this.dishId = dish_id;
+    public void setDishId(long dishId) {
+        this.dishId = dishId;
     }
 
-    public int getOrderId() {
+    public long getOrderId() {
         return orderId;
     }
 
-    public void setOrderId(int order_id) {
-        this.orderId = order_id;
+    public void setOrderId(long orderId) {
+        this.orderId = orderId;
     }
 
     public int getQuantity() {
@@ -47,36 +45,49 @@ public class OrderDish implements Serializable {
         this.quantity = quantity;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        OrderDish orderDish = (OrderDish) o;
-
-        if (id != orderDish.id) return false;
-        if (dishId != orderDish.dishId) return false;
-        if (orderId != orderDish.orderId) return false;
-        return quantity == orderDish.quantity;
-
-    }
-
-    @Override
-    public int hashCode() {
-        int result = id;
-        result = 31 * result + dishId;
-        result = 31 * result + orderId;
-        result = 31 * result + quantity;
-        return result;
+    public OrderDish() {
     }
 
     @Override
     public String toString() {
         return "OrderDish{" +
                 "id=" + id +
-                ", dish_id=" + dishId +
-                ", order_id=" + orderId +
+                ", dishId=" + dishId +
+                ", orderId=" + orderId +
                 ", quantity=" + quantity +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+
+        OrderDish orderDish = (OrderDish) o;
+
+        if (id != orderDish.id){
+            return false;
+        }
+        if (dishId != orderDish.dishId) {
+            return false;
+        }
+        if (orderId != orderDish.orderId){
+            return false;
+        }
+        return quantity == orderDish.quantity;
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = (int) (id ^ (id >>> 32));
+        result = 31 * result + (int) (dishId ^ (dishId >>> 32));
+        result = 31 * result + (int) (orderId ^ (orderId >>> 32));
+        result = 31 * result + quantity;
+        return result;
     }
 }

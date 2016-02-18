@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 /**
- * Created by Вероника on 09.02.2016.
+ * .
  */
 public class CategorySqlDao extends AbstractSqlDao<Category, Long> {
 
@@ -41,29 +41,25 @@ public class CategorySqlDao extends AbstractSqlDao<Category, Long> {
         }
     }
 
-    //public CategorySqlDao(DaoFactory parentFactory) {
-     //   super(parentFactory);
-    //}
-
 
     @Override
     public String getSelectQuery() {
-        return dbBundle.getString("CATEGORIES.SELECT");
+        return dbBundle.getString("CATEGORY.SELECT");
     }
 
     @Override
     public String getCreateQuery() {
-        return dbBundle.getString("CATEGORIES.INSERT");
+        return dbBundle.getString("CATEGORY.INSERT");
     }
 
     @Override
     public String getUpdateQuery() {
-        return dbBundle.getString("CATEGORIES.UPDATE");
+        return dbBundle.getString("CATEGORY.UPDATE");
     }
 
     @Override
     public String getDeleteQuery() {
-        return dbBundle.getString("CATEGORIES.DELETE");
+        return dbBundle.getString("CATEGORY.DELETE");
     }
 
     @Override
@@ -95,7 +91,7 @@ public class CategorySqlDao extends AbstractSqlDao<Category, Long> {
         try {
             statement.setString(1, object.getName());
             statement.setString(2, object.getDescription());
-            statement.setInt(3, object.getId());
+            statement.setLong(3, object.getId());
         } catch (SQLException e) {
             throw new DaoException("Exception",e);
         }
@@ -130,6 +126,11 @@ public class CategorySqlDao extends AbstractSqlDao<Category, Long> {
             throw new DaoException("Exception",e);
         }
         return list.iterator().next();
+    }
+
+    @Override
+    public List<Category> getAllFromRecord(Long id) throws DaoException {
+        return null;
     }
 }
 

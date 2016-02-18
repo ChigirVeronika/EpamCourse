@@ -20,8 +20,6 @@ public final class CommandHelper {
         commandMap.put(CommandName.REGISTER_COMMAND,new RegisterCommand());
         commandMap.put(CommandName.BAN_COMMAND,new BanCommand());
         commandMap.put(CommandName.UNBAN_COMMAND,new UnbanCommand());
-
-        //todo классы не реализованы
         commandMap.put(CommandName.DISHES_COMMAND, new DishesCommand());
         //todo остальные комманды
     }

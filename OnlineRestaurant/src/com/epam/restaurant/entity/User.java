@@ -8,11 +8,11 @@ import java.io.Serializable;
 public class User implements Serializable{
     public static final long serialVersionUID = 1;
 
-    private int id;
+    private long id;
     private String name;
     private String surname;
     private String email;
-    private String payCardId;
+    private String payCard;
     private String login;
     private String hash;
     private Role role;
@@ -35,11 +35,11 @@ public class User implements Serializable{
      * Constructor for registration.
      */
     public User(String name, String surname, String email,
-                String payCardId, String login, String hash) {
+                String payCard, String login, String hash) {
         this.name=name;
         this.surname=surname;
         this.email=email;
-        this.payCardId=payCardId;
+        this.payCard=payCard;
         this.login=login;
         this.hash=hash;
         this.role=Role.USER;
@@ -61,19 +61,19 @@ public class User implements Serializable{
         this.surname = surname;
     }
 
-    public String getPayCardId() {
-        return payCardId;
+    public String getPayCard() {
+        return payCard;
     }
 
-    public void setPayCardId(String payCardId) {
-        this.payCardId = payCardId;
+    public void setPayCard(String payCard) {
+        this.payCard = payCard;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -116,7 +116,7 @@ public class User implements Serializable{
                 ", name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
                 ", email='" + email + '\'' +
-                ", payCard='" + payCardId + '\'' +
+                ", payCardId='" + payCard + '\'' +
                 ", login='" + login + '\'' +
                 ", hash='" + hash + '\'' +
                 ", role=" + role +
@@ -125,29 +125,47 @@ public class User implements Serializable{
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o){
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()){
+            return false;
+        }
 
         User user = (User) o;
 
-        if (id != user.id) return false;
-        if (name != null ? !name.equals(user.name) : user.name != null) return false;
-        if (surname != null ? !surname.equals(user.surname) : user.surname != null) return false;
-        if (email != null ? !email.equals(user.email) : user.email != null) return false;
-        if (payCardId != null ? !payCardId.equals(user.payCardId) : user.payCardId != null) return false;
-        if (login != null ? !login.equals(user.login) : user.login != null) return false;
-        if (hash != null ? !hash.equals(user.hash) : user.hash != null) return false;
+        if (id != user.id){
+            return false;
+        }
+        if (name != null ? !name.equals(user.name) : user.name != null){
+            return false;
+        }
+        if (surname != null ? !surname.equals(user.surname) : user.surname != null){
+            return false;
+        }
+        if (email != null ? !email.equals(user.email) : user.email != null){
+            return false;
+        }
+        if (payCard != null ? !payCard.equals(user.payCard) : user.payCard != null){
+            return false;
+        }
+        if (login != null ? !login.equals(user.login) : user.login != null){
+            return false;
+        }
+        if (hash != null ? !hash.equals(user.hash) : user.hash != null){
+            return false;
+        }
         return role == user.role;
 
     }
 
     @Override
     public int hashCode() {
-        int result = id;
+        int result = (int) (id ^ (id >>> 32));
         result = 31 * result + (name != null ? name.hashCode() : 0);
         result = 31 * result + (surname != null ? surname.hashCode() : 0);
         result = 31 * result + (email != null ? email.hashCode() : 0);
-        result = 31 * result + (payCardId != null ? payCardId.hashCode() : 0);
+        result = 31 * result + (payCard != null ? payCard.hashCode() : 0);
         result = 31 * result + (login != null ? login.hashCode() : 0);
         result = 31 * result + (hash != null ? hash.hashCode() : 0);
         result = 31 * result + (role != null ? role.hashCode() : 0);

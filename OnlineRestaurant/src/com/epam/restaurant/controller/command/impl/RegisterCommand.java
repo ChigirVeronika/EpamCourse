@@ -22,6 +22,8 @@ public class RegisterCommand implements Command {
 
     private static UserService userService = UserService.getInstance();
 
+    public RegisterCommand(){}
+
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws CommandException {
         String name=request.getParameter(NAME);

@@ -19,6 +19,8 @@ import static com.epam.restaurant.controller.name.RequestParameterName.*;
 public class BanCommand implements Command {
     private static final UserService userService = UserService.getInstance();
 
+    public BanCommand(){}
+
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws CommandException {
         String result = JspPageName.USERS_JSP;

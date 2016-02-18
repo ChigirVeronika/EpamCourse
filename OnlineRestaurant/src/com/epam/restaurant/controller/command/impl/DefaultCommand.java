@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class DefaultCommand implements Command {
 
+    public DefaultCommand(){}
+
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws CommandException {
         return JspPageName.INDEX_JSP;

@@ -1,26 +1,75 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Вероника
-  Date: 05.02.2016
-  Time: 19:13
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="mytag" uri="/tag/taglib.tld" %>
 
+<c:set var="language"
+       value="${not empty param.language ? param.language : not empty language ? language : 'en'}"
+       scope="session"/>
+<fmt:setLocale value="${language}"/>
+<fmt:setBundle basename="i18n.restaurant" var="lang"/>
 
-<html>
+<html lang="${language}">
 <head>
-    <title>Title</title>
+    <jsp:include page="layout/resources.jsp" />
 </head>
+
 <body>
-<table>
-    <c:forEach var="i" items = "${simpleinfo}">
-        <tr>
-            <td>${i}</td>
-        </tr>
-    </c:forEach>
-</table>
+<div class="restaurant-wrapper">
+    <div class="restaurant-wrapper-inner">
+        <div class="cover-container">
+            <div>
+                <jsp:include page="layout/header.jsp"/>
+            </div>
+
+            <div class="inner cover">
+                <div class = "container-fluid">
+
+                    <div class="row">
+                      <div class="col-md-4"></div>
+                      <div class="col-md-8">
+                          <h1 class="cover-heading">
+                              <fmt:message key="catalog.heading" bundle="${lang}"/>
+                          </h1>
+                          <br><br>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <mytag:categories/>
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="row">
+                                <p><fmt:message key="lorem.short" bundle="${lang}"/></p>
+                            </div>
+                            <div class="row">
+                                <br><br>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <fmt:message key="lorem.short" bundle="${lang}"/>
+                                    <fmt:message key="lorem.short" bundle="${lang}"/>
+                                </div>
+                                <div class="col-md-6">
+                                    <fmt:message key="lorem.short" bundle="${lang}"/>
+                                    <fmt:message key="lorem.short" bundle="${lang}"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <jsp:include page="add_category_modal.jsp"/>
+                    <jsp:include page="edit_category_modal.jsp"/>
+
+                </div>
+            </div>
+
+            <div class="trendfoot">
+                <jsp:include page="layout/footer.jsp"/>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>

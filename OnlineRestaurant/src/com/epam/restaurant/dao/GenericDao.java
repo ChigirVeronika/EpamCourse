@@ -9,7 +9,7 @@ import java.util.List;
  * @param <T> object type
  * @param <PK> primary key type
  */
-public interface GenericDao<T , PK extends Long> {//todo id
+public interface GenericDao<T , PK> {//todo id
 
     T create() throws DaoException;
 
@@ -24,4 +24,6 @@ public interface GenericDao<T , PK extends Long> {//todo id
     List<T> getAll() throws DaoException;
 
     T getByName(String name) throws DaoException;
+
+    List<T> getAllFromRecord(PK key) throws DaoException;
 }

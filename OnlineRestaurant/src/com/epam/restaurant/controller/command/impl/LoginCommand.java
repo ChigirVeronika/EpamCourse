@@ -31,7 +31,7 @@ public class LoginCommand implements Command {
     /**
      * Provides work with database orders table.
      */
-    private static final OrderService orderService = new OrderService();//todo
+    private static final OrderService orderService = OrderService.getInstance();//todo
 
     public LoginCommand(){}
 
