@@ -4,7 +4,6 @@ import com.epam.restaurant.dao.connectionpool.ConnectionPool;
 import com.epam.restaurant.dao.connectionpool.exception.ConnectionPoolException;
 import com.epam.restaurant.dao.connectionpool.impl.ConnectionPoolImpl;
 import com.epam.restaurant.dao.exception.DaoException;
-import com.epam.restaurant.dao.factory.DaoFactory;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -20,16 +19,12 @@ import java.util.List;
  */
 public abstract class AbstractSqlDao<T,PK extends Long> implements GenericDao<T, PK> {
 
+    //protected DaoFactory parentFactory;
+
     /**
      * Connection to database
      */
-    protected DaoFactory parentFactory;
-
     private ConnectionPool pool = ConnectionPoolImpl.getInstance();
-
-    public AbstractSqlDao(DaoFactory parentFactory) {
-        this.parentFactory = parentFactory;
-    }
 
     public abstract String getSelectQuery();
 

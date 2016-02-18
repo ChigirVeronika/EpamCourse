@@ -1,27 +1,4 @@
 
-2016-02-08 15:31:43 INFO  ConnectionPool:111 - Pool has been initialized
-2016-02-08 15:31:43 INFO  UserSqlDao:58 - list created
-2016-02-08 15:31:43 INFO  UserSqlDao:62 - preparedStatement
-2016-02-08 15:31:43 INFO  UserSqlDao:72 - dish list in dao created
-2016-02-08 15:31:43 INFO  DishService:25 - parsed all dishes
-2016-02-08 15:31:43 INFO  DishesCommand:26 - dishes command executed
-2016-02-08 15:31:43 INFO  MainController:53 - page: dishes.jsp
-2016-02-08 15:37:53 INFO  ConnectionPool:111 - Pool has been initialized
-2016-02-08 15:37:53 INFO  UserSqlDao:58 - list created
-2016-02-08 15:37:53 INFO  UserSqlDao:62 - preparedStatement
-2016-02-08 15:37:53 INFO  UserSqlDao:72 - dish list in dao created
-2016-02-08 15:37:53 INFO  DishService:25 - parsed all dishes
-2016-02-08 15:37:53 INFO  DishesCommand:26 - dishes command executed
-2016-02-08 15:37:53 INFO  MainController:53 - page: dishes.jsp
-2016-02-09 03:39:57 INFO  ConnectionPoolImpl:117 - Pool has been initialized
-2016-02-09 03:39:58 INFO  MainController:52 - page: hello.jsp
-2016-02-09 03:46:26 INFO  ConnectionPoolImpl:117 - Pool has been initialized
-2016-02-09 03:46:26 ERROR MainController:57 - java.util.MissingResourceException: Can't find bundle for base name i18n.webstore, locale ru_RU
-2016-02-09 03:46:37 INFO  MainController:52 - page: hello.jsp
-2016-02-09 03:47:15 INFO  MainController:52 - page: logout.jsp
-2016-02-09 03:55:05 INFO  MainController:52 - page: logout.jsp
-2016-02-09 03:57:22 INFO  ConnectionPoolImpl:117 - Pool has been initialized
-2016-02-09 03:57:22 INFO  MainController:52 - page: hello.jsp
-2016-02-09 03:57:36 INFO  MainController:52 - page: dishes.jsp
-2016-02-09 03:57:42 INFO  MainController:52 - page: index.jsp
-2016-02-09 14:16:40 INFO  ConnectionPoolImpl:117 - Pool has been initialized
+2016-02-18 11:47:56 INFO  MainController:46 - command
+2016-02-18 11:47:56 INFO  MainController:50 - com.epam.restaurant.controller.command.impl.LogoutCommand@a430cb
+2016-02-18 11:47:56 INFO  MainController:54 - page: index.jsp

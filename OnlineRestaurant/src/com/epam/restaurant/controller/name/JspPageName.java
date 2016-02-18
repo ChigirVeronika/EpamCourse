@@ -11,4 +11,6 @@ public class JspPageName {
     public static final String HELLO_JSP= "hello.jsp";
     public static final String ERROR_JSP = "error.jsp";
     public static final String DISHES_JSP = "dishes.jsp";
+    public static final String REGISTER_JSP = "register.jsp";
+    public static final String USERS_JSP = "users.jsp";
 }

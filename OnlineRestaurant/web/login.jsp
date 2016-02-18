@@ -6,7 +6,7 @@
        value="${not empty param.language ? param.language : not empty language ? language : 'en'}"
        scope="session"/>
 <fmt:setLocale value="${language}"/>
-<fmt:setBundle basename="i18n.webstore" var="lang"/>
+<fmt:setBundle basename="i18n.restaurant" var="lang"/>
 
 <html lang="${language}">
 <head>

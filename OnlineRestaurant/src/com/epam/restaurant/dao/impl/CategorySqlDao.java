@@ -1,11 +1,11 @@
 package com.epam.restaurant.dao.impl;
 
 import com.epam.restaurant.dao.AbstractSqlDao;
+import com.epam.restaurant.dao.GenericDao;
 import com.epam.restaurant.dao.connectionpool.ConnectionPool;
 import com.epam.restaurant.dao.connectionpool.exception.ConnectionPoolException;
 import com.epam.restaurant.dao.connectionpool.impl.ConnectionPoolImpl;
 import com.epam.restaurant.dao.exception.DaoException;
-import com.epam.restaurant.dao.factory.DaoFactory;
 import com.epam.restaurant.entity.Category;
 
 import java.sql.Connection;
@@ -28,6 +28,12 @@ public class CategorySqlDao extends AbstractSqlDao<Category, Long> {
 
     private ConnectionPool pool = ConnectionPoolImpl.getInstance();
 
+    private final static CategorySqlDao instance = new CategorySqlDao();
+
+    public static GenericDao getInstance(){
+        return instance;
+    }
+
 
     private class PersistCategory extends Category {
         public void setId(int id) {
@@ -35,9 +41,9 @@ public class CategorySqlDao extends AbstractSqlDao<Category, Long> {
         }
     }
 
-    public CategorySqlDao(DaoFactory parentFactory) {
-        super(parentFactory);
-    }
+    //public CategorySqlDao(DaoFactory parentFactory) {
+     //   super(parentFactory);
+    //}
 
 
     @Override

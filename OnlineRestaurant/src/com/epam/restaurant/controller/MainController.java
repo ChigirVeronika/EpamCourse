@@ -20,12 +20,11 @@ import java.math.BigInteger;
  */
 public class MainController extends HttpServlet{
     public static final long serialVersionUID = 1;
+    private static final Logger LOGGER = Logger.getLogger( MainController.class);
 
     public MainController(){
         super();
     }
-
-    private static final Logger LOGGER = Logger.getLogger( MainController.class);
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -40,24 +39,29 @@ public class MainController extends HttpServlet{
     /**
      * Handle post and get http requests.
      */
-    private void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    private void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException {
         String commandName=request.getParameter(RequestParameterName.COMMAND_NAME);
-
+        LOGGER.info(commandName);
+        LOGGER.info(RequestParameterName.COMMAND_NAME);
 
         Command command = CommandHelper.getInstance().getCommand(commandName);
 
+        LOGGER.info(command);
         String page;
         try {
-              page = command.execute(request, response);
+            page = command.execute(request, response);
+            LOGGER.info(" page: "+ page);
         }catch (CommandException e){
-            LOGGER.error(e);
-            page = JspPageName.ERROR_JSP;
-        }catch (Exception e){
             LOGGER.error(e);
             page = JspPageName.ERROR_JSP;
         }
 
         RequestDispatcher requestDispatcher = request.getRequestDispatcher(page);
-        requestDispatcher.forward(request,response);
+        try {
+            requestDispatcher.forward(request,response);
+        } catch (IOException e) {
+            e.printStackTrace();//// TODO: 18.02.2016
+            LOGGER.error(e);
+        }
     }
 }

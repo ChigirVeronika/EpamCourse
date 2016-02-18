@@ -1,11 +1,11 @@
 package com.epam.restaurant.dao.impl;
 
 import com.epam.restaurant.dao.AbstractSqlDao;
+import com.epam.restaurant.dao.GenericDao;
 import com.epam.restaurant.dao.connectionpool.ConnectionPool;
 import com.epam.restaurant.dao.connectionpool.exception.ConnectionPoolException;
 import com.epam.restaurant.dao.connectionpool.impl.ConnectionPoolImpl;
 import com.epam.restaurant.dao.exception.DaoException;
-import com.epam.restaurant.dao.factory.DaoFactory;
 import com.epam.restaurant.entity.User;
 
 import java.sql.Connection;
@@ -28,6 +28,11 @@ public class UserSqlDao extends AbstractSqlDao<User, Long> {
 
     private ConnectionPool pool = ConnectionPoolImpl.getInstance();
 
+    private final static UserSqlDao instance = new UserSqlDao();
+
+    public static GenericDao getInstance(){
+        return instance;
+    }
 
     private class PersistUser extends User {
         public void setId(int id) {
@@ -35,28 +40,24 @@ public class UserSqlDao extends AbstractSqlDao<User, Long> {
         }
     }
 
-    public UserSqlDao(DaoFactory parentFactory) {
-        super(parentFactory);
-    }
-
     @Override
     public String getSelectQuery() {
-        return dbBundle.getString("USERS.SELECT");
+        return dbBundle.getString("USER.SELECT");
     }
 
     @Override
     public String getCreateQuery() {
-        return dbBundle.getString("USERS.INSERT");
+        return dbBundle.getString("USER.INSERT");
     }
 
     @Override
     public String getUpdateQuery() {
-        return dbBundle.getString("USERS.UPDATE");
+        return dbBundle.getString("USER.UPDATE");
     }
 
     @Override
     public String getDeleteQuery() {
-        return dbBundle.getString("USERS.DELETE");
+        return dbBundle.getString("USER.DELETE");
     }
 
     @Override
@@ -73,10 +74,13 @@ public class UserSqlDao extends AbstractSqlDao<User, Long> {
                 PersistUser student = new PersistUser();
 
                 student.setId(rs.getInt("id"));
+                student.setName(rs.getString("name"));
+                student.setSurname(rs.getString("surname"));
                 student.setLogin(rs.getString("login"));
                 student.setHash(rs.getString("password"));
                 student.setEmail(rs.getString("email"));
                 student.setRole(User.Role.valueOf(rs.getString("role")));
+                student.setPayCardId(rs.getString("pay_card_id"));
                 result.add(student);
             }
         } catch (SQLException e) {
@@ -89,11 +93,14 @@ public class UserSqlDao extends AbstractSqlDao<User, Long> {
     @Override
     protected void prepareStatementForUpdate(PreparedStatement statement, User object) throws DaoException {
         try {
-            statement.setString(1, object.getLogin());
-            statement.setString(2, object.getHash());
-            statement.setString(3, object.getEmail());
-            statement.setString(4, object.getRole().toString());
-            statement.setInt(5, object.getId());
+            statement.setString(1, object.getName());
+            statement.setString(2, object.getSurname());
+            statement.setString(3, object.getLogin());
+            statement.setString(4, object.getHash());
+            statement.setString(5, object.getEmail());
+            statement.setString(6, object.getRole().toString());
+            statement.setString(7, object.getPayCardId());
+            statement.setInt(8, object.getId());
         } catch (SQLException e) {
             throw new DaoException("Exception",e);
         }
@@ -102,20 +109,23 @@ public class UserSqlDao extends AbstractSqlDao<User, Long> {
     @Override
     protected void prepareStatementForInsert(PreparedStatement statement, User object) throws DaoException {
         try {
-            statement.setString(1, object.getLogin());
-            statement.setString(2, object.getHash());
-            statement.setString(3, object.getEmail());
-            statement.setString(4, object.getRole().toString());
+            statement.setString(1, object.getName());
+            statement.setString(2, object.getSurname());
+            statement.setString(3, object.getLogin());
+            statement.setString(4, object.getHash());
+            statement.setString(5, object.getEmail());
+            statement.setString(6, object.getRole().toString());
+            statement.setString(7, object.getPayCardId());
         } catch (SQLException e) {
         throw new DaoException("Exception",e);
         }
     }
 
-    public User getByLogin(String login) throws DaoException {
+    public User getByName(String login) throws DaoException {
         List<User> list;
         try (Connection connection = pool.getConnection()) {
 
-            String sql = dbBundle.getString("USERS.WITH_LOGIN");
+            String sql = dbBundle.getString("USER.WITH_LOGIN");
             PreparedStatement statement = connection.prepareStatement(sql);
             statement.setString(1, login);
             ResultSet rs = statement.executeQuery();

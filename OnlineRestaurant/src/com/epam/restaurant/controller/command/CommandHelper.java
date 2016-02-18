@@ -1,27 +1,27 @@
 package com.epam.restaurant.controller.command;
 
-import com.epam.restaurant.controller.command.impl.DefaultCommand;
-import com.epam.restaurant.controller.command.impl.DishesCommand;
-import com.epam.restaurant.controller.command.impl.LoginCommand;
-import com.epam.restaurant.controller.command.impl.LogoutCommand;
+import com.epam.restaurant.controller.command.impl.*;
 
 import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Created by Вероника on 04.02.2016.
+ * Command pattern realization for all commands.
  */
-public class CommandHelper {
+public final class CommandHelper {
     private static final CommandHelper instance = new CommandHelper();
 
-    private Map<CommandName,Command> commandMap = new HashMap<>();
+    private final Map<CommandName,Command> commandMap = new HashMap<>();
 
     public CommandHelper(){
         commandMap.put(CommandName.DEFAULT_COMMAND,new DefaultCommand());
-
-        //todo классы не реализованы
         commandMap.put(CommandName.LOGIN_COMMAND, new LoginCommand());
         commandMap.put(CommandName.LOGOUT_COMMAND,new LogoutCommand());
+        commandMap.put(CommandName.REGISTER_COMMAND,new RegisterCommand());
+        commandMap.put(CommandName.BAN_COMMAND,new BanCommand());
+        commandMap.put(CommandName.UNBAN_COMMAND,new UnbanCommand());
+
+        //todo классы не реализованы
         commandMap.put(CommandName.DISHES_COMMAND, new DishesCommand());
         //todo остальные комманды
     }

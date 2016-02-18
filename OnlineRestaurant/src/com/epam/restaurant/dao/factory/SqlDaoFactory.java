@@ -3,18 +3,12 @@ package com.epam.restaurant.dao.factory;
 import com.epam.restaurant.dao.GenericDao;
 import com.epam.restaurant.dao.impl.CategorySqlDao;
 import com.epam.restaurant.dao.impl.UserSqlDao;
-import com.epam.restaurant.entity.Category;
-import com.epam.restaurant.entity.User;
 import org.apache.log4j.Logger;
 
-import java.util.HashMap;
-import java.util.Map;
-
 /**
- * Created by Вероника on 09.02.2016.
+ * Created by Вероника on 22.01.2016.
  */
-public class SqlDaoFactory implements DaoFactory {
-
+public class SqlDaoFactory{
     private static final Logger LOGGER = Logger.getLogger(SqlDaoFactory.class);
 
     private final static SqlDaoFactory instance = new SqlDaoFactory();
@@ -23,33 +17,23 @@ public class SqlDaoFactory implements DaoFactory {
         return  instance;
     }
 
-    private Map<Class, DaoCreator> creators;
-
-    /**
-     * Constructor (fill map)
-     */
-    private SqlDaoFactory() {
-
-        creators = new HashMap();
-
-        creators.put(User.class, new DaoCreator() {
-            public GenericDao create(DaoFactory factory) {
-                return new UserSqlDao(factory);
-            }
-        });
-        creators.put(Category.class, new DaoCreator() {
-            public GenericDao create(DaoFactory factory) {
-                return new CategorySqlDao(factory);
-            }
-        });
-    }
-
-    @Override
-    public GenericDao getDao(Class daoClass) throws IllegalArgumentException {
-        DaoCreator creator = creators.get(daoClass);
-        if (creator == null) {
-            throw new IllegalArgumentException("Dao object for " + daoClass + " not found.");
+    public GenericDao getDao(DaoType type){// throws DaoException
+        switch (type){
+            case DISH:
+                //return DishSqlDao.getInstance();
+                break;
+            case USER:
+                return UserSqlDao.getInstance();
+            case CATEGORY:
+                return CategorySqlDao.getInstance();
+            case BILL:
+                break;
         }
-        return creator.create(this);
+        return null;
     }
+
+    public enum DaoType{
+        DISH, USER, CATEGORY, BILL
+    }
+
 }

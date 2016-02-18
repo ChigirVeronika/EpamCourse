@@ -1,18 +1,17 @@
 package com.epam.restaurant.controller.command.impl;
 
 import com.epam.restaurant.controller.name.JspPageName;
-import com.epam.restaurant.controller.name.RequestParameterName;
 import com.epam.restaurant.controller.command.exception.CommandException;
 import com.epam.restaurant.controller.command.Command;
-import com.epam.restaurant.service.DishService;
 import org.apache.log4j.Logger;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.List;
+
+import static com.epam.restaurant.controller.name.RequestParameterName.*;
 
 /**
- * Created by Вероника on 04.02.2016.
+ * Control menu output.
  */
 public class DishesCommand implements Command {
 

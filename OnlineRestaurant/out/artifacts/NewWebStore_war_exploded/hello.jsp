@@ -29,7 +29,6 @@
 
             <div>
                 <h1 class="cover-heading"><fmt:message key="hello.welcome" bundle="${lang}"/><c:out value="${user.login}"/></h1>
-
             </div>
 
             <div class="trendfoot">

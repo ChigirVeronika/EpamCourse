@@ -21,6 +21,10 @@
             <li><a href="/main?command=dishes_command"><fmt:message key="header.catalog" bundle="${lang}"/></a></li>
 
 
+            <c:if test="${user != null && user.role == 'ADMIN'}">
+                <li><a href="../users.jsp"><fmt:message key="header.users" bundle="${lang}"/></a></li>
+            </c:if>
+
             <c:if test="${user == null}">
                 <li><a href="../login.jsp"><fmt:message key="header.login" bundle="${lang}"/></a></li>
             </c:if>

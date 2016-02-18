@@ -1,31 +1,35 @@
 package com.epam.restaurant.service;
 
+import com.epam.restaurant.dao.GenericDao;
 import com.epam.restaurant.dao.exception.DaoException;
 import com.epam.restaurant.dao.factory.SqlDaoFactory;
-import com.epam.restaurant.dao.impl.UserSqlDao;
 import com.epam.restaurant.entity.User;
 import com.epam.restaurant.service.exception.ServiceException;
 import com.epam.restaurant.util.HashUtil;
 import org.apache.log4j.Logger;
 
-import com.epam.restaurant.dao.factory.DaoFactory;
-
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
-import java.sql.Connection;
-import java.sql.SQLException;
 
 /**
- * Created by Вероника on 05.02.2016.
+ * Perform service operations with user objects.
  */
 public class UserService {
-    private static DaoFactory factory = SqlDaoFactory.getInstance();
 
-    public User get(String login) throws ServiceException {
-        UserSqlDao userDao = (UserSqlDao) factory.getDao(User.class);
-        User user = null;
+    private static UserService instance = new UserService();
+
+    private UserService(){}
+
+    public static UserService getInstance(){
+        return instance;
+    }
+
+    private static GenericDao userDao = SqlDaoFactory.getInstance().getDao(SqlDaoFactory.DaoType.USER);
+
+    public User get(String login) throws ServiceException{
+        User user; //TODO ? он же налл, вот таким и должен остаться - это для сервиса
         try {
-            user = userDao.getByLogin(login);
+            user = (User) userDao.getByName(login);
         } catch (DaoException e) {
             throw new ServiceException("Exception",e);
         }
@@ -49,25 +53,23 @@ public class UserService {
         return null;
     }
 
-    public User create(String login, String password, String mail) throws ServiceException {
-        UserSqlDao userDao = (UserSqlDao) factory.getDao(User.class);
-        User user = null;
+    public User create(String name, String surname, String email, String payCard, String login, String password) throws ServiceException {
+        User user;
         try {
-            user = new User(login, HashUtil.createHash(password), mail);
-            return userDao.persist(user);
+            user = new User(name, surname, email, payCard, login, HashUtil.createHash(password));
+            return  (User) userDao.persist(user);
         }catch (DaoException e){
             throw new ServiceException("Exception",e);
         } catch (NoSuchAlgorithmException e) {
-            Logger.getLogger(getClass()).error(e.getMessage());
             throw new ServiceException("Exception",e);
         } catch (InvalidKeySpecException e) {
             Logger.getLogger(getClass()).error(e.getMessage());
             throw new ServiceException("Exception",e);
         }
+        //return user;
     }
 
     public void update(User user) throws ServiceException {
-        UserSqlDao userDao = (UserSqlDao) factory.getDao(User.class);
         try {
             userDao.update(user);
         } catch (DaoException e) {

@@ -13,7 +13,7 @@ public interface GenericDao<T , PK extends Long> {//todo id
 
     T create() throws DaoException;
 
-    T persist(T object)  throws DaoException;//returns new copy
+    T persist(T object) throws DaoException;//returns new copy
 
     T getByPK(PK key) throws DaoException;
 
@@ -22,4 +22,6 @@ public interface GenericDao<T , PK extends Long> {//todo id
     void delete(T object) throws DaoException;
 
     List<T> getAll() throws DaoException;
+
+    T getByName(String name) throws DaoException;
 }

@@ -5,7 +5,7 @@ import java.security.SecureRandom;
 import java.security.spec.InvalidKeySpecException;
 
 /**
- * Created by Вероника on 09.02.2016.
+ * .
  */
 public class HashUtil {
     public static String createHash(String password)

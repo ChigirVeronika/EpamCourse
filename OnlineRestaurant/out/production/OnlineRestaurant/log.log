@@ -1,26 +1,58 @@
-
-2016-02-08 15:31:43 INFO  ConnectionPool:111 - Pool has been initialized
-2016-02-08 15:31:43 INFO  UserSqlDao:58 - list created
-2016-02-08 15:31:43 INFO  UserSqlDao:62 - preparedStatement
-2016-02-08 15:31:43 INFO  UserSqlDao:72 - dish list in dao created
-2016-02-08 15:31:43 INFO  DishService:25 - parsed all dishes
-2016-02-08 15:31:43 INFO  DishesCommand:26 - dishes command executed
-2016-02-08 15:31:43 INFO  MainController:53 - page: dishes.jsp
-2016-02-08 15:37:53 INFO  ConnectionPool:111 - Pool has been initialized
-2016-02-08 15:37:53 INFO  UserSqlDao:58 - list created
-2016-02-08 15:37:53 INFO  UserSqlDao:62 - preparedStatement
-2016-02-08 15:37:53 INFO  UserSqlDao:72 - dish list in dao created
-2016-02-08 15:37:53 INFO  DishService:25 - parsed all dishes
-2016-02-08 15:37:53 INFO  DishesCommand:26 - dishes command executed
-2016-02-08 15:37:53 INFO  MainController:53 - page: dishes.jsp
-2016-02-09 03:39:57 INFO  ConnectionPoolImpl:117 - Pool has been initialized
-2016-02-09 03:39:58 INFO  MainController:52 - page: hello.jsp
-2016-02-09 03:46:26 INFO  ConnectionPoolImpl:117 - Pool has been initialized
-2016-02-09 03:46:26 ERROR MainController:57 - java.util.MissingResourceException: Can't find bundle for base name i18n.webstore, locale ru_RU
-2016-02-09 03:46:37 INFO  MainController:52 - page: hello.jsp
-2016-02-09 03:47:15 INFO  MainController:52 - page: logout.jsp
-2016-02-09 03:55:05 INFO  MainController:52 - page: logout.jsp
-2016-02-09 03:57:22 INFO  ConnectionPoolImpl:117 - Pool has been initialized
-2016-02-09 03:57:22 INFO  MainController:52 - page: hello.jsp
-2016-02-09 03:57:36 INFO  MainController:52 - page: dishes.jsp
-2016-02-09 03:57:42 INFO  MainController:52 - page: index.jsp
+2016-02-17 00:49:35 INFO  ConnectionPoolImpl:117 - Pool has been initialized
+2016-02-17 00:49:35 ERROR MainController:54 - com.epam.restaurant.controller.command.exception.CommandException: Registration failed.
+2016-02-17 00:49:59 ERROR MainController:54 - com.epam.restaurant.controller.command.exception.CommandException: Registration failed.
+2016-02-17 00:54:31 INFO  MainController:45 - register_command
+2016-02-17 00:54:31 INFO  MainController:46 - command
+2016-02-17 00:54:31 INFO  MainController:50 - com.epam.restaurant.controller.command.impl.RegisterCommand@55c758
+2016-02-17 00:54:32 INFO  ConnectionPoolImpl:117 - Pool has been initialized
+2016-02-17 00:54:32 ERROR MainController:56 - com.epam.restaurant.controller.command.exception.CommandException: Registration failed.
+2016-02-17 01:00:08 INFO  MainController:45 - register_command
+2016-02-17 01:00:08 INFO  MainController:46 - command
+2016-02-17 01:00:08 INFO  MainController:50 - com.epam.restaurant.controller.command.impl.RegisterCommand@18eda05
+2016-02-17 01:00:09 INFO  ConnectionPoolImpl:117 - Pool has been initialized
+2016-02-17 01:00:10 ERROR MainController:56 - com.epam.restaurant.controller.command.exception.CommandException: Registration failed.
+2016-02-17 01:01:58 INFO  MainController:45 - register_command
+2016-02-17 01:01:58 INFO  MainController:46 - command
+2016-02-17 01:01:59 INFO  MainController:50 - com.epam.restaurant.controller.command.impl.RegisterCommand@17fa585
+2016-02-17 01:02:45 INFO  ConnectionPoolImpl:117 - Pool has been initialized
+2016-02-17 01:08:46 ERROR MainController:56 - com.epam.restaurant.controller.command.exception.CommandException: Registration failed.
+2016-02-17 01:10:43 INFO  MainController:45 - register_command
+2016-02-17 01:10:43 INFO  MainController:46 - command
+2016-02-17 01:10:43 INFO  MainController:50 - com.epam.restaurant.controller.command.impl.RegisterCommand@d4511c
+2016-02-17 01:10:45 INFO  ConnectionPoolImpl:117 - Pool has been initialized
+2016-02-17 01:10:45 ERROR MainController:59 - java.lang.NullPointerException
+2016-02-17 01:14:10 INFO  MainController:45 - register_command
+2016-02-17 01:14:10 INFO  MainController:46 - command
+2016-02-17 01:14:10 INFO  MainController:50 - com.epam.restaurant.controller.command.impl.RegisterCommand@d2b2f8
+2016-02-17 01:14:11 INFO  ConnectionPoolImpl:117 - Pool has been initialized
+2016-02-17 01:14:11 ERROR MainController:56 - com.epam.restaurant.controller.command.exception.CommandException: Registration failed.
+2016-02-17 01:16:58 INFO  MainController:45 - register_command
+2016-02-17 01:16:58 INFO  MainController:46 - command
+2016-02-17 01:16:58 INFO  MainController:50 - com.epam.restaurant.controller.command.impl.RegisterCommand@595410
+2016-02-17 01:16:59 INFO  ConnectionPoolImpl:117 - Pool has been initialized
+2016-02-17 01:16:59 ERROR MainController:56 - com.epam.restaurant.controller.command.exception.CommandException: Registration failed.
+2016-02-17 01:19:05 INFO  MainController:45 - register_command
+2016-02-17 01:19:06 INFO  MainController:46 - command
+2016-02-17 01:19:06 INFO  MainController:50 - com.epam.restaurant.controller.command.impl.RegisterCommand@18ec93a
+2016-02-17 01:19:14 INFO  ConnectionPoolImpl:117 - Pool has been initialized
+2016-02-17 01:20:02 ERROR MainController:56 - com.epam.restaurant.controller.command.exception.CommandException: Registration failed.
+2016-02-17 02:36:15 INFO  MainController:45 - register_command
+2016-02-17 02:36:16 INFO  MainController:46 - command
+2016-02-17 02:36:37 INFO  MainController:50 - com.epam.restaurant.controller.command.impl.RegisterCommand@1fed148
+2016-02-17 02:36:48 INFO  ConnectionPoolImpl:117 - Pool has been initialized
+2016-02-17 02:36:49 ERROR MainController:56 - com.epam.restaurant.controller.command.exception.CommandException: Registration failed.
+2016-02-18 11:47:31 INFO  MainController:45 - register_command
+2016-02-18 11:47:31 INFO  MainController:46 - command
+2016-02-18 11:47:33 INFO  ConnectionPoolImpl:117 - Pool has been initialized
+2016-02-18 11:47:33 INFO  MainController:50 - com.epam.restaurant.controller.command.impl.RegisterCommand@1c89505
+2016-02-18 11:47:33 INFO  RegisterCommand:41 - User{id=18, name='John', surname='Smith', email='john@gmail.com', payCard='4', login='john', hash='12345', role=USER}
+2016-02-18 11:47:33 INFO  RegisterCommand:43 - login.jsp
+2016-02-18 11:47:33 INFO  MainController:54 - page: login.jsp
+2016-02-18 11:47:49 INFO  MainController:45 - login_command
+2016-02-18 11:47:49 INFO  MainController:46 - command
+2016-02-18 11:47:49 INFO  MainController:50 - com.epam.restaurant.controller.command.impl.LoginCommand@1b5fca1
+2016-02-18 11:47:49 INFO  MainController:54 - page: hello.jsp
+2016-02-18 11:47:56 INFO  MainController:45 - logout_command
+2016-02-18 11:47:56 INFO  MainController:46 - command
+2016-02-18 11:47:56 INFO  MainController:50 - com.epam.restaurant.controller.command.impl.LogoutCommand@a430cb
+2016-02-18 11:47:56 INFO  MainController:54 - page: index.jsp

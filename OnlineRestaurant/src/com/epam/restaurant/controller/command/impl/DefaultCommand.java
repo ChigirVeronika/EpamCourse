@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Created by Вероника on 04.02.2016.
+ * Control unhandled situations.
  */
 public class DefaultCommand implements Command {
 
