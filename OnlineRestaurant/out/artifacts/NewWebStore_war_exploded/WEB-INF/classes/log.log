@@ -1,43 +1,26 @@
-2016-02-17 00:49:35 INFO  ConnectionPoolImpl:117 - Pool has been initialized
-2016-02-17 00:49:35 ERROR MainController:54 - com.epam.restaurant.controller.command.exception.CommandException: Registration failed.
-2016-02-17 00:49:59 ERROR MainController:54 - com.epam.restaurant.controller.command.exception.CommandException: Registration failed.
-2016-02-17 00:54:31 INFO  MainController:45 - register_command
-2016-02-17 00:54:31 INFO  MainController:46 - command
-2016-02-17 00:54:31 INFO  MainController:50 - com.epam.restaurant.controller.command.impl.RegisterCommand@55c758
-2016-02-17 00:54:32 INFO  ConnectionPoolImpl:117 - Pool has been initialized
-2016-02-17 00:54:32 ERROR MainController:56 - com.epam.restaurant.controller.command.exception.CommandException: Registration failed.
-2016-02-17 01:00:08 INFO  MainController:45 - register_command
-2016-02-17 01:00:08 INFO  MainController:46 - command
-2016-02-17 01:00:08 INFO  MainController:50 - com.epam.restaurant.controller.command.impl.RegisterCommand@18eda05
-2016-02-17 01:00:09 INFO  ConnectionPoolImpl:117 - Pool has been initialized
-2016-02-17 01:00:10 ERROR MainController:56 - com.epam.restaurant.controller.command.exception.CommandException: Registration failed.
-2016-02-17 01:01:58 INFO  MainController:45 - register_command
-2016-02-17 01:01:58 INFO  MainController:46 - command
-2016-02-17 01:01:59 INFO  MainController:50 - com.epam.restaurant.controller.command.impl.RegisterCommand@17fa585
-2016-02-17 01:02:45 INFO  ConnectionPoolImpl:117 - Pool has been initialized
-2016-02-17 01:08:46 ERROR MainController:56 - com.epam.restaurant.controller.command.exception.CommandException: Registration failed.
-2016-02-17 01:10:43 INFO  MainController:45 - register_command
-2016-02-17 01:10:43 INFO  MainController:46 - command
-2016-02-17 01:10:43 INFO  MainController:50 - com.epam.restaurant.controller.command.impl.RegisterCommand@d4511c
-2016-02-17 01:10:45 INFO  ConnectionPoolImpl:117 - Pool has been initialized
-2016-02-17 01:10:45 ERROR MainController:59 - java.lang.NullPointerException
-2016-02-17 01:14:10 INFO  MainController:45 - register_command
-2016-02-17 01:14:10 INFO  MainController:46 - command
-2016-02-17 01:14:10 INFO  MainController:50 - com.epam.restaurant.controller.command.impl.RegisterCommand@d2b2f8
-2016-02-17 01:14:11 INFO  ConnectionPoolImpl:117 - Pool has been initialized
-2016-02-17 01:14:11 ERROR MainController:56 - com.epam.restaurant.controller.command.exception.CommandException: Registration failed.
-2016-02-17 01:16:58 INFO  MainController:45 - register_command
-2016-02-17 01:16:58 INFO  MainController:46 - command
-2016-02-17 01:16:58 INFO  MainController:50 - com.epam.restaurant.controller.command.impl.RegisterCommand@595410
-2016-02-17 01:16:59 INFO  ConnectionPoolImpl:117 - Pool has been initialized
-2016-02-17 01:16:59 ERROR MainController:56 - com.epam.restaurant.controller.command.exception.CommandException: Registration failed.
-2016-02-17 01:19:05 INFO  MainController:45 - register_command
-2016-02-17 01:19:06 INFO  MainController:46 - command
-2016-02-17 01:19:06 INFO  MainController:50 - com.epam.restaurant.controller.command.impl.RegisterCommand@18ec93a
-2016-02-17 01:19:14 INFO  ConnectionPoolImpl:117 - Pool has been initialized
-2016-02-17 01:20:02 ERROR MainController:56 - com.epam.restaurant.controller.command.exception.CommandException: Registration failed.
-2016-02-17 02:36:15 INFO  MainController:45 - register_command
-2016-02-17 02:36:16 INFO  MainController:46 - command
-2016-02-17 02:36:37 INFO  MainController:50 - com.epam.restaurant.controller.command.impl.RegisterCommand@1fed148
-2016-02-17 02:36:48 INFO  ConnectionPoolImpl:117 - Pool has been initialized
-2016-02-17 02:36:49 ERROR MainController:56 - com.epam.restaurant.controller.command.exception.CommandException: Registration failed.
+
+2016-02-18 11:47:56 INFO  MainController:46 - command
+2016-02-18 11:47:56 INFO  MainController:50 - com.epam.restaurant.controller.command.impl.LogoutCommand@a430cb
+2016-02-18 11:47:56 INFO  MainController:54 - page: index.jsp
+2016-02-19 00:33:41 INFO  MainController:43 - dishes_command
+2016-02-19 00:33:41 INFO  MainController:44 - command
+2016-02-19 00:33:45 INFO  ConnectionPoolImpl:117 - Pool has been initialized
+2016-02-19 00:33:45 INFO  MainController:48 - com.epam.restaurant.controller.command.impl.DishesCommand@226b26
+2016-02-19 00:33:45 INFO  MainController:52 -  page: dishes.jsp
+2016-02-19 00:34:13 INFO  MainController:43 - login_command
+2016-02-19 00:34:13 INFO  MainController:44 - command
+2016-02-19 00:34:13 INFO  MainController:48 - com.epam.restaurant.controller.command.impl.LoginCommand@1c85999
+2016-02-19 00:34:13 INFO  MainController:52 -  page: hello.jsp
+2016-02-19 00:34:32 INFO  MainController:43 - dishes_command
+2016-02-19 00:34:32 INFO  MainController:44 - command
+2016-02-19 00:34:32 INFO  MainController:48 - com.epam.restaurant.controller.command.impl.DishesCommand@226b26
+2016-02-19 00:34:32 INFO  MainController:52 -  page: dishes.jsp
+2016-02-19 00:34:39 INFO  MainController:43 - dishes_command
+2016-02-19 00:34:39 INFO  MainController:44 - command
+2016-02-19 00:34:39 INFO  MainController:48 - com.epam.restaurant.controller.command.impl.DishesCommand@226b26
+2016-02-19 00:34:39 INFO  MainController:52 -  page: dishes.jsp
+2016-02-19 00:42:29 INFO  MainController:43 - dishes_command
+2016-02-19 00:42:29 INFO  MainController:44 - command
+2016-02-19 00:42:31 INFO  ConnectionPoolImpl:117 - Pool has been initialized
+2016-02-19 00:42:31 INFO  MainController:48 - com.epam.restaurant.controller.command.impl.DishesCommand@1263eea
+2016-02-19 00:42:31 INFO  MainController:52 -  page: dishes.jsp

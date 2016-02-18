@@ -19,6 +19,7 @@ public class ShowCategories extends TagSupport {
         User user = (User) pageContext.getSession().getAttribute("user");
         JspWriter out = pageContext.getOut();
         if(categoryList!=null){
+            System.out.println("22222222USER IS ADMIN"+categoryList.toString());
             try{
                 for (Category c:categoryList) {
                     out.println("<div class = \"row\">");
@@ -37,6 +38,7 @@ public class ShowCategories extends TagSupport {
 
                 // is user is ADMIN - print buttons to create and edit categories
                 if (user != null && user.getRole() == User.Role.ADMIN) {
+                    System.out.println("22222222USER IS ADMIN");
                     out.print("<div class=\"row\"><div class=\"col-sm-4\">");
                     out.print("<button type=\"button\" class=\"btn btn-default\" data-toggle=\"modal\" data-target=\"#add\">" +
                             "<span class = \"glyphicon glyphicon-plus\"/> category" +

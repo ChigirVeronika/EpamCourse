@@ -141,11 +141,12 @@ public abstract class AbstractSqlDao<T,PK extends Long> implements GenericDao<T,
     public List<T> getAll() throws DaoException {
         List<T> list;
         String sql = getSelectQuery();
+        System.out.println(sql);
         try (Connection connection = pool.getConnection()) {
             PreparedStatement statement = connection.prepareStatement(sql);
             ResultSet rs = statement.executeQuery();
-
             list = parseResultSet(rs);
+            System.out.println(list.toString());
         }catch (ConnectionPoolException |SQLException e) {
             throw new DaoException("Exception",e);
         }

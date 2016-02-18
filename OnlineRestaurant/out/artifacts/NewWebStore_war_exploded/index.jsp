@@ -26,7 +26,6 @@
                         <p class="lead"><fmt:message key="lorem.short" bundle="${lang}"/></p>
                         <form action="/main" method="POST">
                             <input type="hidden" name="command" value="dishes_command"/>
-                            <input type="hidden" name="filename" value="myfile"/>
                             <input type="submit" value="<fmt:message key="index.start" bundle="${lang}"/>" class="btn btn-default btn-block"/>
                         </form>
                     </div>
