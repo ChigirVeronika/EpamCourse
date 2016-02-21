@@ -14,8 +14,8 @@
     </head>
 
     <body>
-        <div class="restaurant-wrapper">
-            <div class="restaurant-wrapper-inner">
+        <div class="site-wrapper">
+            <div class="site-wrapper-inner">
                 <div class="cover-container">
                     <div>
                         <jsp:include page="layout/header.jsp"/>
@@ -23,11 +23,8 @@
 
                     <div>
                         <h1 class="cover-heading"><fmt:message key="index.welcome" bundle="${lang}"/></h1>
-                        <p class="lead"><fmt:message key="lorem.short" bundle="${lang}"/></p>
-                        <form action="/main" method="POST">
-                            <input type="hidden" name="command" value="dishes_command"/>
-                            <input type="submit" value="<fmt:message key="index.start" bundle="${lang}"/>" class="btn btn-default btn-block"/>
-                        </form>
+                        <p class="lead"><fmt:message key="common.take" bundle="${lang}"/></p>
+                        <p class="lead"><a href="/main?action=catalog" class="btn btn-lg btn-default"><fmt:message key="index.start" bundle="${lang}"/></a></p>
                     </div>
 
                     <div class="trendfoot">

@@ -24,3 +24,212 @@
 2016-02-19 00:42:31 INFO  ConnectionPoolImpl:117 - Pool has been initialized
 2016-02-19 00:42:31 INFO  MainController:48 - com.epam.restaurant.controller.command.impl.DishesCommand@1263eea
 2016-02-19 00:42:31 INFO  MainController:52 -  page: dishes.jsp
+2016-02-19 00:54:29 INFO  MainController:43 - dishes_command
+2016-02-19 00:54:29 INFO  MainController:44 - command
+2016-02-19 00:54:32 INFO  ConnectionPoolImpl:117 - Pool has been initialized
+2016-02-19 00:54:32 INFO  MainController:48 - com.epam.restaurant.controller.command.impl.DishesCommand@464d92
+2016-02-19 00:54:32 INFO  MainController:52 -  page: dishes.jsp
+2016-02-19 01:26:50 INFO  MainController:43 - dishes_command
+2016-02-19 01:26:50 INFO  MainController:44 - command
+2016-02-19 01:26:52 INFO  ConnectionPoolImpl:117 - Pool has been initialized
+2016-02-19 01:26:52 INFO  MainController:48 - com.epam.restaurant.controller.command.impl.DishesCommand@a5311
+2016-02-19 01:26:52 INFO  MainController:52 -  page: dishes.jsp
+2016-02-19 01:27:05 INFO  MainController:43 - 
+2016-02-19 01:27:05 INFO  MainController:44 - command
+2016-02-19 01:27:09 INFO  MainController:43 - dishes_command
+2016-02-19 01:27:09 INFO  MainController:44 - command
+2016-02-19 01:27:09 INFO  MainController:48 - com.epam.restaurant.controller.command.impl.DishesCommand@a5311
+2016-02-19 01:27:09 INFO  MainController:52 -  page: dishes.jsp
+2016-02-19 01:27:30 INFO  MainController:43 - login_command
+2016-02-19 01:27:30 INFO  MainController:44 - command
+2016-02-19 01:27:30 INFO  MainController:48 - com.epam.restaurant.controller.command.impl.LoginCommand@1fcbfc6
+2016-02-19 01:27:30 INFO  MainController:52 -  page: login.jsp
+2016-02-19 01:27:47 INFO  MainController:43 - register_command
+2016-02-19 01:27:47 INFO  MainController:44 - command
+2016-02-19 01:27:47 INFO  MainController:48 - com.epam.restaurant.controller.command.impl.RegisterCommand@d06c41
+2016-02-19 01:27:48 INFO  MainController:52 -  page: login.jsp
+2016-02-19 01:27:53 INFO  MainController:43 - login_command
+2016-02-19 01:27:53 INFO  MainController:44 - command
+2016-02-19 01:27:53 INFO  MainController:48 - com.epam.restaurant.controller.command.impl.LoginCommand@1fcbfc6
+2016-02-19 01:30:41 INFO  MainController:43 - login_command
+2016-02-19 01:30:41 INFO  MainController:44 - command
+2016-02-19 01:30:41 INFO  MainController:48 - com.epam.restaurant.controller.command.impl.LoginCommand@1fcbfc6
+2016-02-19 01:30:56 INFO  MainController:43 - login_command
+2016-02-19 01:30:56 INFO  MainController:44 - command
+2016-02-19 01:30:56 INFO  MainController:48 - com.epam.restaurant.controller.command.impl.LoginCommand@1fcbfc6
+2016-02-19 11:23:13 ERROR MainController:54 - com.epam.restaurant.controller.command.exception.CommandException: Exception
+2016-02-19 11:23:13 ERROR MainController:54 - com.epam.restaurant.controller.command.exception.CommandException: Exception
+2016-02-19 11:23:13 ERROR MainController:54 - com.epam.restaurant.controller.command.exception.CommandException: Exception
+2016-02-19 11:23:54 INFO  MainController:43 - dishes_command
+2016-02-19 11:23:54 INFO  MainController:44 - command
+2016-02-19 11:23:54 INFO  ConnectionPoolImpl:65 - Pool has been initialized
+2016-02-19 11:23:54 INFO  MainController:48 - com.epam.restaurant.controller.command.impl.DishesCommand@1eb9205
+2016-02-19 11:24:12 INFO  MainController:43 - login_command
+2016-02-19 11:24:12 INFO  MainController:44 - command
+2016-02-19 11:24:12 INFO  MainController:48 - com.epam.restaurant.controller.command.impl.LoginCommand@73db12
+2016-02-19 11:24:12 ERROR MainController:54 - com.epam.restaurant.controller.command.exception.CommandException: Exception
+2016-02-19 11:26:08 INFO  MainController:43 - login_command
+2016-02-19 11:26:08 INFO  MainController:44 - command
+2016-02-19 11:26:08 INFO  ConnectionPoolImpl:65 - Pool has been initialized
+2016-02-19 11:26:08 INFO  MainController:48 - com.epam.restaurant.controller.command.impl.LoginCommand@1441013
+2016-02-19 11:26:08 ERROR MainController:54 - com.epam.restaurant.controller.command.exception.CommandException: Exception
+2016-02-19 11:26:27 INFO  MainController:43 - login_command
+2016-02-19 11:26:27 INFO  MainController:44 - command
+2016-02-19 11:26:27 INFO  MainController:48 - com.epam.restaurant.controller.command.impl.LoginCommand@1441013
+2016-02-19 11:26:27 ERROR MainController:54 - com.epam.restaurant.controller.command.exception.CommandException: Exception
+2016-02-19 11:28:18 INFO  MainController:43 - login_command
+2016-02-19 11:28:18 INFO  MainController:44 - command
+2016-02-19 11:28:19 INFO  ConnectionPoolImpl:63 - Pool has been initialized
+2016-02-19 11:28:19 INFO  MainController:48 - com.epam.restaurant.controller.command.impl.LoginCommand@1300678
+2016-02-19 11:28:19 INFO  MainController:52 -  page: hello.jsp
+2016-02-19 11:28:30 INFO  MainController:43 - dishes_command
+2016-02-19 11:28:30 INFO  MainController:44 - command
+2016-02-19 11:28:30 INFO  MainController:48 - com.epam.restaurant.controller.command.impl.DishesCommand@1885d16
+2016-02-19 11:28:30 INFO  MainController:52 -  page: dishes.jsp
+2016-02-19 11:28:40 INFO  MainController:43 - logout_command
+2016-02-19 11:28:40 INFO  MainController:44 - command
+2016-02-19 11:28:40 INFO  MainController:48 - com.epam.restaurant.controller.command.impl.LogoutCommand@136c4b3
+2016-02-19 11:28:40 INFO  MainController:52 -  page: index.jsp
+2016-02-19 11:28:42 INFO  MainController:43 - dishes_command
+2016-02-19 11:28:42 INFO  MainController:44 - command
+2016-02-19 11:28:42 INFO  MainController:48 - com.epam.restaurant.controller.command.impl.DishesCommand@1885d16
+2016-02-19 11:28:42 INFO  MainController:52 -  page: dishes.jsp
+2016-02-21 14:11:17 INFO  MainController:43 - dishes_command
+2016-02-21 14:11:17 INFO  MainController:44 - command
+2016-02-21 14:11:20 INFO  ConnectionPoolImpl:63 - Pool has been initialized
+2016-02-21 14:11:20 INFO  MainController:48 - com.epam.restaurant.controller.command.impl.DishesCommand@12965c6
+2016-02-21 14:11:20 INFO  MainController:52 -  page: dishes.jsp
+2016-02-21 14:12:24 INFO  MainController:43 - category_command
+2016-02-21 14:12:24 INFO  MainController:44 - command
+2016-02-21 14:12:31 INFO  MainController:43 - category_command
+2016-02-21 14:12:31 INFO  MainController:44 - command
+2016-02-21 14:12:36 INFO  MainController:43 - category_command
+2016-02-21 14:12:36 INFO  MainController:44 - command
+2016-02-21 14:13:12 INFO  MainController:43 - 
+2016-02-21 14:13:12 INFO  MainController:44 - command
+2016-02-21 14:13:17 INFO  MainController:43 - 
+2016-02-21 14:13:17 INFO  MainController:44 - command
+2016-02-21 14:13:27 INFO  MainController:43 - dishes_command
+2016-02-21 14:13:27 INFO  MainController:44 - command
+2016-02-21 14:13:27 INFO  MainController:48 - com.epam.restaurant.controller.command.impl.DishesCommand@12965c6
+2016-02-21 14:13:27 INFO  MainController:52 -  page: dishes.jsp
+2016-02-21 14:13:30 INFO  MainController:43 - 
+2016-02-21 14:13:30 INFO  MainController:44 - command
+2016-02-21 14:13:34 INFO  MainController:43 - 
+2016-02-21 14:13:34 INFO  MainController:44 - command
+2016-02-21 14:13:37 INFO  MainController:43 - 
+2016-02-21 14:13:37 INFO  MainController:44 - command
+2016-02-21 14:13:55 INFO  MainController:43 - login_command
+2016-02-21 14:13:55 INFO  MainController:44 - command
+2016-02-21 14:13:55 INFO  MainController:48 - com.epam.restaurant.controller.command.impl.LoginCommand@13f5cb0
+2016-02-21 14:13:55 INFO  MainController:52 -  page: hello.jsp
+2016-02-21 14:14:06 INFO  MainController:43 - 
+2016-02-21 14:14:06 INFO  MainController:44 - command
+2016-02-21 14:14:12 INFO  MainController:43 - 
+2016-02-21 14:14:12 INFO  MainController:44 - command
+2016-02-21 14:14:27 INFO  MainController:43 - dishes_command
+2016-02-21 14:14:27 INFO  MainController:44 - command
+2016-02-21 14:14:27 INFO  MainController:48 - com.epam.restaurant.controller.command.impl.DishesCommand@12965c6
+2016-02-21 14:14:27 INFO  MainController:52 -  page: dishes.jsp
+2016-02-21 14:23:04 INFO  MainController:43 - dishes_command
+2016-02-21 14:23:04 INFO  MainController:44 - command
+2016-02-21 14:23:06 INFO  ConnectionPoolImpl:63 - Pool has been initialized
+2016-02-21 14:23:06 INFO  MainController:48 - com.epam.restaurant.controller.command.impl.DishesCommand@11de5a5
+2016-02-21 14:23:06 INFO  MainController:52 -  page: dishes.jsp
+2016-02-21 14:23:21 INFO  MainController:43 - login_command
+2016-02-21 14:23:21 INFO  MainController:44 - command
+2016-02-21 14:23:21 INFO  MainController:48 - com.epam.restaurant.controller.command.impl.LoginCommand@35bdb0
+2016-02-21 14:23:21 INFO  MainController:52 -  page: hello.jsp
+2016-02-21 14:23:27 INFO  MainController:43 - dishes_command
+2016-02-21 14:23:27 INFO  MainController:44 - command
+2016-02-21 14:23:27 INFO  MainController:48 - com.epam.restaurant.controller.command.impl.DishesCommand@11de5a5
+2016-02-21 14:23:27 INFO  MainController:52 -  page: dishes.jsp
+2016-02-21 14:26:00 INFO  MainController:43 - 
+2016-02-21 14:26:00 INFO  MainController:44 - command
+2016-02-21 14:26:03 INFO  MainController:43 - 
+2016-02-21 14:26:03 INFO  MainController:44 - command
+2016-02-21 14:26:07 INFO  MainController:43 - 
+2016-02-21 14:26:07 INFO  MainController:44 - command
+2016-02-21 14:26:10 INFO  MainController:43 - 
+2016-02-21 14:26:10 INFO  MainController:44 - command
+2016-02-21 14:26:12 INFO  MainController:43 - 
+2016-02-21 14:26:12 INFO  MainController:44 - command
+2016-02-21 14:26:20 INFO  MainController:43 - 
+2016-02-21 14:26:20 INFO  MainController:44 - command
+2016-02-21 14:26:35 INFO  MainController:43 - logout_command
+2016-02-21 14:26:35 INFO  MainController:44 - command
+2016-02-21 14:26:35 INFO  MainController:48 - com.epam.restaurant.controller.command.impl.LogoutCommand@16b074f
+2016-02-21 14:26:35 INFO  MainController:52 -  page: index.jsp
+2016-02-21 14:28:35 INFO  MainController:43 - logout_command
+2016-02-21 14:28:35 INFO  MainController:44 - command
+2016-02-21 14:28:35 INFO  MainController:48 - com.epam.restaurant.controller.command.impl.LogoutCommand@16b074f
+2016-02-21 14:28:35 INFO  MainController:52 -  page: index.jsp
+2016-02-21 14:28:52 INFO  MainController:43 - logout_command
+2016-02-21 14:28:52 INFO  MainController:44 - command
+2016-02-21 14:28:52 INFO  MainController:48 - com.epam.restaurant.controller.command.impl.LogoutCommand@16b074f
+2016-02-21 14:28:52 INFO  MainController:52 -  page: index.jsp
+2016-02-21 14:50:40 INFO  MainController:43 - dishes_command
+2016-02-21 14:50:40 INFO  MainController:44 - command
+2016-02-21 14:50:41 INFO  ConnectionPoolImpl:63 - Pool has been initialized
+2016-02-21 14:50:41 INFO  MainController:48 - com.epam.restaurant.controller.command.impl.DishesCommand@e7ca5b
+2016-02-21 14:50:42 INFO  MainController:52 -  page: dishes.jsp
+2016-02-21 14:50:52 INFO  MainController:43 - 
+2016-02-21 14:50:52 INFO  MainController:44 - command
+2016-02-21 14:50:56 INFO  MainController:43 - 
+2016-02-21 14:50:56 INFO  MainController:44 - command
+2016-02-21 14:51:01 INFO  MainController:43 - dishes_command
+2016-02-21 14:51:01 INFO  MainController:44 - command
+2016-02-21 14:51:01 INFO  MainController:48 - com.epam.restaurant.controller.command.impl.DishesCommand@e7ca5b
+2016-02-21 14:51:01 INFO  MainController:52 -  page: dishes.jsp
+2016-02-21 14:51:04 INFO  MainController:43 - 
+2016-02-21 14:51:04 INFO  MainController:44 - command
+2016-02-21 14:51:07 INFO  MainController:43 - 
+2016-02-21 14:51:07 INFO  MainController:44 - command
+2016-02-21 14:51:18 INFO  MainController:43 - login_command
+2016-02-21 14:51:18 INFO  MainController:44 - command
+2016-02-21 14:51:18 INFO  MainController:48 - com.epam.restaurant.controller.command.impl.LoginCommand@1f047a1
+2016-02-21 14:51:18 INFO  MainController:52 -  page: hello.jsp
+2016-02-21 14:51:25 INFO  MainController:43 - 
+2016-02-21 14:51:25 INFO  MainController:44 - command
+2016-02-21 14:51:27 INFO  MainController:43 - 
+2016-02-21 14:51:27 INFO  MainController:44 - command
+2016-02-21 14:51:39 INFO  MainController:43 - 
+2016-02-21 14:51:39 INFO  MainController:44 - command
+2016-02-21 14:51:42 INFO  MainController:43 - logout_command
+2016-02-21 14:51:42 INFO  MainController:44 - command
+2016-02-21 14:51:42 INFO  MainController:48 - com.epam.restaurant.controller.command.impl.LogoutCommand@81680d
+2016-02-21 14:51:42 INFO  MainController:52 -  page: index.jsp
+2016-02-21 14:51:45 INFO  MainController:43 - 
+2016-02-21 14:51:45 INFO  MainController:44 - command
+2016-02-21 14:51:49 INFO  MainController:43 - 
+2016-02-21 14:51:49 INFO  MainController:44 - command
+2016-02-21 14:52:03 INFO  MainController:43 - dishes_command
+2016-02-21 14:52:03 INFO  MainController:44 - command
+2016-02-21 14:52:03 INFO  MainController:48 - com.epam.restaurant.controller.command.impl.DishesCommand@e7ca5b
+2016-02-21 14:52:03 INFO  MainController:52 -  page: dishes.jsp
+2016-02-21 14:52:12 INFO  MainController:43 - dishes_command
+2016-02-21 14:52:12 INFO  MainController:44 - command
+2016-02-21 14:52:12 INFO  MainController:48 - com.epam.restaurant.controller.command.impl.DishesCommand@e7ca5b
+2016-02-21 14:52:12 INFO  MainController:52 -  page: dishes.jsp
+2016-02-21 14:52:42 INFO  MainController:43 - 
+2016-02-21 14:52:42 INFO  MainController:44 - command
+2016-02-21 15:12:17 INFO  MainController:43 - dishes_command
+2016-02-21 15:12:17 INFO  MainController:44 - command
+2016-02-21 15:12:18 INFO  ConnectionPoolImpl:63 - Pool has been initialized
+2016-02-21 15:12:18 INFO  MainController:48 - com.epam.restaurant.controller.command.impl.DishesCommand@379d6f
+2016-02-21 15:12:18 INFO  MainController:52 -  page: dishes.jsp
+2016-02-21 15:12:25 INFO  MainController:43 - 
+2016-02-21 15:12:25 INFO  MainController:44 - command
+2016-02-21 15:14:03 INFO  MainController:43 - login_command
+2016-02-21 15:14:03 INFO  MainController:44 - command
+2016-02-21 15:14:03 INFO  MainController:48 - com.epam.restaurant.controller.command.impl.LoginCommand@54abac
+2016-02-21 15:14:03 INFO  MainController:52 -  page: hello.jsp
+2016-02-21 15:14:07 INFO  MainController:43 - 
+2016-02-21 15:14:07 INFO  MainController:44 - command
+2016-02-21 15:15:02 INFO  MainController:43 - dishes_command
+2016-02-21 15:15:02 INFO  MainController:44 - command
+2016-02-21 15:15:03 INFO  ConnectionPoolImpl:63 - Pool has been initialized
+2016-02-21 15:15:03 INFO  MainController:48 - com.epam.restaurant.controller.command.impl.DishesCommand@25334a
+2016-02-21 15:15:03 INFO  MainController:52 -  page: dishes.jsp
+2016-02-21 15:15:08 INFO  MainController:43 - 
+2016-02-21 15:15:08 INFO  MainController:44 - command

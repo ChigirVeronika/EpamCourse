@@ -57,7 +57,9 @@ public class MainController extends HttpServlet{
 
         RequestDispatcher requestDispatcher = request.getRequestDispatcher(page);
         try {
-            requestDispatcher.forward(request,response);
+            if(requestDispatcher!=null){
+                requestDispatcher.forward(request,response);
+            }
         } catch (IOException e) {
             LOGGER.error(e);
         }

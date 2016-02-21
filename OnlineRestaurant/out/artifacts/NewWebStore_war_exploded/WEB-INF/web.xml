@@ -10,6 +10,13 @@
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
 
+    <jsp-config>
+        <taglib>
+            <taglib-uri>/taglib/taglib.tld</taglib-uri>
+            <taglib-location>/WEB-INF/taglib/taglib.tld</taglib-location>
+        </taglib>
+    </jsp-config>
+
     <servlet>
         <servlet-name>MainController</servlet-name>
         <servlet-class>com.epam.restaurant.controller.servlet.MainController</servlet-class>
@@ -18,13 +25,6 @@
         <servlet-name>MainController</servlet-name>
         <url-pattern>/main</url-pattern>
     </servlet-mapping>
-
-    <jsp-config>
-        <taglib>
-            <taglib-uri>/taglib</taglib-uri>
-            <taglib-location>/taglib/taglib.tld</taglib-location>
-        </taglib>
-    </jsp-config>
 
     <error-page>
         <exception-type>java.lang.Throwable</exception-type>

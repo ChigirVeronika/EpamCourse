@@ -8,7 +8,7 @@
         version="2.1"><!--дескриптор библиотеки тегов-->
     <tlib-version>1.0</tlib-version>
     <short-name>mytag</short-name>
-    <uri>/tag/taglib.tld</uri>
+    <uri>/WEB-INF/taglib/taglib.tld</uri>
 
     <tag>
         <name>categories</name>

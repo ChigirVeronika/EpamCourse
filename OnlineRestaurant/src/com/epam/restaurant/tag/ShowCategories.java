@@ -8,22 +8,24 @@ import javax.servlet.jsp.JspWriter;
 import javax.servlet.jsp.tagext.TagSupport;
 import java.io.IOException;
 import java.util.List;
+import org.apache.log4j.Logger;
 
 /**
  * Tag print table with all categories to jsp.
  */
 public class ShowCategories extends TagSupport {
+    private static final Logger LOGGER = Logger.getLogger(ShowCategories.class);
+
     public int doStartTag() throws JspException {
         List<Category> categoryList = (List<Category>) pageContext.getRequest().getAttribute("categories");
 
         User user = (User) pageContext.getSession().getAttribute("user");
         JspWriter out = pageContext.getOut();
         if(categoryList!=null){
-            System.out.println("22222222USER IS ADMIN"+categoryList.toString());
             try{
                 for (Category c:categoryList) {
                     out.println("<div class = \"row\">");
-                    out.println("<h3 class=\"masthead-brand\">");
+                    out.println("<h3 class=\"trendhead-brand\">");
                     out.println("<a href = \"/main?command=category_command&id=" + c.getId() + "\">");
                     out.println(c.getName());
                     out.println("</a>");
@@ -38,7 +40,6 @@ public class ShowCategories extends TagSupport {
 
                 // is user is ADMIN - print buttons to create and edit categories
                 if (user != null && user.getRole() == User.Role.ADMIN) {
-                    System.out.println("22222222USER IS ADMIN");
                     out.print("<div class=\"row\"><div class=\"col-sm-4\">");
                     out.print("<button type=\"button\" class=\"btn btn-default\" data-toggle=\"modal\" data-target=\"#add\">" +
                             "<span class = \"glyphicon glyphicon-plus\"/> category" +
@@ -46,10 +47,10 @@ public class ShowCategories extends TagSupport {
                     out.print("</div></div>");
                 }
             } catch (IOException e) {
-                e.printStackTrace();
+                LOGGER.error("ShowCategories (Custom Tag) Exception",e);
             }
         }
-        // tag with empty body
+        // tag with empty body returns
         return SKIP_BODY;
     }
 }

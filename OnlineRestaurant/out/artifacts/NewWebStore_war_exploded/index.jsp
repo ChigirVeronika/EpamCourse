@@ -24,6 +24,7 @@
                     <div>
                         <h1 class="cover-heading"><fmt:message key="index.welcome" bundle="${lang}"/></h1>
                         <p class="lead"><fmt:message key="lorem.short" bundle="${lang}"/></p>
+                        <p class="lead"><a href="/main?command=dishes_command" class="btn btn-lg btn-default"><fmt:message key="index.start" bundle="${lang}"/></a></p>
                         <form action="/main" method="POST">
                             <input type="hidden" name="command" value="dishes_command"/>
                             <input type="submit" value="<fmt:message key="index.start" bundle="${lang}"/>" class="btn btn-default btn-block"/>

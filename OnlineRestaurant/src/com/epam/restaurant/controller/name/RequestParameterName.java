@@ -23,4 +23,7 @@ public class RequestParameterName {
     public static final String ORDER = "order";
 
     public static final String LOGIN_MESSAGE = "login_message";
+
+    public static final String EN = "en";
+    public static final String UNDERLINE = "_";
 }

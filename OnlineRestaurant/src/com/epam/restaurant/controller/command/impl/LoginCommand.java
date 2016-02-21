@@ -53,8 +53,8 @@ public class LoginCommand implements Command {
             }else{
                 String path = RequestParameterName.I18N;
                 String curLan = (String) request.getSession().getAttribute(LANGUAGE);
-                if (curLan != null && !curLan.equals("en"))
-                    path += "_" + curLan;
+                if (curLan != null && !curLan.equals(EN))
+                    path += UNDERLINE + curLan;
                 ResourceBundle rb = ResourceBundle.getBundle(path);
                 if (user != null && user.getRole() == User.Role.BLOCKED) { // if user is blocked
                 request.setAttribute(MESSAGE, rb.getString("login.blocked"));

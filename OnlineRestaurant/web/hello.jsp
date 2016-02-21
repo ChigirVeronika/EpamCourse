@@ -23,11 +23,11 @@
 <div class="restaurant-wrapper">
     <div class="restaurant-wrapper-inner">
         <div class="cover-container">
-            <div>
+            <div class="trendhead clearfix">
                 <jsp:include page="layout/header.jsp"/>
             </div>
 
-            <div>
+            <div class="inner cover">
                 <h1 class="cover-heading"><fmt:message key="hello.welcome" bundle="${lang}"/><c:out value="${user.login}"/></h1>
             </div>
 

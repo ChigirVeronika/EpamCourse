@@ -41,8 +41,8 @@ public class RegisterCommand implements Command {
             }else {
                 String path =I18N;
                 String currentLanguage = (String) request.getSession().getAttribute(LANGUAGE);
-                if(currentLanguage!=null && !currentLanguage.equals("en")){
-                    path+="_"+currentLanguage;
+                if(currentLanguage!=null && !currentLanguage.equals(EN)){
+                    path+=UNDERLINE+currentLanguage;
                 }
                 ResourceBundle rb = ResourceBundle.getBundle(path);
                 request.setAttribute(LOGIN_MESSAGE,rb.getString("register.wrong"));

@@ -22,6 +22,9 @@ public final class CommandHelper {
         commandMap.put(CommandName.UNBAN_COMMAND,new UnbanCommand());
         commandMap.put(CommandName.DISHES_COMMAND, new DishesCommand());
         //todo остальные комманды
+        commandMap.put(CommandName.ADD_CATEGORY_COMMAND,new AddCategoryCommand());
+        commandMap.put(CommandName.EDIT_CATEGORY_COMMAND,new EditCategoryCommand());
+        commandMap.put(CommandName.DELETE_CATEGORY_COMMAND, new DeleteCategoryCommand());
     }
 
     public Command getCommand(String commandName){

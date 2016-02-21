@@ -43,6 +43,26 @@ public class ConnectionPoolImpl implements ConnectionPool{
         return instance;
     }
 
+    public void initialize() {
+        String url = DAOConfigManager.getProperty(DAOConfigManager.URL);
+        String user = DAOConfigManager.getProperty(DAOConfigManager.USER);
+        String password = DAOConfigManager.getProperty(DAOConfigManager.PASS);
+        int size = Integer.parseInt(DAOConfigManager.getProperty(DAOConfigManager.POOL_SIZE));
+
+        try {
+            DriverManager.registerDriver(new com.mysql.jdbc.Driver());
+            connections = new ArrayBlockingQueue<>(size);
+            for (int i = 0; i < size; i++) {
+                Connection connection = DriverManager.getConnection(url, user, password);
+                connections.offer(connection);
+            }
+        } catch (SQLException e) {
+            //TODO!!!!
+        }
+
+        LOGGER.info("Pool has been initialized");
+    }
+
     public Connection getConnection() throws ConnectionPoolException {//todo
         Connection connection = null;
         if (working) {
@@ -95,25 +115,5 @@ public class ConnectionPoolImpl implements ConnectionPool{
             }
         }
         LOGGER.info("Pool has been released");
-    }
-
-    public void initialize() {
-        String url = DAOConfigManager.getProperty(DAOConfigManager.URL);
-        String user = DAOConfigManager.getProperty(DAOConfigManager.USER);
-        String password = DAOConfigManager.getProperty(DAOConfigManager.PASS);
-        int size = Integer.parseInt(DAOConfigManager.getProperty(DAOConfigManager.POOL_SIZE));
-
-        try {
-            DriverManager.registerDriver(new com.mysql.jdbc.Driver());
-            connections = new ArrayBlockingQueue<>(size);
-            for (int i = 0; i < size; i++) {
-                Connection connection = DriverManager.getConnection(url, user, password);
-                connections.offer(connection);
-            }
-        } catch (SQLException e) {
-            //TODO!!!!
-        }
-
-        LOGGER.info("Pool has been initialized");
     }
 }
