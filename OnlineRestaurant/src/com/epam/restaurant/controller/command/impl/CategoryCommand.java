@@ -4,6 +4,7 @@ import com.epam.restaurant.controller.command.Command;
 import com.epam.restaurant.controller.command.exception.CommandException;
 import com.epam.restaurant.controller.name.JspPageName;
 import com.epam.restaurant.entity.Category;
+import com.epam.restaurant.entity.Dish;
 import com.epam.restaurant.service.CategoryService;
 import com.epam.restaurant.service.exception.ServiceException;
 
@@ -27,6 +28,15 @@ public class CategoryCommand implements Command{
 
             String name = categoryService.getById(categoryId).getName();
             List<Category> categoryList = categoryService.getAllCategories();
+            List<Dish> dishList = categoryService.getAllFromCategory(categoryId);
+
+            request.setAttribute("categories",categoryList);
+            request.setAttribute("name",name);
+
+            if(dishList!=null){
+                request.setAttribute("dishes",dishList);
+                request.setAttribute("name",name);
+            }
 
         } catch (ServiceException e) {
             throw new CommandException("CategoryException",e);
