@@ -2,6 +2,7 @@ package com.epam.restaurant.dao;
 
 import com.epam.restaurant.dao.exception.DaoException;
 
+import java.io.Serializable;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -9,7 +10,7 @@ import java.util.List;
  * @param <T> object type
  * @param <PK> primary key type
  */
-public interface GenericDao<T , PK> {//todo id
+public interface GenericDao<T extends Identified<PK>, PK extends Serializable> {
 
     T create() throws DaoException;
 

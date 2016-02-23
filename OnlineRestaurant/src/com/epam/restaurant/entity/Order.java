@@ -1,5 +1,7 @@
 package com.epam.restaurant.entity;
 
+import com.epam.restaurant.dao.Identified;
+
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -9,7 +11,7 @@ import java.util.List;
 /**
  * Created by Вероника on 04.02.2016.
  */
-public class Order implements Serializable {
+public class Order implements Serializable, Identified<Long> {
     public static final long serialVersionUID = 1;
 
     private long id;
@@ -42,7 +44,7 @@ public class Order implements Serializable {
         return this.orderDishes.size();
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 

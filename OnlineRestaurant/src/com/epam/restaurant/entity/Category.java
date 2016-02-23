@@ -1,11 +1,13 @@
 package com.epam.restaurant.entity;
 
+import com.epam.restaurant.dao.Identified;
+
 import java.io.Serializable;
 
 /**
  * Describes category of dish.
  */
-public class Category implements Serializable {
+public class Category implements Serializable, Identified<Long> {
     public static final long serialVersionUID = 1;
 
     private long id;
@@ -14,7 +16,7 @@ public class Category implements Serializable {
 
     public Category(){}
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 

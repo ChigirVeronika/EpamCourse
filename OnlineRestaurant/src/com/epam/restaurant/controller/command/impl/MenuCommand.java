@@ -5,7 +5,6 @@ import com.epam.restaurant.controller.command.exception.CommandException;
 import com.epam.restaurant.controller.command.Command;
 import com.epam.restaurant.entity.Category;
 import com.epam.restaurant.service.CategoryService;
-import com.epam.restaurant.service.UserService;
 import com.epam.restaurant.service.exception.ServiceException;
 import org.apache.log4j.Logger;
 
@@ -14,17 +13,15 @@ import javax.servlet.http.HttpServletResponse;
 
 import java.util.List;
 
-import static com.epam.restaurant.controller.name.RequestParameterName.*;
-
 /**
  * Control menu output.
  */
-public class DishesCommand implements Command {
+public class MenuCommand implements Command {
 
-    private static final Logger LOGGER = Logger.getLogger( DishesCommand.class);
+    private static final Logger LOGGER = Logger.getLogger( MenuCommand.class);
     private static final CategoryService categoryService = CategoryService.getInstance();
 
-    public DishesCommand(){}
+    public MenuCommand(){}
 
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws CommandException {
@@ -35,8 +32,8 @@ public class DishesCommand implements Command {
                 request.setAttribute("categories",categoryList);
             }
         }catch (ServiceException e){
-            LOGGER.error("DishesCommand Exception",e);
-            throw new CommandException("DishesCommandException",e);
+            LOGGER.error("Can't do CategoryService in MenuCommand ",e);
+            throw new CommandException("MenuCommandException ",e);
         }
         return page;
     }

@@ -147,6 +147,7 @@ public class UserSqlDao extends AbstractSqlDao<User, Long> {
     @Override
     public List<User> getAllFromRecord(Long key) throws DaoException {
         return null;
+        //// TODO: 21.02.2016  
     }
 
 

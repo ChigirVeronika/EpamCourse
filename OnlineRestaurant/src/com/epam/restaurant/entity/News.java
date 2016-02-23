@@ -1,11 +1,13 @@
 package com.epam.restaurant.entity;
 
+import com.epam.restaurant.dao.Identified;
+
 import java.io.Serializable;
 
 /**
  * Created by Вероника on 04.02.2016.
  */
-public class News implements Serializable {
+public class News implements Serializable, Identified<Long> {
     public static final long serialVersionUID = 1;
 
     private long id;
@@ -13,7 +15,7 @@ public class News implements Serializable {
 
     public News(){}
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 

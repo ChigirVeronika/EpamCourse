@@ -7,6 +7,7 @@ import com.epam.restaurant.dao.connectionpool.exception.ConnectionPoolException;
 import com.epam.restaurant.dao.connectionpool.impl.ConnectionPoolImpl;
 import com.epam.restaurant.dao.exception.DaoException;
 import com.epam.restaurant.entity.Category;
+import com.epam.restaurant.entity.Dish;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -110,7 +111,7 @@ public class CategorySqlDao extends AbstractSqlDao<Category, Long> {
     public Category getByName(String name) throws DaoException {
         List<Category> list;
         try (Connection connection = pool.getConnection()) {
-            String sql = dbBundle.getString("CATEGORIES.WITH_NAME");
+            String sql = dbBundle.getString("CATEGORY.WITH_NAME");
             PreparedStatement statement = connection.prepareStatement(sql);
             statement.setString(1, name);
             ResultSet rs = statement.executeQuery();
@@ -130,7 +131,18 @@ public class CategorySqlDao extends AbstractSqlDao<Category, Long> {
 
     @Override
     public List<Category> getAllFromRecord(Long id) throws DaoException {
-        return null;
+        //// TODO: 22.02.2016  
+        List<Category> result;
+        String sql = dbBundle.getString("DISH.FROM_CATEGORY");
+        try (Connection connection = pool.getConnection()) {
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setLong(1,id);
+            ResultSet rs = statement.executeQuery();
+            result = parseResultSet(rs);
+        }catch (ConnectionPoolException |SQLException e) {
+            throw new DaoException("Exception",e);
+        }
+        return result;
     }
 }
 

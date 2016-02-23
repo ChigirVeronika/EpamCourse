@@ -48,7 +48,8 @@ public class RegisterCommand implements Command {
                 request.setAttribute(LOGIN_MESSAGE,rb.getString("register.wrong"));
             }
         }catch (ServiceException e){
-            throw new CommandException("Registration failed.");
+            LOGGER.error("Can't do UserService in RegisterCommand ");
+            throw new CommandException("Registration failed. RegisterCommandException");
         }
 
         return result;

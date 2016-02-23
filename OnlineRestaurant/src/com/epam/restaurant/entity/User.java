@@ -1,11 +1,13 @@
 package com.epam.restaurant.entity;
 
+import com.epam.restaurant.dao.Identified;
+
 import java.io.Serializable;
 
 /**
  * Entity is user in online restaurant.
  */
-public class User implements Serializable{
+public class User implements Serializable, Identified<Long>{
     public static final long serialVersionUID = 1;
 
     private long id;
@@ -69,7 +71,7 @@ public class User implements Serializable{
         this.payCard = payCard;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 

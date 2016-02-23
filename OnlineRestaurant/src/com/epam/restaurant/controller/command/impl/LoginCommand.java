@@ -64,7 +64,8 @@ public class LoginCommand implements Command {
 
             }
         } catch (Exception e) {
-            throw new CommandException("Exception",e);
+            LOGGER.error("Can't do Service in LoginCommand",e);
+            throw new CommandException("LoginCommandException",e);
         }
         return result;
     }

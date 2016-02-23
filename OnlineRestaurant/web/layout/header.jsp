@@ -18,7 +18,7 @@
         <ul class="nav trendhead-nav">
             <li><a href="../index.jsp"><fmt:message key="header.home" bundle="${lang}"/></a> </li>
 
-            <li><a href="/main?command=dishes_command"><fmt:message key="header.catalog" bundle="${lang}"/></a></li>
+            <li><a href="/main?command=menu_command"><fmt:message key="header.catalog" bundle="${lang}"/></a></li>
 
 
             <c:if test="${user != null && user.role == 'ADMIN'}">

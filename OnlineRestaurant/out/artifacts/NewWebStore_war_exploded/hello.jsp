@@ -23,8 +23,7 @@
 <div class="restaurant-wrapper">
     <div class="restaurant-wrapper-inner">
         <div class="cover-container">
-
-            <div class="trendhead">
+            <div class="trendhead clearfix">
                 <jsp:include page="layout/header.jsp"/>
             </div>
 

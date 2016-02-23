@@ -1,6 +1,7 @@
 package com.epam.restaurant.dao.impl;
 
 import com.epam.restaurant.dao.AbstractSqlDao;
+import com.epam.restaurant.dao.GenericDao;
 import com.epam.restaurant.dao.connectionpool.ConnectionPool;
 import com.epam.restaurant.dao.connectionpool.exception.ConnectionPoolException;
 import com.epam.restaurant.dao.connectionpool.impl.ConnectionPoolImpl;
@@ -13,6 +14,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -20,6 +22,10 @@ import java.util.ResourceBundle;
  * .
  */
 public class DishSqlDao extends AbstractSqlDao<Dish, Long> {
+
+    private final static DishSqlDao instance = new DishSqlDao();
+
+    public static GenericDao getInstance(){return instance;}
 
     private ResourceBundle dbBundle = ResourceBundle.getBundle("db.db");
 
@@ -33,46 +39,87 @@ public class DishSqlDao extends AbstractSqlDao<Dish, Long> {
 
     @Override
     public String getSelectQuery() {
-        return null;
+        return dbBundle.getString("DISH.SELECT");
     }
 
     @Override
     public String getCreateQuery() {
-        return null;
+        return dbBundle.getString("DISH.INSERT");
     }
 
     @Override
     public String getUpdateQuery() {
-        return null;
+        return dbBundle.getString("DISH.UPDATE");
     }
 
     @Override
     public String getDeleteQuery() {
-        return null;
+        return dbBundle.getString("DISH.DELETE");
     }
 
     @Override
     protected List<Dish> parseResultSet(ResultSet rs) throws DaoException {
-        return null;
+        LinkedList<Dish> result = new LinkedList<>();
+
+        try {
+            while(rs.next()){
+                PersistDish dish = new PersistDish();
+                dish.setId(rs.getLong("id"));
+                dish.setName(rs.getString("name"));
+                dish.setDescription(rs.getString("description"));
+                dish.setIngredients(rs.getString("ingredients"));
+                dish.setPrice(rs.getBigDecimal("price"));
+                dish.setQuantity(rs.getInt("quantity"));
+                dish.setCategoryId(rs.getLong("category_id"));
+                dish.setImage(rs.getString("image"));
+                result.add(dish);
+            }
+        } catch (SQLException e) {
+            throw new DaoException("DishDaoSql Exception",e);
+        }
+        return result;
     }
 
     @Override
     protected void prepareStatementForInsert(PreparedStatement statement, Dish object) throws DaoException {
-
+        try {
+            statement.setString(1,object.getName());
+            statement.setString(2,object.getDescription());
+            statement.setString(3,object.getIngredients());
+            statement.setBigDecimal(4,object.getPrice());
+            statement.setInt(5,object.getQuantity());
+            statement.setLong(6,object.getCategoryId());
+            statement.setString(7,object.getImage());
+        } catch (SQLException e) {
+            throw new DaoException("DishSqlDao Exception",e);
+        }
     }
 
     @Override
     protected void prepareStatementForUpdate(PreparedStatement statement, Dish object) throws DaoException {
-
+        try {
+            statement.setString(1,object.getName());
+            statement.setString(2,object.getDescription());
+            statement.setString(3,object.getIngredients());
+            statement.setBigDecimal(4,object.getPrice());
+            statement.setInt(5,object.getQuantity());
+            statement.setLong(6,object.getCategoryId());
+            statement.setString(7,object.getImage());
+            statement.setLong(8,object.getId());
+        } catch (SQLException e) {
+            throw new DaoException("DishSqlDao Exception",e);
+        }
     }
 
     @Override
     public Dish create() throws DaoException {
-        return null;
+        Dish dish = new Dish();
+        return persist(dish);
     }
 
     @Override
     public Dish getByName(String name) throws DaoException {
+        //// TODO: 22.02.2016
         return null;
     }
 

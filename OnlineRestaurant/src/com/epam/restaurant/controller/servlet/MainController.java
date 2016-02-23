@@ -41,17 +41,16 @@ public class MainController extends HttpServlet{
     private void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException {
         String commandName=request.getParameter(RequestParameterName.COMMAND_NAME);
         LOGGER.info(commandName);
-        LOGGER.info(RequestParameterName.COMMAND_NAME);
 
         Command command = CommandHelper.getInstance().getCommand(commandName);
-
         LOGGER.info(command);
+
         String page;
         try {
             page = command.execute(request, response);
-            LOGGER.info(" page: "+ page);
+            LOGGER.info("Page: "+ page);
         }catch (CommandException e){
-            LOGGER.error(e);
+            LOGGER.error("Can't execute command in MainController ", e);
             page = JspPageName.ERROR_JSP;
         }
 
@@ -61,7 +60,7 @@ public class MainController extends HttpServlet{
                 requestDispatcher.forward(request,response);
             }
         } catch (IOException e) {
-            LOGGER.error(e);
+            LOGGER.error("Can't return request dispatcher ", e);
         }
     }
 }

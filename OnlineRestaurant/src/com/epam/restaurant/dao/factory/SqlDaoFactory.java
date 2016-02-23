@@ -1,8 +1,7 @@
 package com.epam.restaurant.dao.factory;
 
 import com.epam.restaurant.dao.GenericDao;
-import com.epam.restaurant.dao.impl.CategorySqlDao;
-import com.epam.restaurant.dao.impl.UserSqlDao;
+import com.epam.restaurant.dao.impl.*;
 import org.apache.log4j.Logger;
 
 /**
@@ -17,23 +16,24 @@ public class SqlDaoFactory{
         return  instance;
     }
 
-    public GenericDao getDao(DaoType type){// throws DaoException
+    public GenericDao getDao(DaoType type){// throws DaoException TODO???
         switch (type){
             case DISH:
-                //return DishSqlDao.getInstance();
-                break;
+                return DishSqlDao.getInstance();
             case USER:
                 return UserSqlDao.getInstance();
             case CATEGORY:
                 return CategorySqlDao.getInstance();
-            case BILL:
-                break;
+            case ORDER:
+                return OrderSqlDao.getInstance();
+            case ORDERITEM:
+                return OrderDishSqlDao.getInstance();
         }
         return null;
     }
 
     public enum DaoType{
-        DISH, USER, CATEGORY, BILL, ORDER
+        DISH, USER, CATEGORY, ORDER, ORDERITEM
     }
 
 }

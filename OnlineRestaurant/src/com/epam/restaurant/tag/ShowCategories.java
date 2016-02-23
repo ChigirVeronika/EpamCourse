@@ -26,15 +26,15 @@ public class ShowCategories extends TagSupport {
                 for (Category c:categoryList) {
                     out.println("<div class = \"row\">");
                     out.println("<h3 class=\"trendhead-brand\">");
-                    out.println("<a href = \"/main?command=category_command&id=" + c.getId() + "\">");
-                    out.println(c.getName());
-                    out.println("</a>");
                     if (user != null && user.getRole() == User.Role.ADMIN) {
                         out.print("<button type=\"button\" class=\"btn btn-default btn-xs\" data-toggle=\"modal\" " +
                                 "data-target=\"#edit\" data-name=\""+c.getName()+"\" data-description=\""+c.getDescription()+"\">" +
                                 "<span class = \"glyphicon glyphicon-pencil\"/>" +
                                 "</button>");
                     }
+                    out.println("<a href = \"/main?command=category_command&id=" + c.getId() + "\">");
+                    out.println(c.getName());
+                    out.println("</a>");
                     out.print("</h3></div>");
                 }
 

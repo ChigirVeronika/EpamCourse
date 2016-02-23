@@ -4,6 +4,7 @@ import com.epam.restaurant.dao.connectionpool.ConnectionPool;
 import com.epam.restaurant.dao.connectionpool.exception.ConnectionPoolException;
 import com.epam.restaurant.dao.connectionpool.impl.ConnectionPoolImpl;
 import com.epam.restaurant.dao.exception.DaoException;
+import com.epam.restaurant.dao.factory.SqlDaoFactory;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -17,9 +18,9 @@ import java.util.List;
  * @param <T>  persistance object type
  * @param <PK> primary key type
  */
-public abstract class AbstractSqlDao<T,PK extends Long> implements GenericDao<T, PK> {
+public abstract class AbstractSqlDao<T extends Identified<PK>,PK extends Long> implements GenericDao<T, PK> {
 
-    //protected DaoFactory parentFactory;
+    //protected SqlDaoFactory parentFactory;
 
     /**
      * Connection to database
@@ -82,9 +83,6 @@ public abstract class AbstractSqlDao<T,PK extends Long> implements GenericDao<T,
             statement.setInt(1, Integer.valueOf(String.valueOf(key)));//TODO Im not sure
             ResultSet rs = statement.executeQuery();
 
-            //todo см. пред. метод
-            //parentFactory.putContext(connection);
-
             list = parseResultSet(rs);
 
             if (list == null || list.size() == 0) {
@@ -123,7 +121,7 @@ public abstract class AbstractSqlDao<T,PK extends Long> implements GenericDao<T,
         try (Connection connection = pool.getConnection()) {
             PreparedStatement statement = connection.prepareStatement(sql);
 
-            //statement.setObject(1, object.getId());//TODO
+            statement.setObject(1, object.getId());
 
             int count = statement.executeUpdate();
 
@@ -141,12 +139,11 @@ public abstract class AbstractSqlDao<T,PK extends Long> implements GenericDao<T,
     public List<T> getAll() throws DaoException {
         List<T> list;
         String sql = getSelectQuery();
-        System.out.println(sql);
+
         try (Connection connection = pool.getConnection()) {
             PreparedStatement statement = connection.prepareStatement(sql);
             ResultSet rs = statement.executeQuery();
             list = parseResultSet(rs);
-            System.out.println(list.toString());
         }catch (ConnectionPoolException |SQLException e) {
             throw new DaoException("Exception",e);
         }
