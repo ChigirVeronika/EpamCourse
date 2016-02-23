@@ -5,6 +5,8 @@ import com.epam.restaurant.dao.connectionpool.config.DAOConfigManager;
 import com.epam.restaurant.dao.connectionpool.exception.ConnectionPoolException;
 import org.apache.log4j.Logger;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -43,6 +45,7 @@ public class ConnectionPoolImpl implements ConnectionPool{
         return instance;
     }
 
+    @PostConstruct
     public void initialize() {
         String url = DAOConfigManager.getProperty(DAOConfigManager.URL);
         String user = DAOConfigManager.getProperty(DAOConfigManager.USER);
@@ -51,25 +54,29 @@ public class ConnectionPoolImpl implements ConnectionPool{
 
         try {
             DriverManager.registerDriver(new com.mysql.jdbc.Driver());
+            //Class.forName(DAOConfigManager.DRIVER);
             connections = new ArrayBlockingQueue<>(size);
             for (int i = 0; i < size; i++) {
                 Connection connection = DriverManager.getConnection(url, user, password);
                 connections.offer(connection);
             }
-        } catch (SQLException e) {
-            //TODO!!!!
-        }
 
-        LOGGER.info("Pool has been initialized");
+            LOGGER.info("Pool has been initialized");
+        } catch (SQLException e) {//ClassNotFoundException |
+            //TODO!!!
+            LOGGER.error("Pool initialization error!",e);
+        }
     }
 
-    public Connection getConnection() throws ConnectionPoolException {//todo
+    public Connection getConnection() throws ConnectionPoolException {
         Connection connection = null;
         if (working) {
             try {
                 connection = connections.take();
+                LOGGER.info("Connection is taken.");
             } catch (InterruptedException e) {
-                throw new ConnectionPoolException("Pool Exception",e);//todo
+                LOGGER.error("Pool getConnection Exception",e);
+                throw new ConnectionPoolException("ConnectionPool Exception",e);
             }
         }
 
@@ -87,10 +94,11 @@ public class ConnectionPoolImpl implements ConnectionPool{
             }
         } catch (SQLException e) {
             LOGGER.error("SQL Exception " + e);
-            throw new ConnectionPoolException ("Exception",e);
+            throw new ConnectionPoolException ("ConnectionPool Exception",e);
         }
     }
 
+    @PreDestroy
     public void releasePool() throws ConnectionPoolException {
         working = false;
         Connection connection;
@@ -107,6 +115,7 @@ public class ConnectionPoolImpl implements ConnectionPool{
                     if (!connection.isClosed()) {
                         connection.close();
                     }
+                    LOGGER.info("Pool has been released");
                 } catch (SQLException e) {
                     LOGGER.error("SQL Exception " + e);
                     throw new ConnectionPoolException("Exception",e);
@@ -114,6 +123,5 @@ public class ConnectionPoolImpl implements ConnectionPool{
                 realSize--;
             }
         }
-        LOGGER.info("Pool has been released");
     }
 }

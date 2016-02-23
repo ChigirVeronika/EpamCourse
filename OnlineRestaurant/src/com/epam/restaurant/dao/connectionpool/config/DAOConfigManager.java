@@ -11,7 +11,8 @@ public class DAOConfigManager {
     public static final String USER = "db.user";
     public static final String PASS = "db.password";
     public static final String POOL_SIZE = "db.poolsize";
-    public static final String DRIVER = "\"com.mysql.jdbc.Driver\"";
+    public static final String DRIVERold = "\"com.mysql.jdbc.Driver\"";
+    public static final String DRIVER = "\"org.gjt.mm.mysql.Driver\"";
 
     private static ResourceBundle resourceBundle = ResourceBundle.getBundle("db.db");
 

@@ -25,10 +25,6 @@
                         <h1 class="cover-heading"><fmt:message key="index.welcome" bundle="${lang}"/></h1>
                         <p class="lead"><fmt:message key="common.take" bundle="${lang}"/></p>
                         <p class="lead"><a href="/main?command=menu_command" class="btn btn-lg btn-default"><fmt:message key="index.start" bundle="${lang}"/></a></p>
-                        <form class="lead" action="/main" method="POST">
-                            <input type="hidden" name="command" value="menu_command"/>
-                            <input type="submit" value="<fmt:message key="index.start" bundle="${lang}"/>" class="btn btn-default btn-block"/>
-                        </form>
                     </div>
 
                     <div class="trendfoot">

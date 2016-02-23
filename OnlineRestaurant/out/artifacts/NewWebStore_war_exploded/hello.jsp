@@ -27,9 +27,25 @@
                 <jsp:include page="layout/header.jsp"/>
             </div>
 
+            <br><br>
             <div class="inner cover">
-                <h1 class="cover-heading"><fmt:message key="hello.welcome" bundle="${lang}"/><c:out value="${user.login}"/></h1>
+                <h1 class="cover-heading">
+                    <fmt:message key="hello.welcome" bundle="${lang}"/><c:out value="${user.login}"/>
+                </h1>
             </div>
+
+            <br>
+
+            <c:if test="${param.login_error == 2}">
+                <br>
+                <h2 class="red">Your session has timed out.</h2>
+            </c:if>
+
+            <p class="lead">
+                <a href="/main?command=menu_command" class="btn btn-lg btn-default">
+                    <fmt:message key="index.start" bundle="${lang}"/>
+                </a>
+            </p>
 
             <div class="trendfoot">
                 <jsp:include page="layout/footer.jsp"/>

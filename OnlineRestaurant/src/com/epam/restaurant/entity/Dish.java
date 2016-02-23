@@ -22,6 +22,29 @@ public class Dish implements Serializable, Identified<Long>{
 
     public Dish(){}
 
+    public Dish(String name, String description, String ingredients,
+                BigDecimal price, int  quantity, Long categoryId, String image){
+        this.name=name;
+        this.description=description;
+        this.ingredients=ingredients;
+        this.price=price;
+        this.quantity=quantity;
+        this.categoryId=categoryId;
+        this.image=image;
+    }
+
+    public Dish(Long id, String name, String description, String ingredients,
+                BigDecimal price, int  quantity, Long categoryId, String image){
+        this.id=id;
+        this.name=name;
+        this.description=description;
+        this.ingredients=ingredients;
+        this.price=price;
+        this.quantity=quantity;
+        this.categoryId=categoryId;
+        this.image=image;
+    }
+
     public Long getId() {
         return id;
     }

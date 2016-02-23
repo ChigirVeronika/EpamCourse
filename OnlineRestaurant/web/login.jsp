@@ -32,6 +32,12 @@
 						</span></h4></div>
                         <br />
                     </c:if>
+                    <c:if test="${sessionMessage ne null}">
+                        <div class="row"><h4><span class="label label-danger">
+							<c:out value='${sessionMessage}'/>
+						</span></h4></div>
+                        <br />
+                    </c:if>
 
                     <div class="row">
                         <div class="col-md-3"></div>
