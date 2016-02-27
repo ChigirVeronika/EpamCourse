@@ -123,8 +123,9 @@ public class UserSqlDao extends AbstractSqlDao<User, Long> {
 
     public User getByName(String login) throws DaoException {
         List<User> list;
-        try (Connection connection = pool.getConnection()) {
-
+        Connection connection=null;
+        try {
+            connection = pool.getConnection();
             String sql = dbBundle.getString("USER.WITH_LOGIN");
             PreparedStatement statement = connection.prepareStatement(sql);
             statement.setString(1, login);
@@ -140,6 +141,14 @@ public class UserSqlDao extends AbstractSqlDao<User, Long> {
 
         }catch (ConnectionPoolException |SQLException e) {
             throw new DaoException("Exception",e);
+        }finally {
+            try {
+                if(connection != null) {
+                    pool.returnConnection(connection);
+                }
+            } catch (ConnectionPoolException e) {
+                throw new DaoException("",e);
+            }
         }
         return list.iterator().next();
     }

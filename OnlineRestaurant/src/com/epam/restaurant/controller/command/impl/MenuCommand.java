@@ -25,7 +25,7 @@ public class MenuCommand implements Command {
 
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws CommandException {
-        String page=JspPageName.DISHES_JSP;
+        String page=JspPageName.MENU_JSP;
         try{
             List<Category> categoryList = categoryService.getAllCategories();
             if(categoryList!=null){

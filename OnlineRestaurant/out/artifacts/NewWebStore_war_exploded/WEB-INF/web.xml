@@ -44,15 +44,7 @@
         <url-pattern>/main</url-pattern>
     </filter-mapping>
 
-    <filter>
-        <display-name>SessionFilter</display-name>
-        <filter-name>SessionFilter</filter-name>
-        <filter-class>com.epam.restaurant.filter.SessionFilter</filter-class>
-    </filter>
-    <filter-mapping>
-        <filter-name>SessionFilter</filter-name>
-        <url-pattern>/main</url-pattern>
-    </filter-mapping>
+
 
 
     <error-page>

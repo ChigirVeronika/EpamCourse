@@ -22,9 +22,7 @@ public class CategoryService {
 
     private CategoryService(){}
 
-    public static  CategoryService getInstance(){
-        return instance;
-    }
+    public static CategoryService getInstance(){return instance;}
 
     public List<Category> getAllCategories() throws ServiceException {
         try {

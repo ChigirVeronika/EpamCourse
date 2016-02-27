@@ -38,7 +38,8 @@ public class MainController extends HttpServlet{
     /**
      * Handle post and get http requests.
      */
-    private void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException {
+    private void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("utf-8");
         String commandName=request.getParameter(RequestParameterName.COMMAND_NAME);
         LOGGER.info(commandName);
 
@@ -55,12 +56,10 @@ public class MainController extends HttpServlet{
         }
 
         RequestDispatcher requestDispatcher = request.getRequestDispatcher(page);
-        try {
-            if(requestDispatcher!=null){
-                requestDispatcher.forward(request,response);
-            }
-        } catch (IOException e) {
-            LOGGER.error("Can't return request dispatcher ", e);
+
+        if(requestDispatcher!=null){
+            requestDispatcher.forward(request,response);
         }
+
     }
 }

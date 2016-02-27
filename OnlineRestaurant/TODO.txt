@@ -42,8 +42,32 @@ TODO:
         <url-pattern>/main</url-pattern>
     </filter-mapping>
 
+        <filter>
+            <display-name>CharsetFilter</display-name>
+            <filter-name>CharsetFilter</filter-name>
+            <filter-class>com.epam.restaurant.filter.CharsetFilter</filter-class>
+            <init-param>
+                <param-name>characterEncoding</param-name>
+                <param-value>utf-8</param-value>
+            </init-param>
+        </filter>
+        <filter-mapping>
+            <filter-name>CharsetFilter</filter-name>
+            <url-pattern>/main</url-pattern>
+        </filter-mapping>
+
     (index.jsp from вместо ссылки)
     <form class="lead" action="/main" method="POST">
                                 <input type="hidden" name="command" value="menu_command"/>
                                 <input type="submit" value="<fmt:message key="index.start" bundle="${lang}"/>" class="btn btn-default btn-block"/>
                             </form>
+
+       ALTER TABLE user CHARACTER SET="utf8";                    ===============================
+
+
+Charset cset = Charset.forName("UTF-8");
+ByteBuffer buf = cset.encode(strOld);
+byte[] b = buf.array();
+String str = new String(b);
+
+

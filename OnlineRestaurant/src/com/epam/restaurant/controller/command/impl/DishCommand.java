@@ -2,6 +2,8 @@ package com.epam.restaurant.controller.command.impl;
 
 import com.epam.restaurant.controller.command.Command;
 import com.epam.restaurant.controller.command.exception.CommandException;
+import com.epam.restaurant.controller.name.JspPageName;
+import com.epam.restaurant.service.CategoryService;
 import com.epam.restaurant.service.DishService;
 import org.apache.log4j.Logger;
 
@@ -16,8 +18,11 @@ public class DishCommand implements Command {
 
     private static final DishService dishService = DishService.getInstance();
 
+    private static final CategoryService categoryService = CategoryService.getInstance();
+
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws CommandException {
-        return null;
+        String result = JspPageName.DISH_JSP;
+        return "";
     }
 }

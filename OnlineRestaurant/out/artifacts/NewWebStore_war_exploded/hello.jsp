@@ -1,12 +1,5 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Вероника
-  Date: 04.02.2016
-  Time: 13:16
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" pageEncoding="utf-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <c:set var="language"
@@ -30,17 +23,14 @@
             <br><br>
             <div class="inner cover">
                 <h1 class="cover-heading">
+                    <br>
                     <fmt:message key="hello.welcome" bundle="${lang}"/><c:out value="${user.login}"/>
                 </h1>
             </div>
 
             <br>
-
-            <c:if test="${param.login_error == 2}">
-                <br>
-                <h2 class="red">Your session has timed out.</h2>
-            </c:if>
-
+            <p class="lead"><fmt:message key="common.take" bundle="${lang}"/></p>
+            <br>
             <p class="lead">
                 <a href="/main?command=menu_command" class="btn btn-lg btn-default">
                     <fmt:message key="index.start" bundle="${lang}"/>

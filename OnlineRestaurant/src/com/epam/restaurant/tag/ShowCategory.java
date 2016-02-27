@@ -17,7 +17,7 @@ public class ShowCategory  extends TagSupport {
 
     private static final Logger LOGGER = Logger.getLogger(ShowCategory.class);
 
-    private static String IMAGE_URL = "image/";
+    private static String IMAGE_URL = "images/";
 
     public int doStartTag() throws JspException{
         String currentLanguage = (String) pageContext.getSession().getAttribute("language");

@@ -1,12 +1,5 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Вероника
-  Date: 04.02.2016
-  Time: 13:16
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" pageEncoding="utf-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <c:set var="language"
@@ -30,6 +23,7 @@
             <br><br>
             <div class="inner cover">
                 <h1 class="cover-heading">
+                    <br>
                     <fmt:message key="hello.welcome" bundle="${lang}"/><c:out value="${user.login}"/>
                 </h1>
             </div>

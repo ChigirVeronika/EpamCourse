@@ -1,5 +1,5 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" pageEncoding="utf-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" pageEncoding="utf-8" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <c:set var="language"
@@ -12,19 +12,23 @@
 <head>
     <jsp:include page="layout/resources.jsp" />
 </head>
-
 <body>
 <div class="restaurant-wrapper">
     <div class="restaurant-wrapper-inner">
         <div class="cover-container">
-            <div>
+            <div class="trendhead clearfix">
                 <jsp:include page="layout/header.jsp"/>
             </div>
 
-            <div>
-                <h1 class="cover-heading"><fmt:message key="error.wrong" bundle="${lang}"/></h1>
-                <p class="lead"><fmt:message key="error.problems" bundle="${lang}"/></p>
+            <br><br>
+            <div class="inner cover">
+                <h1 class="cover-heading">
+                    <fmt:message key="hello.welcome" bundle="${lang}"/><c:out value="${user.login}"/>
+                </h1>
             </div>
+
+            <br>
+
 
             <div class="trendfoot">
                 <jsp:include page="layout/footer.jsp"/>
@@ -32,6 +36,6 @@
         </div>
     </div>
 </div>
+
 </body>
 </html>
-

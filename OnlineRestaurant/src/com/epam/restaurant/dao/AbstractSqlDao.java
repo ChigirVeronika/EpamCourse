@@ -45,7 +45,9 @@ public abstract class AbstractSqlDao<T extends Identified<PK>,PK extends Long> i
     @Override
     public T persist(T object) throws DaoException {
         T persistInstance;
-        try (Connection connection = pool.getConnection()) {
+        Connection connection = null;
+        try {
+            connection = pool.getConnection();
             // Добавляем запись
             String sql = getCreateQuery();
             PreparedStatement statement = connection.prepareStatement(sql);
@@ -68,6 +70,14 @@ public abstract class AbstractSqlDao<T extends Identified<PK>,PK extends Long> i
             persistInstance = list.iterator().next();
         }catch (ConnectionPoolException |SQLException e) {
             throw new DaoException("Exception",e);
+        }finally {
+            try {
+                if(connection != null) {
+                    pool.returnConnection(connection);
+                }
+            } catch (ConnectionPoolException e) {
+                throw new DaoException("",e);
+            }
         }
 
         return persistInstance;
@@ -76,7 +86,10 @@ public abstract class AbstractSqlDao<T extends Identified<PK>,PK extends Long> i
     @Override
     public T getByPK(PK key) throws DaoException {
         List<T> list;
-        try (Connection connection = pool.getConnection()) {
+        Connection connection = null;
+        try {
+            connection = pool.getConnection();
+
             String sql = getSelectQuery();
             sql += " WHERE id = ?";
             PreparedStatement statement = connection.prepareStatement(sql);
@@ -93,6 +106,14 @@ public abstract class AbstractSqlDao<T extends Identified<PK>,PK extends Long> i
             }
         }catch (ConnectionPoolException |SQLException e) {
             throw new DaoException("Exception",e);
+        }finally {
+            try {
+                if(connection != null) {
+                    pool.returnConnection(connection);
+                }
+            } catch (ConnectionPoolException e) {
+                throw new DaoException("",e);
+            }
         }
 
         return list.iterator().next();
@@ -101,7 +122,9 @@ public abstract class AbstractSqlDao<T extends Identified<PK>,PK extends Long> i
     @Override
     public void update(T object) throws DaoException {
         String sql = getUpdateQuery();
-        try (Connection connection = pool.getConnection()) {
+        Connection connection = null;
+        try {
+            connection = pool.getConnection();
             PreparedStatement statement = connection.prepareStatement(sql);
             prepareStatementForUpdate(statement, object);
             int count = statement.executeUpdate();
@@ -111,6 +134,14 @@ public abstract class AbstractSqlDao<T extends Identified<PK>,PK extends Long> i
             }
         }catch (ConnectionPoolException |SQLException e) {
             throw new DaoException("Exception",e);
+        }finally {
+            try {
+                if(connection != null) {
+                    pool.returnConnection(connection);
+                }
+            } catch (ConnectionPoolException e) {
+                throw new DaoException("",e);
+            }
         }
 
     }
@@ -118,7 +149,9 @@ public abstract class AbstractSqlDao<T extends Identified<PK>,PK extends Long> i
     @Override
     public void delete(T object) throws DaoException{
         String sql = getDeleteQuery();
-        try (Connection connection = pool.getConnection()) {
+        Connection connection = null;
+        try {
+            connection = pool.getConnection();
             PreparedStatement statement = connection.prepareStatement(sql);
 
             statement.setObject(1, object.getId());
@@ -132,6 +165,14 @@ public abstract class AbstractSqlDao<T extends Identified<PK>,PK extends Long> i
             statement.close();
         }catch (ConnectionPoolException |SQLException e) {
             throw new DaoException("Exception",e);
+        }finally {
+            try {
+                if(connection != null) {
+                    pool.returnConnection(connection);
+                }
+            } catch (ConnectionPoolException e) {
+                throw new DaoException("",e);
+            }
         }
     }
 
@@ -139,13 +180,22 @@ public abstract class AbstractSqlDao<T extends Identified<PK>,PK extends Long> i
     public List<T> getAll() throws DaoException {
         List<T> list;
         String sql = getSelectQuery();
-
-        try (Connection connection = pool.getConnection()) {
+        Connection connection=null;
+        try {
+            connection = pool.getConnection();
             PreparedStatement statement = connection.prepareStatement(sql);
             ResultSet rs = statement.executeQuery();
             list = parseResultSet(rs);
         }catch (ConnectionPoolException |SQLException e) {
             throw new DaoException("Exception",e);
+        }finally {
+            try {
+                if(connection != null) {
+                    pool.returnConnection(connection);
+                }
+            } catch (ConnectionPoolException e) {
+                throw new DaoException("",e);
+            }
         }
 
         return list;

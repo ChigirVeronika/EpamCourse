@@ -163,3 +163,482 @@ Caused by: java.lang.NullPointerException
 2016-02-23 23:43:56 INFO  MainController:46 - com.epam.restaurant.controller.command.impl.MenuCommand@6176a2
 2016-02-23 23:43:56 INFO  ConnectionPoolImpl:76 - Connection is taken.
 2016-02-23 23:43:56 INFO  MainController:51 - Page: menu.jsp
+2016-02-24 00:36:51 INFO  MainController:43 - menu_command
+2016-02-24 00:36:52 INFO  ConnectionPoolImpl:64 - Pool has been initialized
+2016-02-24 00:36:52 INFO  MainController:46 - com.epam.restaurant.controller.command.impl.MenuCommand@1e4fe39
+2016-02-24 00:36:52 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-02-24 00:36:52 INFO  MainController:51 - Page: menu.jsp
+2016-02-24 00:36:57 INFO  MainController:43 - menu_command
+2016-02-24 00:36:57 INFO  MainController:46 - com.epam.restaurant.controller.command.impl.MenuCommand@1e4fe39
+2016-02-24 00:36:57 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-02-24 00:36:57 INFO  MainController:51 - Page: menu.jsp
+2016-02-24 00:37:09 INFO  MainController:43 - login_command
+2016-02-24 00:37:09 INFO  MainController:46 - com.epam.restaurant.controller.command.impl.LoginCommand@81680d
+2016-02-24 00:37:09 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-02-24 00:37:09 INFO  MainController:51 - Page: hello.jsp
+2016-02-24 00:37:12 INFO  MainController:43 - menu_command
+2016-02-24 00:37:12 INFO  MainController:46 - com.epam.restaurant.controller.command.impl.MenuCommand@1e4fe39
+2016-02-24 00:37:12 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-02-24 00:37:12 INFO  MainController:51 - Page: menu.jsp
+2016-02-24 00:37:50 INFO  MainController:43 - logout_command
+2016-02-24 00:37:50 INFO  MainController:46 - com.epam.restaurant.controller.command.impl.LogoutCommand@7f15ae
+2016-02-24 00:37:50 INFO  MainController:51 - Page: index.jsp
+2016-02-24 00:40:03 INFO  MainController:43 - menu_command
+2016-02-24 00:40:03 INFO  MainController:46 - com.epam.restaurant.controller.command.impl.MenuCommand@1e4fe39
+2016-02-24 00:40:03 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-02-24 00:40:03 INFO  MainController:51 - Page: menu.jsp
+2016-02-24 00:40:07 INFO  MainController:43 - category_command
+2016-02-24 00:40:07 INFO  MainController:46 - com.epam.restaurant.controller.command.impl.CategoryCommand@52e50e
+2016-02-24 00:41:03 INFO  MainController:43 - login_command
+2016-02-24 00:41:03 INFO  MainController:46 - com.epam.restaurant.controller.command.impl.LoginCommand@81680d
+2016-02-24 00:49:45 INFO  MainController:43 - login_command
+2016-02-24 00:49:45 INFO  MainController:46 - com.epam.restaurant.controller.command.impl.LoginCommand@81680d
+2016-02-24 10:59:26 INFO  MainController:43 - menu_command
+2016-02-24 10:59:27 INFO  ConnectionPoolImpl:64 - Pool has been initialized
+2016-02-24 10:59:27 INFO  MainController:46 - com.epam.restaurant.controller.command.impl.MenuCommand@183e388
+2016-02-24 10:59:27 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-02-24 10:59:27 INFO  MainController:51 - Page: menu.jsp
+2016-02-24 10:59:33 INFO  MainController:43 - category_command
+2016-02-24 10:59:33 INFO  MainController:46 - com.epam.restaurant.controller.command.impl.CategoryCommand@169157a
+2016-02-24 10:59:33 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-02-24 10:59:33 INFO  CategoryCommand:32 - Salads
+2016-02-24 10:59:33 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-02-24 10:59:33 INFO  CategoryCommand:34 - [Category{id=1, name='Drinks', description='Different drinks'}, Category{id=2, name='Appetizers', description='Served before the main course'}, Category{id=3, name='Soups', description='Boiled mixed food'}, Category{id=4, name='Salads', description='Mixed vegetables with sauce'}, Category{id=5, name='Desserts', description='Sweet food'}, Category{id=6, name='Sides', description='Adders to meat'}]
+2016-02-24 10:59:33 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-02-24 10:59:33 INFO  CategoryCommand:36 - []
+2016-02-24 10:59:33 INFO  MainController:51 - Page: category.jsp
+2016-02-24 10:59:39 INFO  MainController:43 - category_command
+2016-02-24 10:59:39 INFO  MainController:46 - com.epam.restaurant.controller.command.impl.CategoryCommand@169157a
+2016-02-24 10:59:39 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-02-24 10:59:39 INFO  CategoryCommand:32 - Drinks
+2016-02-24 10:59:40 INFO  MainController:43 - category_command
+2016-02-24 10:59:40 INFO  MainController:46 - com.epam.restaurant.controller.command.impl.CategoryCommand@169157a
+2016-02-24 10:59:46 INFO  MainController:43 - category_command
+2016-02-24 10:59:46 INFO  MainController:46 - com.epam.restaurant.controller.command.impl.CategoryCommand@169157a
+2016-02-24 10:59:48 INFO  MainController:43 - category_command
+2016-02-24 10:59:48 INFO  MainController:46 - com.epam.restaurant.controller.command.impl.CategoryCommand@169157a
+2016-02-24 10:59:50 INFO  MainController:43 - category_command
+2016-02-24 10:59:50 INFO  MainController:46 - com.epam.restaurant.controller.command.impl.CategoryCommand@169157a
+2016-02-24 11:00:09 INFO  MainController:43 - login_command
+2016-02-24 11:00:09 INFO  MainController:46 - com.epam.restaurant.controller.command.impl.LoginCommand@1c77047
+2016-02-24 13:01:40 INFO  MainController:43 - login_command
+2016-02-24 13:01:40 INFO  MainController:46 - com.epam.restaurant.controller.command.impl.LoginCommand@1c77047
+2016-02-27 18:48:02 INFO  MainController:43 - menu_command
+2016-02-27 18:48:05 INFO  ConnectionPoolImpl:65 - Pool has been initialized
+2016-02-27 18:48:05 INFO  MainController:46 - com.epam.restaurant.controller.command.impl.MenuCommand@1730d68
+2016-02-27 18:48:05 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 18:48:05 INFO  MainController:51 - Page: menu.jsp
+2016-02-27 18:48:10 INFO  MainController:43 - 
+2016-02-27 18:48:16 INFO  MainController:43 - category_command
+2016-02-27 18:48:16 INFO  MainController:46 - com.epam.restaurant.controller.command.impl.CategoryCommand@1803647
+2016-02-27 18:48:16 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 18:48:16 INFO  CategoryCommand:32 - Drinks
+2016-02-27 18:48:16 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 18:48:16 INFO  CategoryCommand:34 - [Category{id=1, name='Drinks', description='Different drinks'}, Category{id=2, name='Appetizers', description='Served before the main course'}, Category{id=3, name='Soups', description='Boiled mixed food'}, Category{id=4, name='Salads', description='Mixed vegetables with sauce'}, Category{id=5, name='Desserts', description='Sweet food'}, Category{id=6, name='Sides', description='Adders to meat'}]
+2016-02-27 18:48:16 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 18:48:17 INFO  CategoryCommand:36 - [Dish{id=4, name='Apple Juice', description='Drink from fruit', ingredients='Apples', price=2.50, quantity=30, categoryId=1, image='applejuice.png'}, Dish{id=5, name='Orange Juice', description='Drink from fruit', ingredients='Oranges', price=2.50, quantity=30, categoryId=1, image='orangejuice.png'}]
+2016-02-27 18:48:17 INFO  MainController:51 - Page: category.jsp
+2016-02-27 18:48:47 INFO  MainController:43 - login_command
+2016-02-27 18:48:47 INFO  MainController:46 - com.epam.restaurant.controller.command.impl.LoginCommand@81ae44
+2016-02-27 18:48:47 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 18:48:47 INFO  MainController:51 - Page: hello.jsp
+2016-02-27 18:50:52 INFO  MainController:43 - 
+2016-02-27 18:50:57 INFO  MainController:43 - 
+2016-02-27 18:51:01 INFO  MainController:43 - menu_command
+2016-02-27 18:51:01 INFO  MainController:46 - com.epam.restaurant.controller.command.impl.MenuCommand@1730d68
+2016-02-27 18:51:01 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 18:51:01 INFO  MainController:51 - Page: menu.jsp
+2016-02-27 18:51:10 INFO  MainController:43 - menu_command
+2016-02-27 18:51:10 INFO  MainController:46 - com.epam.restaurant.controller.command.impl.MenuCommand@1730d68
+2016-02-27 18:51:10 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 18:51:10 INFO  MainController:51 - Page: menu.jsp
+2016-02-27 18:51:16 INFO  MainController:43 - category_command
+2016-02-27 18:51:16 INFO  MainController:46 - com.epam.restaurant.controller.command.impl.CategoryCommand@1803647
+2016-02-27 18:51:16 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 18:51:16 INFO  CategoryCommand:32 - Sides
+2016-02-27 18:51:16 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 18:51:16 INFO  CategoryCommand:34 - [Category{id=1, name='Drinks', description='Different drinks'}, Category{id=2, name='Appetizers', description='Served before the main course'}, Category{id=3, name='Soups', description='Boiled mixed food'}, Category{id=4, name='Salads', description='Mixed vegetables with sauce'}, Category{id=5, name='Desserts', description='Sweet food'}, Category{id=6, name='Sides', description='Adders to meat'}]
+2016-02-27 18:51:16 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 18:51:16 INFO  CategoryCommand:36 - []
+2016-02-27 18:51:16 INFO  MainController:51 - Page: category.jsp
+2016-02-27 18:51:20 INFO  MainController:43 - category_command
+2016-02-27 18:51:20 INFO  MainController:46 - com.epam.restaurant.controller.command.impl.CategoryCommand@1803647
+2016-02-27 18:51:20 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 18:51:21 INFO  CategoryCommand:32 - Soups
+2016-02-27 18:51:21 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 18:51:21 INFO  CategoryCommand:34 - [Category{id=1, name='Drinks', description='Different drinks'}, Category{id=2, name='Appetizers', description='Served before the main course'}, Category{id=3, name='Soups', description='Boiled mixed food'}, Category{id=4, name='Salads', description='Mixed vegetables with sauce'}, Category{id=5, name='Desserts', description='Sweet food'}, Category{id=6, name='Sides', description='Adders to meat'}]
+2016-02-27 18:51:21 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 18:51:21 INFO  CategoryCommand:36 - [Dish{id=1, name='MySoup1', description='hot cool soup', ingredients='water and colt', price=10.00, quantity=10, categoryId=3, image='mysoup.png'}, Dish{id=2, name='MySoup2', description='hot cool soup', ingredients='water and colt', price=20.00, quantity=10, categoryId=3, image='mysoup2.png'}, Dish{id=3, name='MySoup3', description='hot cool soup', ingredients='water and colt', price=30.00, quantity=10, categoryId=3, image='mysoup3.png'}]
+2016-02-27 18:51:21 INFO  MainController:51 - Page: category.jsp
+2016-02-27 18:51:25 INFO  MainController:43 - category_command
+2016-02-27 18:51:25 INFO  MainController:46 - com.epam.restaurant.controller.command.impl.CategoryCommand@1803647
+2016-02-27 18:51:25 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 18:51:25 INFO  CategoryCommand:32 - Drinks
+2016-02-27 18:51:25 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 18:51:25 INFO  CategoryCommand:34 - [Category{id=1, name='Drinks', description='Different drinks'}, Category{id=2, name='Appetizers', description='Served before the main course'}, Category{id=3, name='Soups', description='Boiled mixed food'}, Category{id=4, name='Salads', description='Mixed vegetables with sauce'}, Category{id=5, name='Desserts', description='Sweet food'}, Category{id=6, name='Sides', description='Adders to meat'}]
+2016-02-27 18:51:25 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 18:51:25 INFO  CategoryCommand:36 - [Dish{id=4, name='Apple Juice', description='Drink from fruit', ingredients='Apples', price=2.50, quantity=30, categoryId=1, image='applejuice.png'}, Dish{id=5, name='Orange Juice', description='Drink from fruit', ingredients='Oranges', price=2.50, quantity=30, categoryId=1, image='orangejuice.png'}]
+2016-02-27 18:51:25 INFO  MainController:51 - Page: category.jsp
+2016-02-27 19:00:22 INFO  MainController:43 - logout_command
+2016-02-27 19:00:22 INFO  MainController:46 - com.epam.restaurant.controller.command.impl.LogoutCommand@12367e3
+2016-02-27 19:00:22 INFO  MainController:51 - Page: index.jsp
+2016-02-27 19:00:39 INFO  MainController:43 - login_command
+2016-02-27 19:00:39 INFO  MainController:46 - com.epam.restaurant.controller.command.impl.LoginCommand@81ae44
+2016-02-27 19:00:39 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 19:00:40 INFO  MainController:51 - Page: hello.jsp
+2016-02-27 19:01:17 INFO  MainController:43 - menu_command
+2016-02-27 19:01:17 INFO  MainController:46 - com.epam.restaurant.controller.command.impl.MenuCommand@1730d68
+2016-02-27 19:01:17 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 19:01:17 INFO  MainController:51 - Page: menu.jsp
+2016-02-27 19:01:19 INFO  MainController:43 - category_command
+2016-02-27 19:01:19 INFO  MainController:46 - com.epam.restaurant.controller.command.impl.CategoryCommand@1803647
+2016-02-27 19:01:19 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 19:01:19 INFO  CategoryCommand:32 - Drinks
+2016-02-27 19:01:19 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 19:01:19 INFO  CategoryCommand:34 - [Category{id=1, name='Drinks', description='Different drinks'}, Category{id=2, name='Appetizers', description='Served before the main course'}, Category{id=3, name='Soups', description='Boiled mixed food'}, Category{id=4, name='Salads', description='Mixed vegetables with sauce'}, Category{id=5, name='Desserts', description='Sweet food'}, Category{id=6, name='Sides', description='Adders to meat'}]
+2016-02-27 19:01:19 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 19:01:19 INFO  CategoryCommand:36 - [Dish{id=4, name='Apple Juice', description='Drink from fruit', ingredients='Apples', price=2.50, quantity=30, categoryId=1, image='applejuice.png'}, Dish{id=5, name='Orange Juice', description='Drink from fruit', ingredients='Oranges', price=2.50, quantity=30, categoryId=1, image='orangejuice.png'}]
+2016-02-27 19:01:19 INFO  MainController:51 - Page: category.jsp
+2016-02-27 19:01:59 INFO  MainController:43 - category_command
+2016-02-27 19:01:59 INFO  MainController:46 - com.epam.restaurant.controller.command.impl.CategoryCommand@1803647
+2016-02-27 19:01:59 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 19:01:59 INFO  CategoryCommand:32 - Drinks
+2016-02-27 19:01:59 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 19:01:59 INFO  CategoryCommand:34 - [Category{id=1, name='Drinks', description='Different drinks'}, Category{id=2, name='Appetizers', description='Served before the main course'}, Category{id=3, name='Soups', description='Boiled mixed food'}, Category{id=4, name='Salads', description='Mixed vegetables with sauce'}, Category{id=5, name='Desserts', description='Sweet food'}, Category{id=6, name='Sides', description='Adders to meat'}]
+2016-02-27 19:01:59 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 19:01:59 INFO  CategoryCommand:36 - [Dish{id=4, name='Apple Juice', description='Drink from fruit', ingredients='Apples', price=2.50, quantity=30, categoryId=1, image='applejuice.png'}, Dish{id=5, name='Orange Juice', description='Drink from fruit', ingredients='Oranges', price=2.50, quantity=30, categoryId=1, image='orangejuice.png'}]
+2016-02-27 19:01:59 INFO  MainController:51 - Page: category.jsp
+2016-02-27 19:02:06 INFO  MainController:43 - category_command
+2016-02-27 19:02:06 INFO  MainController:46 - com.epam.restaurant.controller.command.impl.CategoryCommand@1803647
+2016-02-27 19:02:06 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 19:02:06 INFO  CategoryCommand:32 - Drinks
+2016-02-27 19:02:06 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 19:02:06 INFO  CategoryCommand:34 - [Category{id=1, name='Drinks', description='Different drinks'}, Category{id=2, name='Appetizers', description='Served before the main course'}, Category{id=3, name='Soups', description='Boiled mixed food'}, Category{id=4, name='Salads', description='Mixed vegetables with sauce'}, Category{id=5, name='Desserts', description='Sweet food'}, Category{id=6, name='Sides', description='Adders to meat'}]
+2016-02-27 19:02:06 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 19:02:06 INFO  CategoryCommand:36 - [Dish{id=4, name='Apple Juice', description='Drink from fruit', ingredients='Apples', price=2.50, quantity=30, categoryId=1, image='applejuice.png'}, Dish{id=5, name='Orange Juice', description='Drink from fruit', ingredients='Oranges', price=2.50, quantity=30, categoryId=1, image='orangejuice.png'}]
+2016-02-27 19:02:06 INFO  MainController:51 - Page: category.jsp
+2016-02-27 19:03:03 INFO  MainController:43 - category_command
+2016-02-27 19:03:03 INFO  MainController:46 - com.epam.restaurant.controller.command.impl.CategoryCommand@1803647
+2016-02-27 19:03:03 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 19:03:03 INFO  CategoryCommand:32 - Drinks
+2016-02-27 19:03:03 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 19:03:03 INFO  CategoryCommand:34 - [Category{id=1, name='Drinks', description='Different drinks'}, Category{id=2, name='Appetizers', description='Served before the main course'}, Category{id=3, name='Soups', description='Boiled mixed food'}, Category{id=4, name='Salads', description='Mixed vegetables with sauce'}, Category{id=5, name='Desserts', description='Sweet food'}, Category{id=6, name='Sides', description='Adders to meat'}]
+2016-02-27 19:03:03 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 19:03:03 INFO  CategoryCommand:36 - [Dish{id=4, name='Apple Juice', description='Drink from fruit', ingredients='Apples', price=2.50, quantity=30, categoryId=1, image='applejuice.png'}, Dish{id=5, name='Orange Juice', description='Drink from fruit', ingredients='Oranges', price=2.50, quantity=30, categoryId=1, image='orangejuice.png'}]
+2016-02-27 19:03:03 INFO  MainController:51 - Page: category.jsp
+2016-02-27 19:03:10 INFO  MainController:43 - 
+2016-02-27 19:03:17 INFO  MainController:43 - menu_command
+2016-02-27 19:03:17 INFO  MainController:46 - com.epam.restaurant.controller.command.impl.MenuCommand@1730d68
+2016-02-27 19:03:17 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 19:03:17 INFO  MainController:51 - Page: menu.jsp
+2016-02-27 19:03:22 INFO  MainController:43 - category_command
+2016-02-27 19:03:22 INFO  MainController:46 - com.epam.restaurant.controller.command.impl.CategoryCommand@1803647
+2016-02-27 19:03:22 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 19:03:22 INFO  CategoryCommand:32 - Desserts
+2016-02-27 19:03:22 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 19:03:22 INFO  CategoryCommand:34 - [Category{id=1, name='Drinks', description='Different drinks'}, Category{id=2, name='Appetizers', description='Served before the main course'}, Category{id=3, name='Soups', description='Boiled mixed food'}, Category{id=4, name='Salads', description='Mixed vegetables with sauce'}, Category{id=5, name='Desserts', description='Sweet food'}, Category{id=6, name='Sides', description='Adders to meat'}]
+2016-02-27 19:03:22 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 19:03:22 INFO  CategoryCommand:36 - []
+2016-02-27 19:03:22 INFO  MainController:51 - Page: category.jsp
+2016-02-27 19:04:36 INFO  MainController:43 - 
+2016-02-27 19:04:39 INFO  MainController:43 - 
+2016-02-27 19:04:42 INFO  MainController:43 - 
+2016-02-27 19:04:49 INFO  MainController:43 - menu_command
+2016-02-27 19:04:49 INFO  MainController:46 - com.epam.restaurant.controller.command.impl.MenuCommand@1730d68
+2016-02-27 19:04:49 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 19:04:49 INFO  MainController:51 - Page: menu.jsp
+2016-02-27 19:04:54 INFO  MainController:43 - menu_command
+2016-02-27 19:04:54 INFO  MainController:46 - com.epam.restaurant.controller.command.impl.MenuCommand@1730d68
+2016-02-27 19:04:54 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 19:04:55 INFO  MainController:51 - Page: menu.jsp
+2016-02-27 19:08:30 INFO  MainController:43 - menu_command
+2016-02-27 19:08:30 INFO  MainController:46 - com.epam.restaurant.controller.command.impl.MenuCommand@1730d68
+2016-02-27 19:08:30 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 19:08:30 INFO  MainController:51 - Page: menu.jsp
+2016-02-27 19:08:33 INFO  MainController:43 - 
+2016-02-27 19:08:35 INFO  MainController:43 - 
+2016-02-27 19:08:38 INFO  MainController:43 - logout_command
+2016-02-27 19:08:38 INFO  MainController:46 - com.epam.restaurant.controller.command.impl.LogoutCommand@12367e3
+2016-02-27 19:08:38 INFO  MainController:51 - Page: index.jsp
+2016-02-27 19:08:40 INFO  MainController:43 - 
+2016-02-27 19:08:43 INFO  MainController:43 - 
+2016-02-27 19:11:19 INFO  MainController:43 - register_command
+2016-02-27 19:11:19 INFO  MainController:46 - com.epam.restaurant.controller.command.impl.RegisterCommand@ef5b92
+2016-02-27 19:11:19 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 19:11:19 INFO  MainController:51 - Page: register.jsp
+2016-02-27 19:11:42 INFO  MainController:43 - login_command
+2016-02-27 19:11:42 INFO  MainController:46 - com.epam.restaurant.controller.command.impl.LoginCommand@81ae44
+2016-02-27 19:11:42 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 19:11:42 INFO  MainController:51 - Page: hello.jsp
+2016-02-27 19:24:43 INFO  MainController:43 - menu_command
+2016-02-27 19:24:43 INFO  MainController:46 - com.epam.restaurant.controller.command.impl.MenuCommand@1730d68
+2016-02-27 19:24:43 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 19:24:43 INFO  MainController:51 - Page: menu.jsp
+2016-02-27 19:24:46 INFO  MainController:43 - 
+2016-02-27 19:24:48 INFO  MainController:43 - 
+2016-02-27 19:24:54 INFO  MainController:43 - menu_command
+2016-02-27 19:24:54 INFO  MainController:46 - com.epam.restaurant.controller.command.impl.MenuCommand@1730d68
+2016-02-27 19:24:54 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 19:24:54 INFO  MainController:51 - Page: menu.jsp
+2016-02-27 19:25:00 INFO  MainController:43 - menu_command
+2016-02-27 19:25:00 INFO  MainController:46 - com.epam.restaurant.controller.command.impl.MenuCommand@1730d68
+2016-02-27 19:25:00 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 19:25:00 INFO  MainController:51 - Page: menu.jsp
+2016-02-27 19:25:04 INFO  MainController:43 - logout_command
+2016-02-27 19:25:04 INFO  MainController:46 - com.epam.restaurant.controller.command.impl.LogoutCommand@12367e3
+2016-02-27 19:25:04 INFO  MainController:51 - Page: index.jsp
+2016-02-27 19:25:12 INFO  MainController:43 - menu_command
+2016-02-27 19:25:12 INFO  MainController:46 - com.epam.restaurant.controller.command.impl.MenuCommand@1730d68
+2016-02-27 19:25:12 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 19:25:12 INFO  MainController:51 - Page: menu.jsp
+2016-02-27 19:25:19 INFO  MainController:43 - category_command
+2016-02-27 19:25:19 INFO  MainController:46 - com.epam.restaurant.controller.command.impl.CategoryCommand@1803647
+2016-02-27 19:25:19 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 19:25:19 INFO  CategoryCommand:32 - Salads
+2016-02-27 19:25:19 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 19:25:19 INFO  CategoryCommand:34 - [Category{id=1, name='Drinks', description='Different drinks'}, Category{id=2, name='Appetizers', description='Served before the main course'}, Category{id=3, name='Soups', description='Boiled mixed food'}, Category{id=4, name='Salads', description='Mixed vegetables with sauce'}, Category{id=5, name='Desserts', description='Sweet food'}, Category{id=6, name='Sides', description='Adders to meat'}]
+2016-02-27 19:25:19 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 19:25:19 INFO  CategoryCommand:36 - []
+2016-02-27 19:25:19 INFO  MainController:51 - Page: category.jsp
+2016-02-27 19:31:11 INFO  MainController:43 - category_command
+2016-02-27 19:31:11 INFO  MainController:46 - com.epam.restaurant.controller.command.impl.CategoryCommand@1803647
+2016-02-27 19:31:11 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 19:31:11 INFO  CategoryCommand:32 - Drinks
+2016-02-27 19:31:11 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 19:31:11 INFO  CategoryCommand:34 - [Category{id=1, name='Drinks', description='Different drinks'}, Category{id=2, name='Appetizers', description='Served before the main course'}, Category{id=3, name='Soups', description='Boiled mixed food'}, Category{id=4, name='Salads', description='Mixed vegetables with sauce'}, Category{id=5, name='Desserts', description='Sweet food'}, Category{id=6, name='Sides', description='Adders to meat'}]
+2016-02-27 19:31:11 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 19:31:11 INFO  CategoryCommand:36 - [Dish{id=4, name='Apple Juice', description='Drink from fruit', ingredients='Apples', price=2.50, quantity=30, categoryId=1, image='applejuice.png'}, Dish{id=5, name='Orange Juice', description='Drink from fruit', ingredients='Oranges', price=2.50, quantity=30, categoryId=1, image='orangejuice.png'}, Dish{id=6, name='??ло?н?й ?о?', description='Со? ?з ??ло?', ingredients='??ло??', price=2.50, quantity=30, categoryId=1, image='applejuice.png'}]
+2016-02-27 19:31:11 INFO  MainController:51 - Page: category.jsp
+2016-02-27 19:53:55 INFO  MainController:44 - menu_command
+2016-02-27 19:53:56 INFO  ConnectionPoolImpl:65 - Pool has been initialized
+2016-02-27 19:53:56 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.MenuCommand@1ce068
+2016-02-27 19:53:56 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 19:53:57 INFO  MainController:52 - Page: menu.jsp
+2016-02-27 19:54:02 INFO  MainController:44 - category_command
+2016-02-27 19:54:02 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.CategoryCommand@931a36
+2016-02-27 19:54:02 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 19:54:02 INFO  CategoryCommand:32 - Drinks
+2016-02-27 19:54:02 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 19:54:02 INFO  CategoryCommand:34 - [Category{id=1, name='Drinks', description='Different drinks'}, Category{id=2, name='Appetizers', description='Served before the main course'}, Category{id=3, name='Soups', description='Boiled mixed food'}, Category{id=4, name='Salads', description='Mixed vegetables with sauce'}, Category{id=5, name='Desserts', description='Sweet food'}, Category{id=6, name='Sides', description='Adders to meat'}]
+2016-02-27 19:54:02 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 19:54:02 INFO  CategoryCommand:36 - [Dish{id=4, name='Apple Juice', description='Drink from fruit', ingredients='Apples', price=2.50, quantity=30, categoryId=1, image='applejuice.png'}, Dish{id=5, name='Orange Juice', description='Drink from fruit', ingredients='Oranges', price=2.50, quantity=30, categoryId=1, image='orangejuice.png'}, Dish{id=6, name='??ло?н?й ?о?', description='Со? ?з ??ло?', ingredients='??ло??', price=2.50, quantity=30, categoryId=1, image='applejuice.png'}]
+2016-02-27 19:54:02 INFO  MainController:52 - Page: category.jsp
+2016-02-27 19:54:30 INFO  MainController:44 - category_command
+2016-02-27 19:54:30 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.CategoryCommand@931a36
+2016-02-27 19:54:30 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 19:54:30 INFO  CategoryCommand:32 - Soups
+2016-02-27 19:54:30 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 19:54:30 INFO  CategoryCommand:34 - [Category{id=1, name='Drinks', description='Different drinks'}, Category{id=2, name='Appetizers', description='Served before the main course'}, Category{id=3, name='Soups', description='Boiled mixed food'}, Category{id=4, name='Salads', description='Mixed vegetables with sauce'}, Category{id=5, name='Desserts', description='Sweet food'}, Category{id=6, name='Sides', description='Adders to meat'}]
+2016-02-27 19:54:30 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 19:54:30 INFO  CategoryCommand:36 - [Dish{id=1, name='MySoup1', description='hot cool soup', ingredients='water and colt', price=10.00, quantity=10, categoryId=3, image='mysoup.png'}, Dish{id=2, name='MySoup2', description='hot cool soup', ingredients='water and colt', price=20.00, quantity=10, categoryId=3, image='mysoup2.png'}, Dish{id=3, name='MySoup3', description='hot cool soup', ingredients='water and colt', price=30.00, quantity=10, categoryId=3, image='mysoup3.png'}]
+2016-02-27 19:54:30 INFO  MainController:52 - Page: category.jsp
+2016-02-27 19:54:33 INFO  MainController:44 - category_command
+2016-02-27 19:54:33 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.CategoryCommand@931a36
+2016-02-27 19:54:33 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 19:54:33 INFO  CategoryCommand:32 - Drinks
+2016-02-27 19:54:33 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 19:54:33 INFO  CategoryCommand:34 - [Category{id=1, name='Drinks', description='Different drinks'}, Category{id=2, name='Appetizers', description='Served before the main course'}, Category{id=3, name='Soups', description='Boiled mixed food'}, Category{id=4, name='Salads', description='Mixed vegetables with sauce'}, Category{id=5, name='Desserts', description='Sweet food'}, Category{id=6, name='Sides', description='Adders to meat'}]
+2016-02-27 19:54:33 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 19:54:33 INFO  CategoryCommand:36 - [Dish{id=4, name='Apple Juice', description='Drink from fruit', ingredients='Apples', price=2.50, quantity=30, categoryId=1, image='applejuice.png'}, Dish{id=5, name='Orange Juice', description='Drink from fruit', ingredients='Oranges', price=2.50, quantity=30, categoryId=1, image='orangejuice.png'}, Dish{id=6, name='??ло?н?й ?о?', description='Со? ?з ??ло?', ingredients='??ло??', price=2.50, quantity=30, categoryId=1, image='applejuice.png'}]
+2016-02-27 19:54:33 INFO  MainController:52 - Page: category.jsp
+2016-02-27 19:56:06 INFO  MainController:44 - menu_command
+2016-02-27 19:56:07 INFO  ConnectionPoolImpl:65 - Pool has been initialized
+2016-02-27 19:56:07 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.MenuCommand@150894d
+2016-02-27 19:56:07 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 19:56:07 INFO  MainController:52 - Page: menu.jsp
+2016-02-27 19:56:12 INFO  MainController:44 - category_command
+2016-02-27 19:56:12 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.CategoryCommand@f8b0d7
+2016-02-27 19:56:12 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 19:56:12 INFO  CategoryCommand:32 - Drinks
+2016-02-27 19:56:12 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 19:56:12 INFO  CategoryCommand:34 - [Category{id=1, name='Drinks', description='Different drinks'}, Category{id=2, name='Appetizers', description='Served before the main course'}, Category{id=3, name='Soups', description='Boiled mixed food'}, Category{id=4, name='Salads', description='Mixed vegetables with sauce'}, Category{id=5, name='Desserts', description='Sweet food'}, Category{id=6, name='Sides', description='Adders to meat'}]
+2016-02-27 19:56:12 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 19:56:12 INFO  CategoryCommand:36 - [Dish{id=4, name='Apple Juice', description='Drink from fruit', ingredients='Apples', price=2.50, quantity=30, categoryId=1, image='applejuice.png'}, Dish{id=5, name='Orange Juice', description='Drink from fruit', ingredients='Oranges', price=2.50, quantity=30, categoryId=1, image='orangejuice.png'}, Dish{id=6, name='??ло?н?й ?о?', description='Со? ?з ??ло?', ingredients='??ло??', price=2.50, quantity=30, categoryId=1, image='applejuice.png'}]
+2016-02-27 19:56:12 INFO  MainController:52 - Page: category.jsp
+2016-02-27 21:32:55 INFO  MainController:44 - menu_command
+2016-02-27 21:32:56 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.MenuCommand@150894d
+2016-02-27 21:32:56 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 21:32:56 INFO  MainController:52 - Page: menu.jsp
+2016-02-27 21:33:00 INFO  MainController:44 - category_command
+2016-02-27 21:33:00 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.CategoryCommand@f8b0d7
+2016-02-27 21:33:00 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 21:33:00 INFO  CategoryCommand:32 - Drinks
+2016-02-27 21:33:00 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 21:33:00 INFO  CategoryCommand:34 - [Category{id=1, name='Drinks', description='Different drinks'}, Category{id=2, name='Appetizers', description='Served before the main course'}, Category{id=3, name='Soups', description='Boiled mixed food'}, Category{id=4, name='Salads', description='Mixed vegetables with sauce'}, Category{id=5, name='Desserts', description='Sweet food'}, Category{id=6, name='Sides', description='Adders to meat'}]
+2016-02-27 21:33:00 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 21:33:00 INFO  CategoryCommand:36 - [Dish{id=4, name='Apple Juice', description='Drink from fruit', ingredients='Apples', price=2.50, quantity=30, categoryId=1, image='applejuice.png'}, Dish{id=5, name='Orange Juice', description='Drink from fruit', ingredients='Oranges', price=2.50, quantity=30, categoryId=1, image='orangejuice.png'}, Dish{id=6, name='??ло?н?й ?о?', description='Со? ?з ??ло?', ingredients='??ло??', price=2.50, quantity=30, categoryId=1, image='applejuice.png'}]
+2016-02-27 21:33:00 INFO  MainController:52 - Page: category.jsp
+2016-02-27 21:34:19 INFO  MainController:44 - menu_command
+2016-02-27 21:34:21 INFO  ConnectionPoolImpl:65 - Pool has been initialized
+2016-02-27 21:34:21 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.MenuCommand@15c5660
+2016-02-27 21:34:21 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 21:34:21 INFO  MainController:52 - Page: menu.jsp
+2016-02-27 21:34:25 INFO  MainController:44 - category_command
+2016-02-27 21:34:25 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.CategoryCommand@192a609
+2016-02-27 21:34:25 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 21:34:25 INFO  CategoryCommand:32 - Drinks
+2016-02-27 21:34:25 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 21:34:25 INFO  CategoryCommand:34 - [Category{id=1, name='Drinks', description='Different drinks'}, Category{id=2, name='Appetizers', description='Served before the main course'}, Category{id=3, name='Soups', description='Boiled mixed food'}, Category{id=4, name='Salads', description='Mixed vegetables with sauce'}, Category{id=5, name='Desserts', description='Sweet food'}, Category{id=6, name='Sides', description='Adders to meat'}]
+2016-02-27 21:34:25 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 21:34:25 INFO  CategoryCommand:36 - [Dish{id=4, name='Apple Juice', description='Drink from fruit', ingredients='Apples', price=2.50, quantity=30, categoryId=1, image='applejuice.png'}, Dish{id=5, name='Orange Juice', description='Drink from fruit', ingredients='Oranges', price=2.50, quantity=30, categoryId=1, image='orangejuice.png'}, Dish{id=6, name='??ло?н?й ?о?', description='Со? ?з ??ло?', ingredients='??ло??', price=2.50, quantity=30, categoryId=1, image='applejuice.png'}]
+2016-02-27 21:34:25 INFO  MainController:52 - Page: category.jsp
+2016-02-27 21:40:30 INFO  MainController:44 - category_command
+2016-02-27 21:40:30 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.CategoryCommand@192a609
+2016-02-27 21:40:30 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 21:40:30 INFO  CategoryCommand:32 - Drinks
+2016-02-27 21:40:30 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 21:40:30 INFO  CategoryCommand:34 - [Category{id=1, name='Drinks', description='Different drinks'}, Category{id=2, name='Appetizers', description='Served before the main course'}, Category{id=3, name='Soups', description='Boiled mixed food'}, Category{id=4, name='Salads', description='Mixed vegetables with sauce'}, Category{id=5, name='Desserts', description='Sweet food'}, Category{id=6, name='Sides', description='Adders to meat'}]
+2016-02-27 21:40:30 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 21:40:30 INFO  CategoryCommand:36 - [Dish{id=4, name='Apple Juice', description='Drink from fruit', ingredients='Apples', price=2.50, quantity=30, categoryId=1, image='applejuice.png'}, Dish{id=5, name='Orange Juice', description='Drink from fruit', ingredients='Oranges', price=2.50, quantity=30, categoryId=1, image='orangejuice.png'}, Dish{id=6, name='??ло?н?й ?о?', description='Со? ?з ??ло?', ingredients='??ло??', price=2.50, quantity=30, categoryId=1, image='applejuice.png'}]
+2016-02-27 21:40:30 INFO  MainController:52 - Page: category.jsp
+2016-02-27 21:40:33 INFO  MainController:44 - category_command
+2016-02-27 21:40:33 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.CategoryCommand@192a609
+2016-02-27 21:40:33 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 21:40:33 INFO  CategoryCommand:32 - Appetizers
+2016-02-27 21:40:33 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 21:40:33 INFO  CategoryCommand:34 - [Category{id=1, name='Drinks', description='Different drinks'}, Category{id=2, name='Appetizers', description='Served before the main course'}, Category{id=3, name='Soups', description='Boiled mixed food'}, Category{id=4, name='Salads', description='Mixed vegetables with sauce'}, Category{id=5, name='Desserts', description='Sweet food'}, Category{id=6, name='Sides', description='Adders to meat'}]
+2016-02-27 21:40:33 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 21:40:33 INFO  CategoryCommand:36 - []
+2016-02-27 21:40:33 INFO  MainController:52 - Page: category.jsp
+2016-02-27 21:40:36 INFO  MainController:44 - category_command
+2016-02-27 21:40:36 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.CategoryCommand@192a609
+2016-02-27 21:40:36 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 21:40:36 INFO  CategoryCommand:32 - Soups
+2016-02-27 21:40:36 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 21:40:36 INFO  CategoryCommand:34 - [Category{id=1, name='Drinks', description='Different drinks'}, Category{id=2, name='Appetizers', description='Served before the main course'}, Category{id=3, name='Soups', description='Boiled mixed food'}, Category{id=4, name='Salads', description='Mixed vegetables with sauce'}, Category{id=5, name='Desserts', description='Sweet food'}, Category{id=6, name='Sides', description='Adders to meat'}]
+2016-02-27 21:40:36 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 21:40:36 INFO  CategoryCommand:36 - [Dish{id=1, name='MySoup1', description='hot cool soup', ingredients='water and colt', price=10.00, quantity=10, categoryId=3, image='mysoup.png'}, Dish{id=2, name='MySoup2', description='hot cool soup', ingredients='water and colt', price=20.00, quantity=10, categoryId=3, image='mysoup2.png'}, Dish{id=3, name='MySoup3', description='hot cool soup', ingredients='water and colt', price=30.00, quantity=10, categoryId=3, image='mysoup3.png'}]
+2016-02-27 21:40:36 INFO  MainController:52 - Page: category.jsp
+2016-02-27 21:40:39 INFO  MainController:44 - category_command
+2016-02-27 21:40:39 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.CategoryCommand@192a609
+2016-02-27 21:40:39 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 21:40:39 INFO  CategoryCommand:32 - Drinks
+2016-02-27 21:40:39 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 21:40:39 INFO  CategoryCommand:34 - [Category{id=1, name='Drinks', description='Different drinks'}, Category{id=2, name='Appetizers', description='Served before the main course'}, Category{id=3, name='Soups', description='Boiled mixed food'}, Category{id=4, name='Salads', description='Mixed vegetables with sauce'}, Category{id=5, name='Desserts', description='Sweet food'}, Category{id=6, name='Sides', description='Adders to meat'}]
+2016-02-27 21:40:39 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 21:40:39 INFO  CategoryCommand:36 - [Dish{id=4, name='Apple Juice', description='Drink from fruit', ingredients='Apples', price=2.50, quantity=30, categoryId=1, image='applejuice.png'}, Dish{id=5, name='Orange Juice', description='Drink from fruit', ingredients='Oranges', price=2.50, quantity=30, categoryId=1, image='orangejuice.png'}, Dish{id=6, name='??ло?н?й ?о?', description='Со? ?з ??ло?', ingredients='??ло??', price=2.50, quantity=30, categoryId=1, image='applejuice.png'}]
+2016-02-27 21:40:39 INFO  MainController:52 - Page: category.jsp
+2016-02-27 22:00:18 INFO  MainController:44 - category_command
+2016-02-27 22:00:18 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.CategoryCommand@192a609
+2016-02-27 22:00:18 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 22:00:18 INFO  CategoryCommand:32 - Drinks
+2016-02-27 22:00:18 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 22:00:18 INFO  CategoryCommand:34 - [Category{id=1, name='Drinks', description='Different drinks'}, Category{id=2, name='Appetizers', description='Served before the main course'}, Category{id=3, name='Soups', description='Boiled mixed food'}, Category{id=4, name='Salads', description='Mixed vegetables with sauce'}, Category{id=5, name='Desserts', description='Sweet food'}, Category{id=6, name='Sides', description='Adders to meat'}]
+2016-02-27 22:00:18 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 22:00:18 INFO  CategoryCommand:36 - [Dish{id=4, name='Apple Juice', description='Drink from fruit', ingredients='Apples', price=2.50, quantity=30, categoryId=1, image='applejuice.png'}, Dish{id=5, name='Orange Juice', description='Drink from fruit', ingredients='Oranges', price=2.50, quantity=30, categoryId=1, image='orangejuice.png'}, Dish{id=6, name='??ло?н?й ?о?', description='Со? ?з ??ло?', ingredients='??ло??', price=2.50, quantity=30, categoryId=1, image='applejuice.png'}]
+2016-02-27 22:00:18 INFO  MainController:52 - Page: category.jsp
+2016-02-27 22:00:26 INFO  MainController:44 - menu_command
+2016-02-27 22:00:26 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.MenuCommand@15c5660
+2016-02-27 22:00:26 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 22:00:26 INFO  MainController:52 - Page: menu.jsp
+2016-02-27 22:00:28 INFO  MainController:44 - category_command
+2016-02-27 22:00:28 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.CategoryCommand@192a609
+2016-02-27 22:00:28 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 22:00:29 INFO  CategoryCommand:32 - Drinks
+2016-02-27 22:00:29 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 22:00:29 INFO  CategoryCommand:34 - [Category{id=1, name='Drinks', description='Different drinks'}, Category{id=2, name='Appetizers', description='Served before the main course'}, Category{id=3, name='Soups', description='Boiled mixed food'}, Category{id=4, name='Salads', description='Mixed vegetables with sauce'}, Category{id=5, name='Desserts', description='Sweet food'}, Category{id=6, name='Sides', description='Adders to meat'}]
+2016-02-27 22:00:29 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 22:00:29 INFO  CategoryCommand:36 - [Dish{id=4, name='Apple Juice', description='Drink from fruit', ingredients='Apples', price=2.50, quantity=30, categoryId=1, image='applejuice.png'}, Dish{id=5, name='Orange Juice', description='Drink from fruit', ingredients='Oranges', price=2.50, quantity=30, categoryId=1, image='orangejuice.png'}, Dish{id=6, name='??ло?н?й ?о?', description='Со? ?з ??ло?', ingredients='??ло??', price=2.50, quantity=30, categoryId=1, image='applejuice.png'}]
+2016-02-27 22:00:29 INFO  MainController:52 - Page: category.jsp
+2016-02-27 22:07:27 INFO  MainController:44 - register_command
+2016-02-27 22:07:27 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.RegisterCommand@9f53e9
+2016-02-27 22:07:27 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 22:07:28 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 22:07:28 INFO  MainController:52 - Page: login.jsp
+2016-02-27 22:07:45 INFO  MainController:44 - login_command
+2016-02-27 22:07:45 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.LoginCommand@10bc931
+2016-02-27 22:07:45 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 22:07:45 INFO  MainController:52 - Page: hello.jsp
+2016-02-27 22:11:42 INFO  MainController:44 - logout_command
+2016-02-27 22:11:42 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.LogoutCommand@c75388
+2016-02-27 22:11:42 INFO  MainController:52 - Page: index.jsp
+2016-02-27 22:12:37 INFO  MainController:44 - register_command
+2016-02-27 22:12:37 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.RegisterCommand@9f53e9
+2016-02-27 22:12:37 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 22:12:37 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 22:12:37 INFO  MainController:52 - Page: login.jsp
+2016-02-27 22:12:46 INFO  MainController:44 - login_command
+2016-02-27 22:12:46 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.LoginCommand@10bc931
+2016-02-27 22:12:46 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 22:12:46 INFO  MainController:52 - Page: hello.jsp
+2016-02-27 22:13:15 INFO  MainController:44 - logout_command
+2016-02-27 22:13:15 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.LogoutCommand@c75388
+2016-02-27 22:13:15 INFO  MainController:52 - Page: index.jsp
+2016-02-27 22:32:27 INFO  MainController:44 - menu_command
+2016-02-27 22:32:27 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.MenuCommand@15c5660
+2016-02-27 22:32:27 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 22:32:28 INFO  MainController:52 - Page: menu.jsp
+2016-02-27 22:34:26 INFO  MainController:44 - menu_command
+2016-02-27 22:34:26 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.MenuCommand@15c5660
+2016-02-27 22:34:26 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 22:34:26 INFO  MainController:52 - Page: menu.jsp
+2016-02-27 22:34:29 INFO  MainController:44 - category_command
+2016-02-27 22:34:29 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.CategoryCommand@192a609
+2016-02-27 22:34:29 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 22:34:29 INFO  CategoryCommand:32 - Drinks
+2016-02-27 22:34:29 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 22:34:29 INFO  CategoryCommand:34 - [Category{id=1, name='Drinks', description='Different drinks'}, Category{id=2, name='Appetizers', description='Served before the main course'}, Category{id=3, name='Soups', description='Boiled mixed food'}, Category{id=4, name='Salads', description='Mixed vegetables with sauce'}, Category{id=5, name='Desserts', description='Sweet food'}, Category{id=6, name='Sides', description='Adders to meat'}]
+2016-02-27 22:34:29 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 22:34:29 INFO  CategoryCommand:36 - [Dish{id=4, name='Apple Juice', description='Drink from fruit', ingredients='Apples', price=2.50, quantity=30, categoryId=1, image='applejuice.png'}, Dish{id=5, name='Orange Juice', description='Drink from fruit', ingredients='Oranges', price=2.50, quantity=30, categoryId=1, image='orangejuice.png'}, Dish{id=6, name='juice', description='apples', ingredients='apples', price=2.50, quantity=30, categoryId=1, image='applejuice.png'}]
+2016-02-27 22:34:29 INFO  MainController:52 - Page: category.jsp
+2016-02-27 22:51:18 INFO  MainController:44 - category_command
+2016-02-27 22:51:18 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.CategoryCommand@192a609
+2016-02-27 22:51:18 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 22:51:18 INFO  CategoryCommand:32 - Salads
+2016-02-27 22:51:18 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 22:51:18 INFO  CategoryCommand:34 - [Category{id=1, name='Drinks', description='Different drinks'}, Category{id=2, name='Appetizers', description='Served before the main course'}, Category{id=3, name='Soups', description='Boiled mixed food'}, Category{id=4, name='Salads', description='Mixed vegetables with sauce'}, Category{id=5, name='Desserts', description='Sweet food'}, Category{id=6, name='Sides', description='Adders to meat'}]
+2016-02-27 22:51:18 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 22:51:18 INFO  CategoryCommand:36 - []
+2016-02-27 22:51:18 INFO  MainController:52 - Page: category.jsp
+2016-02-27 22:51:26 INFO  MainController:44 - category_command
+2016-02-27 22:51:26 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.CategoryCommand@192a609
+2016-02-27 22:51:26 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 22:51:26 INFO  CategoryCommand:32 - Drinks
+2016-02-27 22:51:26 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 22:51:26 INFO  CategoryCommand:34 - [Category{id=1, name='Drinks', description='Different drinks'}, Category{id=2, name='Appetizers', description='Served before the main course'}, Category{id=3, name='Soups', description='Boiled mixed food'}, Category{id=4, name='Salads', description='Mixed vegetables with sauce'}, Category{id=5, name='Desserts', description='Sweet food'}, Category{id=6, name='Sides', description='Adders to meat'}]
+2016-02-27 22:51:26 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 22:51:26 INFO  CategoryCommand:36 - [Dish{id=4, name='Apple Juice', description='Drink from fruit', ingredients='Apples', price=2.50, quantity=30, categoryId=1, image='applejuice.png'}, Dish{id=5, name='Orange Juice', description='Drink from fruit', ingredients='Oranges', price=2.50, quantity=30, categoryId=1, image='orangejuice.png'}]
+2016-02-27 22:51:26 INFO  MainController:52 - Page: category.jsp
+2016-02-27 23:08:09 INFO  MainController:44 - register_command
+2016-02-27 23:08:09 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.RegisterCommand@9f53e9
+2016-02-27 23:08:09 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 23:08:09 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 23:08:09 INFO  MainController:52 - Page: login.jsp
+2016-02-27 23:08:18 INFO  MainController:44 - login_command
+2016-02-27 23:08:18 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.LoginCommand@10bc931
+2016-02-27 23:08:18 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 23:08:18 INFO  MainController:52 - Page: hello.jsp
+2016-02-27 23:20:14 INFO  MainController:44 - logout_command
+2016-02-27 23:20:14 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.LogoutCommand@c75388
+2016-02-27 23:20:14 INFO  MainController:52 - Page: index.jsp
+2016-02-27 23:34:54 INFO  MainController:44 - register_command
+2016-02-27 23:34:55 INFO  ConnectionPoolImpl:65 - Pool has been initialized
+2016-02-27 23:34:55 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.RegisterCommand@17b6611
+2016-02-27 23:34:55 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 23:34:55 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 23:34:55 INFO  MainController:52 - Page: login.jsp
+2016-02-27 23:35:05 INFO  MainController:44 - login_command
+2016-02-27 23:35:05 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.LoginCommand@9d3f73
+2016-02-27 23:35:05 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-27 23:35:05 INFO  MainController:52 - Page: hello.jsp
+2016-02-27 23:41:46 INFO  MainController:44 - logout_command
+2016-02-27 23:41:46 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.LogoutCommand@891689
+2016-02-27 23:41:46 INFO  MainController:52 - Page: index.jsp
+2016-02-28 00:34:51 INFO  MainController:44 - register_command
+2016-02-28 00:34:53 INFO  ConnectionPoolImpl:65 - Pool has been initialized
+2016-02-28 00:34:53 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.RegisterCommand@e29466
+2016-02-28 00:34:53 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-28 00:34:53 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-28 00:34:53 INFO  MainController:52 - Page: login.jsp
+2016-02-28 00:35:02 INFO  MainController:44 - login_command
+2016-02-28 00:35:02 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.LoginCommand@6f166e
+2016-02-28 00:35:02 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-28 00:35:02 INFO  MainController:52 - Page: login.jsp
+2016-02-28 00:35:12 INFO  MainController:44 - login_command
+2016-02-28 00:35:12 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.LoginCommand@6f166e
+2016-02-28 00:35:12 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-28 00:35:12 INFO  MainController:52 - Page: login.jsp
+2016-02-28 00:35:55 INFO  MainController:44 - login_command
+2016-02-28 00:35:55 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.LoginCommand@6f166e
+2016-02-28 00:35:55 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-28 00:35:55 INFO  MainController:52 - Page: login.jsp

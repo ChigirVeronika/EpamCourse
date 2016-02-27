@@ -7,6 +7,7 @@ import org.apache.log4j.Logger;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -53,8 +54,8 @@ public class ConnectionPoolImpl implements ConnectionPool{
         int size = Integer.parseInt(DAOConfigManager.getProperty(DAOConfigManager.POOL_SIZE));
 
         try {
-            DriverManager.registerDriver(new com.mysql.jdbc.Driver());
-            //Class.forName(DAOConfigManager.DRIVER);
+            //DriverManager.registerDriver(new com.mysql.jdbc.Driver());
+            Class.forName(DAOConfigManager.DRIVER);
             connections = new ArrayBlockingQueue<>(size);
             for (int i = 0; i < size; i++) {
                 Connection connection = DriverManager.getConnection(url, user, password);
@@ -62,7 +63,7 @@ public class ConnectionPoolImpl implements ConnectionPool{
             }
 
             LOGGER.info("Pool has been initialized");
-        } catch (SQLException e) {//ClassNotFoundException |
+        } catch (ClassNotFoundException | SQLException e) {//ClassNotFoundException |
             //TODO!!!
             LOGGER.error("Pool initialization error!",e);
         }

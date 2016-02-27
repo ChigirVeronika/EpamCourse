@@ -126,8 +126,9 @@ public class DishSqlDao extends AbstractSqlDao<Dish, Long> {
     @Override
     public List<Dish> getAllFromRecord(Long key) throws DaoException {
         List<Dish> result;
-        try (Connection connection = pool.getConnection()) {
-
+        Connection connection=null;
+        try  {
+            connection = pool.getConnection();
             String sql = dbBundle.getString("DISH.FROM_CATEGORY");
             PreparedStatement statement = connection.prepareStatement(sql);
             statement.setLong(1, key);
@@ -136,9 +137,17 @@ public class DishSqlDao extends AbstractSqlDao<Dish, Long> {
             if(result==null){
                 return Collections.emptyList();
             }
-            return result;
         }catch (ConnectionPoolException |SQLException e) {
             throw new DaoException("Dao Exception",e);
+        }finally {
+            try {
+                if(connection != null) {
+                    pool.returnConnection(connection);
+                }
+            } catch (ConnectionPoolException e) {
+                throw new DaoException("",e);
+            }
         }
+        return result;
     }
 }

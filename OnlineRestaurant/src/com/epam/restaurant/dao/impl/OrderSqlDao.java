@@ -110,7 +110,9 @@ public class OrderSqlDao extends AbstractSqlDao<Order, Long> {
     @Override//getByUserId COVER//TODO getByUserId COVER
     public Order getByName(String name) throws DaoException {
         List<Order> list;
-        try (Connection connection = pool.getConnection()) {
+        Connection connection=null;
+        try  {
+            connection = pool.getConnection();
             String sql = dbBundle.getString("ORDER.FROM_USER_ID");
             PreparedStatement statement = connection.prepareStatement(sql);
             statement.setLong(1, Long.parseLong(name));
@@ -119,7 +121,16 @@ public class OrderSqlDao extends AbstractSqlDao<Order, Long> {
 
         } catch (ConnectionPoolException|SQLException e) {
             throw new DaoException("OrderSqlDao Exception",e);
+        }finally {
+            try {
+                if(connection != null) {
+                    pool.returnConnection(connection);
+                }
+            } catch (ConnectionPoolException e) {
+                throw new DaoException("",e);
+            }
         }
+
         if (list == null || list.size() == 0) {
             return null;
         }
