@@ -1,11 +1,10 @@
 package com.epam.restaurant.service;
 
-import com.epam.restaurant.dao.GenericDao;
 import com.epam.restaurant.dao.exception.DaoException;
 import com.epam.restaurant.dao.factory.SqlDaoFactory;
+import com.epam.restaurant.dao.impl.UserSqlDao;
 import com.epam.restaurant.entity.User;
 import com.epam.restaurant.service.exception.ServiceException;
-import com.epam.restaurant.util.CharsetUtil;
 import com.epam.restaurant.util.HashUtil;
 import org.apache.log4j.Logger;
 
@@ -25,12 +24,12 @@ public class UserService {
         return instance;
     }
 
-    private static GenericDao userDao = SqlDaoFactory.getInstance().getDao(SqlDaoFactory.DaoType.USER);
+    private static UserSqlDao userDao = (UserSqlDao) SqlDaoFactory.getInstance().getDao(SqlDaoFactory.DaoType.USER);
 
     public User get(String login) throws ServiceException{
         User user; //TODO ? он же налл, вот таким и должен остаться - это для сервиса
         try {
-            user = (User) userDao.getByName(login);
+            user = userDao.getByName(login);
         } catch (DaoException e) {
             throw new ServiceException("Exception",e);
         }
@@ -60,7 +59,7 @@ public class UserService {
             user = new User(name, surname, email, payCard, login, HashUtil.createHash(password));
 //            user = new User(CharsetUtil.StringToUtf8(name), CharsetUtil.StringToUtf8(surname),
 //                    email, payCard, CharsetUtil.StringToUtf8(login), HashUtil.createHash(password));
-            return  (User) userDao.persist(user);
+            return  userDao.persist(user);
         }catch (DaoException|NoSuchAlgorithmException|InvalidKeySpecException  e){
             throw new ServiceException("Exception",e);
         }

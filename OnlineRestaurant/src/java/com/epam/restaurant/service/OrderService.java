@@ -1,14 +1,19 @@
 package com.epam.restaurant.service;
 
-import com.epam.restaurant.dao.GenericDao;
+import com.epam.restaurant.dao.exception.DaoException;
 import com.epam.restaurant.dao.factory.SqlDaoFactory;
+import com.epam.restaurant.dao.impl.OrderSqlDao;
 import com.epam.restaurant.entity.Order;
 import com.epam.restaurant.service.exception.ServiceException;
+
+import java.util.Date;
 
 /**
  * Perform service operations with order object.
  */
 public class OrderService {
+
+    private static OrderSqlDao orderDao = (OrderSqlDao) SqlDaoFactory.getInstance().getDao(SqlDaoFactory.DaoType.ORDER);
 
     private static OrderService instance = new OrderService();
 
@@ -18,13 +23,25 @@ public class OrderService {
         return instance;
     }
 
-    private static GenericDao orderDao = SqlDaoFactory.getInstance().getDao(SqlDaoFactory.DaoType.ORDER);
+    public Order create(Long userId, Date createdAt)throws ServiceException{
+        Order order = new Order(userId,createdAt);
+        try {
+            return orderDao.persist(order);
+        } catch (DaoException e) {
+            throw new ServiceException("");
+        }
+    }
+
+    public void delete(Order order) throws ServiceException{
+        try {
+            orderDao.delete(order);
+        } catch (DaoException e) {
+            throw new ServiceException("");
+        }
+    }
 
     public Order getByUserId(long userId) throws ServiceException{
-        //order dao todo
-        Order order = new Order();
-
-        //todo set to order
+        Order order = orderDao.
 
         return order;
     }

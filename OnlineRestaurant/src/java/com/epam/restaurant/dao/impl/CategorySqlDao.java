@@ -129,7 +129,6 @@ public class CategorySqlDao extends AbstractSqlDao<Category, Long> {
         return list.iterator().next();
     }
 
-    @Override
     public List<Category> getAllFromRecord(Long id) throws DaoException {
         //// TODO: 22.02.2016  
         List<Category> result;

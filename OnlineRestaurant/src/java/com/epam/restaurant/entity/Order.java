@@ -25,6 +25,13 @@ public class Order implements Serializable, Identified<Long> {
         this.createdAt = new Date();
     }
 
+    public Order(long userId,Date createdAt){
+        this.userId = userId;
+        this.createdAt = createdAt;
+        this.orderDishes = new ArrayList<>();
+        this.total = total;
+    }
+
     public Order(long userId,Date createdAt, BigDecimal total){
         this.userId = userId;
         this.createdAt = createdAt;

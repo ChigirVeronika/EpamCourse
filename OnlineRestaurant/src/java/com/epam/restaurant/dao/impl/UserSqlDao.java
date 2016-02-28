@@ -153,11 +153,5 @@ public class UserSqlDao extends AbstractSqlDao<User, Long> {
         return list.iterator().next();
     }
 
-    @Override
-    public List<User> getAllFromRecord(Long key) throws DaoException {
-        return null;
-        //// TODO: 21.02.2016  
-    }
-
 
 }

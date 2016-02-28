@@ -21,5 +21,5 @@ public enum CommandName {
     DELETE_CATEGORY_COMMAND,
     ADD_DISH_COMMAND,
 
-        ADD_TO_ORDER_COMMAND,
+    ADD_TO_ORDER_COMMAND,
 }

@@ -1,8 +1,7 @@
 package com.epam.restaurant.service;
 
-
-import com.epam.restaurant.dao.GenericDao;
 import com.epam.restaurant.dao.exception.DaoException;
+import com.epam.restaurant.dao.factory.SqlDaoFactory;
 import com.epam.restaurant.dao.impl.DishSqlDao;
 import com.epam.restaurant.entity.Dish;
 import com.epam.restaurant.service.exception.ServiceException;
@@ -17,7 +16,7 @@ import java.math.BigDecimal;
 public class DishService {
     private static final Logger LOGGER = Logger.getLogger( DishService.class);
 
-    private static GenericDao dishDao = DishSqlDao.getInstance();
+    private static DishSqlDao dishDao = (DishSqlDao) SqlDaoFactory.getInstance().getDao(SqlDaoFactory.DaoType.DISH);
 
     private static DishService instance = new DishService();
 
@@ -27,7 +26,7 @@ public class DishService {
 
     public Dish getById(Long dishId) throws ServiceException{
         try {
-            return (Dish) dishDao.getByPK(dishId);
+            return dishDao.getByPK(dishId);
         } catch (DaoException e) {
             LOGGER.error("Can't do DishSqlDao in DishService",e);
             throw new ServiceException("DishServiceException",e);
@@ -39,7 +38,7 @@ public class DishService {
                         throws ServiceException{
         Dish dish = new Dish(name,description,ingredients,price,quantity,categoryId,image);
         try {
-            return (Dish) dishDao.persist(dish);
+            return dishDao.persist(dish);
         } catch (DaoException e) {
             LOGGER.error("Can't do DishSqlDao in DishService",e);
             throw new ServiceException("DishServiceException",e);

@@ -23,8 +23,4 @@ public interface GenericDao<T extends Identified<PK>, PK extends Serializable> {
     void delete(T object) throws DaoException;
 
     List<T> getAll() throws DaoException;
-
-    T getByName(String name) throws DaoException;
-
-    List<T> getAllFromRecord(PK key) throws DaoException;
 }
