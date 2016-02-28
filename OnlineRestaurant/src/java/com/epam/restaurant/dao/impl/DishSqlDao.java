@@ -19,17 +19,16 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 /**
- * .
+ * Dao implementation for MySQL database and Dish entity.
  */
 public class DishSqlDao extends AbstractSqlDao<Dish, Long> {
+    private ResourceBundle dbBundle = ResourceBundle.getBundle("db.db");
+
+    private ConnectionPool pool = ConnectionPoolImpl.getInstance();
 
     private final static DishSqlDao instance = new DishSqlDao();
 
     public static GenericDao getInstance(){return instance;}
-
-    private ResourceBundle dbBundle = ResourceBundle.getBundle("db.db");
-
-    private ConnectionPool pool = ConnectionPoolImpl.getInstance();
 
     private class PersistDish extends Dish {
         public void setId(Long id) {
@@ -117,14 +116,7 @@ public class DishSqlDao extends AbstractSqlDao<Dish, Long> {
         return persist(dish);
     }
 
-    @Override
-    public Dish getByName(String name) throws DaoException {
-        //// TODO: 22.02.2016
-        return null;
-    }
-
-    @Override
-    public List<Dish> getAllFromRecord(Long key) throws DaoException {
+    public List<Dish> getAllFromCategory(Long key) throws DaoException {
         List<Dish> result;
         Connection connection=null;
         try  {

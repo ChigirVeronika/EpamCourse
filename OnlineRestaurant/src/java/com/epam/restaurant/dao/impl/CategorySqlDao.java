@@ -18,7 +18,7 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 /**
- * .
+ * Dao implementation for MySQL database and Category entity.
  */
 public class CategorySqlDao extends AbstractSqlDao<Category, Long> {
 
@@ -127,32 +127,6 @@ public class CategorySqlDao extends AbstractSqlDao<Category, Long> {
             throw new DaoException("Exception",e);
         }
         return list.iterator().next();
-    }
-
-    public List<Category> getAllFromRecord(Long id) throws DaoException {
-        //// TODO: 22.02.2016  
-        List<Category> result;
-        String sql = dbBundle.getString("DISH.FROM_CATEGORY");
-        Connection connection=null;
-        try  {
-            connection = pool.getConnection();
-
-            PreparedStatement statement = connection.prepareStatement(sql);
-            statement.setLong(1,id);
-            ResultSet rs = statement.executeQuery();
-            result = parseResultSet(rs);
-        }catch (ConnectionPoolException |SQLException e) {
-            throw new DaoException("Exception",e);
-        }finally {
-            try {
-                if(connection != null) {
-                    pool.returnConnection(connection);
-                }
-            } catch (ConnectionPoolException e) {
-                throw new DaoException("",e);
-            }
-        }
-        return result;
     }
 }
 

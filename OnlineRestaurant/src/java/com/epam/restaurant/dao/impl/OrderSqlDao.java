@@ -18,7 +18,7 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 /**
- * Created by Вероника on 21.02.2016.
+ * Dao implementation for MySQL database and Order entity.
  */
 public class OrderSqlDao extends AbstractSqlDao<Order, Long> {
     private ResourceBundle dbBundle = ResourceBundle.getBundle("db.db");
@@ -107,8 +107,7 @@ public class OrderSqlDao extends AbstractSqlDao<Order, Long> {
         return persist(order);
     }
 
-    @Override//getByUserId COVER//TODO getByUserId COVER
-    public Order getByName(String name) throws DaoException {
+    public Order getByUserId(String name) throws DaoException {
         List<Order> list;
         Connection connection=null;
         try  {
@@ -140,10 +139,5 @@ public class OrderSqlDao extends AbstractSqlDao<Order, Long> {
         }
 
         return list.iterator().next();
-    }
-
-    @Override
-    public List<Order> getAllFromRecord(Long key) throws DaoException {
-        return null;
     }
 }

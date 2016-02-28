@@ -42,7 +42,7 @@ public class CategoryService {
 
     public List<Dish> getAllFromCategory(long categoryId) throws ServiceException {
         try {
-            return dishDao.getAllFromRecord(categoryId);
+            return dishDao.getAllFromCategory(categoryId);
         } catch (DaoException e) {
             throw new ServiceException("CategoryService Exception",e);
         }

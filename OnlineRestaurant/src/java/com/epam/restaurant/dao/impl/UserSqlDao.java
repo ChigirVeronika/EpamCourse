@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 /**
- * Created by Вероника on 09.02.2016.
+ * Dao implementation for MySQL database and User entity.
  */
 public class UserSqlDao extends AbstractSqlDao<User, Long> {
 
@@ -121,7 +121,7 @@ public class UserSqlDao extends AbstractSqlDao<User, Long> {
         }
     }
 
-    public User getByName(String login) throws DaoException {
+    public User getByLogin(String login) throws DaoException {
         List<User> list;
         Connection connection=null;
         try {
