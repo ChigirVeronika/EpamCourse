@@ -12,6 +12,7 @@ public enum CommandName {
     MENU_COMMAND,
     CATEGORY_COMMAND,
     DISH_COMMAND,
+    CHECKOUT_COMMAND,
 
     BAN_COMMAND,
     UNBAN_COMMAND,

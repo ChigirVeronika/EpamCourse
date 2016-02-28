@@ -22,6 +22,7 @@ public final class CommandHelper {
         commandMap.put(CommandName.MENU_COMMAND, new MenuCommand());
         commandMap.put(CommandName.CATEGORY_COMMAND, new CategoryCommand());
         commandMap.put(CommandName.DISH_COMMAND, new DishCommand());
+        commandMap.put(CommandName.CHECKOUT_COMMAND, new CheckoutCommand());
 
         commandMap.put(CommandName.BAN_COMMAND,new BanCommand());
         commandMap.put(CommandName.UNBAN_COMMAND,new UnbanCommand());
