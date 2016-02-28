@@ -652,3 +652,14 @@ Caused by: java.lang.NullPointerException
 2016-02-28 00:44:46 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.LoginCommand@2efb04
 2016-02-28 00:44:46 INFO  ConnectionPoolImpl:77 - Connection is taken.
 2016-02-28 00:44:46 INFO  MainController:52 - Page: hello.jsp
+2016-02-28 16:27:03 INFO  MainController:44 - menu_command
+2016-02-28 16:27:07 INFO  ConnectionPoolImpl:65 - Pool has been initialized
+2016-02-28 16:27:13 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.MenuCommand@3f88d1
+2016-02-28 16:27:13 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-28 16:27:13 INFO  MainController:52 - Page: menu.jsp
+2016-02-28 16:27:32 INFO  MainController:44 - category_command
+2016-02-28 16:27:32 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.CategoryCommand@1008d20
+2016-02-28 16:27:32 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-28 16:27:32 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-28 16:27:32 INFO  ConnectionPoolImpl:77 - Connection is taken.
+2016-02-28 16:27:32 INFO  MainController:52 - Page: category.jsp

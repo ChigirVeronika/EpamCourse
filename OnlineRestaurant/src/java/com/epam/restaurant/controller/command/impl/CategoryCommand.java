@@ -29,11 +29,8 @@ public class CategoryCommand implements Command{
             int categoryId = Integer.parseInt(request.getParameter("id"));
 
             String name = categoryService.getById(categoryId).getName();
-            LOGGER.info(name);
             List<Category> categoryList = categoryService.getAllCategories();
-            LOGGER.info(categoryList);
             List<Dish> dishList = categoryService.getAllFromCategory(categoryId);
-            LOGGER.info(dishList);
 
             request.setAttribute("categories",categoryList);
 

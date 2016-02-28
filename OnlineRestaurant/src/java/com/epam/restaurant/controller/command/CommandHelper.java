@@ -25,11 +25,15 @@ public final class CommandHelper {
 
         commandMap.put(CommandName.BAN_COMMAND,new BanCommand());
         commandMap.put(CommandName.UNBAN_COMMAND,new UnbanCommand());
+
         //todo остальные комманды
         commandMap.put(CommandName.ADD_CATEGORY_COMMAND,new AddCategoryCommand());
         commandMap.put(CommandName.EDIT_CATEGORY_COMMAND,new EditCategoryCommand());
         commandMap.put(CommandName.DELETE_CATEGORY_COMMAND, new DeleteCategoryCommand());
         commandMap.put(CommandName.ADD_DISH_COMMAND,new AddDishCommand());
+
+        commandMap.put(CommandName.ADD_TO_ORDER_COMMAND, new AddToOrderCommand());
+
     }
 
     public Command getCommand(String commandName){

@@ -57,19 +57,13 @@ public class UserService {
     public User create(String name, String surname, String email, String payCard, String login, String password) throws ServiceException {
         User user;
         try {
-            //user = new User(name, surname, email, payCard, login, HashUtil.createHash(password));
-            user = new User(CharsetUtil.StringToUtf8(name), CharsetUtil.StringToUtf8(surname),
-                    email, payCard, CharsetUtil.StringToUtf8(login), HashUtil.createHash(password));
+            user = new User(name, surname, email, payCard, login, HashUtil.createHash(password));
+//            user = new User(CharsetUtil.StringToUtf8(name), CharsetUtil.StringToUtf8(surname),
+//                    email, payCard, CharsetUtil.StringToUtf8(login), HashUtil.createHash(password));
             return  (User) userDao.persist(user);
-        }catch (DaoException e){
-            throw new ServiceException("Exception",e);
-        } catch (NoSuchAlgorithmException e) {
-            throw new ServiceException("Exception",e);
-        } catch (InvalidKeySpecException e) {
-            Logger.getLogger(getClass()).error(e.getMessage());
+        }catch (DaoException|NoSuchAlgorithmException|InvalidKeySpecException  e){
             throw new ServiceException("Exception",e);
         }
-        //return user;
     }
 
     public void update(User user) throws ServiceException {

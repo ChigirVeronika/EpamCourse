@@ -1,6 +1,5 @@
 TODO:
-
-
+======================================
 <web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
@@ -10,7 +9,7 @@ TODO:
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
          version="3.0">
-
+======================================
          <security-constraint>
                  <display-name>Restrict direct access to certain folders</display-name>
                  <web-resource-collection>
@@ -21,9 +20,7 @@ TODO:
                  </web-resource-collection>
                  <auth-constraint />
              </security-constraint>
-
-
-
+======================================
     <filter>
         <filter-name>RegisterFilter</filter-name>
         <filter-class>com.epam.restaurant.filter.RegistrationFilter</filter-class>
@@ -32,7 +29,6 @@ TODO:
         <filter-name>RegisterFilter</filter-name>
         <url-pattern>/main</url-pattern>
     </filter-mapping>
-
     <filter>
         <filter-name>LoginFilter</filter-name>
         <filter-class>com.epam.restaurant.filter.LoginFilter</filter-class>
@@ -41,7 +37,6 @@ TODO:
         <filter-name>LoginFilter</filter-name>
         <url-pattern>/main</url-pattern>
     </filter-mapping>
-
         <filter>
             <display-name>CharsetFilter</display-name>
             <filter-name>CharsetFilter</filter-name>
@@ -55,19 +50,27 @@ TODO:
             <filter-name>CharsetFilter</filter-name>
             <url-pattern>/main</url-pattern>
         </filter-mapping>
-
+======================================
     (index.jsp from вместо ссылки)
     <form class="lead" action="/main" method="POST">
-                                <input type="hidden" name="command" value="menu_command"/>
-                                <input type="submit" value="<fmt:message key="index.start" bundle="${lang}"/>" class="btn btn-default btn-block"/>
-                            </form>
-
-       ALTER TABLE user CHARACTER SET="utf8";                    ===============================
-
-
+        <input type="hidden" name="command" value="menu_command"/>
+        <input type="submit" value="<fmt:message key="index.start" bundle="${lang}"/>" class="btn btn-default btn-block"/>
+    </form>
+======================================
+ALTER TABLE user CHARACTER SET="utf8";
+======================================
 Charset cset = Charset.forName("UTF-8");
 ByteBuffer buf = cset.encode(strOld);
 byte[] b = buf.array();
 String str = new String(b);
+======================================
+SELECT COUNT(*) FROM table_name
+======================================
+
+======================================
+
+======================================
+
+======================================
 
 
