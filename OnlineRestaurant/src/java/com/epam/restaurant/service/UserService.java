@@ -29,7 +29,7 @@ public class UserService {
     public User get(String login) throws ServiceException{
         User user; //TODO ? он же налл, вот таким и должен остаться - это для сервиса
         try {
-            user = userDao.getByName(login);
+            user = userDao.getByLogin(login);
         } catch (DaoException e) {
             throw new ServiceException("Exception",e);
         }

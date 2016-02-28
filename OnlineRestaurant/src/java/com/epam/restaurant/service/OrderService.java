@@ -4,9 +4,11 @@ import com.epam.restaurant.dao.exception.DaoException;
 import com.epam.restaurant.dao.factory.SqlDaoFactory;
 import com.epam.restaurant.dao.impl.OrderSqlDao;
 import com.epam.restaurant.entity.Order;
+import com.epam.restaurant.entity.OrderDish;
 import com.epam.restaurant.service.exception.ServiceException;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * Perform service operations with order object.
@@ -41,7 +43,23 @@ public class OrderService {
     }
 
     public Order getByUserId(long userId) throws ServiceException{
-        Order order = orderDao.
+        Order order = null;
+        try {
+            order = orderDao.getByUserId(userId);
+            if(order!=null){
+                OrderDishService orderDishService = OrderDishService.getInstance();
+                List<OrderDish> orderDishList = orderDishService.getAllFromOrder(order.getId());
+                if(orderDishList.size()>0){
+                    DishService dishService = DishService.getInstance();
+                    for(OrderDish od: orderDishList){
+                        od.setDish(dishService.getById(od.getDishId()));
+                    }
+                }
+                order.setOrderDishes(orderDishList);
+            }
+        } catch (DaoException e) {
+            throw new ServiceException("");
+        }
 
         return order;
     }

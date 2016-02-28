@@ -107,14 +107,14 @@ public class OrderSqlDao extends AbstractSqlDao<Order, Long> {
         return persist(order);
     }
 
-    public Order getByUserId(String name) throws DaoException {
+    public Order getByUserId(Long name) throws DaoException {
         List<Order> list;
         Connection connection=null;
         try  {
             connection = pool.getConnection();
             String sql = dbBundle.getString("ORDER.FROM_USER_ID");
             PreparedStatement statement = connection.prepareStatement(sql);
-            statement.setLong(1, Long.parseLong(name));
+            statement.setLong(1, name);
             ResultSet rs = statement.executeQuery();
             list = parseResultSet(rs);
 

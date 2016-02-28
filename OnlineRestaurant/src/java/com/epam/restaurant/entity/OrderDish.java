@@ -15,6 +15,17 @@ public class OrderDish implements Serializable, Identified<Long> {
     private long orderId;
     private int quantity;
 
+    private Dish dish;
+
+    public OrderDish() {}
+
+    public OrderDish(long dishId,long orderId, int quantity) {
+        this.dishId=dishId;
+        this.orderId=orderId;
+        this.quantity=quantity;
+
+    }
+
     public Long getId() {
         return id;
     }
@@ -47,14 +58,10 @@ public class OrderDish implements Serializable, Identified<Long> {
         this.quantity = quantity;
     }
 
-    public OrderDish(long dishId,long orderId, int quantity) {
-        this.dishId=dishId;
-        this.orderId=orderId;
-        this.quantity=quantity;
+    public Dish getDish(){return dish;}
 
-    }
-
-    public OrderDish() {
+    public void setDish(Dish dish){
+        this.dish=dish;
     }
 
     @Override

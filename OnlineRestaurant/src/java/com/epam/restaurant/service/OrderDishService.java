@@ -6,6 +6,8 @@ import com.epam.restaurant.dao.impl.OrderDishSqlDao;
 import com.epam.restaurant.entity.OrderDish;
 import com.epam.restaurant.service.exception.ServiceException;
 
+import java.util.List;
+
 /**
  *
  */
@@ -51,6 +53,14 @@ public class OrderDishService {
             orderDishDao.update(orderDish);
         } catch (DaoException e) {
             throw new ServiceException("OrderServiceException",e);
+        }
+    }
+
+    public List<OrderDish> getAllFromOrder(Long orderId) throws ServiceException{
+        try {
+            return orderDishDao.getAllFromOrder(orderId);
+        } catch (DaoException e) {
+            throw new ServiceException("");
         }
     }
 }
