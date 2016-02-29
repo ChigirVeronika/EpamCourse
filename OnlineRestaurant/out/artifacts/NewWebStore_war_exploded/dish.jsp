@@ -1,6 +1,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" pageEncoding="utf-8" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="mytag" uri="/WEB-INF/taglib/taglib.tld" %>
+
 
 <c:set var="language"
        value="${not empty param.language ? param.language : not empty language ? language : 'en'}"
@@ -32,7 +34,7 @@
                     </div>
                     <div class = "row">
                         <div class="col-sm-4">
-                            <tag:categories/>
+                            <mytag:categories/>
                         </div>
                         <div class = "col-sm-8">
                             <div class="row">
