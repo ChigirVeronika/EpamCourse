@@ -26,14 +26,19 @@ public final class CommandHelper {
 
         commandMap.put(CommandName.BAN_COMMAND,new BanCommand());
         commandMap.put(CommandName.UNBAN_COMMAND,new UnbanCommand());
+        commandMap.put(CommandName.SEARCH_USER_COMMAND,new SearchUserCommand());
 
         //todo остальные комманды
         commandMap.put(CommandName.ADD_CATEGORY_COMMAND,new AddCategoryCommand());
         commandMap.put(CommandName.EDIT_CATEGORY_COMMAND,new EditCategoryCommand());
         commandMap.put(CommandName.DELETE_CATEGORY_COMMAND, new DeleteCategoryCommand());
         commandMap.put(CommandName.ADD_DISH_COMMAND,new AddDishCommand());
+        commandMap.put(CommandName.EDIT_DISH_COMMAND,new EditDishCommand());
+        commandMap.put(CommandName.DELETE_DISH_COMMAND,new DeleteDishCommand());
 
         commandMap.put(CommandName.ADD_TO_ORDER_COMMAND, new AddToOrderCommand());
+        commandMap.put(CommandName.DELETE_ITEM_COMMAND,new DeleteItemCommand());
+        commandMap.put(CommandName.UPDATE_ORDER_COMMAND,new UpdateOrderCommand());
 
     }
 
