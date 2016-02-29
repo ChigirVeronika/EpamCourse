@@ -26,7 +26,7 @@ public class CategoryCommand implements Command{
         String result = JspPageName.CATEGORY_JSP;
 
         try{
-            int categoryId = Integer.parseInt(request.getParameter("id"));
+            Long categoryId = Long.parseLong(request.getParameter("id"));
 
             String name = categoryService.getById(categoryId).getName();
             List<Category> categoryList = categoryService.getAllCategories();

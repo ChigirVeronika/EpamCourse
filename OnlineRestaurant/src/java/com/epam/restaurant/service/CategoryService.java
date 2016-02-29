@@ -32,7 +32,7 @@ public class CategoryService {
         }
     }
 
-    public Category getById(long id)throws ServiceException{
+    public Category getById(Long id)throws ServiceException{
         try {
             return categoryDao.getByPK(id);
         } catch (DaoException e) {
