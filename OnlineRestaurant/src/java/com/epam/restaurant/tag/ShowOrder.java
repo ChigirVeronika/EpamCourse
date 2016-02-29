@@ -25,7 +25,7 @@ public class ShowOrder  extends TagSupport {
         Order order = (Order) pageContext.getSession().getAttribute("cart"); // get current cart from session
         JspWriter out = pageContext.getOut();
 
-        BigDecimal item  = BigDecimal.ZERO;
+        BigDecimal item;
         BigDecimal total = BigDecimal.ZERO;
 
         try {
