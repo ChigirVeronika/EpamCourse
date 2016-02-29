@@ -70,7 +70,15 @@ SELECT COUNT(*) FROM table_name
 ======================================
 
 ======================================
+ BigDecimal itemCost  = BigDecimal.ZERO;
+    BigDecimal totalCost = BigDecimal.ZERO;
 
+    public BigDecimal calculateCost(int itemQuantity, BigDecimal itemPrice)
+    {
+        itemCost  = itemPrice.multiply(new BigDecimal(itemQuantity));
+        totalCost = totalCost.add(itemCost);
+        return totalCost;
+    }
 ======================================
 public List<Category> getAllFromRecord(Long id) throws DaoException {
         //// TODO: 22.02.2016
