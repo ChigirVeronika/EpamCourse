@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.math.BigDecimal;
 
 /**
- *
+ * Change dish parameters by user with role ADMIN.
  */
 public class EditDishCommand implements Command {
 

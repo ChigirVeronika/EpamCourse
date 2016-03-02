@@ -21,9 +21,7 @@ public class MenuCommand implements Command {
     private static final Logger LOGGER = Logger.getLogger( MenuCommand.class);
     private static final CategoryService categoryService = CategoryService.getInstance();
 
-    public MenuCommand(){}
-
-    @Override
+   @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws CommandException {
         String page=JspPageName.MENU_JSP;
         try{

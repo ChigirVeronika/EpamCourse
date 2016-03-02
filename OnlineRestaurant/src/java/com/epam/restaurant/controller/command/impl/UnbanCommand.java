@@ -15,14 +15,12 @@ import static com.epam.restaurant.controller.name.RequestParameterName.*;
 
 /**
  * Change user's role to BLOCKED from USER
- * Handle 'Unban' button on the ADMIN user page
+ * Handle 'Unban' button on ADMIN user page
  */
 public class UnbanCommand implements Command {
     private static final Logger LOGGER = Logger.getLogger( UnbanCommand.class);
 
     private static final UserService userService = UserService.getInstance();
-
-    public UnbanCommand(){}
 
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws CommandException {

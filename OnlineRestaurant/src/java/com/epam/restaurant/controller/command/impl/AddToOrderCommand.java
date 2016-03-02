@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.Date;
 
 /**
- * Created by Вероника on 28.02.2016.
+ * Add dish to users order whose role USER.
  */
 public class AddToOrderCommand implements Command {
 
@@ -33,12 +33,16 @@ public class AddToOrderCommand implements Command {
         String result = JspPageName.ORDER_JSP;
 
         User currentUser = (User) request.getSession().getAttribute("user");
+        System.out.println(currentUser);
         Order currentOrder = (Order) request.getSession().getAttribute("order");
+        System.out.println(currentOrder);
 
         try{
             long dishId = Long.parseLong(request.getParameter("dish_id"));
+            System.out.println(dishId);
             if(currentOrder == null){
                 currentOrder = orderService.create(currentUser.getId(),new Date());
+                System.out.println("ORDER CREATED!HURRAY!");
             }
             OrderDish orderDish = orderDishService.create(dishId,currentOrder.getId(),1);
             Dish dish = dishService.getById(dishId);

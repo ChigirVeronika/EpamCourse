@@ -12,7 +12,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Created by Вероника on 29.02.2016.
+ * Update order dish (with new quantity) in order.
+ * Handle 'Update' button on the order page.
  */
 public class UpdateOrderCommand implements Command {
 

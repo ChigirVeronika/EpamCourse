@@ -1,7 +1,7 @@
 package com.epam.restaurant.controller.command;
 
 /**
- * Created by Вероника on 22.01.2016.
+ * Contains all commands names.
  */
 public enum CommandName {
     UNKNOWN_COMMAND,

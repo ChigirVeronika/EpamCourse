@@ -26,7 +26,7 @@
                         <p class="lead"><fmt:message key="common.take" bundle="${lang}"/></p>
                         <p class="lead"><a href="/main?command=menu_command" class="btn btn-lg btn-default"><fmt:message key="index.start" bundle="${lang}"/></a></p>
                     </div>
-
+                    <br><br><br><br>
                     <div class="trendfoot">
                         <jsp:include page="layout/footer.jsp"/>
                     </div>

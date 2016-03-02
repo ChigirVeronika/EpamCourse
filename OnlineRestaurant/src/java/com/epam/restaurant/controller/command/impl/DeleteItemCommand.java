@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Created by Вероника on 29.02.2016.
+ * Delete item from order by user with role USER.
  */
 public class DeleteItemCommand implements Command {
 

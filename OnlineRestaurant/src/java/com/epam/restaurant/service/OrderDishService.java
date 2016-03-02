@@ -24,7 +24,7 @@ public class OrderDishService {
 
     public OrderDish getById(Long dishId) throws ServiceException {
         try {
-            return (OrderDish) orderDishDao.getByPK(dishId);
+            return orderDishDao.getByPK(dishId);
         } catch (DaoException e) {
             throw new ServiceException("DishServiceException",e);
         }
@@ -34,7 +34,7 @@ public class OrderDishService {
             throws ServiceException{
         OrderDish orderDish = new OrderDish (dishId,orderId,quantity);
         try {
-            return (OrderDish ) orderDishDao.persist(orderDish);
+            return orderDishDao.persist(orderDish);
         } catch (DaoException e) {
             throw new ServiceException("OrderServiceException",e);
         }

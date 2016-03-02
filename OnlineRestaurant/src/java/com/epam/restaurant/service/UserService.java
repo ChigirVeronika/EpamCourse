@@ -44,10 +44,8 @@ public class UserService {
                 return user;
             }
         } catch (NoSuchAlgorithmException e) {
-            Logger.getLogger(getClass()).error(e.getMessage());
             throw new ServiceException("Exception",e);
         } catch (InvalidKeySpecException e) {
-            Logger.getLogger(getClass()).error(e.getMessage());
             throw new ServiceException("Exception",e);
         }
         return null;

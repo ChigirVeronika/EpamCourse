@@ -20,6 +20,19 @@
 
             <li><a href="/main?command=menu_command"><fmt:message key="header.catalog" bundle="${lang}"/></a></li>
 
+            <c:if test="${user != null && user.role == 'USER'}">
+                <li><a href="../order.jsp">
+                    <fmt:message key="header.order" bundle="${lang}"/>
+                    <c:if test="${order != null}">
+                            <span class="badge">
+                                    ${order.size}
+                            </span>
+                    </c:if>
+                    <c:if test="${order == null}">
+                        <span class="badge">0</span>
+                    </c:if>
+                </a></li>
+            </c:if>
 
             <c:if test="${user != null && user.role == 'ADMIN'}">
                 <li><a href="../users.jsp"><fmt:message key="header.users" bundle="${lang}"/></a></li>

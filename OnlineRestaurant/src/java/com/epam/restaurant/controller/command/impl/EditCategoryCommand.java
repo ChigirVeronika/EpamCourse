@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Created by Вероника on 21.02.2016.
+ * Change category parameters by user with role ADMIN.
  */
 public class EditCategoryCommand  implements Command {
     private static final Logger LOGGER = Logger.getLogger( EditCategoryCommand.class);

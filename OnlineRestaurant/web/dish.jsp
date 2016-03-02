@@ -25,15 +25,15 @@
             <div class="inner cover">
                 <div class = "container-fluid">
                     <div class="row">
-                        <div class="col-md-4"></div>
-                        <div class="col-md-8">
+                        <div class="col-sm-4"></div>
+                        <div class="col-sm-8">
                             <h1 class="cover-heading">
-                                <c:out value="${dish.name}"/>
-                            </h1><br/></br>
+                                <c:out value="${dish.name}"/><br>
+                            </h1>
                         </div>
                     </div>
                     <div class = "row">
-                        <div class="col-sm-4">
+                        <div class="col-sm-4"><
                             <mytag:categories/>
                         </div>
                         <div class = "col-sm-8">
@@ -164,7 +164,7 @@
                 </div>
             </div>
 
-
+            <br><br><br><br>
             <div class="trendfoot">
                 <jsp:include page="layout/footer.jsp"/>
             </div>

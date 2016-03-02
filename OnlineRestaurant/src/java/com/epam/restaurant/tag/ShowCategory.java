@@ -37,7 +37,7 @@ public class ShowCategory  extends TagSupport {
                     out.println("<div class = \"col-xs-5\">");
                     out.println("<p>"+d.getName() + " </p>");
                     out.println("<p>"+ resourceBundle.getString("dish.price") +": " + d.getPrice() + " </p>");
-                    out.println("<p><a href = \"/main?dish_command&id="+d.getId()+"\" class=\"btn btn-default\">"+ resourceBundle.getString("dish.more.button") +"</a></p>\n");
+                    out.println("<p><a href = \"/main?command=dish_command&id="+d.getId()+"\" class=\"btn btn-default\">"+ resourceBundle.getString("dish.more.button") +"</a></p>\n");
                     out.println("</div>");
                     out.println("</div>");
 

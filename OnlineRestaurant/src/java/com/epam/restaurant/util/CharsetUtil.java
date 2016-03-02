@@ -10,21 +10,20 @@ import static java.nio.charset.StandardCharsets.*;
  * Created by Вероника on 27.02.2016.
  */
 public class CharsetUtil {
-    public static String StringToUtf8(String oldString){
+    private static String UTF_8 = "UTF-8";
+    private static String ISO = "ISO-8859-1";
 
-//        Charset set = Charset.forName("UTF-8");
-//        ByteBuffer buf = set.encode(oldString);
-//        byte[] b = buf.array();
-//        String newString = new String(b);
-//
-//        try {
-//            byte[] ptext = oldString.getBytes("UTF-8");
-//        } catch (UnsupportedEncodingException e) {
-//            e.printStackTrace();//// TODO: 28.02.2016
-//        }
+    public static String encodeToUTF8(String inputString){
 
-        byte ptext[] = oldString.getBytes(ISO_8859_1);
-        String value = new String(ptext, UTF_8);
+        String value = new String();
+        byte ptext[];
+        try {
+            ptext = inputString.getBytes(ISO);
+            value = new String(ptext, UTF_8);
+        } catch (UnsupportedEncodingException e) {
+            //TODO LOGGER
+        }
+
         return value;
     }
 }

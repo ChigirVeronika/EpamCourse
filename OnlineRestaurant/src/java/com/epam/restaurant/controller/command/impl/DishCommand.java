@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 /**
- * Created by Вероника on 21.02.2016.
+ * Show page with concrete dish.
  */
 public class DishCommand implements Command {
     private static final Logger LOGGER = Logger.getLogger( DishCommand.class);

@@ -44,7 +44,7 @@ public class OrderDishSqlDao extends AbstractSqlDao<OrderDish, Long> {
 
     @Override
     public String getCreateQuery() {
-        return dbBundle.getString("ORDER_DISH.CREATE");
+        return dbBundle.getString("ORDER_DISH.INSERT");
     }
 
     @Override
@@ -111,7 +111,7 @@ public class OrderDishSqlDao extends AbstractSqlDao<OrderDish, Long> {
         Connection connection=null;
         try  {
             connection = pool.getConnection();
-            String sql = dbBundle.getString("ORDER.FROM_ORDER");
+            String sql = dbBundle.getString("ORDER_DISH.FROM_ORDER");
             PreparedStatement statement = connection.prepareStatement(sql);
             statement.setLong(1, key);
             ResultSet rs = statement.executeQuery();

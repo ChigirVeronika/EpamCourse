@@ -18,6 +18,7 @@ import static com.epam.restaurant.controller.name.RequestParameterName.*;
 
 /**
  * Controls login user to site.
+ * Handle "login" button.
  */
 public class LoginCommand implements Command {
 
@@ -32,8 +33,6 @@ public class LoginCommand implements Command {
      * Provides work with database orders table.
      */
     private static final OrderService orderService = OrderService.getInstance();
-
-    public LoginCommand(){}
 
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws CommandException {

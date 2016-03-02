@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Created by Вероника on 29.02.2016.
+ * Delete dish from dish list by user with role ADMIN.
  */
 public class DeleteDishCommand implements Command {
 

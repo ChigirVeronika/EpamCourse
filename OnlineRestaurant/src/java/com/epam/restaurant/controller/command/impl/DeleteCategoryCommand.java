@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Created by Вероника on 21.02.2016.
+ * Delete category from category list by user with role ADMIN.
  */
 public class DeleteCategoryCommand implements Command {
     private static final Logger LOGGER = Logger.getLogger( DeleteCategoryCommand.class);

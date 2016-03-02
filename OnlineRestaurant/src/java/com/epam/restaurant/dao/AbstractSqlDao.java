@@ -19,9 +19,6 @@ import java.util.List;
  * @param <PK> primary key type
  */
 public abstract class AbstractSqlDao<T extends Identified<PK>,PK extends Long> implements GenericDao<T, PK> {
-
-    //protected SqlDaoFactory parentFactory;
-
     /**
      * Connection to database
      */

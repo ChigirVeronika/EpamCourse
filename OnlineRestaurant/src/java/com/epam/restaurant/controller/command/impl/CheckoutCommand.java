@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Created by Вероника on 29.02.2016.
+ * Checkout USER order.
  */
 public class CheckoutCommand implements Command {
     private static final OrderService orderService = OrderService.getInstance();

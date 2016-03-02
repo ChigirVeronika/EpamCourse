@@ -64,7 +64,6 @@ public class ConnectionPoolImpl implements ConnectionPool{
 
             LOGGER.info("Pool has been initialized");
         } catch (ClassNotFoundException | SQLException e) {//ClassNotFoundException |
-            //TODO!!!
             LOGGER.error("Pool initialization error!",e);
         }
     }
@@ -80,7 +79,6 @@ public class ConnectionPoolImpl implements ConnectionPool{
                 throw new ConnectionPoolException("ConnectionPool Exception",e);
             }
         }
-
         return connection;
     }
 

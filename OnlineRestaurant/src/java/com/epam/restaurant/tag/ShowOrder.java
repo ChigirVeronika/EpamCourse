@@ -22,7 +22,7 @@ public class ShowOrder  extends TagSupport {
         ResourceBundle rb = ResourceBundleUtil.getResourceBundle(curLanguage);
 
         //get current shopping cart from servlet request
-        Order order = (Order) pageContext.getSession().getAttribute("cart"); // get current cart from session
+        Order order = (Order) pageContext.getSession().getAttribute("order"); // get current cart from session
         JspWriter out = pageContext.getOut();
 
         BigDecimal item;
@@ -49,7 +49,7 @@ public class ShowOrder  extends TagSupport {
                     out.print("<a href = \"/main?command=dish_command&id=" + od.getDishId() + "\">" + od.getDish().getName() + "</a>");
                     out.print("</td>");
                     out.print("<td>" + od.getDish().getPrice() + "</td>");
-                    out.print("<form method = \"POST\" action = \"/main\" class = \"cart\">");
+                    out.print("<form method = \"POST\" action = \"/main\" class = \"order\">");
                     out.print("<td>");
                     out.print("<label for = \"quantity\">"+ rb.getString("order.quantity.title") +": </label>");
                     out.print("<input type = \"text\" name = \"quantity\" value = \"" + od.getQuantity() + "\" id = \"quantity\" size = \"1\" class = \"quantity\" maxlength = \"3\" />\n");
@@ -63,15 +63,15 @@ public class ShowOrder  extends TagSupport {
 
                     out.print("</td>");
                     out.print("<td>");
-                    out.print("<input type = \"hidden\" name = \"action\" value = \"updateCart\" />");
+                    out.print("<input type = \"hidden\" name = \"command\" value = \"update_order_command\" />");
                     out.print("<input type = \"hidden\" name = \"item_id\" value = \"" + od.getId() + "\" />");
                     out.print("<input type = \"submit\" name = \"submit\" value = \""+ rb.getString("order.update.button") +"\" class=\"btn btn-default\" />");
                     out.print("</td>");
                     out.print("</form>");
-                    out.print("<form method = \"POST\" action = \"/main\" class = \"cart\">");
+                    out.print("<form method = \"POST\" action = \"/main\" class = \"order\">");
                     out.print("<td>");
                     out.print("<input type = \"hidden\" name = \"item_id\" value = \"" + od.getId() + "\" />");
-                    out.print("<input type = \"hidden\" name = \"command\" value = \"delete_item\" />");
+                    out.print("<input type = \"hidden\" name = \"command\" value = \"delete_item_command\" />");
                     out.print("<input type = \"submit\" name = \"submit\" value = \""+ rb.getString("order.delete.button") +"\" class=\"btn btn-default\" />");
                     out.print("</td>");
                     out.print("<td>" + total + "</td>");
@@ -85,8 +85,8 @@ public class ShowOrder  extends TagSupport {
                 out.print("<tfoot><tr><th colspan = \"5\">"+ rb.getString("order.subtotal.title") +":</th><th>" + total + "</th></tr><tr>\n");
                 if (order != null && order.getOrderDishes() != null && order.getOrderDishes().size() != 0) {
                     out.print("<th colspan = \"6\">\n");
-                    out.print("<form method = \"POST\" action = \"/main\" class = \"cart\">");
-                    out.print("<input type = \"hidden\" name = \"command\" value = \"checkout\" />\n");
+                    out.print("<form method = \"POST\" action = \"/main\" class = \"order\">");
+                    out.print("<input type = \"hidden\" name = \"command\" value = \"checkout_command\" />\n");
                     out.print("<input type = \"submit\" name = \"submit\" value = \""+ rb.getString("order.checkout.button") +"\" class=\"btn btn-default\" />\n");
                     out.print("</form>");
                     out.print("</th></tr></tfoot>");

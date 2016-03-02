@@ -15,16 +15,15 @@ import java.util.ResourceBundle;
 import static com.epam.restaurant.controller.name.RequestParameterName.*;
 
 /**
- *Control users registration to site.
+ * Control users registration to site.
+ * Handle "register" button.
  */
 public class RegisterCommand implements Command {
     private static final Logger LOGGER = Logger.getLogger( RegisterCommand.class);
 
     private static UserService userService = UserService.getInstance();
 
-    public RegisterCommand(){}
-
-    @Override
+   @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws CommandException {
         String name=request.getParameter(NAME);
         String surname=request.getParameter(SURNAME);
