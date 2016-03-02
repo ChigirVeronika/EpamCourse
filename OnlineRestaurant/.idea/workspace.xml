@@ -73,9 +73,12 @@
       <file leaf-file-name="A.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/java/com/epam/restaurant/controller/command/exception/A.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.15260324">
-              <caret line="5" column="14" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
-              <folding />
+            <state vertical-scroll-proportion="0.21364452">
+              <caret line="7" column="46" selection-start-line="7" selection-start-column="46" selection-end-line="7" selection-end-column="46" />
+              <folding>
+                <element signature="e#141#142#0" expanded="true" />
+                <element signature="e#197#198#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -101,7 +104,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/java/com/epam/restaurant/service/OrderDishService.java" />
         <option value="$PROJECT_DIR$/src/java/com/epam/restaurant/tag/ShowCategory.java" />
         <option value="$PROJECT_DIR$/src/test/com/epam/reastaurant/dao/AbstractSqlDaoTest.java" />
         <option value="$PROJECT_DIR$/web/menu.jsp" />
@@ -152,6 +154,7 @@
         <option value="$PROJECT_DIR$/src/test/com/epam/restaurant/controller/command/impl/AddCategoryCommandTest.java" />
         <option value="$PROJECT_DIR$/src/test/com/epam/restaurant/controller/command/impl/LogoutCommandTest.java" />
         <option value="$PROJECT_DIR$/src/test/com/epam/restaurant/controller/command/CommandHelperTest.java" />
+        <option value="$PROJECT_DIR$/src/java/com/epam/restaurant/controller/command/exception/A.java" />
       </list>
     </option>
   </component>
@@ -1106,7 +1109,7 @@
       <workItem from="1456731926832" duration="2391000" />
       <workItem from="1456735214200" duration="17644000" />
       <workItem from="1456839201166" duration="15355000" />
-      <workItem from="1456906157893" duration="13317000" />
+      <workItem from="1456906157893" duration="13357000" />
     </task>
     <servers />
   </component>
@@ -1143,7 +1146,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="346416000" />
+    <option name="totallyTimeSpent" value="346456000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1621,9 +1624,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/java/com/epam/restaurant/controller/command/exception/A.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.15260324">
-          <caret line="5" column="14" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
-          <folding />
+        <state vertical-scroll-proportion="0.21364452">
+          <caret line="7" column="46" selection-start-line="7" selection-start-column="46" selection-end-line="7" selection-end-column="46" />
+          <folding>
+            <element signature="e#141#142#0" expanded="true" />
+            <element signature="e#197#198#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
