@@ -22,7 +22,7 @@ public class DeleteCategoryCommand implements Command {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws CommandException {
 
-        String result = JspPageName.MENU_JSP;
+        String result = JspPageName.CONCRETE_MENU_JSP;
         try{
             String name = request.getParameter("name");
 

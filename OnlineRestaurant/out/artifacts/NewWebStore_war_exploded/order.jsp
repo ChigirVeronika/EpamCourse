@@ -18,7 +18,7 @@
     .quantity {
         color: black;
     }
-    .cart {
+    .order {
         width: 200px;
     }
     th, td, tr {

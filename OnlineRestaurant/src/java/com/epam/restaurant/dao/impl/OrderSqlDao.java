@@ -40,22 +40,22 @@ public class OrderSqlDao extends AbstractSqlDao<Order, Long> {
 
     @Override
     public String getSelectQuery() {
-        return dbBundle.getString("ORDER.SELECT");
+        return dbBundle.getString("USER_ORDER.SELECT");
     }
 
     @Override
     public String getCreateQuery() {
-        return dbBundle.getString("ORDER.INSERT");
+        return dbBundle.getString("USER_ORDER.INSERT");
     }
 
     @Override
     public String getUpdateQuery() {
-        return dbBundle.getString("ORDER.UPDATE");
+        return dbBundle.getString("USER_ORDER.UPDATE");
     }
 
     @Override
     public String getDeleteQuery() {
-        return dbBundle.getString("ORDER.DELETE");
+        return dbBundle.getString("USER_ORDER.DELETE");
     }
 
     @Override
@@ -112,7 +112,7 @@ public class OrderSqlDao extends AbstractSqlDao<Order, Long> {
         Connection connection=null;
         try  {
             connection = pool.getConnection();
-            String sql = dbBundle.getString("ORDER.FROM_USER_ID");
+            String sql = dbBundle.getString("USER_ORDER.FROM_USER_ID");
             PreparedStatement statement = connection.prepareStatement(sql);
             statement.setLong(1, name);
             ResultSet rs = statement.executeQuery();
