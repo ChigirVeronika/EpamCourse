@@ -38,7 +38,12 @@ public abstract class AbstractSqlDao<T extends Identified<PK>,PK extends Long> i
 
     protected abstract void prepareStatementForUpdate(PreparedStatement statement, T object) throws DaoException;
 
-
+    /**
+     *
+     * @param object
+     * @return
+     * @throws DaoException
+     */
     @Override
     public T persist(T object) throws DaoException {
         T persistInstance;
