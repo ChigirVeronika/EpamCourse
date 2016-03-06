@@ -1,50 +1,130 @@
-/**
- * Created by Вероника on 06.03.2016.
- */
-function sendSignin(type) {
-    var elem = document.getElementById(type);
-    var error = elem.querySelector('#error');
-    var command = encodeURIComponent('LOGIN');
-    var name = encodeURIComponent(elem.querySelector('#login').value);
-    var password = encodeURIComponent(elem.querySelector('#password').value);
-    var passRegEx = new RegExp('^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\\s).*$');
-    var authRegEx = new RegExp('(([A-Za-z0-9]{6,18}))');
+function registrationFormValidation() {
+    var name = document.registration.name.value;
+    var surname = document.registration.surname;
+    var card = document.registration.pay_card_id;
+    var email = document.registration.email;
+    var login = document.registration.login;
+    var password = document.registration.password;
 
-    if(!name.match(authRegEx) || name.match(authRegEx)[0] != name) {
-        error.innerText = 'Invalid name. Name can consist of uppercase latin letters,\
-            lowercase latin letters and numbers. And contain at least 6 sybols.';
-        error.className = error.className.replace(' hide', '');
-        error.className += ' show';
-        return false;
+    if(name_validation(name)) {
+            return true;
     }
 
-    if(!password.match(passRegEx) || password.match(passRegEx)[0] != password) {
-        error.innerText = 'Invalid password. Password should contain at least one\
-            uppercase latin letters, lowercase latin letters and number.';
-        error.className = error.className.replace(' hide', '');
-        error.className += ' show';
-        return false;
-    }
-
-    var xhr = new XMLHttpRequest();
-
-    var body = 'command=' + encodeURIComponent('LOGIN') +
-        '&login=' + encodeURIComponent(elem.querySelector('#login').value) +
-        '&password=' + encodeURIComponent(elem.querySelector('#password').value);
-
-    xhr.open("POST", '/controller', true)
-    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
-
-    xhr.onloadend = function(response) {
-        if(response.currentTarget.status === 401) {
-            error.innerHTML = response.currentTarget.response;
-            error.className = error.className.replace(' hide', '');
-            error.className += " show";
-        }
-        else if (response.currentTarget.status === 200) {
-            window.location.href = "/controller?command=SELECT_USER_PAGE";
-        }
-    }
-    xhr.send(body);
     return false;
 }
+var msg="";
+function name_validation(value){
+    if(length_validation(value,2,25)) {
+        if(allLetter(value)){
+            return true;
+        }
+    }
+    msg = document.createTextNode("Field should not be empty / length be between "+mx+" to "+my);
+    document.getElementById('userName-msg').appendChild(msg);
+    return false;
+}
+
+function length_validation(uid,mx,my)
+{
+    var uid_len = uid.value.length;
+    if (uid_len == 0 || uid_len >= my || uid_len < mx)
+    {
+        var msg = document.createTextNode("Field should not be empty / length be between "+mx+" to "+my);
+        document.getElementById('name-msg').appendChild(msg);
+        return false;
+    }
+    return true;
+}
+function allLetter(uname)
+{
+    var letters = /^[A-Za-z]+$/;
+    if(uname.value.match(letters))
+    {
+        return true;
+    }
+    else
+    {
+        var msg = document.createTextNode("Field should contains only letters");
+        document.getElementById('name-msg').appendChild(msg);
+        return false;
+    }
+}
+function alphanumeric(uadd)
+{
+    var letters = /^[0-9a-zA-Z]+$/;
+    if(uadd.value.match(letters))
+    {
+        return true;
+    }
+    else
+    {
+        alert('User address must have alphanumeric characters only');
+        uadd.focus();
+        return false;
+    }
+}
+function countryselect(ucountry)
+{
+    if(ucountry.value == "Default")
+    {
+        alert('Select your country from the list');
+        ucountry.focus();
+        return false;
+    }
+    else
+    {
+        return true;
+    }
+}
+function allnumeric(uzip)
+{
+    var numbers = /^[0-9]+$/;
+    if(uzip.value.match(numbers))
+    {
+        return true;
+    }
+    else
+    {
+        alert('ZIP code must have numeric characters only');
+        uzip.focus();
+        return false;
+    }
+}
+function validateEmail(uemail)
+{
+    var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    if(uemail.value.match(mailformat))
+    {
+        return true;
+    }
+    else
+    {
+        alert("You have entered an invalid email address!");
+        uemail.focus();
+        return false;
+    }
+}
+function validsex(umsex,ufsex)
+{
+    x=0;
+
+    if(umsex.checked)
+    {
+        x++;
+    } if(ufsex.checked)
+{
+    x++;
+}
+    if(x==0)
+    {
+        alert('Select Male/Female');
+        umsex.focus();
+        return false;
+    }
+    else
+    {
+        alert('Form Succesfully Submitted');
+        window.location.reload()
+        return true;
+    }
+}  

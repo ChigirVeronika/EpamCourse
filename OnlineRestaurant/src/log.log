@@ -1419,3 +1419,105 @@ Caused by: java.lang.ArrayIndexOutOfBoundsException: 1
 2016-03-06 19:04:24 INFO  ConnectionPoolImpl:76 - Connection is taken.
 2016-03-06 19:04:24 INFO  ConnectionPoolImpl:76 - Connection is taken.
 2016-03-06 19:04:24 INFO  MainController:52 - Page: hello.jsp
+2016-03-06 19:14:31 INFO  MainController:44 - logout_command
+2016-03-06 19:14:32 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.LogoutCommand@1692a15
+2016-03-06 19:14:33 INFO  MainController:52 - Page: index.jsp
+2016-03-06 19:26:40 INFO  MainController:44 - menu_command
+2016-03-06 19:26:41 INFO  ConnectionPoolImpl:65 - Pool has been initialized
+2016-03-06 19:26:41 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.MenuCommand@4cb75b
+2016-03-06 19:26:41 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-06 19:26:41 INFO  MainController:52 - Page: menu.jsp
+2016-03-06 19:26:58 INFO  MainController:44 - login_command
+2016-03-06 19:26:58 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.LoginCommand@f10fc5
+2016-03-06 19:26:58 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-06 19:26:58 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-06 19:26:58 INFO  MainController:52 - Page: hello.jsp
+2016-03-06 19:27:06 INFO  MainController:44 - menu_command
+2016-03-06 19:27:06 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.MenuCommand@4cb75b
+2016-03-06 19:27:06 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-06 19:27:06 INFO  MainController:52 - Page: menu.jsp
+2016-03-06 19:35:16 INFO  MainController:44 - menu_command
+2016-03-06 19:35:17 INFO  ConnectionPoolImpl:65 - Pool has been initialized
+2016-03-06 19:35:17 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.MenuCommand@594c4f
+2016-03-06 19:35:17 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-06 19:35:17 INFO  MainController:52 - Page: menu.jsp
+2016-03-06 19:35:51 INFO  MainController:44 - login_command
+2016-03-06 19:35:51 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.LoginCommand@152dbf0
+2016-03-06 19:35:51 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-06 19:35:51 INFO  MainController:52 - Page: login.jsp
+2016-03-06 19:42:32 INFO  MainController:44 - menu_command
+2016-03-06 19:42:33 INFO  ConnectionPoolImpl:65 - Pool has been initialized
+2016-03-06 19:42:34 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.MenuCommand@975149
+2016-03-06 19:42:34 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-06 19:42:34 INFO  MainController:52 - Page: menu.jsp
+2016-03-06 19:42:40 INFO  MainController:44 - category_command
+2016-03-06 19:42:40 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.CategoryCommand@8057ab
+2016-03-06 19:42:40 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-06 19:42:40 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-06 19:42:40 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-06 19:42:40 INFO  MainController:52 - Page: category.jsp
+2016-03-06 19:42:46 INFO  MainController:44 - category_command
+2016-03-06 19:42:46 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.CategoryCommand@8057ab
+2016-03-06 19:42:46 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-06 19:42:46 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-06 19:42:46 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-06 19:42:46 INFO  MainController:52 - Page: category.jsp
+2016-03-06 19:47:55 INFO  MainController:44 - menu_command
+2016-03-06 19:47:57 INFO  ConnectionPoolImpl:65 - Pool has been initialized
+2016-03-06 19:47:57 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.MenuCommand@89cb9c
+2016-03-06 19:47:57 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-06 19:47:57 INFO  MainController:52 - Page: menu.jsp
+2016-03-06 20:48:17 INFO  MainController:44 - login_command
+2016-03-06 20:48:19 INFO  ConnectionPoolImpl:65 - Pool has been initialized
+2016-03-06 20:48:20 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.LoginCommand@7f0e13
+2016-03-06 20:48:20 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-06 20:48:21 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-06 20:48:21 INFO  MainController:52 - Page: hello.jsp
+2016-03-06 20:48:25 INFO  MainController:44 - menu_command
+2016-03-06 20:48:25 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.MenuCommand@1f7952f
+2016-03-06 20:48:25 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-06 20:48:25 INFO  MainController:52 - Page: menu.jsp
+2016-03-06 21:26:11 INFO  MainController:44 - register_command
+2016-03-06 21:26:14 INFO  ConnectionPoolImpl:65 - Pool has been initialized
+2016-03-06 21:26:14 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.RegisterCommand@b3632f
+2016-03-06 21:26:14 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-06 21:26:15 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-06 21:26:15 INFO  MainController:52 - Page: login.jsp
+2016-03-06 21:37:51 INFO  MainController:44 - register_command
+2016-03-06 21:37:52 INFO  ConnectionPoolImpl:65 - Pool has been initialized
+2016-03-06 21:37:52 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.RegisterCommand@80f04f
+2016-03-06 21:37:52 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-06 21:37:52 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-06 21:37:53 INFO  MainController:52 - Page: login.jsp
+2016-03-06 22:43:04 INFO  MainController:44 - register_command
+2016-03-06 22:43:05 INFO  ConnectionPoolImpl:65 - Pool has been initialized
+2016-03-06 22:43:05 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.RegisterCommand@b88dd7
+2016-03-06 22:43:05 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-06 22:43:06 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-06 22:43:06 INFO  MainController:52 - Page: login.jsp
+2016-03-06 22:43:53 INFO  MainController:44 - menu_command
+2016-03-06 22:43:53 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.MenuCommand@1ed41dd
+2016-03-06 22:43:53 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-06 22:43:53 INFO  MainController:52 - Page: menu.jsp
+2016-03-06 22:48:24 INFO  MainController:44 - register_command
+2016-03-06 22:48:25 INFO  ConnectionPoolImpl:65 - Pool has been initialized
+2016-03-06 22:48:25 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.RegisterCommand@1370b8
+2016-03-06 22:48:25 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-06 22:48:26 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-06 22:48:26 INFO  MainController:52 - Page: login.jsp
+2016-03-06 22:53:48 INFO  MainController:44 - register_command
+2016-03-06 22:53:49 INFO  ConnectionPoolImpl:65 - Pool has been initialized
+2016-03-06 22:53:49 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.RegisterCommand@b451c4
+2016-03-06 22:53:49 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-06 22:53:50 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-06 22:53:50 INFO  MainController:52 - Page: login.jsp
+2016-03-06 22:54:15 INFO  MainController:44 - menu_command
+2016-03-06 22:54:15 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.MenuCommand@3d9f30
+2016-03-06 22:54:15 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-06 22:54:15 INFO  MainController:52 - Page: menu.jsp
+2016-03-06 23:03:27 INFO  MainController:44 - register_command
+2016-03-06 23:03:29 INFO  ConnectionPoolImpl:65 - Pool has been initialized
+2016-03-06 23:03:30 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.RegisterCommand@12eef68
+2016-03-06 23:03:30 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-06 23:03:30 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-06 23:03:31 INFO  MainController:52 - Page: login.jsp

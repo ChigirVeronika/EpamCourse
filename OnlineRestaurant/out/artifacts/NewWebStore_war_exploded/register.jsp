@@ -22,18 +22,19 @@
             </div>
 
             <div class="inner cover">
-                <form action="/main" method="POST">
+                <form name="registration" action="/main" method="POST">
                     <input type="hidden" name="command" value="register_command"/>
 
                     <div class="row">
                         <div class="col-md-3"></div>
                         <div class="col-md-5">
-                            <input type="text" name="name" class="form-control" placeholder="<fmt:message key="register.name" bundle="${lang}"/>"/>
+                            <input type="text" id="name" name="name" class="form-control" placeholder="<fmt:message key="register.name" bundle="${lang}"/>"/>
+                            <span id="userName-msg"></span>
                         </div>
                         <div class="col-md-4">
-                            <c:if test="${name_message}!=nul">
+                            <c:if test="${required_message}!=nul">
                                 <h4><span class="label label-danger">
-                                    <c:out value="$name_message"/>
+                                    <c:out value="$required_message"/>
                                 </span></h4>
                             </c:if>
                         </div>
@@ -45,9 +46,9 @@
                             <input type="text" name="surname" class="form-control" placeholder="<fmt:message key="register.surname" bundle="${lang}"/>"/>
                         </div>
                         <div class="col-md-4">
-                            <c:if test="${surname_message}!=nul">
+                            <c:if test="${required_message}!=nul">
                                 <h4><span class="label label-danger">
-                                    <c:out value="$surname_message"/>
+                                    <c:out value="$required_message"/>
                                 </span></h4>
                             </c:if>
                         </div>
@@ -59,9 +60,9 @@
                             <input type="text" name="email" class="form-control" placeholder="<fmt:message key="register.email" bundle="${lang}"/>"/>
                         </div>
                         <div class="col-md-4">
-                            <c:if test="${email_message}!=nul">
+                            <c:if test="${required_message}!=nul">
                                 <h4><span class="label label-danger">
-                                    <c:out value="$email_message"/>
+                                    <c:out value="$required_message"/>
                                 </span></h4>
                             </c:if>
                         </div>
@@ -73,9 +74,9 @@
                             <input type="text" name="pay_card_id" class="form-control" placeholder="<fmt:message key="register.pay_card" bundle="${lang}"/>"/>
                         </div>
                         <div class="col-md-4">
-                            <c:if test="${pay_card_message}!=nul">
+                            <c:if test="${required_message}!=nul">
                                 <h4><span class="label label-danger">
-                                    <c:out value="$pay_card_message"/>
+                                    <c:out value="$required_message"/>
                                 </span></h4>
                             </c:if>
                         </div>
@@ -87,9 +88,9 @@
                             <input type="text" name="login" class="form-control" placeholder="<fmt:message key="register.login" bundle="${lang}"/>"/>
                         </div>
                         <div class="col-md-4">
-                            <c:if test="${login_message}!=nul">
+                            <c:if test="${required_message}!=nul">
                                 <h4><span class="label label-danger">
-                                    <c:out value="$login_message"/>
+                                    <c:out value="$required_message"/>
                                 </span></h4>
                             </c:if>
                         </div>
@@ -101,9 +102,9 @@
                             <input type="password" name="password" class="form-control" placeholder="<fmt:message key="register.password" bundle="${lang}"/>"/>
                         </div>
                         <div class="col-md-4">
-                            <c:if test="${password_message}!=nul">
+                            <c:if test="${required_message}!=nul">
                                 <h4><span class="label label-danger">
-                                    <c:out value="$password_message"/>
+                                    <c:out value="$required_message"/>
                                 </span></h4>
                             </c:if>
                         </div>
@@ -112,7 +113,7 @@
                     <div class="row">
                         <div class="col-lg-4"></div>
                         <div class="col-md-3">
-                            <input type="submit" value="<fmt:message key="register.signup" bundle="${lang}"/>" class="btn btn-default btn-block"/>
+                            <input type="submit" onclick="return registrationFormValidation();" value="<fmt:message key="register.signup" bundle="${lang}"/>" class="btn btn-default btn-block"/>
                         </div>
                     </div>
                 </form>

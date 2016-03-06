@@ -44,7 +44,7 @@ public class RegisterCommand implements Command {
                     path+=UNDERLINE+currentLanguage;
                 }
                 ResourceBundle rb = ResourceBundle.getBundle(path);
-                request.setAttribute(LOGIN_MESSAGE,rb.getString("register.wrong"));
+                request.setAttribute(REQUIRED_MESSAGE,rb.getString("register.wrong"));
             }
         }catch (ServiceException e){
             LOGGER.error("Can't do UserService in RegisterCommand ");

@@ -9,16 +9,13 @@
 <fmt:setBundle basename="i18n.restaurant" var="lang"/>
 
 <div class="modal fade" id="edit" role="dialog">
-
     <div class="modal-dialog">
-
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
-
             <div class="modal-body">
-                <form action="/main" method="POST">
+                <form id="edit_category" action="/main" method="POST">
                     <input type="text" name="name" class="name form-control" placeholder="<fmt:message key="catalog.add.name" bundle="${lang}"/>"/>
                     <br>
                     <textarea class="description form-control" name="description" id="message-text-edit" placeholder="<fmt:message key="catalog.add.description" bundle="${lang}"/>"></textarea>
@@ -32,15 +29,9 @@
                     <button type="submit" class="btn btn-default"><fmt:message key="dish.del.button" bundle="${lang}"/></button>
                 </form>
             </div>
-
-
         </div>
-
     </div>
-
 </div>
-
-
 
 <script type="text/javascript">
     $('#edit').on('show.bs.modal', function (event) {

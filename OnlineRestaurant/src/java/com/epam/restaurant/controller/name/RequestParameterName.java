@@ -26,4 +26,6 @@ public class RequestParameterName {
 
     public static final String EN = "en";
     public static final String UNDERLINE = "_";
+
+    public static final String REQUIRED_MESSAGE="required_message";
 }
