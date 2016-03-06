@@ -15,11 +15,12 @@
     <jsp:include page="layout/resources.jsp" />
 </head>
 <body>
-<div class="restaurant-wrapper">
-    <div class="restaurant-wrapper-inner">
+<div class="site-wrapper">
+    <div class="site-wrapper-inner">
         <div class="cover-container">
+
             <div class="trendhead clearfix">
-                <jsp:include page="layout/header.jsp"/>
+                <jsp:include page="layout/header.jsp" />
             </div>
 
             <div class="inner cover">
@@ -150,7 +151,7 @@
                                                 modal.find('.ingredients').val(ingredients);
                                                 modal.find('.description').val(description);
                                                 modal.find('.image').val(image);
-                                                //odal.find('.old_name').val(name);
+                                                //modal.find('.old_name').val(name);
                                                 //modal.find('.del_name').val(name);
                                                 //modal.find('.description').val(desc);
                                             });
@@ -164,8 +165,7 @@
                 </div>
             </div>
 
-            <br><br><br><br>
-            <div class="trendfoot">
+            <div>
                 <jsp:include page="layout/footer.jsp"/>
             </div>
         </div>

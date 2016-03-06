@@ -14,11 +14,11 @@
     </head>
 
     <body>
-        <div class="restaurant-wrapper">
-            <div class="restaurant-wrapper-inner">
+        <div class="site-wrapper">
+            <div class="site-wrapper-inner">
                 <div class="cover-container">
-                    <div>
-                        <jsp:include page="layout/header.jsp"/>
+                    <div class="trendhead clearfix">
+                        <jsp:include page="layout/header.jsp" />
                     </div>
 
                     <div>
@@ -27,7 +27,7 @@
                         <p class="lead"><a href="/main?command=menu_command" class="btn btn-lg btn-default"><fmt:message key="index.start" bundle="${lang}"/></a></p>
                     </div>
                     <br><br><br><br>
-                    <div class="trendfoot">
+                    <div>
                         <jsp:include page="layout/footer.jsp"/>
                     </div>
                 </div>

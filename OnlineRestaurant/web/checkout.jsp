@@ -13,11 +13,11 @@
     <jsp:include page="layout/resources.jsp" />
 </head>
 <body>
-<div class="restaurant-wrapper">
-    <div class="restaurant-wrapper-inner">
+<div class="site-wrapper">
+    <div class="site-wrapper-inner">
         <div class="cover-container">
             <div class="trendhead clearfix">
-                <jsp:include page="layout/header.jsp"/>
+                <jsp:include page="layout/header.jsp" />
             </div>
 
             <br><br>

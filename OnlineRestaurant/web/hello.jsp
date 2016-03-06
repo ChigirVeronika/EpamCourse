@@ -13,11 +13,11 @@
     <jsp:include page="layout/resources.jsp" />
 </head>
 <body>
-<div class="restaurant-wrapper">
-    <div class="restaurant-wrapper-inner">
+<div class="site-wrapper">
+    <div class="site-wrapper-inner">
         <div class="cover-container">
             <div class="trendhead clearfix">
-                <jsp:include page="layout/header.jsp"/>
+                <jsp:include page="layout/header.jsp" />
             </div>
 
             <br><br>
@@ -28,9 +28,10 @@
                 </h1>
             </div>
 
-            <br>
-            <p class="lead"><fmt:message key="common.take" bundle="${lang}"/></p>
-            <br>
+            <c:if test="${user != null && user.role == 'USER'}">
+                <p class="lead"><fmt:message key="common.take" bundle="${lang}"/></p>
+            </c:if>
+
             <p class="lead">
                 <a href="/main?command=menu_command" class="btn btn-lg btn-default">
                     <fmt:message key="index.start" bundle="${lang}"/>

@@ -6,7 +6,7 @@
        value="${not empty param.language ? param.language : not empty language ? language : 'en'}"
        scope="session"/>
 <fmt:setLocale value="${language}"/>
-<fmt:setBundle basename="i18n.webstore" var="lang"/>
+<fmt:setBundle basename="i18n.restaurant" var="lang"/>
 
 <div class="modal fade" id="edit" role="dialog">
 
@@ -22,7 +22,7 @@
                     <input type="text" name="name" class="name form-control" placeholder="<fmt:message key="catalog.add.name" bundle="${lang}"/>"/>
                     <br>
                     <textarea class="description form-control" name="description" id="message-text-edit" placeholder="<fmt:message key="catalog.add.description" bundle="${lang}"/>"></textarea>
-                    <input type = "hidden" name = "action" value="edit_category_command"/>
+                    <input type = "hidden" name = "command" value="edit_category_command"/>
                     <input class="old_name" type="hidden" name="old_name"/>
                     <button type="submit" class="btn btn-default"><fmt:message key="dish.edit.button" bundle="${lang}"/></button>
                 </form>

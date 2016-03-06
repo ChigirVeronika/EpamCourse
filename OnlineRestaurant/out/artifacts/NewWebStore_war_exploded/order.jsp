@@ -27,8 +27,8 @@
 </style>
 
 <body>
-<div class="restaurant-wrapper">
-    <div class="restaurant-wrapper-inner">
+<div class="site-wrapper">
+    <div class="site-wrapper-inner">
         <div class="cover-container">
             <div class="trendhead clearfix">
                 <jsp:include page="layout/header.jsp"/>

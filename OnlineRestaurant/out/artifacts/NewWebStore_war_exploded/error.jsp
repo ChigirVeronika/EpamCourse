@@ -14,11 +14,11 @@
 </head>
 
 <body>
-<div class="restaurant-wrapper">
-    <div class="restaurant-wrapper-inner">
-        <div class="cover-container">
-            <div>
-                <jsp:include page="layout/header.jsp"/>
+<div class="site-wrapper">
+    <div class="site-wrapper-inner">
+        <div class="site-container">
+            <div class="trendhead clearfix">
+                <jsp:include page="layout/header.jsp" />
             </div>
 
             <div>
@@ -26,7 +26,7 @@
                 <p class="lead"><fmt:message key="error.problems" bundle="${lang}"/></p>
             </div>
 
-            <div class="trendfoot">
+            <div>
                 <jsp:include page="layout/footer.jsp"/>
             </div>
         </div>

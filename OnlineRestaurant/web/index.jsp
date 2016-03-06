@@ -14,11 +14,11 @@
     </head>
 
     <body>
-        <div class="restaurant-wrapper">
-            <div class="restaurant-wrapper-inner">
+        <div class="site-wrapper">
+            <div class="site-wrapper-inner">
                 <div class="cover-container">
-                    <div>
-                        <jsp:include page="layout/header.jsp"/>
+                    <div class="trendhead clearfix">
+                        <jsp:include page="layout/header.jsp" />
                     </div>
 
                     <div>
