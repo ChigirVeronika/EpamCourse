@@ -46,8 +46,6 @@
                                 <div class = "col-xs-5">
                                     <p><fmt:message key="dish.name" bundle="${lang}"/>: <c:out value="${dish.name}"/> </p>
                                     <input type="hidden" id="dish_name" value="<c:out value="${dish.name}"/>">
-                                    <p><fmt:message key="dish.name" bundle="${lang}"/>: <em> <c:out value="${dish.name}"/> </p>
-                                    <input type="hidden" id="dish_name" value="<c:out value="${dish.name}"/>">
                                     <p><fmt:message key="dish.price" bundle="${lang}"/>: $  <c:out value="${dish.price}"/> </p>
                                     <input type="hidden" id="dish_price" value="<c:out value="${dish.price}"/>">
                                     <br/>
@@ -79,6 +77,10 @@
                                 <h3><fmt:message key="dish.description" bundle="${lang}"/>:</h3>
                                 <p> <c:out value="${dish.description	}"/></p>
                                 <input type="hidden" id="dish_description" value="<c:out value="${dish.description}"/>">
+
+                                <h3><fmt:message key="dish.ingredients" bundle="${lang}"/>:</h3>
+                                <p> <c:out value="${dish.ingredients	}"/></p>
+                                <input type="hidden" id="dish_ingredients" value="<c:out value="${dish.ingredients}"/>">
                             </div>
 
                             <c:if test="${user != null && user.role == 'ADMIN'}">
@@ -102,15 +104,11 @@
                                                         <input type="hidden" name="dish_id" value="<c:out value="${dish.id}" />" >
                                                         <input type="text" name="name" class="name form-control" placeholder="<fmt:message key="dish.add.name" bundle="${lang}"/>"/>
                                                         <br>
-                                                        <input type="text" name="category" class="brand form-control" placeholder="<fmt:message key="dish.add.category" bundle="${lang}"/>"/>
-                                                        <br>
-                                                        <input type="text" name="quantity" class="brand form-control" placeholder="<fmt:message key="dish.add.quantity" bundle="${lang}"/>"/>
-                                                        <br>
                                                         <input type="text" name="price" class="price form-control" placeholder="<fmt:message key="dish.add.price" bundle="${lang}"/>"/>
                                                         <br>
                                                         <input type="text" name="image" class="image form-control" placeholder="<fmt:message key="dish.add.image" bundle="${lang}"/>"/>
                                                         <br>
-                                                        <textarea class="description form-control" name="ingredients" id="message-text-ingredients" placeholder="<fmt:message key="dish.add.ingredients" bundle="${lang}"/>"></textarea>
+                                                        <textarea class="ingredients form-control" name="ingredients" id="message-text-ingredients" placeholder="<fmt:message key="dish.add.ingredients" bundle="${lang}"/>"></textarea>
                                                         <br>
                                                         <textarea class="description form-control" name="description" id="message-text-description" placeholder="<fmt:message key="dish.add.description" bundle="${lang}"/>"></textarea>
                                                         <input type = "hidden" name = "command" value="edit_dish_command"/>
@@ -134,8 +132,8 @@
                                             $('#editDish').on('show.bs.modal', function (event) {
                                                 //var button = $(event.relatedTarget);
                                                 var name = $("#dish_name").val();
-                                                var category = $("#dish_category").val();
-                                                var quantity = $("#dish_quantity").val();
+                                                //var category = $("#dish_category").val();
+                                                //var quantity = $("#dish_quantity").val();
                                                 var price = $("#dish_price").val();
                                                 var ingredients = $("#dish_ingredients").val();
                                                 var description = $("#dish_description").val();
@@ -145,8 +143,8 @@
                                                 var modal = $(this);
 
                                                 modal.find('.name').val(name);
-                                                modal.find('.category').val(category);
-                                                modal.find('.quantity').val(quantity);
+                                                //modal.find('.category').val(category);
+                                                //modal.find('.quantity').val(quantity);
                                                 modal.find('.price').val(price);
                                                 modal.find('.ingredients').val(ingredients);
                                                 modal.find('.description').val(description);

@@ -23,18 +23,27 @@ public class EditDishCommand implements Command {
         String result = JspPageName.CONCRETE_CATEGORY_JSP;
 
         try{
+            System.out.println("try to edit");
             Long dishId = Long.parseLong(request.getParameter("dish_id"));
             Dish dish = dishService.getById(dishId);
+            System.out.println(dish.toString());
 
             if(dish!=null){
+                System.out.println("not null!");
                 result+=dish.getCategoryId();
-
+                System.out.println(result);
                 String dishName = request.getParameter("name");
+                System.out.println(dishName);
                 String dishDescription = request.getParameter("description");
+                System.out.println(dishDescription);
                 String dishIngredients = request.getParameter("ingredients");
-                BigDecimal dishPrice = BigDecimal.valueOf(Long.parseLong(request.getParameter("price")));
-                Integer dishQuantity = Integer.parseInt(request.getParameter("quantity"));
+                System.out.println(dishIngredients);
+                BigDecimal dishPrice = new BigDecimal(request.getParameter("price"));
+                System.out.println(dishPrice);
+                //Integer dishQuantity = Integer.parseInt(request.getParameter("quantity"));
+                Integer dishQuantity = 200;//todo!!!
                 String dishImage = request.getParameter("image");
+                System.out.println(dishImage);
 
                 dish.setName(dishName);
                 dish.setDescription(dishDescription);
@@ -42,6 +51,7 @@ public class EditDishCommand implements Command {
                 dish.setPrice(dishPrice);
                 dish.setQuantity(dishQuantity);
                 dish.setImage(dishImage);
+                System.out.println("in if! "+dish.toString());
 
                 dishService.update(dish);
             }else {
