@@ -42,7 +42,7 @@ public class AddDishCommand implements Command {
                 dishService.create(dishName,dishDescription,dishIngredients,
                         dishPrice,dishQuantity,category.getId(),dishImage);
             }else {
-//                result=JspPageName.CONCRETE_MENU_JSP;
+//                result=JspPageName.CONCRETE_MENU_JSP;// TODO: 06.03.2016  
                 result=JspPageName.MENU_JSP;
             }
 

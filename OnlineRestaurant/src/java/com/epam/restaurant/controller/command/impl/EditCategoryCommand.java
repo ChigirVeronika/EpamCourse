@@ -28,7 +28,7 @@ public class EditCategoryCommand  implements Command {
             System.out.println(name);
             String newName = request.getParameter("name");
             System.out.println(newName);
-            String newDescription = request.getParameter("newDescription");
+            String newDescription = request.getParameter("description");
             System.out.println(newDescription);
 
             Category category = categoryService.getByName(name);
