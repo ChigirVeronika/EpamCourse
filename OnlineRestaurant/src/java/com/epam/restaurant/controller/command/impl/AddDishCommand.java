@@ -30,14 +30,12 @@ public class AddDishCommand implements Command {
         try{
             String categoryName=request.getParameter("category");
             Category category = categoryService.getByName(categoryName);
-
             if(category!=null){
                 result+=category.getId();
-
                 String dishName = request.getParameter("name");
                 String dishDescription = request.getParameter("description");
                 String dishIngredients = request.getParameter("ingredients");
-                BigDecimal dishPrice = BigDecimal.valueOf(Long.parseLong(request.getParameter("price")));
+                BigDecimal dishPrice = new BigDecimal(request.getParameter("price"));
                 Integer dishQuantity = Integer.parseInt(request.getParameter("quantity"));
                 String dishImage = request.getParameter("image");
 

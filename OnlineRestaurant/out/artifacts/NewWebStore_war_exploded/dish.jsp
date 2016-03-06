@@ -81,6 +81,7 @@
                                 <h3><fmt:message key="dish.ingredients" bundle="${lang}"/>:</h3>
                                 <p> <c:out value="${dish.ingredients	}"/></p>
                                 <input type="hidden" id="dish_ingredients" value="<c:out value="${dish.ingredients}"/>">
+                                <input type="hidden" id="dish_quantity" value="<c:out value="${dish.quantity}"/>">
                             </div>
 
                             <c:if test="${user != null && user.role == 'ADMIN'}">
@@ -105,6 +106,8 @@
                                                         <input type="text" name="name" class="name form-control" placeholder="<fmt:message key="dish.add.name" bundle="${lang}"/>"/>
                                                         <br>
                                                         <input type="text" name="price" class="price form-control" placeholder="<fmt:message key="dish.add.price" bundle="${lang}"/>"/>
+                                                        <br>
+                                                        <input type="text" name="quantity" class="quantity form-control" placeholder="<fmt:message key="dish.add.quantity" bundle="${lang}"/>"/>
                                                         <br>
                                                         <input type="text" name="image" class="image form-control" placeholder="<fmt:message key="dish.add.image" bundle="${lang}"/>"/>
                                                         <br>
@@ -133,7 +136,7 @@
                                                 //var button = $(event.relatedTarget);
                                                 var name = $("#dish_name").val();
                                                 //var category = $("#dish_category").val();
-                                                //var quantity = $("#dish_quantity").val();
+                                                var quantity = $("#dish_quantity").val();
                                                 var price = $("#dish_price").val();
                                                 var ingredients = $("#dish_ingredients").val();
                                                 var description = $("#dish_description").val();
@@ -144,7 +147,7 @@
 
                                                 modal.find('.name').val(name);
                                                 //modal.find('.category').val(category);
-                                                //modal.find('.quantity').val(quantity);
+                                                modal.find('.quantity').val(quantity);
                                                 modal.find('.price').val(price);
                                                 modal.find('.ingredients').val(ingredients);
                                                 modal.find('.description').val(description);

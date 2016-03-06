@@ -25,8 +25,11 @@ public class EditCategoryCommand  implements Command {
         String result = JspPageName.CONCRETE_MENU_JSP;
         try{
             String name = request.getParameter("old_name");
+            System.out.println(name);
             String newName = request.getParameter("name");
+            System.out.println(newName);
             String newDescription = request.getParameter("newDescription");
+            System.out.println(newDescription);
 
             Category category = categoryService.getByName(name);
 

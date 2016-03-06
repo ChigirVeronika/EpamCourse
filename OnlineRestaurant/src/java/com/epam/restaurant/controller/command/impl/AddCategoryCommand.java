@@ -24,7 +24,9 @@ public class AddCategoryCommand implements Command {
 
         try{
             String name = request.getParameter("name");
+            System.out.println(name);
             String description = request.getParameter("description");
+            System.out.println(description);
 
             categoryService.create(name,description);
         } catch (ServiceException e) {

@@ -29,7 +29,7 @@
                         <div class="col-md-8">
                             <h1 class="cover-heading">
                                 <c:out value="${name}"/>
-                            </h1><br/></br>
+                            </h1>
                         </div>
                     </div>
 
@@ -65,13 +65,15 @@
                                     <div class="modal-body">
                                         <input type="text" name="name" class="form-control" placeholder="<fmt:message key="dish.add.name" bundle="${lang}"/>"/>
                                         <br>
-                                        <input type="text" name="brand" class="form-control" placeholder="<fmt:message key="dish.add.category" bundle="${lang}"/>"/>
-                                        <br>
                                         <input type="text" name="price" class="form-control" placeholder="<fmt:message key="dish.add.price" bundle="${lang}"/>"/>
+                                        <br>
+                                        <input type="text" name="quantity" class="form-control" placeholder="<fmt:message key="dish.add.quantity" bundle="${lang}"/>"/>
                                         <br>
                                         <input type="text" name="image" class="form-control" placeholder="<fmt:message key="dish.add.image" bundle="${lang}"/>"/>
                                         <br>
-                                        <textarea class="form-control" name="description" id="message-text" placeholder="<fmt:message key="dish.add.description" bundle="${lang}"/>"></textarea>
+                                        <textarea class="form-control" name="ingredients" id="ingredients-message-text" placeholder="<fmt:message key="dish.add.ingredients" bundle="${lang}"/>"></textarea>
+                                        <br>
+                                        <textarea class="form-control" name="description" id="description-message-text" placeholder="<fmt:message key="dish.add.description" bundle="${lang}"/>"></textarea>
                                         <input type = "hidden" name = "command" value="add_dish_command"/>
                                         <input type = "hidden" name = "category" value="${name}"/>
                                         <button type="submit" class="btn btn-default"><fmt:message key="dish.add.save" bundle="${lang}"/></button>
