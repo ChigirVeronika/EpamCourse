@@ -16,7 +16,7 @@
 <body>
 <div class="site-wrapper">
     <div class="site-wrapper-inner">
-        <div class="site-container">
+        <div class="cover-container">
             <div class="trendhead clearfix">
                 <jsp:include page="layout/header.jsp" />
             </div>
@@ -26,7 +26,7 @@
                 <p class="lead"><fmt:message key="error.problems" bundle="${lang}"/></p>
             </div>
 
-            <div>
+            <div class="trendfoot">
                 <jsp:include page="layout/footer.jsp"/>
             </div>
         </div>

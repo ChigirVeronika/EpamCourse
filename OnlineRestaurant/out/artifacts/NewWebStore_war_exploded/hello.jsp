@@ -20,7 +20,6 @@
                 <jsp:include page="layout/header.jsp" />
             </div>
 
-            <br><br>
             <div class="inner cover">
                 <h1 class="cover-heading">
                     <br>
@@ -38,7 +37,7 @@
                 </a>
             </p>
 
-            <div>
+            <div class="trendfoot">
                 <jsp:include page="layout/footer.jsp"/>
             </div>
         </div>

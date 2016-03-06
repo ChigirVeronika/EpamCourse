@@ -34,7 +34,7 @@
                         </div>
                     </div>
                     <div class = "row">
-                        <div class="col-sm-4"><
+                        <div class="col-sm-4">
                             <mytag:categories/>
                         </div>
                         <div class = "col-sm-8">
@@ -165,7 +165,7 @@
                 </div>
             </div>
 
-            <div>
+            <div class="trendfoot">
                 <jsp:include page="layout/footer.jsp"/>
             </div>
         </div>
