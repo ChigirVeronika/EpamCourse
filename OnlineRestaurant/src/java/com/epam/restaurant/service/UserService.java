@@ -27,14 +27,13 @@ public class UserService {
     private static UserSqlDao userDao = (UserSqlDao) SqlDaoFactory.getInstance().getDao(SqlDaoFactory.DaoType.USER);
 
     public User get(String login) throws ServiceException{
-        User user; //TODO ? он же налл, вот таким и должен остаться - это для сервиса
         try {
-            user = userDao.getByLogin(login);
+            User user = userDao.getByLogin(login);
+            return user;
+
         } catch (DaoException e) {
             throw new ServiceException("Exception",e);
         }
-
-        return user;
     }
 
     public User login(String login, String password) throws ServiceException {
@@ -55,7 +54,7 @@ public class UserService {
         User user;
         try {
             user = new User(name, surname, email, payCard, login, HashUtil.createHash(password));
-//            user = new User(CharsetUtil.StringToUtf8(name), CharsetUtil.StringToUtf8(surname),
+//            user = new User(CharsetUtil.StringToUtf8(name), CharsetUtil.StringToUtf8(surname),//todo
 //                    email, payCard, CharsetUtil.StringToUtf8(login), HashUtil.createHash(password));
             return  userDao.persist(user);
         }catch (DaoException|NoSuchAlgorithmException|InvalidKeySpecException  e){
