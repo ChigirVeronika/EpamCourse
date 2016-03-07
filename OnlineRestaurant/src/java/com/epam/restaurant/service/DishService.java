@@ -11,7 +11,7 @@ import java.math.BigDecimal;
 
 
 /**
- * Perfor service operations with dish object.
+ * Perform service operations with dish object.
  */
 public class DishService {
     private static final Logger LOGGER = Logger.getLogger( DishService.class);

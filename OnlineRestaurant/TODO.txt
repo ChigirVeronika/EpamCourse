@@ -1,4 +1,19 @@
 TODO:
+public static void main(String args[]){
+        User user = new User();
+        user.setName("name-name");
+        user.setSurname("sur-name");
+        user.setEmail("veronikach789@gmail.com");
+        user.setPayCard("1234123412341234");
+        user.setLogin("azsxdcfv gbhnjm");
+        user.setHash("azsxdcfvgbhnjm");
+
+        System.out.println(userValid(user));
+
+        Dish dish = new Dish("name","description","ingredients",new BigDecimal(12.000),13,1L,"image.iii");
+        System.out.println(dishValid(dish));
+    }
+======================================
 <body onload="document.registration.name.focus();">
 ======================================
 <web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
