@@ -23,7 +23,6 @@ public class OrderDish implements Serializable, Identified<Long> {
         this.dishId=dishId;
         this.orderId=orderId;
         this.quantity=quantity;
-
     }
 
     public Long getId() {

@@ -8,11 +8,11 @@ import static org.junit.Assert.*;
 import static org.junit.Assert.assertEquals;
 
 /**
- * Created by Вероника on 03.03.2016.
+ *
  */
 public class DishTest {
 
-    Dish dish = new Dish("name","description","ingredients",new BigDecimal(12),10,1L,"image.png");
+    private Dish dish = new Dish("name","description","ingredients",new BigDecimal(12),10,1L,"image.png");
 
     @Test
     public void testGetName() throws Exception {

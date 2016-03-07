@@ -40,22 +40,22 @@ public class OrderSqlDao extends AbstractSqlDao<Order, Long> {
 
     @Override
     public String getSelectQuery() {
-        return dbBundle.getString("USER_ORDER.SELECT");
+        return dbBundle.getString("ORDER.SELECT");
     }
 
     @Override
     public String getCreateQuery() {
-        return dbBundle.getString("USER_ORDER.INSERT");
+        return dbBundle.getString("ORDER.INSERT");
     }
 
     @Override
     public String getUpdateQuery() {
-        return dbBundle.getString("USER_ORDER.UPDATE");
+        return dbBundle.getString("ORDER.UPDATE");
     }
 
     @Override
     public String getDeleteQuery() {
-        return dbBundle.getString("USER_ORDER.DELETE");
+        return dbBundle.getString("ORDER.DELETE");
     }
 
     @Override
@@ -72,7 +72,7 @@ public class OrderSqlDao extends AbstractSqlDao<Order, Long> {
                 result.add(order);
             }
         } catch (SQLException e) {
-            throw new DaoException("OrderSqlDao Exception",e);
+            throw new DaoException("OrderSqlDao Exception");
         }
         return result;
     }
@@ -82,9 +82,10 @@ public class OrderSqlDao extends AbstractSqlDao<Order, Long> {
         try {
             statement.setLong(1, object.getUserId());
             statement.setDate(2, new java.sql.Date(object.getCreatedAt().getTime()));
-            statement.setBigDecimal(3,object.getTotal());
+            statement.setBigDecimal(3,object.getTotal());//todo
+            System.out.println(object.getTotal());
         } catch (SQLException e) {
-            throw new DaoException("OrderSqlDao Exception",e);
+            throw new DaoException("OrderSqlDao Exception");
         }
     }
 
@@ -112,7 +113,7 @@ public class OrderSqlDao extends AbstractSqlDao<Order, Long> {
         Connection connection=null;
         try  {
             connection = pool.getConnection();
-            String sql = dbBundle.getString("USER_ORDER.FROM_USER_ID");
+            String sql = dbBundle.getString("ORDER.FROM_USER_ID");
             PreparedStatement statement = connection.prepareStatement(sql);
             statement.setLong(1, name);
             ResultSet rs = statement.executeQuery();

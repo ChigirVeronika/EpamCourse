@@ -38,7 +38,7 @@ public class AddToOrderCommand implements Command {
         try{
             long dishId = Long.parseLong(request.getParameter("dish_id"));
             if(currentOrder == null){
-                currentOrder = orderService.create(currentUser.getId(),new Date());System.out.println("ORDER CREATED!HURRAY!");
+                currentOrder = orderService.create(currentUser.getId(),new Date());
             }
             OrderDish orderDish = orderDishService.create(dishId,currentOrder.getId(),1);
             Dish dish = dishService.getById(dishId);
@@ -46,6 +46,7 @@ public class AddToOrderCommand implements Command {
             currentOrder.getOrderDishes().add(orderDish);
             request.getSession().setAttribute("order",currentOrder);
         } catch (ServiceException e) {
+            e.printStackTrace();
             throw new CommandException("");
         }
         return result;

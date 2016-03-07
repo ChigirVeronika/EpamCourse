@@ -37,9 +37,20 @@
                         <div class="col-sm-4">
                             <mytag:categories/>
                         </div>
+
                         <div class="col-sm-8">
-                            <mytag:category/>
+                            <table id="results">
+                                <mytag:category/>
+                            </table>
                         </div>
+                        <div id="pageNavPosition"></div>
+
+                        <script type="text/javascript">
+                            var pager = new Pager('results', 2);
+                            pager.init();
+                            pager.showPageNav('pager', 'pageNavPosition');
+                            pager.showPage(1);
+                        </script>
                     </div>
 
                     <c:if test="${user!=null && user.role == 'ADMIN'}">

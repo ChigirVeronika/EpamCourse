@@ -9,7 +9,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * Created by Вероника on 04.02.2016.
+ *
  */
 public class Order implements Serializable, Identified<Long> {
     public static final long serialVersionUID = 1;
@@ -91,5 +91,39 @@ public class Order implements Serializable, Identified<Long> {
         this.orderDishes = orderDishes;
     }
 
+    @Override
+    public String toString() {
+        return "Order{" +
+                "id=" + id +
+                ", userId=" + userId +
+                ", createdAt=" + createdAt +
+                ", total=" + total +
+                ", orderDishes=" + orderDishes +
+                '}';
+    }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Order order = (Order) o;
+
+        if (id != order.id) return false;
+        if (userId != order.userId) return false;
+        if (createdAt != null ? !createdAt.equals(order.createdAt) : order.createdAt != null) return false;
+        if (total != null ? !total.equals(order.total) : order.total != null) return false;
+        return orderDishes != null ? orderDishes.equals(order.orderDishes) : order.orderDishes == null;
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = (int) (id ^ (id >>> 32));
+        result = 31 * result + (int) (userId ^ (userId >>> 32));
+        result = 31 * result + (createdAt != null ? createdAt.hashCode() : 0);
+        result = 31 * result + (total != null ? total.hashCode() : 0);
+        result = 31 * result + (orderDishes != null ? orderDishes.hashCode() : 0);
+        return result;
+    }
 }

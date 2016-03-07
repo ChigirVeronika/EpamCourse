@@ -30,7 +30,7 @@ public class OrderDishService {
         }
     }
 
-    public OrderDish  create(long dishId,long orderId, int quantity)
+    public OrderDish create(long dishId,long orderId, int quantity)
             throws ServiceException{
         OrderDish orderDish = new OrderDish (dishId,orderId,quantity);
         try {

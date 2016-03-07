@@ -14,21 +14,20 @@ import javax.servlet.http.HttpServletResponse;
  * Add new category to menu by user whose role ADMIN.
  */
 public class AddCategoryCommand implements Command {
-    private static final Logger LOGGER = Logger.getLogger( AddCategoryCommand.class);
+    private static final Logger LOGGER = Logger.getLogger(AddCategoryCommand.class);
 
     private static final CategoryService categoryService = CategoryService.getInstance();
+
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws CommandException {
 
         String result = JspPageName.CONCRETE_MENU_JSP;
 
-        try{
+        try {
             String name = request.getParameter("name");
-            System.out.println(name);
             String description = request.getParameter("description");
-            System.out.println(description);
 
-            categoryService.create(name,description);
+            categoryService.create(name, description);
         } catch (ServiceException e) {
             throw new CommandException("");
         }

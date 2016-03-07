@@ -35,7 +35,7 @@
             </div>
 
             <div class="inner cover">
-
+                <mytag:order/>
             </div>
 
             <div class="trendfoot">

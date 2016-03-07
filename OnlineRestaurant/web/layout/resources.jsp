@@ -14,6 +14,9 @@
 <script src="../js/registrationValidation.js"></script>
 <script src="../js/categoryValidation.js"></script>
 <script src="../js/dishValidation.js"></script>
+<script src="../js/pagination.js"></script>
+<script src="../js/tooltip.js"></script>
+
 <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
 <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
 <script src="http://getbootstrap.com/assets/js/ie-emulation-modes-warning.js" type="text/javascript"></script>

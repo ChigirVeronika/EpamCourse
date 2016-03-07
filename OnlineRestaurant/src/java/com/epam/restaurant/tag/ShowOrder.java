@@ -27,14 +27,14 @@ public class ShowOrder  extends TagSupport {
         Order order = (Order) pageContext.getSession().getAttribute("order"); // get current cart from session
         JspWriter out = pageContext.getOut();
 
-        BigDecimal item = BigDecimal.ZERO;
+        BigDecimal item ;
         BigDecimal total = BigDecimal.ZERO;
 
         try {
             if (order == null || order.getOrderDishes().size() == 0) {
                 out.print("<h2>"+rb.getString("order.empty")+"</h2>");
             } else {
-                out.print("<table class = \"table\">");
+                out.print("<table class = \"table\" >");
                 out.print("<caption><h3>"+ rb.getString("order.title") +"</h3></caption>");
                 out.print("<thead><tr>");
                 out.print("<th scope = \"col\" width=\"50px\">"+ rb.getString("order.dish.title") +"</th>");
@@ -57,7 +57,7 @@ public class ShowOrder  extends TagSupport {
                     out.print("<label for = \"quantity\">"+ rb.getString("order.quantity.title") +": </label>");
                     out.print("<input type = \"text\" name = \"quantity\" value = \"" + ci.getQuantity() + "\" id = \"quantity\" size = \"1\" class = \"quantity\" maxlength = \"3\" />\n");
 
-                    //total= TotalUtil.calculateCost(ci.getQuantity(),ci.getDish().getPrice());
+                    total= TotalUtil.calculateCost(ci.getQuantity(),ci.getDish().getPrice());
 
                     out.print("</td>");
                     out.print("<td>");
@@ -72,9 +72,8 @@ public class ShowOrder  extends TagSupport {
                     out.print("<input type = \"hidden\" name = \"command\" value = \"delete_item_command\" />");
                     out.print("<input type = \"submit\" name = \"submit\" value = \""+ rb.getString("order.delete.button") +"\" class=\"btn btn-default\" />");
                     out.print("</td>");
-                    //item=TotalUtil.multiply(ci.getQuantity(),ci.getDish().getPrice());
-                    //out.print("<td>" + item + "</td>");
-                    out.print("<td>" + "haha" + "</td>");
+                    item=TotalUtil.multiply(ci.getQuantity(),ci.getDish().getPrice());
+                    out.print("<td>" + item + "</td>");
                     out.print("</form>");
                     out.print("</tr>");
                 }

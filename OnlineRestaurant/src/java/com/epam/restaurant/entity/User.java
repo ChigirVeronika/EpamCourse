@@ -118,7 +118,7 @@ public class User implements Serializable, Identified<Long>{
                 ", name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
                 ", email='" + email + '\'' +
-                ", payCardId='" + payCard + '\'' +
+                ", payCard='" + payCard + '\'' +
                 ", login='" + login + '\'' +
                 ", hash='" + hash + '\'' +
                 ", role=" + role +

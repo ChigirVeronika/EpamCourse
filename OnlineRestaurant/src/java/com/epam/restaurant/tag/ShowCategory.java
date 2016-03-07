@@ -29,19 +29,36 @@ public class ShowCategory  extends TagSupport {
         if(dishList!=null){
             try{
                 for(Dish d:dishList){
+                    out.println("<tr><td>");
                     out.println("<div class=\"row\">");
                     out.println("<div class=\"col-xs-7\">");
-                    out.println("<img src=\""+IMAGE_URL+d.getImage()+"\"alt=\""+d.getName()+"\"height=\"100\"/>");
+                    out.println("<img src=\""+IMAGE_URL+d.getImage()+"\"alt=\""+d.getName()+"\"height=\"100\" data-tooltip=\"DESCRIPTION\"/>");
                     out.println("</div>");
+                    out.println("</td>");
 
+                    out.println("<td>");
                     out.println("<div class = \"col-xs-5\">");
                     out.println("<p>"+d.getName() + " </p>");
                     out.println("<p>"+ resourceBundle.getString("dish.price") +": " + d.getPrice() + " </p>");
+                    out.println("</td>");
+
+                    out.println("<td>");
                     out.println("<p><a href = \"/main?command=dish_command&id="+d.getId()+"\" class=\"btn btn-default\">"+ resourceBundle.getString("dish.more.button") +"</a></p>\n");
                     out.println("</div>");
                     out.println("</div>");
+                    out.println("</td></tr>");
+                    out.println("<br>");
+//                    out.println("<tr><td colspan=3>");
+//                    out.println("<div class = \"col-xs-5\">");
+//                    out.println("<p>"+ resourceBundle.getString("dish.ingredients") +": " + d.getIngredients() + " </p>");
+//                    out.println("</div>");
+//                    out.println("</td></tr>");
+//                    out.println("<tr><td colspan=3>");
+//                    out.println("<div class = \"col-xs-5\">");
+//                    out.println("<p>"+ resourceBundle.getString("dish.description") +": " + d.getDescription() + " </p>");
+//                    out.println("</div>");
+//                    out.println("</td></tr>");
 
-                    out.println("<br><br>");
                 }
             }catch (Exception e){
                 LOGGER.error("ShowCategory (Custom Tag) Exception",e);
