@@ -104,16 +104,22 @@
                                                     <form action="/main" method="POST">
                                                         <input type="hidden" name="dish_id" value="<c:out value="${dish.id}" />" >
                                                         <input type="text" name="name" class="name form-control" placeholder="<fmt:message key="dish.add.name" bundle="${lang}"/>"/>
+                                                        <span class="label label-danger"  id="dishName-msg"></span>
                                                         <br>
                                                         <input type="text" name="price" class="price form-control" placeholder="<fmt:message key="dish.add.price" bundle="${lang}"/>"/>
+                                                        <span class="label label-danger"  id="dishPrice-msg"></span>
                                                         <br>
                                                         <input type="text" name="quantity" class="quantity form-control" placeholder="<fmt:message key="dish.add.quantity" bundle="${lang}"/>"/>
+                                                        <span class="label label-danger"  id="dishQuantity-msg"></span>
                                                         <br>
                                                         <input type="text" name="image" class="image form-control" placeholder="<fmt:message key="dish.add.image" bundle="${lang}"/>"/>
+                                                        <span class="label label-danger"  id="dishImage-msg"></span>
                                                         <br>
                                                         <textarea class="ingredients form-control" name="ingredients" id="message-text-ingredients" placeholder="<fmt:message key="dish.add.ingredients" bundle="${lang}"/>"></textarea>
+                                                        <span class="label label-danger"  id="dishIngredients-msg"></span>
                                                         <br>
                                                         <textarea class="description form-control" name="description" id="message-text-description" placeholder="<fmt:message key="dish.add.description" bundle="${lang}"/>"></textarea>
+                                                        <span class="label label-danger"  id="dishDescription-msg"></span>
                                                         <input type = "hidden" name = "command" value="edit_dish_command"/>
                                                         <button type="submit" class="btn btn-default"><fmt:message key="dish.add.save" bundle="${lang}"/></button>
                                                     </form>

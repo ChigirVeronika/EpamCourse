@@ -22,16 +22,16 @@
             </div>
 
             <div class="inner cover">
-                <form name="registration" action="/main" method="POST">
+                <form name="Registration" action="/main" method="POST" onsubmit="return registrationFormValidation();">
                     <input type="hidden" name="command" value="register_command"/>
 
                     <div class="row">
                         <div class="col-md-3"></div>
                         <div class="col-md-5">
-                            <input type="text" id="name" name="name" class="form-control" placeholder="<fmt:message key="register.name" bundle="${lang}"/>"/>
-                            <span id="userName-msg"></span>
+                            <input type="text" name="name" class="form-control" placeholder="<fmt:message key="register.name" bundle="${lang}"/>"/>
                         </div>
                         <div class="col-md-4">
+                            <h4><span class="label label-danger" id="userName-msg"></span></h4>
                             <c:if test="${required_message}!=nul">
                                 <h4><span class="label label-danger">
                                     <c:out value="$required_message"/>
@@ -46,6 +46,7 @@
                             <input type="text" name="surname" class="form-control" placeholder="<fmt:message key="register.surname" bundle="${lang}"/>"/>
                         </div>
                         <div class="col-md-4">
+                            <h4><span class="label label-danger" id="userSurname-msg"></span></h4>
                             <c:if test="${required_message}!=nul">
                                 <h4><span class="label label-danger">
                                     <c:out value="$required_message"/>
@@ -60,6 +61,7 @@
                             <input type="text" name="email" class="form-control" placeholder="<fmt:message key="register.email" bundle="${lang}"/>"/>
                         </div>
                         <div class="col-md-4">
+                            <h4><span class="label label-danger" id="userEmail-msg"></span></h4>
                             <c:if test="${required_message}!=nul">
                                 <h4><span class="label label-danger">
                                     <c:out value="$required_message"/>
@@ -74,6 +76,7 @@
                             <input type="text" name="pay_card_id" class="form-control" placeholder="<fmt:message key="register.pay_card" bundle="${lang}"/>"/>
                         </div>
                         <div class="col-md-4">
+                            <h4><span class="label label-danger" id="userPaycard-msg"></span></h4>
                             <c:if test="${required_message}!=nul">
                                 <h4><span class="label label-danger">
                                     <c:out value="$required_message"/>
@@ -88,6 +91,7 @@
                             <input type="text" name="login" class="form-control" placeholder="<fmt:message key="register.login" bundle="${lang}"/>"/>
                         </div>
                         <div class="col-md-4">
+                            <h4><span class="label label-danger" id="userLogin-msg"></span></h4>
                             <c:if test="${required_message}!=nul">
                                 <h4><span class="label label-danger">
                                     <c:out value="$required_message"/>
@@ -102,6 +106,7 @@
                             <input type="password" name="password" class="form-control" placeholder="<fmt:message key="register.password" bundle="${lang}"/>"/>
                         </div>
                         <div class="col-md-4">
+                            <h4><span class="label label-danger" id="userPaasword-msg"></span></h4>
                             <c:if test="${required_message}!=nul">
                                 <h4><span class="label label-danger">
                                     <c:out value="$required_message"/>
@@ -113,7 +118,7 @@
                     <div class="row">
                         <div class="col-lg-4"></div>
                         <div class="col-md-3">
-                            <input type="submit" onclick="return registrationFormValidation();" value="<fmt:message key="register.signup" bundle="${lang}"/>" class="btn btn-default btn-block"/>
+                            <input type="submit" value="<fmt:message key="register.signup" bundle="${lang}"/>" class="btn btn-default btn-block"/>
                         </div>
                     </div>
                 </form>

@@ -55,7 +55,7 @@
                         </div>
                     </div>
                     <div class="modal fade" id="addProduct" role="dialog">
-                        <form action="/main" method="POST">
+                        <form name="AddDish" action="/main" method="POST" onsubmit="addDishFormValidation()">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -64,16 +64,22 @@
 
                                     <div class="modal-body">
                                         <input type="text" name="name" class="form-control" placeholder="<fmt:message key="dish.add.name" bundle="${lang}"/>"/>
+                                        <span class="lable label-danger"  id="dishName-msg"></span>
                                         <br>
                                         <input type="text" name="price" class="form-control" placeholder="<fmt:message key="dish.add.price" bundle="${lang}"/>"/>
+                                        <span class="lable label-danger"  id="dishPrice-msg"></span>
                                         <br>
                                         <input type="text" name="quantity" class="form-control" placeholder="<fmt:message key="dish.add.quantity" bundle="${lang}"/>"/>
+                                        <span class="lable label-danger"  id="dishQuantity-msg"></span>
                                         <br>
                                         <input type="text" name="image" class="form-control" placeholder="<fmt:message key="dish.add.image" bundle="${lang}"/>"/>
+                                        <span class="lable label-danger"  id="dishImage-msg"></span>
                                         <br>
                                         <textarea class="form-control" name="ingredients" id="ingredients-message-text" placeholder="<fmt:message key="dish.add.ingredients" bundle="${lang}"/>"></textarea>
+                                        <span class="lable label-danger"  id="dishIngredients-msg"></span>
                                         <br>
                                         <textarea class="form-control" name="description" id="description-message-text" placeholder="<fmt:message key="dish.add.description" bundle="${lang}"/>"></textarea>
+                                        <span class="lable label-danger"  id="dishDescription-msg"></span>
                                         <input type = "hidden" name = "command" value="add_dish_command"/>
                                         <input type = "hidden" name = "category" value="${name}"/>
                                         <button type="submit" class="btn btn-default"><fmt:message key="dish.add.save" bundle="${lang}"/></button>

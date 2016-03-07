@@ -15,10 +15,12 @@
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body">
-                <form id="edit_category" action="/main" method="POST">
-                    <input type="text" name="name" class="name form-control" placeholder="<fmt:message key="catalog.add.name" bundle="${lang}"/>"/>
+                <form name="EditCategory" action="/main" method="POST" onsubmit="return editCategoryFormValidation()">
+                    <input type="text" name="name" class="name form-control" placeholder="<fmt:message key="catalog.add.name" bundle="${lang}"/>"/><span class="lable label-danger"  id="categoryName-msg"></span>
+                    <span class="lable label-danger"  id="categoryNameOld-msg"></span>
                     <br>
-                    <textarea class="description form-control" name="description" id="message-text-edit" placeholder="<fmt:message key="catalog.add.description" bundle="${lang}"/>"></textarea>
+                    <textarea class="description form-control" name="description" id="message-text-edit" placeholder="<fmt:message key="catalog.add.description" bundle="${lang}"/>"></textarea><span class="lable label-danger"  id="categoryDescription-msg"></span>
+                    <span class="lable label-danger"  id="categoryDescriptionOld-msg"></span>
                     <input type = "hidden" name = "command" value="edit_category_command"/>
                     <input class="old_name" type="hidden" name="old_name"/>
                     <button type="submit" class="btn btn-default"><fmt:message key="dish.edit.button" bundle="${lang}"/></button>

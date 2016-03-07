@@ -11,7 +11,9 @@
 
 <!-- Custom styles for this template -->
 <link href="../css/style.css" rel="stylesheet">
-<script src="../js/validation.js"></script>
+<script src="../js/registrationValidation.js"></script>
+<script src="../js/categoryValidation.js"></script>
+<script src="../js/dishValidation.js"></script>
 <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
 <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
 <script src="http://getbootstrap.com/assets/js/ie-emulation-modes-warning.js" type="text/javascript"></script>
