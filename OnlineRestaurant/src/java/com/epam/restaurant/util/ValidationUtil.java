@@ -1,5 +1,6 @@
 package com.epam.restaurant.util;
 
+import com.epam.restaurant.entity.Category;
 import com.epam.restaurant.entity.Dish;
 import com.epam.restaurant.entity.User;
 
@@ -21,8 +22,6 @@ public class ValidationUtil {
     private static final String DISH_IMAGE = "^[a-zA-Z]+\\.[a-zA-Z]+$";
     private static final String EMPTY_STRING = "";
 
-
-
     private static boolean validValue(String pattern, String  value){
         Pattern patternForName = Pattern.compile(pattern);
         Matcher matcherName = patternForName.matcher(value);
@@ -32,6 +31,16 @@ public class ValidationUtil {
         else {
             return false;
         }
+    }
+
+    public static boolean categoryValid(Category category){
+        if(category.getName().equals(EMPTY_STRING)){
+            return false;
+        }
+        if(category.getDescription().equals(EMPTY_STRING)){
+            return false;
+        }
+        return true;
     }
 
     public static boolean dishValid(Dish dish){
