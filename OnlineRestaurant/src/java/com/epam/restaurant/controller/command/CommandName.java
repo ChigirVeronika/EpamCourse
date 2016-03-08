@@ -28,4 +28,7 @@ public enum CommandName {
     ADD_TO_ORDER_COMMAND,
     DELETE_ITEM_COMMAND,
     UPDATE_ORDER_COMMAND,
+
+    NEWS_COMMAND,
+    ADD_NEWS_COMMAND
 }

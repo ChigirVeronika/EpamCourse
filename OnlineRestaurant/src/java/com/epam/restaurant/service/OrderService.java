@@ -42,6 +42,14 @@ public class OrderService {
         }
     }
 
+    public void updateStatus(Order order) throws ServiceException{
+        try {
+            orderDao.update(order);
+        } catch (DaoException e) {
+            throw new ServiceException("OrderServiceException");
+        }
+    }
+
     public Order getByUserId(long userId) throws ServiceException{
         Order order;
         try {

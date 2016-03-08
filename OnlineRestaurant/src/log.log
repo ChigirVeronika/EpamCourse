@@ -4067,3 +4067,31 @@ com.epam.restaurant.controller.command.exception.CommandException: Cant't execut
 2016-03-08 16:24:43 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.LogoutCommand@145e261
 2016-03-08 16:24:43 INFO  LogoutCommand:24 - LogoutCommand executed
 2016-03-08 16:24:43 INFO  MainController:52 - Page: index.jsp
+2016-03-08 18:37:55 INFO  MainController:44 - news_command
+2016-03-08 18:37:56 INFO  ConnectionPoolImpl:65 - Pool has been initialized
+2016-03-08 18:37:56 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.NewsCommand@17f7814
+2016-03-08 18:37:56 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-08 18:37:56 INFO  MainController:52 - Page: news.jsp
+2016-03-08 19:00:29 INFO  MainController:44 - login_command
+2016-03-08 19:00:29 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.LoginCommand@a384d3
+2016-03-08 19:00:29 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-08 19:00:30 INFO  MainController:52 - Page: login.jsp
+2016-03-08 19:00:40 INFO  MainController:44 - login_command
+2016-03-08 19:00:40 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.LoginCommand@a384d3
+2016-03-08 19:00:40 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-08 19:00:41 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-08 19:00:41 INFO  MainController:52 - Page: hello.jsp
+2016-03-08 19:00:44 INFO  MainController:44 - news_command
+2016-03-08 19:00:44 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.NewsCommand@17f7814
+2016-03-08 19:00:44 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-08 19:00:44 INFO  MainController:52 - Page: news.jsp
+2016-03-08 19:43:00 INFO  MainController:44 - login_command
+2016-03-08 19:43:01 INFO  ConnectionPoolImpl:65 - Pool has been initialized
+2016-03-08 19:43:01 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.LoginCommand@1a0bcd0
+2016-03-08 19:43:01 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-08 19:43:02 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-08 19:43:02 INFO  MainController:52 - Page: hello.jsp
+2016-03-08 19:43:06 INFO  MainController:44 - news_command
+2016-03-08 19:43:06 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.NewsCommand@18147c1
+2016-03-08 19:43:06 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-08 19:43:06 INFO  MainController:52 - Page: news.jsp

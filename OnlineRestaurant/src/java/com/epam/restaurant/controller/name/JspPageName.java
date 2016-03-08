@@ -21,6 +21,8 @@ public class JspPageName {
     public static final String ORDER_JSP = "order.jsp";
     public static final String CHECKOUT_JSP = "checkout.jsp";
 
+    public static final String NEWS_JSP = "news.jsp";
+
     public static final String CONCRETE_CATEGORY_JSP = "main?command=category_command&id=";
     public static final String CONCRETE_MENU_JSP = "/main?command=menu_command";
 

@@ -48,16 +48,6 @@ public class ShowCategory  extends TagSupport {
                     out.println("</div>");
                     out.println("</td></tr>");
                     out.println("<br>");
-//                    out.println("<tr><td colspan=3>");
-//                    out.println("<div class = \"col-xs-5\">");
-//                    out.println("<p>"+ resourceBundle.getString("dish.ingredients") +": " + d.getIngredients() + " </p>");
-//                    out.println("</div>");
-//                    out.println("</td></tr>");
-//                    out.println("<tr><td colspan=3>");
-//                    out.println("<div class = \"col-xs-5\">");
-//                    out.println("<p>"+ resourceBundle.getString("dish.description") +": " + d.getDescription() + " </p>");
-//                    out.println("</div>");
-//                    out.println("</td></tr>");
 
                 }
             }catch (Exception e){

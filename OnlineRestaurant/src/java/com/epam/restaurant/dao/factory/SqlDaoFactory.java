@@ -28,12 +28,14 @@ public class SqlDaoFactory{
                 return OrderSqlDao.getInstance();
             case ORDERDISH:
                 return OrderDishSqlDao.getInstance();
+            case NEWS:
+                return NewsSqlDao.getInstance();
         }
         return null;
     }
 
     public enum DaoType{
-        DISH, USER, CATEGORY, ORDER, ORDERDISH
+        DISH, USER, CATEGORY, ORDER, ORDERDISH, NEWS
     }
 
 }

@@ -20,6 +20,10 @@
 
             <li><a href="/main?command=menu_command"><fmt:message key="header.catalog" bundle="${lang}"/></a></li>
 
+            <li>
+                <a href="/main?command=news_command"><fmt:message key="header.news" bundle="${lang}"/></a>
+            </li>
+
             <c:if test="${user != null && user.role == 'USER'}">
                 <li><a href="../order.jsp">
                     <fmt:message key="header.order" bundle="${lang}"/>
