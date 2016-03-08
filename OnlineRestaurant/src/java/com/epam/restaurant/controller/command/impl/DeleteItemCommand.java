@@ -35,7 +35,7 @@ public class DeleteItemCommand implements Command {
                 }
             }
         } catch (ServiceException e) {
-            throw new CommandException("");
+            throw new CommandException("Cant't execute DeleteItemCommand");
         }
 
         return result;

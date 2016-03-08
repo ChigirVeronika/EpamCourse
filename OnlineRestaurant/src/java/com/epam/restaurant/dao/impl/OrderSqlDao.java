@@ -69,6 +69,7 @@ public class OrderSqlDao extends AbstractSqlDao<Order, Long> {
                 order.setUserId(rs.getLong("user_id"));
                 order.setCreatedAt(rs.getDate("created_at"));
                 order.setTotal(rs.getBigDecimal("total"));
+                order.setPaid(rs.getBoolean("paid"));
                 result.add(order);
             }
         } catch (SQLException e) {
@@ -82,8 +83,8 @@ public class OrderSqlDao extends AbstractSqlDao<Order, Long> {
         try {
             statement.setLong(1, object.getUserId());
             statement.setDate(2, new java.sql.Date(object.getCreatedAt().getTime()));
-            statement.setBigDecimal(3,object.getTotal());//todo
-            System.out.println(object.getTotal());
+            statement.setBigDecimal(3,object.getTotal());
+            statement.setBoolean(4, object.isPaid());
         } catch (SQLException e) {
             throw new DaoException("OrderSqlDao Exception");
         }
@@ -95,9 +96,10 @@ public class OrderSqlDao extends AbstractSqlDao<Order, Long> {
             statement.setLong(1, object.getUserId());
             statement.setDate(2, new java.sql.Date(object.getCreatedAt().getTime()));
             statement.setBigDecimal(3,object.getTotal());
-            statement.setLong(4, object.getId());
+            statement.setBoolean(4,object.isPaid());
+            statement.setLong(5, object.getId());
         } catch (SQLException e) {
-            throw new DaoException("OrderSqlDao Exception",e);
+            throw new DaoException("OrderSqlDao Exception");
         }
 
     }
@@ -120,14 +122,14 @@ public class OrderSqlDao extends AbstractSqlDao<Order, Long> {
             list = parseResultSet(rs);
 
         } catch (ConnectionPoolException|SQLException e) {
-            throw new DaoException("OrderSqlDao Exception",e);
+            throw new DaoException("OrderSqlDao Exception");
         }finally {
             try {
                 if(connection != null) {
                     pool.returnConnection(connection);
                 }
             } catch (ConnectionPoolException e) {
-                throw new DaoException("",e);
+                throw new DaoException("OrderSqlDao Exception");
             }
         }
 

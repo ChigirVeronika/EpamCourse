@@ -41,7 +41,7 @@ public class DeleteCategoryCommand implements Command {
                 }
             }
         } catch (ServiceException e) {
-            throw new CommandException("EditCategoryCommand Exception",e);
+            throw new CommandException("Cant't execute EditCategoryCommand");
         }
         return result;
     }

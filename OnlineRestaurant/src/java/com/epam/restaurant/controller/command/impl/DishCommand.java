@@ -37,7 +37,7 @@ public class DishCommand implements Command {
             request.setAttribute("categories",categoryList);
 
         }catch (ServiceException e){
-            throw new CommandException("DishCommand Exception",e);
+            throw new CommandException("Cant't execute DishCommand");
         }
 
         return result;

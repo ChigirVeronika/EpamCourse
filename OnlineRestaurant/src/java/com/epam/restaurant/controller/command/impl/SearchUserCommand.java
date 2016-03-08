@@ -27,10 +27,10 @@ public class SearchUserCommand implements Command {
             if(user!=null){
                 request.setAttribute("founded_user",user);
             }else {
-                request.setAttribute("massage","not found");
+                request.setAttribute("message","not found");
             }
         } catch (ServiceException e) {
-            throw new CommandException("");
+            throw new CommandException("Cant't execute SearchUserCommand");
         }
 
         return result;

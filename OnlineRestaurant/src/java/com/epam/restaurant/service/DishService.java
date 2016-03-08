@@ -29,7 +29,7 @@ public class DishService {
             return dishDao.getByPK(dishId);
         } catch (DaoException e) {
             LOGGER.error("Can't do DishSqlDao in DishService",e);
-            throw new ServiceException("DishServiceException",e);
+            throw new ServiceException("DishServiceException");
         }
     }
 
@@ -41,7 +41,7 @@ public class DishService {
             return dishDao.persist(dish);
         } catch (DaoException e) {
             LOGGER.error("Can't do DishSqlDao in DishService",e);
-            throw new ServiceException("DishServiceException",e);
+            throw new ServiceException("DishServiceException");
         }
     }
 
@@ -50,7 +50,7 @@ public class DishService {
             dishDao.delete(dish);
         } catch (DaoException e) {
             LOGGER.error("Can't do DishSqlDao in DishService",e);
-            throw new ServiceException("DishServiceException",e);
+            throw new ServiceException("DishServiceException");
         }
     }
 
@@ -59,7 +59,7 @@ public class DishService {
             dishDao.update(dish);
         } catch (DaoException e) {
             LOGGER.error("Can't do DishSqlDao in DishService",e);
-            throw new ServiceException("DishServiceException",e);
+            throw new ServiceException("DishServiceException");
         }
     }
 }

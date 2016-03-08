@@ -84,7 +84,7 @@ public class UserSqlDao extends AbstractSqlDao<User, Long> {
                 result.add(student);
             }
         } catch (SQLException e) {
-            throw new DaoException("Exception",e);
+            throw new DaoException("Exception");
         }
 
         return result;
@@ -102,7 +102,7 @@ public class UserSqlDao extends AbstractSqlDao<User, Long> {
             statement.setString(7, object.getPayCard());
             statement.setLong(8, object.getId());
         } catch (SQLException e) {
-            throw new DaoException("Exception",e);
+            throw new DaoException("Exception");
         }
     }
 
@@ -117,7 +117,7 @@ public class UserSqlDao extends AbstractSqlDao<User, Long> {
             statement.setString(6, object.getRole().toString());
             statement.setString(7, object.getPayCard());
         } catch (SQLException e) {
-        throw new DaoException("Exception",e);
+        throw new DaoException("Exception");
         }
     }
 
@@ -140,14 +140,14 @@ public class UserSqlDao extends AbstractSqlDao<User, Long> {
             }
 
         }catch (ConnectionPoolException |SQLException e) {
-            throw new DaoException("Exception",e);
+            throw new DaoException("Exception");
         }finally {
             try {
                 if(connection != null) {
                     pool.returnConnection(connection);
                 }
             } catch (ConnectionPoolException e) {
-                throw new DaoException("",e);
+                throw new DaoException("UserSqlDao Exception");
             }
         }
         return list.iterator().next();

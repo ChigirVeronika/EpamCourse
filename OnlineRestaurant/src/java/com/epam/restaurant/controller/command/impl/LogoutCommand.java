@@ -21,6 +21,7 @@ public class LogoutCommand implements Command {
         HttpSession currentSession = request.getSession(false);
         if (currentSession != null)
             currentSession.invalidate();
+        LOGGER.info("LogoutCommand executed");
         return JspPageName.INDEX_JSP;
     }
 }

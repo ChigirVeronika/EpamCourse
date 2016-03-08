@@ -124,7 +124,7 @@ public class CategorySqlDao extends AbstractSqlDao<Category, Long> {
                 throw new DaoException("Received more than one record.");
             }
         }catch (ConnectionPoolException |SQLException e) {
-            throw new DaoException("Exception",e);
+            throw new DaoException("Exception");
         }
         return list.iterator().next();
     }

@@ -39,7 +39,7 @@ public class EditCategoryCommand  implements Command {
                 categoryService.update(category);
             }
         } catch (ServiceException e) {
-            throw new CommandException("EditCategoryCommand Exception",e);
+            throw new CommandException("Cant't execute EditCategoryCommand");
         }
         return result;
     }

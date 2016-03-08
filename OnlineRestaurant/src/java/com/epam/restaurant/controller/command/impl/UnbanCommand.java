@@ -35,7 +35,7 @@ public class UnbanCommand implements Command {
             }
         } catch (ServiceException e) {
             LOGGER.error("Can't do UserService in UndanCommand ",e);
-            throw new CommandException("UnbanCommand Exception",e);
+            throw new CommandException("Cant't execute UnbanCommand");
         }
 
         return result;

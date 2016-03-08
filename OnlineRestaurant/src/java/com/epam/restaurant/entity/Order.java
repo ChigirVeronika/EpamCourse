@@ -19,17 +19,19 @@ public class Order implements Serializable, Identified<Long> {
     private Date createdAt;
     private BigDecimal total;
     private List<OrderDish> orderDishes;
+    private boolean paid;
 
     public Order(){
         this.orderDishes = new ArrayList<>();
         this.createdAt = new Date();
+        this.paid=false;
     }
 
     public Order(long userId,Date createdAt){
         this.userId = userId;
         this.createdAt = createdAt;
         this.orderDishes = new ArrayList<>();
-        this.total = total;
+        this.paid=false;
     }
 
     public Order(long userId,Date createdAt, BigDecimal total){
@@ -37,6 +39,7 @@ public class Order implements Serializable, Identified<Long> {
         this.createdAt = createdAt;
         this.orderDishes = new ArrayList<>();
         this.total = total;
+        this.paid=false;
     }
 
     public Order(long id,long userId,Date createdAt, BigDecimal total){
@@ -45,6 +48,7 @@ public class Order implements Serializable, Identified<Long> {
         this.createdAt = createdAt;
         this.orderDishes = new ArrayList<>();
         this.total = total;
+        this.paid=false;
     }
 
     public int getSize() {
@@ -91,6 +95,14 @@ public class Order implements Serializable, Identified<Long> {
         this.orderDishes = orderDishes;
     }
 
+    public boolean isPaid() {
+        return paid;
+    }
+
+    public void setPaid(boolean paid) {
+        this.paid = paid;
+    }
+
     @Override
     public String toString() {
         return "Order{" +
@@ -99,6 +111,7 @@ public class Order implements Serializable, Identified<Long> {
                 ", createdAt=" + createdAt +
                 ", total=" + total +
                 ", orderDishes=" + orderDishes +
+                ", paid=" + paid +
                 '}';
     }
 
@@ -111,6 +124,7 @@ public class Order implements Serializable, Identified<Long> {
 
         if (id != order.id) return false;
         if (userId != order.userId) return false;
+        if (paid != order.paid) return false;
         if (createdAt != null ? !createdAt.equals(order.createdAt) : order.createdAt != null) return false;
         if (total != null ? !total.equals(order.total) : order.total != null) return false;
         return orderDishes != null ? orderDishes.equals(order.orderDishes) : order.orderDishes == null;
@@ -124,6 +138,7 @@ public class Order implements Serializable, Identified<Long> {
         result = 31 * result + (createdAt != null ? createdAt.hashCode() : 0);
         result = 31 * result + (total != null ? total.hashCode() : 0);
         result = 31 * result + (orderDishes != null ? orderDishes.hashCode() : 0);
+        result = 31 * result + (paid ? 1 : 0);
         return result;
     }
 }

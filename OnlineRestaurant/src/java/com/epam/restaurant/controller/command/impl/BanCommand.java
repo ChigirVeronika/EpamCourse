@@ -36,7 +36,7 @@ public class BanCommand implements Command {
                 userService.update(user);
             }
         } catch (ServiceException e) {
-            LOGGER.error("Can't do UserService in BanCommand ",e);
+            LOGGER.error("Can't execute BanCommand ",e);
             throw new CommandException("BanCommand Exception");
         }
 

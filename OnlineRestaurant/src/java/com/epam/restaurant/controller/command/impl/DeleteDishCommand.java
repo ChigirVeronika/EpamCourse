@@ -32,7 +32,7 @@ public class DeleteDishCommand implements Command {
                 result=JspPageName.CONCRETE_MENU_JSP;
             }
         } catch (ServiceException e) {
-            throw new CommandException("");
+            throw new CommandException("Cant't execute DeleteDishCommand");
         }
 
         return result;

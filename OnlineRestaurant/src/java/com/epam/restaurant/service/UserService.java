@@ -32,7 +32,17 @@ public class UserService {
             return user;
 
         } catch (DaoException e) {
-            throw new ServiceException("Exception",e);
+            throw new ServiceException("Exception");
+        }
+    }
+
+    public User getById(Long id) throws ServiceException{
+        try {
+            User user = userDao.getByPK(id);
+            return user;
+
+        } catch (DaoException e) {
+            throw new ServiceException("Exception");
         }
     }
 
@@ -43,9 +53,9 @@ public class UserService {
                 return user;
             }
         } catch (NoSuchAlgorithmException e) {
-            throw new ServiceException("Exception",e);
+            throw new ServiceException("Exception");
         } catch (InvalidKeySpecException e) {
-            throw new ServiceException("Exception",e);
+            throw new ServiceException("Exception");
         }
         return null;
     }

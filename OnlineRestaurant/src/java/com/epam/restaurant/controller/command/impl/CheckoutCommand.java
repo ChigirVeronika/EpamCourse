@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 public class CheckoutCommand implements Command {
     private static final OrderService orderService = OrderService.getInstance();
 
-    private static final OrderDishService orderDishSerice = OrderDishService.getInstance();
+    private static final OrderDishService orderDishService = OrderDishService.getInstance();
 
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws CommandException {
@@ -27,12 +27,12 @@ public class CheckoutCommand implements Command {
         try{
             Order order = (Order)request.getSession().getAttribute("order");
             for(OrderDish od: order.getOrderDishes()){
-                orderDishSerice.delete(od);
+                orderDishService.delete(od);
             }
             orderService.delete(order);
             request.getSession().removeAttribute("order");
         } catch (ServiceException e) {
-            throw new CommandException("");
+            throw new CommandException("Cant't executeCheckoutCommand");
         }
 
         return result;

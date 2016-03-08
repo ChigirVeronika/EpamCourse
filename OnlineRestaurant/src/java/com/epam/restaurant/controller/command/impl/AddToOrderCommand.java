@@ -47,7 +47,7 @@ public class AddToOrderCommand implements Command {
             request.getSession().setAttribute("order",currentOrder);
         } catch (ServiceException e) {
             e.printStackTrace();
-            throw new CommandException("");
+            throw new CommandException("Cant't execute AddToOrderCommand");
         }
         return result;
     }

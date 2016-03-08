@@ -29,7 +29,7 @@ public class AddCategoryCommand implements Command {
 
             categoryService.create(name, description);
         } catch (ServiceException e) {
-            throw new CommandException("");
+            throw new CommandException("Cant't execute AddCategoryCommand");
         }
 
         return result;

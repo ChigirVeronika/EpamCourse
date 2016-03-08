@@ -74,7 +74,7 @@ public class DishSqlDao extends AbstractSqlDao<Dish, Long> {
                 result.add(dish);
             }
         } catch (SQLException e) {
-            throw new DaoException("DishDaoSql Exception",e);
+            throw new DaoException("DishDaoSql Exception");
         }
         return result;
     }
@@ -90,7 +90,7 @@ public class DishSqlDao extends AbstractSqlDao<Dish, Long> {
             statement.setLong(6,object.getCategoryId());
             statement.setString(7,object.getImage());
         } catch (SQLException e) {
-            throw new DaoException("DishSqlDao Exception",e);
+            throw new DaoException("DishSqlDao Exception");
         }
     }
 
@@ -106,7 +106,7 @@ public class DishSqlDao extends AbstractSqlDao<Dish, Long> {
             statement.setString(7,object.getImage());
             statement.setLong(8,object.getId());
         } catch (SQLException e) {
-            throw new DaoException("DishSqlDao Exception",e);
+            throw new DaoException("DishSqlDao Exception");
         }
     }
 
@@ -130,14 +130,14 @@ public class DishSqlDao extends AbstractSqlDao<Dish, Long> {
                 return Collections.emptyList();
             }
         }catch (ConnectionPoolException |SQLException e) {
-            throw new DaoException("Dao Exception",e);
+            throw new DaoException("Dao Exception");
         }finally {
             try {
                 if(connection != null) {
                     pool.returnConnection(connection);
                 }
             } catch (ConnectionPoolException e) {
-                throw new DaoException("",e);
+                throw new DaoException("Dao Exception");
             }
         }
         return result;

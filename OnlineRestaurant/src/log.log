@@ -3420,3 +3420,248 @@ com.epam.restaurant.controller.command.exception.CommandException:
 2016-03-08 00:36:17 INFO  ConnectionPoolImpl:76 - Connection is taken.
 2016-03-08 00:36:17 INFO  ConnectionPoolImpl:76 - Connection is taken.
 2016-03-08 00:36:17 INFO  MainController:52 - Page: category.jsp
+2016-03-08 14:18:57 INFO  MainController:44 - login_command
+2016-03-08 14:18:59 INFO  ConnectionPoolImpl:65 - Pool has been initialized
+2016-03-08 14:18:59 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.LoginCommand@13f6a0b
+2016-03-08 14:18:59 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-08 14:18:59 ERROR LoginCommand:66 - Can't do Service in LoginCommand
+com.epam.restaurant.service.exception.ServiceException: Exception
+	at com.epam.restaurant.service.UserService.get(UserService.java:35)
+	at com.epam.restaurant.service.UserService.login(UserService.java:50)
+	at com.epam.restaurant.controller.command.impl.LoginCommand.execute(LoginCommand.java:45)
+	at com.epam.restaurant.controller.servlet.MainController.processRequest(MainController.java:51)
+	at com.epam.restaurant.controller.servlet.MainController.doPost(MainController.java:35)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:648)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:291)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at com.epam.restaurant.filter.CharsetFilter.doFilter(CharsetFilter.java:27)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:212)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:106)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:141)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:616)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:521)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1096)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:674)
+	at org.apache.tomcat.util.net.AprEndpoint$SocketProcessor.doRun(AprEndpoint.java:2500)
+	at org.apache.tomcat.util.net.AprEndpoint$SocketProcessor.run(AprEndpoint.java:2489)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+2016-03-08 14:18:59 ERROR MainController:54 - Can't execute command in MainController 
+com.epam.restaurant.controller.command.exception.CommandException: LoginCommandException
+	at com.epam.restaurant.controller.command.impl.LoginCommand.execute(LoginCommand.java:67)
+	at com.epam.restaurant.controller.servlet.MainController.processRequest(MainController.java:51)
+	at com.epam.restaurant.controller.servlet.MainController.doPost(MainController.java:35)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:648)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:291)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at com.epam.restaurant.filter.CharsetFilter.doFilter(CharsetFilter.java:27)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:212)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:106)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:141)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:616)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:521)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1096)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:674)
+	at org.apache.tomcat.util.net.AprEndpoint$SocketProcessor.doRun(AprEndpoint.java:2500)
+	at org.apache.tomcat.util.net.AprEndpoint$SocketProcessor.run(AprEndpoint.java:2489)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: com.epam.restaurant.service.exception.ServiceException: Exception
+	at com.epam.restaurant.service.UserService.get(UserService.java:35)
+	at com.epam.restaurant.service.UserService.login(UserService.java:50)
+	at com.epam.restaurant.controller.command.impl.LoginCommand.execute(LoginCommand.java:45)
+	... 28 more
+2016-03-08 14:27:53 INFO  MainController:44 - login_command
+2016-03-08 14:27:55 INFO  ConnectionPoolImpl:65 - Pool has been initialized
+2016-03-08 14:27:55 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.LoginCommand@150de7f
+2016-03-08 14:27:55 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-08 14:27:55 ERROR LoginCommand:66 - Can't do Service in LoginCommand
+com.epam.restaurant.service.exception.ServiceException: Exception
+	at com.epam.restaurant.service.UserService.get(UserService.java:35)
+	at com.epam.restaurant.service.UserService.login(UserService.java:50)
+	at com.epam.restaurant.controller.command.impl.LoginCommand.execute(LoginCommand.java:45)
+	at com.epam.restaurant.controller.servlet.MainController.processRequest(MainController.java:51)
+	at com.epam.restaurant.controller.servlet.MainController.doPost(MainController.java:35)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:648)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:291)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at com.epam.restaurant.filter.CharsetFilter.doFilter(CharsetFilter.java:27)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:212)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:106)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:141)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:616)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:521)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1096)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:674)
+	at org.apache.tomcat.util.net.AprEndpoint$SocketProcessor.doRun(AprEndpoint.java:2500)
+	at org.apache.tomcat.util.net.AprEndpoint$SocketProcessor.run(AprEndpoint.java:2489)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+2016-03-08 14:27:55 ERROR MainController:54 - Can't execute command in MainController 
+com.epam.restaurant.controller.command.exception.CommandException: LoginCommandException
+	at com.epam.restaurant.controller.command.impl.LoginCommand.execute(LoginCommand.java:67)
+	at com.epam.restaurant.controller.servlet.MainController.processRequest(MainController.java:51)
+	at com.epam.restaurant.controller.servlet.MainController.doPost(MainController.java:35)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:648)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:291)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at com.epam.restaurant.filter.CharsetFilter.doFilter(CharsetFilter.java:27)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:212)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:106)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:141)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:616)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:521)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1096)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:674)
+	at org.apache.tomcat.util.net.AprEndpoint$SocketProcessor.doRun(AprEndpoint.java:2500)
+	at org.apache.tomcat.util.net.AprEndpoint$SocketProcessor.run(AprEndpoint.java:2489)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: com.epam.restaurant.service.exception.ServiceException: Exception
+	at com.epam.restaurant.service.UserService.get(UserService.java:35)
+	at com.epam.restaurant.service.UserService.login(UserService.java:50)
+	at com.epam.restaurant.controller.command.impl.LoginCommand.execute(LoginCommand.java:45)
+	... 28 more
+2016-03-08 14:36:54 INFO  MainController:44 - login_command
+2016-03-08 14:36:55 INFO  ConnectionPoolImpl:65 - Pool has been initialized
+2016-03-08 14:36:55 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.LoginCommand@18591d2
+2016-03-08 14:36:55 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-08 14:36:55 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-08 14:36:55 INFO  MainController:52 - Page: hello.jsp
+2016-03-08 14:37:08 INFO  MainController:44 - menu_command
+2016-03-08 14:37:08 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.MenuCommand@274289
+2016-03-08 14:37:08 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-08 14:37:08 INFO  MainController:52 - Page: menu.jsp
+2016-03-08 14:37:45 INFO  MainController:44 - search_user_command
+2016-03-08 14:37:45 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.SearchUserCommand@112f270
+2016-03-08 14:37:45 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-08 14:42:59 INFO  MainController:44 - logout_command
+2016-03-08 14:42:59 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.LogoutCommand@1a3fec5
+2016-03-08 14:42:59 INFO  MainController:52 - Page: index.jsp
+2016-03-08 14:43:16 INFO  MainController:44 - login_command
+2016-03-08 14:43:16 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.LoginCommand@18591d2
+2016-03-08 14:43:16 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-08 14:43:16 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-08 14:43:16 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-08 14:43:16 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-08 14:43:16 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-08 14:43:16 INFO  MainController:52 - Page: hello.jsp
+2016-03-08 14:43:28 INFO  MainController:44 - menu_command
+2016-03-08 14:43:28 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.MenuCommand@274289
+2016-03-08 14:43:28 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-08 14:43:28 INFO  MainController:52 - Page: menu.jsp
+2016-03-08 14:43:31 INFO  MainController:44 - category_command
+2016-03-08 14:43:31 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.CategoryCommand@52ddf7
+2016-03-08 14:43:31 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-08 14:43:31 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-08 14:43:31 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-08 14:43:31 INFO  MainController:52 - Page: category.jsp
+2016-03-08 14:43:34 INFO  MainController:44 - dish_command
+2016-03-08 14:43:34 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.DishCommand@1a5209
+2016-03-08 14:43:34 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-08 14:43:34 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-08 14:43:34 INFO  MainController:52 - Page: dish.jsp
+2016-03-08 14:43:37 INFO  MainController:44 - add_to_order_command
+2016-03-08 14:43:37 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.AddToOrderCommand@7e8619
+2016-03-08 14:43:37 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-08 14:43:37 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-08 14:43:37 INFO  MainController:52 - Page: order.jsp
+2016-03-08 14:43:42 INFO  MainController:44 - delete_item_command
+2016-03-08 14:43:42 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.DeleteItemCommand@1f811a6
+2016-03-08 14:43:42 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-08 14:43:42 INFO  MainController:52 - Page: order.jsp
+2016-03-08 14:43:45 INFO  MainController:44 - update_order_command
+2016-03-08 14:43:45 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.UpdateOrderCommand@9e61fb
+2016-03-08 14:43:45 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-08 14:43:45 INFO  MainController:52 - Page: order.jsp
+2016-03-08 14:43:48 INFO  MainController:44 - checkout_command
+2016-03-08 14:43:48 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.CheckoutCommand@1e14ea8
+2016-03-08 14:43:48 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-08 14:43:48 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-08 14:43:48 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-08 14:43:48 INFO  MainController:52 - Page: checkout.jsp
+2016-03-08 14:44:00 INFO  MainController:44 - logout_command
+2016-03-08 14:44:00 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.LogoutCommand@1a3fec5
+2016-03-08 14:44:00 INFO  MainController:52 - Page: index.jsp
+2016-03-08 14:44:37 INFO  MainController:44 - login_command
+2016-03-08 14:44:37 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.LoginCommand@18591d2
+2016-03-08 14:44:37 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-08 14:44:37 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-08 14:44:37 INFO  MainController:52 - Page: hello.jsp
+2016-03-08 14:44:45 INFO  MainController:44 - search_user_command
+2016-03-08 14:44:45 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.SearchUserCommand@112f270
+2016-03-08 14:44:45 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-08 14:44:52 INFO  MainController:44 - search_user_command
+2016-03-08 14:44:52 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.SearchUserCommand@112f270
+2016-03-08 14:44:52 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-08 14:47:03 INFO  MainController:44 - login_command
+2016-03-08 14:47:05 INFO  ConnectionPoolImpl:65 - Pool has been initialized
+2016-03-08 14:47:05 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.LoginCommand@1bc6da0
+2016-03-08 14:47:05 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-08 14:47:05 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-08 14:47:05 INFO  MainController:52 - Page: hello.jsp
+2016-03-08 14:47:14 INFO  MainController:44 - search_user_command
+2016-03-08 14:47:14 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.SearchUserCommand@e2fa70
+2016-03-08 14:47:14 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-08 14:55:22 INFO  MainController:44 - login_command
+2016-03-08 14:55:23 INFO  ConnectionPoolImpl:65 - Pool has been initialized
+2016-03-08 14:55:23 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.LoginCommand@65668e
+2016-03-08 14:55:23 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-08 14:55:24 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-08 14:55:24 INFO  MainController:52 - Page: hello.jsp
+2016-03-08 14:55:33 INFO  MainController:44 - search_user_command
+2016-03-08 14:55:33 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.SearchUserCommand@16de304
+2016-03-08 14:55:33 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-08 14:55:33 INFO  MainController:52 - Page: users.jsp
+2016-03-08 14:55:38 INFO  MainController:44 - search_user_command
+2016-03-08 14:55:38 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.SearchUserCommand@16de304
+2016-03-08 14:55:38 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-08 14:55:38 INFO  MainController:52 - Page: users.jsp
+2016-03-08 14:55:43 INFO  MainController:44 - menu_command
+2016-03-08 14:55:43 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.MenuCommand@a116b3
+2016-03-08 14:55:43 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-08 14:55:43 INFO  MainController:52 - Page: menu.jsp

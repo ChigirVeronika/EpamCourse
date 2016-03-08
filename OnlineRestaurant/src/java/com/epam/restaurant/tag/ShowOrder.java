@@ -21,7 +21,6 @@ public class ShowOrder  extends TagSupport {
         //get resource bundle for current language
         String curLanguage = (String) pageContext.getSession().getAttribute("language");
         ResourceBundle rb = ResourceBundleUtil.getResourceBundle(curLanguage);
-        System.out.println(curLanguage);
 
         //get current restaurant order from servlet request
         Order order = (Order) pageContext.getSession().getAttribute("order"); // get current cart from session
@@ -43,7 +42,6 @@ public class ShowOrder  extends TagSupport {
                 out.print("<th scope = \"col\">"+ rb.getString("order.total.title") +"</th>");
                 out.print("</tr></thead>");
                 out.print("<tbody>");
-
                 // print every item
 
                 for (OrderDish ci : order.getOrderDishes()) {
@@ -89,12 +87,8 @@ public class ShowOrder  extends TagSupport {
                     out.print("</form>");
                     out.print("</th></tr></tfoot>");
                 }
-
                 out.print("</table>");
-
             }
-
-
         } catch (IOException e) {
             e.printStackTrace();
         }

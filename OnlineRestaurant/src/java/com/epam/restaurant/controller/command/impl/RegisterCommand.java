@@ -48,7 +48,7 @@ public class RegisterCommand implements Command {
             }
         }catch (ServiceException e){
             LOGGER.error("Can't do UserService in RegisterCommand ");
-            throw new CommandException("Registration failed. RegisterCommandException");
+            throw new CommandException("Registration failed");
         }
 
         return result;

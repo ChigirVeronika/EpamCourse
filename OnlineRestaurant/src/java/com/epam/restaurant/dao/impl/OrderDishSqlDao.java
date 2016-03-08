@@ -71,7 +71,7 @@ public class OrderDishSqlDao extends AbstractSqlDao<OrderDish, Long> {
                 result.add(orderDish);
             }
         } catch (SQLException e) {
-            throw new DaoException("");
+            throw new DaoException("OrderDishSqlDao Exception");
         }
         return result;
     }
@@ -83,7 +83,7 @@ public class OrderDishSqlDao extends AbstractSqlDao<OrderDish, Long> {
             statement.setLong(2, object.getOrderId());
             statement.setInt(3, object.getQuantity());
         }catch (SQLException e) {
-            throw new DaoException("");
+            throw new DaoException("OrderDishSqlDao Exception");
         }
     }
 
@@ -95,7 +95,7 @@ public class OrderDishSqlDao extends AbstractSqlDao<OrderDish, Long> {
             statement.setInt(3, object.getQuantity());
             statement.setLong(4, object.getId());
         }catch (SQLException e) {
-            throw new DaoException("");
+            throw new DaoException("OrderDishSqlDao Exception");
         }
     }
 
@@ -120,14 +120,14 @@ public class OrderDishSqlDao extends AbstractSqlDao<OrderDish, Long> {
                 return Collections.emptyList();
             }
         }catch (ConnectionPoolException |SQLException e) {
-            throw new DaoException("Dao Exception",e);
+            throw new DaoException("Dao Exception");
         }finally {
             try {
                 if(connection != null) {
                     pool.returnConnection(connection);
                 }
             } catch (ConnectionPoolException e) {
-                throw new DaoException("",e);
+                throw new DaoException("OrderDishSqlDao Exception");
             }
         }
 

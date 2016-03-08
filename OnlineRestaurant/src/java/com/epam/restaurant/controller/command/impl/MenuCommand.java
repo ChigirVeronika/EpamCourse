@@ -31,7 +31,7 @@ public class MenuCommand implements Command {
             }
         }catch (ServiceException e){
             LOGGER.error("Can't do CategoryService in MenuCommand ",e);
-            throw new CommandException("MenuCommandException ",e);
+            throw new CommandException("Cant't execute MenuCommand");
         }
         return page;
     }

@@ -33,7 +33,6 @@ public class EditDishCommand implements Command {
                 String dishIngredients = request.getParameter("ingredients");
                 BigDecimal dishPrice = new BigDecimal(request.getParameter("price"));
                 Integer dishQuantity = Integer.parseInt(request.getParameter("quantity"));
-                //Integer dishQuantity = 200;//todo!!!
                 String dishImage = request.getParameter("image");
 
                 dish.setName(dishName);
@@ -48,7 +47,7 @@ public class EditDishCommand implements Command {
                 result=JspPageName.CONCRETE_MENU_JSP;
             }
         } catch (ServiceException e) {
-            throw new CommandException("");
+            throw new CommandException("Cant't execute EditDishCommand");
         }
 
         return result;

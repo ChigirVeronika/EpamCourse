@@ -39,7 +39,7 @@ public class CategoryCommand implements Command{
                 request.setAttribute("name",name);
             }
         } catch (ServiceException e) {
-            LOGGER.error("Can't do CategoryService in CategoryCommand",e);
+            LOGGER.error("Can't execute CategoryCommand",e);
             throw new CommandException("CategoryCommandException",e);
         }
         return result;

@@ -30,7 +30,7 @@ public class OrderService {
         try {
             return orderDao.persist(order);
         } catch (DaoException e) {
-            throw new ServiceException("");
+            throw new ServiceException("OrderServiceException");
         }
     }
 
@@ -38,12 +38,12 @@ public class OrderService {
         try {
             orderDao.delete(order);
         } catch (DaoException e) {
-            throw new ServiceException("");
+            throw new ServiceException("OrderServiceException");
         }
     }
 
     public Order getByUserId(long userId) throws ServiceException{
-        Order order = null;
+        Order order;
         try {
             order = orderDao.getByUserId(userId);
             if(order!=null){
@@ -58,7 +58,7 @@ public class OrderService {
                 order.setOrderDishes(orderDishList);
             }
         } catch (DaoException e) {
-            throw new ServiceException("");
+            throw new ServiceException("OrderServiceException");
         }
 
         return order;
