@@ -3,7 +3,7 @@ package com.epam.restaurant.util;
 import java.math.BigDecimal;
 
 /**
- * Created by Вероника on 02.03.2016.
+ *
  */
 public class TotalUtil {
 

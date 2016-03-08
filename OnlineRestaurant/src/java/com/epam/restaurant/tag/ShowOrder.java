@@ -55,7 +55,7 @@ public class ShowOrder  extends TagSupport {
                     out.print("<label for = \"quantity\">"+ rb.getString("order.quantity.title") +": </label>");
                     out.print("<input type = \"text\" name = \"quantity\" value = \"" + ci.getQuantity() + "\" id = \"quantity\" size = \"1\" class = \"quantity\" maxlength = \"3\" />\n");
 
-                    total= TotalUtil.calculateCost(ci.getQuantity(),ci.getDish().getPrice());
+                    total=total.add(TotalUtil.calculateCost(ci.getQuantity(),ci.getDish().getPrice()));
 
                     out.print("</td>");
                     out.print("<td>");
@@ -82,6 +82,7 @@ public class ShowOrder  extends TagSupport {
                 if (order != null && order.getOrderDishes() != null && order.getOrderDishes().size() != 0) {
                     out.print("<th colspan = \"6\">\n");
                     out.print("<form method = \"POST\" action = \"/main\" class = \"order\">");
+                    out.print("<input type = \"hidden\" name = \"total\" value = \"" + total + "\" />\n");
                     out.print("<input type = \"hidden\" name = \"command\" value = \"checkout_command\" />\n");
                     out.print("<input type = \"submit\" name = \"submit\" value = \""+ rb.getString("order.checkout.button") +"\" class=\"btn btn-default\" />\n");
                     out.print("</form>");
