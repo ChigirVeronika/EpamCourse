@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import static com.epam.restaurant.controller.name.RequestParameterName.*;
-
+import static com.epam.restaurant.util.SessionUtil.*;
 /**
  * Change user's role to BLOCKED
  * Handle 'Ban' button on the ADMIN user page
@@ -27,6 +27,11 @@ public class BanCommand implements Command {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws CommandException {
         String result = JspPageName.USERS_JSP;
+
+        if(sessionExpired(request)){
+            result=JspPageName.LOGIN_JSP;
+            return result;
+        }
 
         try {
             String userLogin = request.getParameter(LOGIN);

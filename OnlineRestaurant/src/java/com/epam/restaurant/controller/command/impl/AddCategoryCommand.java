@@ -5,23 +5,29 @@ import com.epam.restaurant.controller.command.exception.CommandException;
 import com.epam.restaurant.controller.name.JspPageName;
 import com.epam.restaurant.service.CategoryService;
 import com.epam.restaurant.service.exception.ServiceException;
-import org.apache.log4j.Logger;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import static com.epam.restaurant.util.SessionUtil.*;
 
 /**
  * Add new category to menu by user whose role ADMIN.
  */
 public class AddCategoryCommand implements Command {
-    private static final Logger LOGGER = Logger.getLogger(AddCategoryCommand.class);
 
     private static final CategoryService categoryService = CategoryService.getInstance();
 
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws CommandException {
+        String result;
 
-        String result = JspPageName.CONCRETE_MENU_JSP;
+        if(sessionExpired(request)){
+            result=JspPageName.LOGIN_JSP;
+            return result;
+        }
+
+        result = JspPageName.CONCRETE_MENU_JSP;
 
         try {
             String name = request.getParameter("name");

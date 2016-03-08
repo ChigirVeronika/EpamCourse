@@ -10,7 +10,7 @@ import com.epam.restaurant.service.exception.ServiceException;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import static com.epam.restaurant.util.SessionUtil.*;
 /**
  * Delete item from order by user with role USER.
  */
@@ -21,6 +21,11 @@ public class DeleteItemCommand implements Command {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws CommandException {
         String result = JspPageName.ORDER_JSP;
+
+        if(sessionExpired(request)){
+            result=JspPageName.LOGIN_JSP;
+            return result;
+        }
 
         try{
             Long orderDishId = Long.parseLong(request.getParameter("item_id"));

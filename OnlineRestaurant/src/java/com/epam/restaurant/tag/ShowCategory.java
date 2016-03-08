@@ -26,6 +26,7 @@ public class ShowCategory  extends TagSupport {
         List<Dish> dishList = (List<Dish>) pageContext.getRequest().getAttribute("dishes");
         JspWriter out = pageContext.getOut();
 
+
         if(dishList!=null){
             try{
                 for(Dish d:dishList){
@@ -47,7 +48,7 @@ public class ShowCategory  extends TagSupport {
                     out.println("</div>");
                     out.println("</div>");
                     out.println("</td></tr>");
-                    out.println("<br>");
+                    out.println("<br><br>");
 
                 }
             }catch (Exception e){

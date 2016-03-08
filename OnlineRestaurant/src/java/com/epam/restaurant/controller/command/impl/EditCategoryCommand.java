@@ -10,7 +10,7 @@ import org.apache.log4j.Logger;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import static com.epam.restaurant.util.SessionUtil.*;
 /**
  * Change category parameters by user with role ADMIN.
  */
@@ -23,6 +23,12 @@ public class EditCategoryCommand  implements Command {
     public String execute(HttpServletRequest request, HttpServletResponse response) throws CommandException {
 
         String result = JspPageName.CONCRETE_MENU_JSP;
+
+        if(sessionExpired(request)){
+            result=JspPageName.LOGIN_JSP;
+            return result;
+        }
+
         try{
             String name = request.getParameter("old_name");
             System.out.println(name);

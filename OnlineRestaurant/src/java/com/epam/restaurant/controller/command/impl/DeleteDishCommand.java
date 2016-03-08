@@ -9,7 +9,7 @@ import com.epam.restaurant.service.exception.ServiceException;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import static com.epam.restaurant.util.SessionUtil.*;
 /**
  * Delete dish from dish list by user with role ADMIN.
  */
@@ -20,6 +20,11 @@ public class DeleteDishCommand implements Command {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws CommandException {
         String result = JspPageName.CONCRETE_CATEGORY_JSP;
+
+        if(sessionExpired(request)){
+            result=JspPageName.LOGIN_JSP;
+            return result;
+        }
 
         try{
             Long dishId = Long.parseLong(request.getParameter("dish_id"));

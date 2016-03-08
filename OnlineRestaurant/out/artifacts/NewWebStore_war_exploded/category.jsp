@@ -39,7 +39,7 @@
                         </div>
 
                         <div class="col-sm-8">
-                            <table id="results">
+                            <table id="results" border>
                                 <mytag:category/>
                             </table>
                         </div>

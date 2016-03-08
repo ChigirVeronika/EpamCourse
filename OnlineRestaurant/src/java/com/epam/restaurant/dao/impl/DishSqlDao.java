@@ -28,7 +28,9 @@ public class DishSqlDao extends AbstractSqlDao<Dish, Long> {
 
     private final static DishSqlDao instance = new DishSqlDao();
 
-    public static GenericDao getInstance(){return instance;}
+    public static GenericDao getInstance() {
+        return instance;
+    }
 
     private class PersistDish extends Dish {
         public void setId(Long id) {
@@ -61,7 +63,7 @@ public class DishSqlDao extends AbstractSqlDao<Dish, Long> {
         LinkedList<Dish> result = new LinkedList<>();
 
         try {
-            while(rs.next()){
+            while (rs.next()) {
                 PersistDish dish = new PersistDish();
                 dish.setId(rs.getLong("id"));
                 dish.setName(rs.getString("name"));
@@ -82,13 +84,13 @@ public class DishSqlDao extends AbstractSqlDao<Dish, Long> {
     @Override
     protected void prepareStatementForInsert(PreparedStatement statement, Dish object) throws DaoException {
         try {
-            statement.setString(1,object.getName());
-            statement.setString(2,object.getDescription());
-            statement.setString(3,object.getIngredients());
-            statement.setBigDecimal(4,object.getPrice());
-            statement.setInt(5,object.getQuantity());
-            statement.setLong(6,object.getCategoryId());
-            statement.setString(7,object.getImage());
+            statement.setString(1, object.getName());
+            statement.setString(2, object.getDescription());
+            statement.setString(3, object.getIngredients());
+            statement.setBigDecimal(4, object.getPrice());
+            statement.setInt(5, object.getQuantity());
+            statement.setLong(6, object.getCategoryId());
+            statement.setString(7, object.getImage());
         } catch (SQLException e) {
             throw new DaoException("DishSqlDao Exception");
         }
@@ -97,14 +99,14 @@ public class DishSqlDao extends AbstractSqlDao<Dish, Long> {
     @Override
     protected void prepareStatementForUpdate(PreparedStatement statement, Dish object) throws DaoException {
         try {
-            statement.setString(1,object.getName());
-            statement.setString(2,object.getDescription());
-            statement.setString(3,object.getIngredients());
-            statement.setBigDecimal(4,object.getPrice());
-            statement.setInt(5,object.getQuantity());
-            statement.setLong(6,object.getCategoryId());
-            statement.setString(7,object.getImage());
-            statement.setLong(8,object.getId());
+            statement.setString(1, object.getName());
+            statement.setString(2, object.getDescription());
+            statement.setString(3, object.getIngredients());
+            statement.setBigDecimal(4, object.getPrice());
+            statement.setInt(5, object.getQuantity());
+            statement.setLong(6, object.getCategoryId());
+            statement.setString(7, object.getImage());
+            statement.setLong(8, object.getId());
         } catch (SQLException e) {
             throw new DaoException("DishSqlDao Exception");
         }
@@ -118,22 +120,22 @@ public class DishSqlDao extends AbstractSqlDao<Dish, Long> {
 
     public List<Dish> getAllFromCategory(Long key) throws DaoException {
         List<Dish> result;
-        Connection connection=null;
-        try  {
+        Connection connection = null;
+        try {
             connection = pool.getConnection();
             String sql = dbBundle.getString("DISH.FROM_CATEGORY");
             PreparedStatement statement = connection.prepareStatement(sql);
             statement.setLong(1, key);
             ResultSet rs = statement.executeQuery();
             result = parseResultSet(rs);
-            if(result==null){
+            if (result == null) {
                 return Collections.emptyList();
             }
-        }catch (ConnectionPoolException |SQLException e) {
+        } catch (ConnectionPoolException | SQLException e) {
             throw new DaoException("Dao Exception");
-        }finally {
+        } finally {
             try {
-                if(connection != null) {
+                if (connection != null) {
                     pool.returnConnection(connection);
                 }
             } catch (ConnectionPoolException e) {

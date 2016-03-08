@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.math.BigDecimal;
 import java.util.Date;
-
+import static com.epam.restaurant.util.SessionUtil.*;
 /**
  * Checkout USER order.
  */
@@ -26,6 +26,11 @@ public class CheckoutCommand implements Command {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws CommandException {
         String result = JspPageName.CHECKOUT_JSP;
+
+        if(sessionExpired(request)){
+            result=JspPageName.LOGIN_JSP;
+            return result;
+        }
 
         User currentUser = (User) request.getSession().getAttribute("user");
         try{

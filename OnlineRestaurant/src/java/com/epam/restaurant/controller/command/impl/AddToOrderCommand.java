@@ -16,7 +16,7 @@ import com.epam.restaurant.service.exception.ServiceException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.Date;
-
+import static com.epam.restaurant.util.SessionUtil.*;
 /**
  * Add dish to users order whose role USER.
  */
@@ -31,6 +31,11 @@ public class AddToOrderCommand implements Command {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws CommandException {
         String result = JspPageName.ORDER_JSP;
+
+        if(sessionExpired(request)){
+            result=JspPageName.LOGIN_JSP;
+            return result;
+        }
 
         User currentUser = (User) request.getSession().getAttribute("user");
         Order currentOrder = (Order) request.getSession().getAttribute("order");

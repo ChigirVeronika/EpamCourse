@@ -10,7 +10,7 @@ import com.epam.restaurant.service.exception.ServiceException;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import static com.epam.restaurant.util.SessionUtil.*;
 /**
  * Update order dish (with new quantity) in order.
  * Handle 'Update' button on the order page.
@@ -22,6 +22,11 @@ public class UpdateOrderCommand implements Command {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws CommandException {
         String result = JspPageName.ORDER_JSP;
+
+        if(sessionExpired(request)){
+            result=JspPageName.LOGIN_JSP;
+            return result;
+        }
 
         Order currentOrder = (Order)request.getSession().getAttribute("order");
 

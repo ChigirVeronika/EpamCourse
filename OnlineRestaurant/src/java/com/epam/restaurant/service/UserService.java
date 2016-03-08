@@ -6,6 +6,7 @@ import com.epam.restaurant.dao.impl.UserSqlDao;
 import com.epam.restaurant.entity.User;
 import com.epam.restaurant.service.exception.ServiceException;
 import com.epam.restaurant.util.HashUtil;
+import com.epam.restaurant.util.ValidationUtil;
 import org.apache.log4j.Logger;
 
 import java.security.NoSuchAlgorithmException;
@@ -18,31 +19,32 @@ public class UserService {
 
     private static UserService instance = new UserService();
 
-    private UserService(){}
+    private UserService() {
+    }
 
-    public static UserService getInstance(){
+    public static UserService getInstance() {
         return instance;
     }
 
     private static UserSqlDao userDao = (UserSqlDao) SqlDaoFactory.getInstance().getDao(SqlDaoFactory.DaoType.USER);
 
-    public User get(String login) throws ServiceException{
+    public User get(String login) throws ServiceException {
         try {
             User user = userDao.getByLogin(login);
             return user;
 
         } catch (DaoException e) {
-            throw new ServiceException("Exception");
+            throw new ServiceException("UserService Exception");
         }
     }
 
-    public User getById(Long id) throws ServiceException{
+    public User getById(Long id) throws ServiceException {
         try {
             User user = userDao.getByPK(id);
             return user;
 
         } catch (DaoException e) {
-            throw new ServiceException("Exception");
+            throw new ServiceException("UserService Exception");
         }
     }
 
@@ -53,9 +55,9 @@ public class UserService {
                 return user;
             }
         } catch (NoSuchAlgorithmException e) {
-            throw new ServiceException("Exception");
+            throw new ServiceException("UserService Exception");
         } catch (InvalidKeySpecException e) {
-            throw new ServiceException("Exception");
+            throw new ServiceException("UserService Exception");
         }
         return null;
     }
@@ -66,17 +68,25 @@ public class UserService {
             user = new User(name, surname, email, payCard, login, HashUtil.createHash(password));
 //            user = new User(CharsetUtil.StringToUtf8(name), CharsetUtil.StringToUtf8(surname),//todo
 //                    email, payCard, CharsetUtil.StringToUtf8(login), HashUtil.createHash(password));
-            return  userDao.persist(user);
-        }catch (DaoException|NoSuchAlgorithmException|InvalidKeySpecException  e){
-            throw new ServiceException("Exception",e);
+            if (ValidationUtil.userValid(user)) {
+                return userDao.persist(user);
+            } else {
+                throw new ServiceException("UserService Exception");
+            }
+        } catch (DaoException | NoSuchAlgorithmException | InvalidKeySpecException e) {
+            throw new ServiceException("UserService Exception");
         }
     }
 
     public void update(User user) throws ServiceException {
         try {
-            userDao.update(user);
+            if (ValidationUtil.userValid(user)) {
+                userDao.update(user);
+            }else {
+                throw new ServiceException("UserService Exception");
+            }
         } catch (DaoException e) {
-            throw new ServiceException("Exception",e);
+            throw new ServiceException("UserService Exception");
         }
     }
 }

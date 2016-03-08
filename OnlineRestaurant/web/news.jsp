@@ -50,18 +50,24 @@
             </div>
             </c:if>
 
-                <table>
+                <table border id="results">
                     <c:forEach var="one_news" items = "${newsList}">
                         <tr>
-                            <td>${one_news}</td>
+                            <td>${one_news.getName()}</td><td rowspan="3">${one_news.getContent()}</td>
                         </tr>
+                        <tr>
+                            <td>${one_news.getDate()}</td>
+                        </tr>
+                        <tr>
+                            <td><img src="images/${one_news.getImage()}" height="100"/></td>
+                        </tr>
+                        <br>
                     </c:forEach>
                 </table>
+
+
             </div>
 
-            <div class="trendfoot">
-                <jsp:include page="layout/footer.jsp"/>
-            </div>
         </div>
     </div>
 </div>

@@ -5,6 +5,7 @@ import com.epam.restaurant.dao.factory.SqlDaoFactory;
 import com.epam.restaurant.dao.impl.DishSqlDao;
 import com.epam.restaurant.entity.Dish;
 import com.epam.restaurant.service.exception.ServiceException;
+import com.epam.restaurant.util.ValidationUtil;
 import org.apache.log4j.Logger;
 
 import java.math.BigDecimal;
@@ -38,7 +39,11 @@ public class DishService {
                         throws ServiceException{
         Dish dish = new Dish(name,description,ingredients,price,quantity,categoryId,image);
         try {
-            return dishDao.persist(dish);
+            if(ValidationUtil.dishValid(dish)){
+                return dishDao.persist(dish);
+            }else {
+                throw new ServiceException("DishServiceException");
+            }
         } catch (DaoException e) {
             LOGGER.error("Can't do DishSqlDao in DishService",e);
             throw new ServiceException("DishServiceException");
@@ -56,7 +61,11 @@ public class DishService {
 
     public void update(Dish dish) throws ServiceException{
         try {
-            dishDao.update(dish);
+            if(ValidationUtil.dishValid(dish)){
+                dishDao.update(dish);
+            }else {
+                throw new ServiceException("DishServiceException");
+            }
         } catch (DaoException e) {
             LOGGER.error("Can't do DishSqlDao in DishService",e);
             throw new ServiceException("DishServiceException");

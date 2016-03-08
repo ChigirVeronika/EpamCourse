@@ -7,6 +7,7 @@ import com.epam.restaurant.dao.impl.DishSqlDao;
 import com.epam.restaurant.entity.Category;
 import com.epam.restaurant.entity.Dish;
 import com.epam.restaurant.service.exception.ServiceException;
+import com.epam.restaurant.util.ValidationUtil;
 
 import java.util.List;
 
@@ -20,19 +21,22 @@ public class CategoryService {
 
     private static CategoryService instance = new CategoryService();
 
-    private CategoryService(){}
+    private CategoryService() {
+    }
 
-    public static CategoryService getInstance(){return instance;}
+    public static CategoryService getInstance() {
+        return instance;
+    }
 
     public List<Category> getAllCategories() throws ServiceException {
         try {
             return categoryDao.getAll();
         } catch (DaoException e) {
-            throw new ServiceException("CategoryServiceException",e);
+            throw new ServiceException("CategoryServiceException", e);
         }
     }
 
-    public Category getById(Long id)throws ServiceException{
+    public Category getById(Long id) throws ServiceException {
         try {
             return categoryDao.getByPK(id);
         } catch (DaoException e) {
@@ -48,7 +52,7 @@ public class CategoryService {
         }
     }
 
-    public Category getByName(String name) throws ServiceException{
+    public Category getByName(String name) throws ServiceException {
         try {
             return categoryDao.getByName(name);
         } catch (DaoException e) {
@@ -56,24 +60,32 @@ public class CategoryService {
         }
     }
 
-    public Category create(String name, String description) throws ServiceException{
-        Category category = new Category(name,description);
+    public Category create(String name, String description) throws ServiceException {
+        Category category = new Category(name, description);
         try {
-            return categoryDao.persist(category);
+//            if (ValidationUtil.categoryValid(category)) {
+                return categoryDao.persist(category);
+//            } else {
+//                throw new ServiceException("CategoryService Exception");
+//            }
         } catch (DaoException e) {
             throw new ServiceException("CategoryService Exception");
         }
     }
 
-    public void update(Category category) throws ServiceException{
+    public void update(Category category) throws ServiceException {
         try {
-            categoryDao.update(category);
+//            if (ValidationUtil.categoryValid(category)) {
+                categoryDao.update(category);
+//            } else {
+//                throw new ServiceException("CategoryService Exception");
+//            }
         } catch (DaoException e) {
             throw new ServiceException("CategoryService Exception");
         }
     }
 
-    public void delete(Category category) throws ServiceException{
+    public void delete(Category category) throws ServiceException {
         try {
             categoryDao.delete(category);
         } catch (DaoException e) {
