@@ -6,7 +6,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- *
+ * Describes news entity.
  */
 public class News implements Serializable, Identified<Long> {
     public static final long serialVersionUID = 1;

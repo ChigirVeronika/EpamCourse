@@ -22,8 +22,6 @@ import static com.epam.restaurant.controller.name.RequestParameterName.*;
  */
 public class LoginCommand implements Command {
 
-    private static final Logger LOGGER = Logger.getLogger( LoginCommand.class);
-
     /**
      * Provides work with database users table.
      */
@@ -42,28 +40,27 @@ public class LoginCommand implements Command {
         String result = JspPageName.LOGIN_JSP;
 
         try {
-            User user = userService.login(login,password);
-            if(user!=null && user.getRole()!=User.Role.BLOCKED){
-                result=JspPageName.HELLO_JSP;
-                request.getSession().setAttribute(USER,user);
+            User user = userService.login(login, password);
+            if (user != null && user.getRole() != User.Role.BLOCKED) {
+                result = JspPageName.HELLO_JSP;
+                request.getSession().setAttribute(USER, user);
 
                 Order order = orderService.getByUserId(user.getId());
-                request.getSession().setAttribute(ORDER,order);
-            }else{
+                request.getSession().setAttribute(ORDER, order);
+            } else {
                 String path = RequestParameterName.I18N;
                 String curLan = (String) request.getSession().getAttribute(LANGUAGE);
                 if (curLan != null && !curLan.equals(EN))
                     path += UNDERLINE + curLan;
                 ResourceBundle rb = ResourceBundle.getBundle(path);
                 if (user != null && user.getRole() == User.Role.BLOCKED) { // if user is blocked
-                request.setAttribute(MESSAGE, rb.getString("login.blocked"));
-            } else {
-                request.setAttribute(MESSAGE, rb.getString("login.wrong"));
-            }
+                    request.setAttribute(MESSAGE, rb.getString(LOGIN_BLOCKED));
+                } else {
+                    request.setAttribute(MESSAGE, rb.getString(LOGIN_WRONG));
+                }
 
             }
         } catch (Exception e) {
-            LOGGER.error("Can't execute LoginCommand");
             throw new CommandException("Cant't execute LoginCommand");
         }
         return result;

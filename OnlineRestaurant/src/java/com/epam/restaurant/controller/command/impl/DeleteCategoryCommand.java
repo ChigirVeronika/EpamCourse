@@ -12,13 +12,14 @@ import org.apache.log4j.Logger;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
+
 import static com.epam.restaurant.util.SessionUtil.*;
+import static com.epam.restaurant.controller.name.RequestParameterName.*;
+
 /**
  * Delete category from category list by user with role ADMIN.
  */
 public class DeleteCategoryCommand implements Command {
-    private static final Logger LOGGER = Logger.getLogger( DeleteCategoryCommand.class);
-
     private static final CategoryService categoryService = CategoryService.getInstance();
 
     @Override
@@ -26,22 +27,22 @@ public class DeleteCategoryCommand implements Command {
 
         String result = JspPageName.CONCRETE_MENU_JSP;
 
-        if(sessionExpired(request)){
-            result=JspPageName.LOGIN_JSP;
+        if (sessionExpired(request)) {
+            result = JspPageName.LOGIN_JSP;
             return result;
         }
-        try{
-            String name = request.getParameter("name");
+        try {
+            String name = request.getParameter(NAME);
 
             Category category = categoryService.getByName(name);
 
-            if(category!=null){
+            if (category != null) {
                 //if there dishes of this category
                 List<Dish> dishList = categoryService.getAllFromCategory(category.getId());
-                if(dishList!=null){
-                    result=JspPageName.ERROR_JSP;
+                if (dishList != null) {
+                    result = JspPageName.ERROR_JSP;
                     return result;
-                }else{
+                } else {
                     categoryService.delete(category);
                 }
             }

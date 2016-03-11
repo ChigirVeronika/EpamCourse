@@ -1,5 +1,6 @@
 package com.epam.restaurant.tag;
 
+import com.epam.restaurant.controller.name.RequestParameterName;
 import com.epam.restaurant.entity.Category;
 import com.epam.restaurant.entity.User;
 
@@ -17,9 +18,9 @@ public class ShowCategories extends TagSupport {
     private static final Logger LOGGER = Logger.getLogger(ShowCategories.class);
 
     public int doStartTag() throws JspException {
-        List<Category> categoryList = (List<Category>) pageContext.getRequest().getAttribute("categories");
+        List<Category> categoryList = (List<Category>) pageContext.getRequest().getAttribute(RequestParameterName.CATEGORIES);
 
-        User user = (User) pageContext.getSession().getAttribute("user");
+        User user = (User) pageContext.getSession().getAttribute(RequestParameterName.USER);
         JspWriter out = pageContext.getOut();
         if(categoryList!=null){
             try{

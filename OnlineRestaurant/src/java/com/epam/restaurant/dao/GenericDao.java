@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 /**
+ * Interface for work with persistance objects
  * @param <T> object type
  * @param <PK> primary key type
  */

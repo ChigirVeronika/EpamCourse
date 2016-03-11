@@ -11,10 +11,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
+import static com.epam.restaurant.controller.name.RequestParameterName.*;
+
 /**
- *
+ * Show page with all news.
  */
-public class NewsCommand implements Command{
+public class NewsCommand implements Command {
 
     private static final NewsService newsService = NewsService.getInstance();
 
@@ -23,9 +25,9 @@ public class NewsCommand implements Command{
         String result = JspPageName.NEWS_JSP;
 
         try {
-            List<News> newsList  = newsService.getAllNews();
+            List<News> newsList = newsService.getAllNews();
 
-            request.setAttribute("newsList",newsList);
+            request.setAttribute(NEWS_LIST, newsList);
         } catch (ServiceException e) {
             throw new CommandException("NewsCommand Exception");
         }

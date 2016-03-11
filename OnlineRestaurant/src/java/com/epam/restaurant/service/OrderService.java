@@ -19,14 +19,15 @@ public class OrderService {
 
     private static OrderService instance = new OrderService();
 
-    private OrderService(){}
+    private OrderService() {
+    }
 
-    public static OrderService getInstance(){
+    public static OrderService getInstance() {
         return instance;
     }
 
-    public Order create(Long userId, Date createdAt)throws ServiceException{
-        Order order = new Order(userId,createdAt);
+    public Order create(Long userId, Date createdAt) throws ServiceException {
+        Order order = new Order(userId, createdAt);
         try {
             return orderDao.persist(order);
         } catch (DaoException e) {
@@ -34,7 +35,7 @@ public class OrderService {
         }
     }
 
-    public void delete(Order order) throws ServiceException{
+    public void delete(Order order) throws ServiceException {
         try {
             orderDao.delete(order);
         } catch (DaoException e) {
@@ -42,7 +43,7 @@ public class OrderService {
         }
     }
 
-    public void updateStatus(Order order) throws ServiceException{
+    public void updateStatus(Order order) throws ServiceException {
         try {
             orderDao.update(order);
         } catch (DaoException e) {
@@ -50,16 +51,16 @@ public class OrderService {
         }
     }
 
-    public Order getByUserId(long userId) throws ServiceException{
+    public Order getByUserId(long userId) throws ServiceException {
         Order order;
         try {
             order = orderDao.getByUserId(userId);
-            if(order!=null){
+            if (order != null) {
                 OrderDishService orderDishService = OrderDishService.getInstance();
                 List<OrderDish> orderDishList = orderDishService.getAllFromOrder(order.getId());
-                if(orderDishList.size()>0){
+                if (orderDishList.size() > 0) {
                     DishService dishService = DishService.getInstance();
-                    for(OrderDish od: orderDishList){
+                    for (OrderDish od : orderDishList) {
                         od.setDish(dishService.getById(od.getDishId()));
                     }
                 }

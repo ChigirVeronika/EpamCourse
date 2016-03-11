@@ -1,5 +1,6 @@
 package com.epam.restaurant.tag;
 
+import com.epam.restaurant.controller.name.RequestParameterName;
 import com.epam.restaurant.entity.Dish;
 import com.epam.restaurant.util.ResourceBundleUtil;
 
@@ -20,10 +21,10 @@ public class ShowCategory  extends TagSupport {
     private static String IMAGE_URL = "images/";
 
     public int doStartTag() throws JspException{
-        String currentLanguage = (String) pageContext.getSession().getAttribute("language");
+        String currentLanguage = (String) pageContext.getSession().getAttribute(RequestParameterName.LANGUAGE);
         ResourceBundle resourceBundle = ResourceBundleUtil.getResourceBundle(currentLanguage);
 
-        List<Dish> dishList = (List<Dish>) pageContext.getRequest().getAttribute("dishes");
+        List<Dish> dishList = (List<Dish>) pageContext.getRequest().getAttribute(RequestParameterName.DISHES);
         JspWriter out = pageContext.getOut();
 
 

@@ -17,6 +17,8 @@ import java.security.spec.InvalidKeySpecException;
  */
 public class UserService {
 
+    private static UserSqlDao userDao = (UserSqlDao) SqlDaoFactory.getInstance().getDao(SqlDaoFactory.DaoType.USER);
+
     private static UserService instance = new UserService();
 
     private UserService() {
@@ -25,8 +27,6 @@ public class UserService {
     public static UserService getInstance() {
         return instance;
     }
-
-    private static UserSqlDao userDao = (UserSqlDao) SqlDaoFactory.getInstance().getDao(SqlDaoFactory.DaoType.USER);
 
     public User get(String login) throws ServiceException {
         try {
@@ -82,7 +82,7 @@ public class UserService {
         try {
             if (ValidationUtil.userValid(user)) {
                 userDao.update(user);
-            }else {
+            } else {
                 throw new ServiceException("UserService Exception");
             }
         } catch (DaoException e) {

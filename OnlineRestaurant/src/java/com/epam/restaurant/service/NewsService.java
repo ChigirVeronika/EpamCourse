@@ -10,7 +10,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
- *
+ * Perform service operations with news object.
  */
 public class NewsService {
     private static final NewsSqlDao newsDao = (NewsSqlDao) SqlDaoFactory.getInstance().getDao(SqlDaoFactory.DaoType.NEWS);

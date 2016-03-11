@@ -5,7 +5,7 @@ import com.epam.restaurant.dao.Identified;
 import java.io.Serializable;
 
 /**
- * Entity is user in online restaurant.
+ * Describes user entity in online restaurant.
  */
 public class User implements Serializable, Identified<Long>{
     public static final long serialVersionUID = 1;

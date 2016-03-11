@@ -7,13 +7,13 @@ import java.nio.charset.Charset;
 import static java.nio.charset.StandardCharsets.*;
 
 /**
- * Created by Вероника on 27.02.2016.
+ * Change string to utf-8 charset.
  */
 public class CharsetUtil {
     private static String UTF_8 = "UTF-8";
     private static String ISO = "ISO-8859-1";
 
-    public static String encodeToUTF8(String inputString){
+    public static String encodeToUTF8(String inputString) {
 
         String value = new String();
         byte ptext[];

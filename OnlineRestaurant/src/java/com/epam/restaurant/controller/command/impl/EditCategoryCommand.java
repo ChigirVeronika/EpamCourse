@@ -10,13 +10,14 @@ import org.apache.log4j.Logger;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import static com.epam.restaurant.util.SessionUtil.*;
+import static com.epam.restaurant.controller.name.RequestParameterName.*;
+
 /**
  * Change category parameters by user with role ADMIN.
  */
-public class EditCategoryCommand  implements Command {
-    private static final Logger LOGGER = Logger.getLogger( EditCategoryCommand.class);
-
+public class EditCategoryCommand implements Command {
     private static final CategoryService categoryService = CategoryService.getInstance();
 
     @Override
@@ -24,22 +25,19 @@ public class EditCategoryCommand  implements Command {
 
         String result = JspPageName.CONCRETE_MENU_JSP;
 
-        if(sessionExpired(request)){
-            result=JspPageName.LOGIN_JSP;
+        if (sessionExpired(request)) {
+            result = JspPageName.LOGIN_JSP;
             return result;
         }
 
-        try{
-            String name = request.getParameter("old_name");
-            System.out.println(name);
-            String newName = request.getParameter("name");
-            System.out.println(newName);
-            String newDescription = request.getParameter("description");
-            System.out.println(newDescription);
+        try {
+            String name = request.getParameter(OLD_NAME);
+            String newName = request.getParameter(NAME);
+            String newDescription = request.getParameter(DESCRIPTION);
 
             Category category = categoryService.getByName(name);
 
-            if(category!=null){
+            if (category != null) {
                 category.setName(newName);
                 category.setDescription(newDescription);
                 categoryService.update(category);

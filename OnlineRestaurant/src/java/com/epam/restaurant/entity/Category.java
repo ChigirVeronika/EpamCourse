@@ -14,17 +14,18 @@ public class Category implements Serializable, Identified<Long> {
     private String name;
     private String description;
 
-    public Category(){}
-
-    public Category(String name, String description){
-        this.name=name;
-        this.description=description;
+    public Category() {
     }
 
-    public Category(long id, String name, String description){
-        this.id=id;
-        this.name=name;
-        this.description=description;
+    public Category(String name, String description) {
+        this.name = name;
+        this.description = description;
+    }
+
+    public Category(long id, String name, String description) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
     }
 
     public Long getId() {
@@ -53,19 +54,19 @@ public class Category implements Serializable, Identified<Long> {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o){
+        if (this == o) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()){
+        if (o == null || getClass() != o.getClass()) {
             return false;
         }
 
         Category category = (Category) o;
 
-        if (id != category.id){
+        if (id != category.id) {
             return false;
         }
-        if (name != null ? !name.equals(category.name) : category.name != null){
+        if (name != null ? !name.equals(category.name) : category.name != null) {
             return false;
         }
         return description != null ? description.equals(category.description) : category.description == null;

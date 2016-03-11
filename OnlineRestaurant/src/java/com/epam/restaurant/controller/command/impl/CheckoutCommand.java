@@ -14,7 +14,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.math.BigDecimal;
 import java.util.Date;
+
 import static com.epam.restaurant.util.SessionUtil.*;
+import static com.epam.restaurant.controller.name.RequestParameterName.*;
+
 /**
  * Checkout USER order.
  */
@@ -27,29 +30,28 @@ public class CheckoutCommand implements Command {
     public String execute(HttpServletRequest request, HttpServletResponse response) throws CommandException {
         String result = JspPageName.CHECKOUT_JSP;
 
-        if(sessionExpired(request)){
-            result=JspPageName.LOGIN_JSP;
+        if (sessionExpired(request)) {
+            result = JspPageName.LOGIN_JSP;
             return result;
         }
 
-        User currentUser = (User) request.getSession().getAttribute("user");
-        try{
-            Order currentOrder = (Order)request.getSession().getAttribute("order");
-            for(OrderDish od: currentOrder.getOrderDishes()){
+        User currentUser = (User) request.getSession().getAttribute(USER);
+        try {
+            Order currentOrder = (Order) request.getSession().getAttribute(ORDER);
+            for (OrderDish od : currentOrder.getOrderDishes()) {
                 orderDishService.delete(od);
             }
 
-            //todo тут еще сервис, чтоб обновить статус оплачено и цену забить:)
             currentOrder.setPaid(true);
-            BigDecimal total = new BigDecimal(request.getParameter("total"));
+            BigDecimal total = new BigDecimal(request.getParameter(TOTAL));
             currentOrder.setTotal(total);
             orderService.updateStatus(currentOrder);
 
 
-            request.getSession().removeAttribute("order");
+            request.getSession().removeAttribute(ORDER);
 
-            Order newOrder = orderService.create(currentUser.getId(),new Date());
-            request.getSession().setAttribute("order",newOrder);
+            Order newOrder = orderService.create(currentUser.getId(), new Date());
+            request.getSession().setAttribute(ORDER, newOrder);
         } catch (ServiceException e) {
             throw new CommandException("Cant't executeCheckoutCommand");
         }

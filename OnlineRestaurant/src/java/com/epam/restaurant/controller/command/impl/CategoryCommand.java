@@ -13,34 +13,34 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
+import static com.epam.restaurant.controller.name.RequestParameterName.*;
+
 /**
  * Control all dishes in one category output.
  */
-public class CategoryCommand implements Command{
+public class CategoryCommand implements Command {
 
     private static final CategoryService categoryService = CategoryService.getInstance();
-    private static final Logger LOGGER = Logger.getLogger( CategoryCommand.class);
 
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws CommandException {
         String result = JspPageName.CATEGORY_JSP;
 
-        try{
-            Long categoryId = Long.parseLong(request.getParameter("id"));
+        try {
+            Long categoryId = Long.parseLong(request.getParameter(ID));
 
             String name = categoryService.getById(categoryId).getName();
             List<Category> categoryList = categoryService.getAllCategories();
             List<Dish> dishList = categoryService.getAllFromCategory(categoryId);
 
-            request.setAttribute("categories",categoryList);
+            request.setAttribute(CATEGORIES, categoryList);
 
-            if(dishList!=null){
-                request.setAttribute("dishes",dishList);
-                request.setAttribute("name",name);
+            if (dishList != null) {
+                request.setAttribute(DISHES, dishList);
+                request.setAttribute(NAME, name);
             }
         } catch (ServiceException e) {
-            LOGGER.error("Can't execute CategoryCommand",e);
-            throw new CommandException("CategoryCommandException",e);
+            throw new CommandException("CategoryCommandException", e);
         }
         return result;
     }

@@ -11,6 +11,7 @@ import com.epam.restaurant.service.exception.ServiceException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import static com.epam.restaurant.util.SessionUtil.*;
+import static com.epam.restaurant.controller.name.RequestParameterName.*;
 /**
  * Delete item from order by user with role USER.
  */
@@ -28,9 +29,9 @@ public class DeleteItemCommand implements Command {
         }
 
         try{
-            Long orderDishId = Long.parseLong(request.getParameter("item_id"));
+            Long orderDishId = Long.parseLong(request.getParameter(ITEM_ID));
 
-            Order order = (Order) request.getSession().getAttribute("order");
+            Order order = (Order) request.getSession().getAttribute(ORDER);
 
             for(OrderDish od: order.getOrderDishes()){
                 if(od.getId()==orderDishId){//find item we need to delete

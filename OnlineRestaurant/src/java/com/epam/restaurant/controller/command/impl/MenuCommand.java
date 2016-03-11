@@ -13,24 +13,24 @@ import javax.servlet.http.HttpServletResponse;
 
 import java.util.List;
 
+import static com.epam.restaurant.controller.name.RequestParameterName.*;
+
 /**
  * Control menu output.
  */
 public class MenuCommand implements Command {
 
-    private static final Logger LOGGER = Logger.getLogger( MenuCommand.class);
     private static final CategoryService categoryService = CategoryService.getInstance();
 
-   @Override
+    @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws CommandException {
-        String page=JspPageName.MENU_JSP;
-        try{
+        String page = JspPageName.MENU_JSP;
+        try {
             List<Category> categoryList = categoryService.getAllCategories();
-            if(categoryList!=null){
-                request.setAttribute("categories",categoryList);
+            if (categoryList != null) {
+                request.setAttribute(CATEGORIES, categoryList);
             }
-        }catch (ServiceException e){
-            LOGGER.error("Can't do CategoryService in MenuCommand ",e);
+        } catch (ServiceException e) {
             throw new CommandException("Cant't execute MenuCommand");
         }
         return page;

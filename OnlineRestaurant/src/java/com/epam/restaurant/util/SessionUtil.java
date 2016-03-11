@@ -7,18 +7,21 @@ import java.util.ResourceBundle;
 import static com.epam.restaurant.controller.name.RequestParameterName.*;
 
 /**
- *
+ * Check session expiration.
  */
 public class SessionUtil {
-    public static boolean sessionExpired(HttpServletRequest request){
+
+    private static final String LOGIN_SESSION_ERROR = "login.session.error";
+
+    public static boolean sessionExpired(HttpServletRequest request) {
         HttpSession currentSession = request.getSession(false);
-        if(currentSession==null){
+        if (currentSession == null) {
             String path = I18N;
             String curLan = (String) request.getSession().getAttribute(LANGUAGE);
             if (curLan != null && !curLan.equals(EN))
                 path += UNDERLINE + curLan;
             ResourceBundle rb = ResourceBundle.getBundle(path);
-            request.setAttribute(MESSAGE, rb.getString("login.session.error"));
+            request.setAttribute(MESSAGE, rb.getString(LOGIN_SESSION_ERROR));
             return true;
         }
         return false;

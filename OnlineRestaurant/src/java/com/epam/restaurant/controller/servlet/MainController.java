@@ -17,11 +17,10 @@ import java.io.IOException;
 /**
  * Main HTTP servlet control all actions in system.
  */
-public class MainController extends HttpServlet{
+public class MainController extends HttpServlet {
     public static final long serialVersionUID = 1;
-    private static final Logger LOGGER = Logger.getLogger( MainController.class);
 
-    public MainController(){
+    public MainController() {
         super();
     }
 
@@ -39,26 +38,22 @@ public class MainController extends HttpServlet{
      * Handle post and get http requests.
      */
     private void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setCharacterEncoding("utf-8");
-        String commandName=request.getParameter(RequestParameterName.COMMAND_NAME);
-        LOGGER.info(commandName);
+        request.setCharacterEncoding(RequestParameterName.UTF8);
+        String commandName = request.getParameter(RequestParameterName.COMMAND_NAME);
 
         Command command = CommandHelper.getInstance().getCommand(commandName);
-        LOGGER.info(command);
 
         String page;
         try {
             page = command.execute(request, response);
-            LOGGER.info("Page: "+ page);
-        }catch (CommandException e){
-            LOGGER.error("Can't execute command in MainController ", e);
+        } catch (CommandException e) {
             page = JspPageName.ERROR_JSP;
         }
 
         RequestDispatcher requestDispatcher = request.getRequestDispatcher(page);
 
-        if(requestDispatcher!=null){
-            requestDispatcher.forward(request,response);
+        if (requestDispatcher != null) {
+            requestDispatcher.forward(request, response);
         }
 
     }

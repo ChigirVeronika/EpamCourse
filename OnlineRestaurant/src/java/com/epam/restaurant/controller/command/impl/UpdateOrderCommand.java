@@ -10,7 +10,10 @@ import com.epam.restaurant.service.exception.ServiceException;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import static com.epam.restaurant.util.SessionUtil.*;
+import static com.epam.restaurant.controller.name.RequestParameterName.*;
+
 /**
  * Update order dish (with new quantity) in order.
  * Handle 'Update' button on the order page.
@@ -23,19 +26,19 @@ public class UpdateOrderCommand implements Command {
     public String execute(HttpServletRequest request, HttpServletResponse response) throws CommandException {
         String result = JspPageName.ORDER_JSP;
 
-        if(sessionExpired(request)){
-            result=JspPageName.LOGIN_JSP;
+        if (sessionExpired(request)) {
+            result = JspPageName.LOGIN_JSP;
             return result;
         }
 
-        Order currentOrder = (Order)request.getSession().getAttribute("order");
+        Order currentOrder = (Order) request.getSession().getAttribute(ORDER);
 
-        try{
-            Long orderDishId = Long.parseLong(request.getParameter("item_id"));
-            Integer newQuantity = Integer.parseInt(request.getParameter("quantity"));
+        try {
+            Long orderDishId = Long.parseLong(request.getParameter(ITEM_ID));
+            Integer newQuantity = Integer.parseInt(request.getParameter(DISH_QUANTITY));
 
-            for(OrderDish od: currentOrder.getOrderDishes()){
-                if(od.getId() == orderDishId){
+            for (OrderDish od : currentOrder.getOrderDishes()) {
+                if (od.getId() == orderDishId) {
                     od.setQuantity(newQuantity);
                     orderDishService.update(od);
                     break;

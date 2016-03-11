@@ -5,7 +5,7 @@ import com.epam.restaurant.dao.Identified;
 import java.io.Serializable;
 
 /**
- *
+ * Describes dish fro order entity.
  */
 public class OrderDish implements Serializable, Identified<Long> {
     public static final long serialVersionUID = 1;

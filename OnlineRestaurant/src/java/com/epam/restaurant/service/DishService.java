@@ -10,64 +10,60 @@ import org.apache.log4j.Logger;
 
 import java.math.BigDecimal;
 
-
 /**
  * Perform service operations with dish object.
  */
 public class DishService {
-    private static final Logger LOGGER = Logger.getLogger( DishService.class);
-
     private static DishSqlDao dishDao = (DishSqlDao) SqlDaoFactory.getInstance().getDao(SqlDaoFactory.DaoType.DISH);
 
     private static DishService instance = new DishService();
 
-    private DishService(){}
+    private DishService() {
+    }
 
-    public static DishService getInstance(){return instance;}
+    public static DishService getInstance() {
+        return instance;
+    }
 
-    public Dish getById(Long dishId) throws ServiceException{
+    public Dish getById(Long dishId) throws ServiceException {
         try {
             return dishDao.getByPK(dishId);
         } catch (DaoException e) {
-            LOGGER.error("Can't do DishSqlDao in DishService",e);
             throw new ServiceException("DishServiceException");
         }
     }
 
     public Dish create(String name, String description, String ingredients,
-                       BigDecimal price, int  quantity, Long categoryId, String image)
-                        throws ServiceException{
-        Dish dish = new Dish(name,description,ingredients,price,quantity,categoryId,image);
+                       BigDecimal price, int quantity, Long categoryId, String image)
+            throws ServiceException {
+        Dish dish = new Dish(name, description, ingredients, price, quantity, categoryId, image);
         try {
-            if(ValidationUtil.dishValid(dish)){
+            if (ValidationUtil.dishValid(dish)) {
                 return dishDao.persist(dish);
-            }else {
+            } else {
                 throw new ServiceException("DishServiceException");
             }
         } catch (DaoException e) {
-            LOGGER.error("Can't do DishSqlDao in DishService",e);
             throw new ServiceException("DishServiceException");
         }
     }
 
-    public void delete(Dish dish) throws ServiceException{
+    public void delete(Dish dish) throws ServiceException {
         try {
             dishDao.delete(dish);
         } catch (DaoException e) {
-            LOGGER.error("Can't do DishSqlDao in DishService",e);
             throw new ServiceException("DishServiceException");
         }
     }
 
-    public void update(Dish dish) throws ServiceException{
+    public void update(Dish dish) throws ServiceException {
         try {
-            if(ValidationUtil.dishValid(dish)){
+            if (ValidationUtil.dishValid(dish)) {
                 dishDao.update(dish);
-            }else {
+            } else {
                 throw new ServiceException("DishServiceException");
             }
         } catch (DaoException e) {
-            LOGGER.error("Can't do DishSqlDao in DishService",e);
             throw new ServiceException("DishServiceException");
         }
     }

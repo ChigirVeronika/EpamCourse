@@ -9,19 +9,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import static com.epam.restaurant.controller.name.RequestParameterName.*;
+
 /**
  * Control user logout from site.
  * Handle "logout" button.
  */
 public class LogoutCommand implements Command {
-    private static final Logger LOGGER = Logger.getLogger(LogoutCommand.class);
 
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws CommandException {
         HttpSession currentSession = request.getSession(false);
-        if (currentSession != null)
+        if (currentSession != null) {
             currentSession.invalidate();
-        LOGGER.info("LogoutCommand executed");
+        }
         return JspPageName.INDEX_JSP;
     }
 }

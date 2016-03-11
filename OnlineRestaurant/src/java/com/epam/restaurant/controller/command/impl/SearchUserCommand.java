@@ -9,9 +9,12 @@ import com.epam.restaurant.service.exception.ServiceException;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import static com.epam.restaurant.util.SessionUtil.*;
+import static com.epam.restaurant.controller.name.RequestParameterName.*;
+
 /**
- *
+ * Search user by login for user with role ADMIN.
  */
 public class SearchUserCommand implements Command {
 
@@ -21,18 +24,18 @@ public class SearchUserCommand implements Command {
     public String execute(HttpServletRequest request, HttpServletResponse response) throws CommandException {
         String result = JspPageName.USERS_JSP;
 
-        if(sessionExpired(request)){
-            result=JspPageName.LOGIN_JSP;
+        if (sessionExpired(request)) {
+            result = JspPageName.LOGIN_JSP;
             return result;
         }
 
-        String login = request.getParameter("login");
-        try{
+        String login = request.getParameter(LOGIN);
+        try {
             User user = userService.get(login);
-            if(user!=null){
-                request.setAttribute("founded_user",user);
-            }else {
-                request.setAttribute("message","not found");
+            if (user != null) {
+                request.setAttribute(FOUNDED_USER, user);
+            } else {
+                request.setAttribute(MESSAGE, NOT_FOUND);
             }
         } catch (ServiceException e) {
             throw new CommandException("Cant't execute SearchUserCommand");

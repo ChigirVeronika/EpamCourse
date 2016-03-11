@@ -19,35 +19,33 @@ import static com.epam.restaurant.controller.name.RequestParameterName.*;
  * Handle "register" button.
  */
 public class RegisterCommand implements Command {
-    private static final Logger LOGGER = Logger.getLogger( RegisterCommand.class);
 
     private static UserService userService = UserService.getInstance();
 
-   @Override
+    @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws CommandException {
-        String name=request.getParameter(NAME);
-        String surname=request.getParameter(SURNAME);
-        String login=request.getParameter(LOGIN);
-        String password=request.getParameter(PASSWORD);
+        String name = request.getParameter(NAME);
+        String surname = request.getParameter(SURNAME);
+        String login = request.getParameter(LOGIN);
+        String password = request.getParameter(PASSWORD);
         String email = request.getParameter(EMAIL);
         String payCard = request.getParameter(PAY_CARD_ID);
 
         String result = JspPageName.REGISTER_JSP;
-        try{
-            if(userService.get(login)==null){
+        try {
+            if (userService.get(login) == null) {
                 User user = userService.create(name, surname, email, payCard, login, password);
                 result = JspPageName.LOGIN_JSP;//зарегался - теперь залогинься
-            }else {
-                String path =I18N;
+            } else {
+                String path = I18N;
                 String currentLanguage = (String) request.getSession().getAttribute(LANGUAGE);
-                if(currentLanguage!=null && !currentLanguage.equals(EN)){
-                    path+=UNDERLINE+currentLanguage;
+                if (currentLanguage != null && !currentLanguage.equals(EN)) {
+                    path += UNDERLINE + currentLanguage;
                 }
                 ResourceBundle rb = ResourceBundle.getBundle(path);
-                request.setAttribute(REQUIRED_MESSAGE,rb.getString("register.wrong"));
+                request.setAttribute(REQUIRED_MESSAGE, rb.getString(REGISTER_WRONG));
             }
-        }catch (ServiceException e){
-            LOGGER.error("Can't do UserService in RegisterCommand ");
+        } catch (ServiceException e) {
             throw new CommandException("Registration failed");
         }
 

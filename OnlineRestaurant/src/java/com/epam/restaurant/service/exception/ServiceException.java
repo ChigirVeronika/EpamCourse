@@ -4,7 +4,7 @@ package com.epam.restaurant.service.exception;
 import com.epam.restaurant.exception.ProjectException;
 
 /**
- * Created by Вероника on 22.01.2016.
+ * Exception for service layer classes.
  */
 public class ServiceException extends ProjectException {
     private static final long serialVersionUID = 1;

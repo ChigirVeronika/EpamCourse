@@ -6,7 +6,7 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 
 /**
- * Created by Вероника on 04.02.2016.
+ * Describes dish entity.
  */
 public class Dish implements Serializable, Identified<Long>{
     public static final long serialVersionUID = 1;

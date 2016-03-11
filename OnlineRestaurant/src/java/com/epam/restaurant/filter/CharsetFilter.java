@@ -4,16 +4,18 @@ import javax.servlet.*;
 import java.io.IOException;
 
 /**
- * Created by Вероника on 23.02.2016.
+ * Filter charset.
  */
 public class CharsetFilter implements Filter {
     private String encoding;
     private ServletContext context;
 
+    private static final String CHARACTER = "characterEncoding";
+
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
-        encoding=filterConfig.getInitParameter("characterEncoding");
-        context=filterConfig.getServletContext();
+        encoding = filterConfig.getInitParameter(CHARACTER);
+        context = filterConfig.getServletContext();
     }
 
     @Override
@@ -21,10 +23,9 @@ public class CharsetFilter implements Filter {
         servletRequest.setCharacterEncoding(encoding);
         servletResponse.setCharacterEncoding(encoding);
 
-//        context.log("Charset was set successfully.");
-       // System.out.println("Charset was set successfully.");
+        context.log("Charset was set successfully.");
 
-        filterChain.doFilter(servletRequest,servletResponse);
+        filterChain.doFilter(servletRequest, servletResponse);
     }
 
     @Override

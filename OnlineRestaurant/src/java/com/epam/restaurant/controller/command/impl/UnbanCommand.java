@@ -13,12 +13,12 @@ import javax.servlet.http.HttpServletResponse;
 
 import static com.epam.restaurant.controller.name.RequestParameterName.*;
 import static com.epam.restaurant.util.SessionUtil.*;
+
 /**
  * Change user's role to BLOCKED from USER
  * Handle 'Unban' button on ADMIN user page
  */
 public class UnbanCommand implements Command {
-    private static final Logger LOGGER = Logger.getLogger( UnbanCommand.class);
 
     private static final UserService userService = UserService.getInstance();
 
@@ -26,20 +26,19 @@ public class UnbanCommand implements Command {
     public String execute(HttpServletRequest request, HttpServletResponse response) throws CommandException {
         String result = JspPageName.USERS_JSP;
 
-        if(sessionExpired(request)){
-            result=JspPageName.LOGIN_JSP;
+        if (sessionExpired(request)) {
+            result = JspPageName.LOGIN_JSP;
             return result;
         }
 
         String userLogin = request.getParameter(LOGIN);
-        try{
+        try {
             User user = userService.get(userLogin);
-            if(user!=null){
+            if (user != null) {
                 user.setRole(User.Role.USER);
                 userService.update(user);
             }
         } catch (ServiceException e) {
-            LOGGER.error("Can't do UserService in UndanCommand ",e);
             throw new CommandException("Cant't execute UnbanCommand");
         }
 

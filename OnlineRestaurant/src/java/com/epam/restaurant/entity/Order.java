@@ -9,7 +9,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
- *
+ * Describes user order entity.
  */
 public class Order implements Serializable, Identified<Long> {
     public static final long serialVersionUID = 1;

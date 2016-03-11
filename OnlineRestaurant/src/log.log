@@ -4428,3 +4428,138 @@ com.epam.restaurant.controller.command.exception.CommandException: Cant't execut
 2016-03-08 23:29:22 INFO  MainController:44 - add_category_command
 2016-03-08 23:29:22 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.AddCategoryCommand@f6a739
 2016-03-08 23:29:22 INFO  MainController:52 - Page: login.jsp
+2016-03-10 18:21:40 INFO  MainController:44 - news_command
+2016-03-10 18:21:42 INFO  ConnectionPoolImpl:65 - Pool has been initialized
+2016-03-10 18:21:42 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.NewsCommand@db5da2
+2016-03-10 18:21:42 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-10 18:21:42 INFO  MainController:52 - Page: news.jsp
+2016-03-10 18:22:33 INFO  MainController:44 - menu_command
+2016-03-10 18:22:33 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.MenuCommand@14a14e2
+2016-03-10 18:22:33 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-10 18:22:33 INFO  MainController:52 - Page: menu.jsp
+2016-03-10 18:22:38 INFO  MainController:44 - news_command
+2016-03-10 18:22:38 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.NewsCommand@db5da2
+2016-03-10 18:22:38 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-10 18:22:38 INFO  MainController:52 - Page: news.jsp
+2016-03-10 18:22:41 INFO  MainController:44 - menu_command
+2016-03-10 18:22:41 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.MenuCommand@14a14e2
+2016-03-10 18:22:41 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-10 18:22:41 INFO  MainController:52 - Page: menu.jsp
+2016-03-10 18:22:45 INFO  MainController:44 - category_command
+2016-03-10 18:22:45 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.CategoryCommand@638ccf
+2016-03-10 18:22:45 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-10 18:22:45 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-10 18:22:45 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-10 18:22:45 INFO  MainController:52 - Page: category.jsp
+2016-03-10 18:22:50 INFO  MainController:44 - news_command
+2016-03-10 18:22:50 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.NewsCommand@db5da2
+2016-03-10 18:22:50 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-10 18:22:50 INFO  MainController:52 - Page: news.jsp
+2016-03-10 18:57:33 INFO  MainController:44 - menu_command
+2016-03-10 18:57:33 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.MenuCommand@14a14e2
+2016-03-10 18:57:33 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-10 18:57:33 INFO  MainController:52 - Page: menu.jsp
+2016-03-10 18:57:36 INFO  MainController:44 - category_command
+2016-03-10 18:57:36 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.CategoryCommand@638ccf
+2016-03-10 18:57:36 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-10 18:57:36 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-10 18:57:36 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-10 18:57:36 INFO  MainController:52 - Page: category.jsp
+2016-03-10 18:57:44 INFO  MainController:44 - category_command
+2016-03-10 18:57:44 INFO  MainController:47 - com.epam.restaurant.controller.command.impl.CategoryCommand@638ccf
+2016-03-10 18:57:44 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-10 18:57:44 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-10 18:57:44 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-10 18:57:44 INFO  MainController:52 - Page: category.jsp
+2016-03-11 12:53:54 INFO  ConnectionPoolImpl:65 - Pool has been initialized
+2016-03-11 12:53:54 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 12:53:55 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 12:53:59 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 12:54:08 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 12:54:11 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 12:54:21 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 12:54:21 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 12:54:21 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 12:54:35 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 12:54:35 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 12:54:36 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 12:54:43 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 12:54:43 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 12:54:43 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 12:54:52 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 12:54:52 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 12:54:57 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 12:54:57 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 12:55:02 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 12:55:08 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 12:55:08 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 12:55:08 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 12:55:12 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 12:55:12 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 12:55:12 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 12:55:15 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 12:55:15 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 12:55:15 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 12:55:19 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 13:06:51 INFO  ConnectionPoolImpl:65 - Pool has been initialized
+2016-03-11 13:06:51 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 13:06:52 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 13:06:58 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 13:07:08 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 13:07:08 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 13:07:12 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 13:09:14 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 13:09:14 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 13:09:16 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 13:09:24 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 13:09:24 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 13:09:24 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 13:09:53 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 13:09:57 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 13:10:01 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 13:10:01 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 13:10:01 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 13:10:31 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 13:10:31 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 13:10:31 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 13:10:31 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 13:10:31 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 13:10:38 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 13:10:38 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 13:11:10 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 13:11:14 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 13:11:21 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 13:11:21 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 13:11:21 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 13:11:24 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 13:11:24 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 13:11:32 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 13:11:32 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 13:11:32 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 13:11:32 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 13:11:32 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 13:11:36 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 13:11:36 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 13:11:46 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 13:11:46 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 13:11:47 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 13:11:47 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 13:11:47 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 13:11:49 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 13:11:49 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 13:12:02 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 13:12:02 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 13:12:02 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 13:12:02 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 13:12:02 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 13:12:08 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 13:12:08 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 13:12:12 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 13:12:12 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 13:12:12 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 13:12:12 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 13:12:12 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 13:12:23 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 13:12:23 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 13:12:23 INFO  ConnectionPoolImpl:76 - Connection is taken.
+2016-03-11 13:12:45 INFO  ConnectionPoolImpl:76 - Connection is taken.

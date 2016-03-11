@@ -14,12 +14,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
+import static com.epam.restaurant.controller.name.RequestParameterName.*;
+
 /**
  * Show page with concrete dish.
  */
 public class DishCommand implements Command {
-    private static final Logger LOGGER = Logger.getLogger( DishCommand.class);
-
     private static final DishService dishService = DishService.getInstance();
 
     private static final CategoryService categoryService = CategoryService.getInstance();
@@ -28,15 +28,15 @@ public class DishCommand implements Command {
     public String execute(HttpServletRequest request, HttpServletResponse response) throws CommandException {
         String result = JspPageName.DISH_JSP;
 
-        long dishId=Long.parseLong(request.getParameter("id"));
-        try{
+        long dishId = Long.parseLong(request.getParameter(ID));
+        try {
             List<Category> categoryList = categoryService.getAllCategories();
-            Dish dish=dishService.getById(dishId);
+            Dish dish = dishService.getById(dishId);
 
-            request.setAttribute("dish",dish);
-            request.setAttribute("categories",categoryList);
+            request.setAttribute(DISH, dish);
+            request.setAttribute(CATEGORIES, categoryList);
 
-        }catch (ServiceException e){
+        } catch (ServiceException e) {
             throw new CommandException("Cant't execute DishCommand");
         }
 

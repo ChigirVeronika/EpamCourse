@@ -110,7 +110,9 @@ public class CategorySqlDao extends AbstractSqlDao<Category, Long> {
 
     public Category getByName(String name) throws DaoException {
         List<Category> list;
-        try (Connection connection = pool.getConnection()) {
+        Connection connection = null;
+        try {
+            connection = pool.getConnection();
             String sql = dbBundle.getString("CATEGORY.WITH_NAME");
             PreparedStatement statement = connection.prepareStatement(sql);
             statement.setString(1, name);
@@ -125,6 +127,14 @@ public class CategorySqlDao extends AbstractSqlDao<Category, Long> {
             }
         }catch (ConnectionPoolException |SQLException e) {
             throw new DaoException("Exception");
+        }finally {
+            try {
+                if (connection != null) {
+                    pool.returnConnection(connection);
+                }
+            } catch (ConnectionPoolException e) {
+                throw new DaoException("Dao Exception");
+            }
         }
         return list.iterator().next();
     }

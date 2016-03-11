@@ -12,10 +12,6 @@ import javax.servlet.http.HttpServletResponse;
  * Control unhandled situations.
  */
 public class UnknownCommand implements Command {
-    private static final Logger LOGGER = Logger.getLogger( UnknownCommand.class);
-
-    public UnknownCommand(){}
-
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws CommandException {
         return JspPageName.ERROR_JSP;

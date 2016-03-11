@@ -12,7 +12,7 @@ import com.epam.restaurant.util.ValidationUtil;
 import java.util.List;
 
 /**
- * .
+ * Perform service operations with category object.
  */
 public class CategoryService {
 
@@ -63,11 +63,11 @@ public class CategoryService {
     public Category create(String name, String description) throws ServiceException {
         Category category = new Category(name, description);
         try {
-//            if (ValidationUtil.categoryValid(category)) {
+            if (ValidationUtil.categoryValid(category)) {
                 return categoryDao.persist(category);
-//            } else {
-//                throw new ServiceException("CategoryService Exception");
-//            }
+            } else {
+                throw new ServiceException("CategoryService Exception");
+            }
         } catch (DaoException e) {
             throw new ServiceException("CategoryService Exception");
         }
@@ -75,11 +75,11 @@ public class CategoryService {
 
     public void update(Category category) throws ServiceException {
         try {
-//            if (ValidationUtil.categoryValid(category)) {
+            if (ValidationUtil.categoryValid(category)) {
                 categoryDao.update(category);
-//            } else {
-//                throw new ServiceException("CategoryService Exception");
-//            }
+            } else {
+                throw new ServiceException("CategoryService Exception");
+            }
         } catch (DaoException e) {
             throw new ServiceException("CategoryService Exception");
         }

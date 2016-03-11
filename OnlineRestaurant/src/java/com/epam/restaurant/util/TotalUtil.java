@@ -3,7 +3,7 @@ package com.epam.restaurant.util;
 import java.math.BigDecimal;
 
 /**
- *
+ * Calculate total price for user order for ShowOrder tag class.
  */
 public class TotalUtil {
 

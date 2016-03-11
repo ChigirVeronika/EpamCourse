@@ -9,16 +9,17 @@ import com.epam.restaurant.service.exception.ServiceException;
 import java.util.List;
 
 /**
- *
+ * Perform service operations with orderDish object.
  */
 public class OrderDishService {
     private static final OrderDishSqlDao orderDishDao = (OrderDishSqlDao) SqlDaoFactory.getInstance().getDao(SqlDaoFactory.DaoType.ORDERDISH);
 
     private static final OrderDishService instance = new OrderDishService();
 
-    private OrderDishService(){}
+    private OrderDishService() {
+    }
 
-    public static  OrderDishService getInstance(){
+    public static OrderDishService getInstance() {
         return instance;
     }
 
@@ -30,9 +31,9 @@ public class OrderDishService {
         }
     }
 
-    public OrderDish create(long dishId,long orderId, int quantity)
-            throws ServiceException{
-        OrderDish orderDish = new OrderDish (dishId,orderId,quantity);
+    public OrderDish create(long dishId, long orderId, int quantity)
+            throws ServiceException {
+        OrderDish orderDish = new OrderDish(dishId, orderId, quantity);
         try {
             return orderDishDao.persist(orderDish);
         } catch (DaoException e) {
@@ -40,7 +41,7 @@ public class OrderDishService {
         }
     }
 
-    public void delete(OrderDish orderDish) throws ServiceException{
+    public void delete(OrderDish orderDish) throws ServiceException {
         try {
             orderDishDao.delete(orderDish);
         } catch (DaoException e) {
@@ -48,7 +49,7 @@ public class OrderDishService {
         }
     }
 
-    public void update(OrderDish orderDish) throws ServiceException{
+    public void update(OrderDish orderDish) throws ServiceException {
         try {
             orderDishDao.update(orderDish);
         } catch (DaoException e) {
@@ -56,11 +57,11 @@ public class OrderDishService {
         }
     }
 
-    public List<OrderDish> getAllFromOrder(Long orderId) throws ServiceException{
+    public List<OrderDish> getAllFromOrder(Long orderId) throws ServiceException {
         try {
             return orderDishDao.getAllFromOrder(orderId);
         } catch (DaoException e) {
-            throw new ServiceException("");
+            throw new ServiceException("OrderServiceException");
         }
     }
 }
