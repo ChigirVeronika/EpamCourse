@@ -7,6 +7,7 @@ import com.epam.restaurant.dao.connectionpool.exception.ConnectionPoolException;
 import com.epam.restaurant.dao.connectionpool.impl.ConnectionPoolImpl;
 import com.epam.restaurant.dao.exception.DaoException;
 import com.epam.restaurant.entity.User;
+import org.apache.log4j.Logger;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -16,21 +17,24 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.ResourceBundle;
 
+import static com.epam.restaurant.dao.name.ParameterName.*;
+
 /**
  * Dao implementation for MySQL database and User entity.
  */
 public class UserSqlDao extends AbstractSqlDao<User, Long> {
 
+    private static final Logger LOGGER = Logger.getLogger(UserSqlDao.class);
     /**
      * Resource bundle with MySQL DB queries
      */
-    private ResourceBundle dbBundle = ResourceBundle.getBundle("db.db");
+    private ResourceBundle dbBundle = ResourceBundle.getBundle(BUNDLE);
 
     private ConnectionPool pool = ConnectionPoolImpl.getInstance();
 
     private final static UserSqlDao instance = new UserSqlDao();
 
-    public static GenericDao getInstance(){
+    public static GenericDao getInstance() {
         return instance;
     }
 
@@ -42,22 +46,22 @@ public class UserSqlDao extends AbstractSqlDao<User, Long> {
 
     @Override
     public String getSelectQuery() {
-        return dbBundle.getString("USER.SELECT");
+        return dbBundle.getString(USER_SELECT);
     }
 
     @Override
     public String getCreateQuery() {
-        return dbBundle.getString("USER.INSERT");
+        return dbBundle.getString(USER_INSERT);
     }
 
     @Override
     public String getUpdateQuery() {
-        return dbBundle.getString("USER.UPDATE");
+        return dbBundle.getString(USER_UPDATE);
     }
 
     @Override
     public String getDeleteQuery() {
-        return dbBundle.getString("USER.DELETE");
+        return dbBundle.getString(USER_DELETE);
     }
 
     @Override
@@ -73,18 +77,19 @@ public class UserSqlDao extends AbstractSqlDao<User, Long> {
             while (rs.next()) {
                 PersistUser student = new PersistUser();
 
-                student.setId(rs.getInt("id"));
-                student.setName(rs.getString("name"));
-                student.setSurname(rs.getString("surname"));
-                student.setLogin(rs.getString("login"));
-                student.setHash(rs.getString("password"));
-                student.setEmail(rs.getString("email"));
-                student.setRole(User.Role.valueOf(rs.getString("role")));
-                student.setPayCard(rs.getString("pay_card_id"));
+                student.setId(rs.getInt(ID));
+                student.setName(rs.getString(NAME));
+                student.setSurname(rs.getString(SURNAME));
+                student.setLogin(rs.getString(LOGIN));
+                student.setHash(rs.getString(PASSWORD));
+                student.setEmail(rs.getString(EMAIL));
+                student.setRole(User.Role.valueOf(rs.getString(ROLE)));
+                student.setPayCard(rs.getString(PAY_CARD_ID));
                 result.add(student);
             }
+            LOGGER.info("ResultSet parsed");
         } catch (SQLException e) {
-            throw new DaoException("Exception");
+            throw new DaoException("Exception in parseResultSet method", e);
         }
 
         return result;
@@ -101,8 +106,10 @@ public class UserSqlDao extends AbstractSqlDao<User, Long> {
             statement.setString(6, object.getRole().toString());
             statement.setString(7, object.getPayCard());
             statement.setLong(8, object.getId());
+            LOGGER.info("Statement for update prepared");
         } catch (SQLException e) {
-            throw new DaoException("Exception");
+            LOGGER.error("Exception in prepareStatementForUpdate method");
+            throw new DaoException("Exception in prepareStatementForUpdate method", e);
         }
     }
 
@@ -116,17 +123,19 @@ public class UserSqlDao extends AbstractSqlDao<User, Long> {
             statement.setString(5, object.getEmail());
             statement.setString(6, object.getRole().toString());
             statement.setString(7, object.getPayCard());
+            LOGGER.info("Statement for insert prepared");
         } catch (SQLException e) {
-        throw new DaoException("Exception");
+            LOGGER.error("Exception in prepareStatementForInsert method");
+            throw new DaoException("Exception in prepareStatementForInsert method", e);
         }
     }
 
     public User getByLogin(String login) throws DaoException {
         List<User> list;
-        Connection connection=null;
+        Connection connection = null;
         try {
             connection = pool.getConnection();
-            String sql = dbBundle.getString("USER.WITH_LOGIN");
+            String sql = dbBundle.getString(USER_WITH_LOGIN);
             PreparedStatement statement = connection.prepareStatement(sql);
             statement.setString(1, login);
             ResultSet rs = statement.executeQuery();
@@ -136,18 +145,22 @@ public class UserSqlDao extends AbstractSqlDao<User, Long> {
                 return null;
             }
             if (list.size() > 1) {
+                LOGGER.error("Received more than one record");
                 throw new SQLException("Received more than one record.");
             }
 
-        }catch (ConnectionPoolException |SQLException e) {
+        } catch (ConnectionPoolException | SQLException e) {
+            LOGGER.error("Exception");
             throw new DaoException("Exception");
-        }finally {
+        } finally {
             try {
-                if(connection != null) {
+                if (connection != null) {
                     pool.returnConnection(connection);
+                    LOGGER.info("Connection returned successfully");
                 }
             } catch (ConnectionPoolException e) {
-                throw new DaoException("UserSqlDao Exception");
+                LOGGER.error("Exception during returning connection");
+                throw new DaoException("Dao Exception");
             }
         }
         return list.iterator().next();

@@ -54,7 +54,6 @@ public class ConnectionPoolImpl implements ConnectionPool{
         int size = Integer.parseInt(DAOConfigManager.getProperty(DAOConfigManager.POOL_SIZE));
 
         try {
-            //DriverManager.registerDriver(new com.mysql.jdbc.Driver());
             Class.forName(DAOConfigManager.DRIVER);
             connections = new ArrayBlockingQueue<>(size);
             for (int i = 0; i < size; i++) {

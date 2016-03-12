@@ -12,8 +12,9 @@ public class DAOConfigManager {
     public static final String PASS = "db.password";
     public static final String POOL_SIZE = "db.poolsize";
     public static final String DRIVER = "org.gjt.mm.mysql.Driver";
+    public static final String BUNDLE = "db.db";
 
-    private static ResourceBundle resourceBundle = ResourceBundle.getBundle("db.db");
+    private static ResourceBundle resourceBundle = ResourceBundle.getBundle(BUNDLE);
 
     public static ResourceBundle getResourceBundle() {
         return resourceBundle;
@@ -25,7 +26,7 @@ public class DAOConfigManager {
 
     public static String getProperty(String property) {
         if (resourceBundle == null) {
-            resourceBundle = ResourceBundle.getBundle("db.db");
+            resourceBundle = ResourceBundle.getBundle(BUNDLE);
             LOGGER.info("Resource bundle of db has been created");
         }
         return (String) resourceBundle.getObject(property);

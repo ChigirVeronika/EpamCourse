@@ -5,7 +5,7 @@ import com.epam.restaurant.dao.impl.*;
 import org.apache.log4j.Logger;
 
 /**
- * Created by Вероника on 22.01.2016.
+ * Factory pattern realization in dao layer.
  */
 public class SqlDaoFactory{
     private static final Logger LOGGER = Logger.getLogger(SqlDaoFactory.class);
@@ -16,7 +16,7 @@ public class SqlDaoFactory{
         return  instance;
     }
 
-    public GenericDao getDao(DaoType type){// throws DaoException TODO???
+    public GenericDao getDao(DaoType type){
         switch (type){
             case DISH:
                 return DishSqlDao.getInstance();
@@ -31,6 +31,7 @@ public class SqlDaoFactory{
             case NEWS:
                 return NewsSqlDao.getInstance();
         }
+        LOGGER.info("No such dao type.");
         return null;
     }
 

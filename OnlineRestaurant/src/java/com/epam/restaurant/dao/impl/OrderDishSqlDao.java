@@ -8,6 +8,7 @@ import com.epam.restaurant.dao.connectionpool.impl.ConnectionPoolImpl;
 import com.epam.restaurant.dao.exception.DaoException;
 import com.epam.restaurant.entity.OrderDish;
 import com.epam.restaurant.entity.User;
+import org.apache.log4j.Logger;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -18,20 +19,25 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.ResourceBundle;
 
+import static com.epam.restaurant.dao.name.ParameterName.*;
+
 /**
  * Dao implementation for MySQL database and OrderDish entity.
  */
 public class OrderDishSqlDao extends AbstractSqlDao<OrderDish, Long> {
+    private static final Logger LOGGER = Logger.getLogger(OrderSqlDao.class);
 
-    private ResourceBundle dbBundle = ResourceBundle.getBundle("db.db");
+    private ResourceBundle dbBundle = ResourceBundle.getBundle(BUNDLE);
 
     private ConnectionPool pool = ConnectionPoolImpl.getInstance();
 
     private final static OrderDishSqlDao instance = new OrderDishSqlDao();
 
-    public static GenericDao getInstance(){return instance;}
+    public static GenericDao getInstance() {
+        return instance;
+    }
 
-    private class PersistOrderDish extends OrderDish{
+    private class PersistOrderDish extends OrderDish {
         public void setId(long id) {
             super.setId(id);
         }
@@ -39,22 +45,22 @@ public class OrderDishSqlDao extends AbstractSqlDao<OrderDish, Long> {
 
     @Override
     public String getSelectQuery() {
-        return dbBundle.getString("ORDER_DISH.SELECT");
+        return dbBundle.getString(ORDER_DISH_SELECT);
     }
 
     @Override
     public String getCreateQuery() {
-        return dbBundle.getString("ORDER_DISH.INSERT");
+        return dbBundle.getString(ORDER_DISH_INSERT);
     }
 
     @Override
     public String getUpdateQuery() {
-        return dbBundle.getString("ORDER_DISH.UPDATE");
+        return dbBundle.getString(ORDER_DISH_UPDATE);
     }
 
     @Override
     public String getDeleteQuery() {
-        return dbBundle.getString("ORDER_DISH.DELETE");
+        return dbBundle.getString(ORDER_DISH_DELETE);
     }
 
     @Override
@@ -62,16 +68,17 @@ public class OrderDishSqlDao extends AbstractSqlDao<OrderDish, Long> {
         LinkedList<OrderDish> result = new LinkedList<>();
 
         try {
-            while (rs.next()){
+            while (rs.next()) {
                 PersistOrderDish orderDish = new PersistOrderDish();
-                orderDish.setId(rs.getLong("id"));
-                orderDish.setDishId(rs.getLong("dish_id"));
-                orderDish.setOrderId(rs.getLong("order_id"));
-                orderDish.setQuantity(rs.getInt("quantity"));
+                orderDish.setId(rs.getLong(ID));
+                orderDish.setDishId(rs.getLong(DISH_ID));
+                orderDish.setOrderId(rs.getLong(ORDER_ID));
+                orderDish.setQuantity(rs.getInt(QUANTITY));
                 result.add(orderDish);
             }
+            LOGGER.info("ResultSet parsed.");
         } catch (SQLException e) {
-            throw new DaoException("OrderDishSqlDao Exception");
+            throw new DaoException("Exception in parseResultSet method", e);
         }
         return result;
     }
@@ -82,20 +89,24 @@ public class OrderDishSqlDao extends AbstractSqlDao<OrderDish, Long> {
             statement.setLong(1, object.getDishId());
             statement.setLong(2, object.getOrderId());
             statement.setInt(3, object.getQuantity());
-        }catch (SQLException e) {
-            throw new DaoException("OrderDishSqlDao Exception");
+            LOGGER.info("Statement for insert prepared");
+        } catch (SQLException e) {
+            LOGGER.error("Exception in prepareStatementForInsert method");
+            throw new DaoException("Exception in prepareStatementForInsert method", e);
         }
     }
 
     @Override
     protected void prepareStatementForUpdate(PreparedStatement statement, OrderDish object) throws DaoException {
-        try{
+        try {
             statement.setLong(1, object.getDishId());
             statement.setLong(2, object.getOrderId());
             statement.setInt(3, object.getQuantity());
             statement.setLong(4, object.getId());
-        }catch (SQLException e) {
-            throw new DaoException("OrderDishSqlDao Exception");
+            LOGGER.info("Statement for update prepared.");
+        } catch (SQLException e) {
+            LOGGER.error("Exception in prepareStatementForUpdate method");
+            throw new DaoException("Exception in prepareStatementForUpdate method", e);
         }
     }
 
@@ -108,29 +119,32 @@ public class OrderDishSqlDao extends AbstractSqlDao<OrderDish, Long> {
     public List<OrderDish> getAllFromOrder(Long key) throws DaoException {
         List<OrderDish> result;
 
-        Connection connection=null;
-        try  {
+        Connection connection = null;
+        try {
             connection = pool.getConnection();
-            String sql = dbBundle.getString("ORDER_DISH.FROM_ORDER");
+            String sql = dbBundle.getString(ORDER_DISH_FORM_ORDER);
             PreparedStatement statement = connection.prepareStatement(sql);
             statement.setLong(1, key);
             ResultSet rs = statement.executeQuery();
             result = parseResultSet(rs);
-            if(result==null){
+            if (result == null) {
                 return Collections.emptyList();
             }
-        }catch (ConnectionPoolException |SQLException e) {
-            throw new DaoException("Dao Exception");
-        }finally {
+            LOGGER.info("Method getAllFromOrder executed");
+        } catch (ConnectionPoolException | SQLException e) {
+            LOGGER.error("Exception");
+            throw new DaoException("Exception");
+        } finally {
             try {
-                if(connection != null) {
+                if (connection != null) {
                     pool.returnConnection(connection);
+                    LOGGER.info("Connection returned ");
                 }
             } catch (ConnectionPoolException e) {
-                throw new DaoException("OrderDishSqlDao Exception");
+                LOGGER.error("Exception during returning connection");
+                throw new DaoException("Exception");
             }
         }
-
         return result;
     }
 }

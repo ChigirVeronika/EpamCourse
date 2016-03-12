@@ -4,7 +4,7 @@ package com.epam.restaurant.dao.exception;
 import com.epam.restaurant.exception.ProjectException;
 
 /**
- * Created by Вероника on 22.01.2016.
+ * Exception claas for dao layer classes.
  */
 public class DaoException extends ProjectException {
     private static final long serialVersionUID = 1;

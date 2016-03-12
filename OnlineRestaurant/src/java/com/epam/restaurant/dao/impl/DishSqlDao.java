@@ -8,6 +8,7 @@ import com.epam.restaurant.dao.connectionpool.impl.ConnectionPoolImpl;
 import com.epam.restaurant.dao.exception.DaoException;
 import com.epam.restaurant.entity.Dish;
 import com.epam.restaurant.entity.User;
+import org.apache.log4j.Logger;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -18,11 +19,15 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.ResourceBundle;
 
+import static com.epam.restaurant.dao.name.ParameterName.*;
+
 /**
  * Dao implementation for MySQL database and Dish entity.
  */
 public class DishSqlDao extends AbstractSqlDao<Dish, Long> {
-    private ResourceBundle dbBundle = ResourceBundle.getBundle("db.db");
+    private static final Logger LOGGER = Logger.getLogger(DishSqlDao.class);
+
+    private ResourceBundle dbBundle = ResourceBundle.getBundle(BUNDLE);
 
     private ConnectionPool pool = ConnectionPoolImpl.getInstance();
 
@@ -40,22 +45,22 @@ public class DishSqlDao extends AbstractSqlDao<Dish, Long> {
 
     @Override
     public String getSelectQuery() {
-        return dbBundle.getString("DISH.SELECT");
+        return dbBundle.getString(DISH_SELECT);
     }
 
     @Override
     public String getCreateQuery() {
-        return dbBundle.getString("DISH.INSERT");
+        return dbBundle.getString(DISH_INSERT);
     }
 
     @Override
     public String getUpdateQuery() {
-        return dbBundle.getString("DISH.UPDATE");
+        return dbBundle.getString(DISH_UPDATE);
     }
 
     @Override
     public String getDeleteQuery() {
-        return dbBundle.getString("DISH.DELETE");
+        return dbBundle.getString(DISH_DELETE);
     }
 
     @Override
@@ -65,18 +70,19 @@ public class DishSqlDao extends AbstractSqlDao<Dish, Long> {
         try {
             while (rs.next()) {
                 PersistDish dish = new PersistDish();
-                dish.setId(rs.getLong("id"));
-                dish.setName(rs.getString("name"));
-                dish.setDescription(rs.getString("description"));
-                dish.setIngredients(rs.getString("ingredients"));
-                dish.setPrice(rs.getBigDecimal("price"));
-                dish.setQuantity(rs.getInt("quantity"));
-                dish.setCategoryId(rs.getLong("category_id"));
-                dish.setImage(rs.getString("image"));
+                dish.setId(rs.getLong(ID));
+                dish.setName(rs.getString(NAME));
+                dish.setDescription(rs.getString(DESCRIPTION));
+                dish.setIngredients(rs.getString(INGREDIENTS));
+                dish.setPrice(rs.getBigDecimal(PRICE));
+                dish.setQuantity(rs.getInt(QUANTITY));
+                dish.setCategoryId(rs.getLong(CATEGORY_ID));
+                dish.setImage(rs.getString(IMAGE));
                 result.add(dish);
             }
-        } catch (SQLException e) {
-            throw new DaoException("DishDaoSql Exception");
+            LOGGER.info("ResultSet parsed.");
+        }catch(SQLException e){
+            throw new DaoException("Exception in parseResultSet method",e);
         }
         return result;
     }
@@ -91,8 +97,10 @@ public class DishSqlDao extends AbstractSqlDao<Dish, Long> {
             statement.setInt(5, object.getQuantity());
             statement.setLong(6, object.getCategoryId());
             statement.setString(7, object.getImage());
+            LOGGER.info("Statement for insert prepared");
         } catch (SQLException e) {
-            throw new DaoException("DishSqlDao Exception");
+            LOGGER.error("Exception in prepareStatementForInsert method");
+            throw new DaoException("Exception in prepareStatementForInsert method",e);
         }
     }
 
@@ -107,8 +115,10 @@ public class DishSqlDao extends AbstractSqlDao<Dish, Long> {
             statement.setLong(6, object.getCategoryId());
             statement.setString(7, object.getImage());
             statement.setLong(8, object.getId());
+            LOGGER.info("Statement for update prepared.");
         } catch (SQLException e) {
-            throw new DaoException("DishSqlDao Exception");
+            LOGGER.error("Exception in prepareStatementForUpdate method");
+            throw new DaoException("Exception in prepareStatementForUpdate method",e);
         }
     }
 
@@ -123,7 +133,7 @@ public class DishSqlDao extends AbstractSqlDao<Dish, Long> {
         Connection connection = null;
         try {
             connection = pool.getConnection();
-            String sql = dbBundle.getString("DISH.FROM_CATEGORY");
+            String sql = dbBundle.getString(DISH_FORM_CATEGORY);
             PreparedStatement statement = connection.prepareStatement(sql);
             statement.setLong(1, key);
             ResultSet rs = statement.executeQuery();
@@ -131,15 +141,19 @@ public class DishSqlDao extends AbstractSqlDao<Dish, Long> {
             if (result == null) {
                 return Collections.emptyList();
             }
+            LOGGER.info("Method getAllCategories executed");
         } catch (ConnectionPoolException | SQLException e) {
-            throw new DaoException("Dao Exception");
+            LOGGER.error("Exception");
+            throw new DaoException("Exception");
         } finally {
             try {
                 if (connection != null) {
                     pool.returnConnection(connection);
+                    LOGGER.info("Connection returned");
                 }
             } catch (ConnectionPoolException e) {
-                throw new DaoException("Dao Exception");
+                LOGGER.error("Exception during returning connection");
+                throw new DaoException("Exception");
             }
         }
         return result;

@@ -7,6 +7,7 @@ import com.epam.restaurant.dao.connectionpool.impl.ConnectionPoolImpl;
 import com.epam.restaurant.dao.exception.DaoException;
 import com.epam.restaurant.entity.Dish;
 import com.epam.restaurant.entity.News;
+import org.apache.log4j.Logger;
 
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -15,12 +16,15 @@ import java.sql.SQLException;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.ResourceBundle;
+import static com.epam.restaurant.dao.name.ParameterName.*;
 
 /**
- *
+ * Dao implementation for MySQL database and News entity.
  */
 public class NewsSqlDao extends AbstractSqlDao<News, Long> {
-    private ResourceBundle dbBundle = ResourceBundle.getBundle("db.db");
+    private static final Logger LOGGER = Logger.getLogger(NewsSqlDao.class);
+
+    private ResourceBundle dbBundle = ResourceBundle.getBundle(BUNDLE);
 
     private final static NewsSqlDao instance = new NewsSqlDao();
 
@@ -36,22 +40,22 @@ public class NewsSqlDao extends AbstractSqlDao<News, Long> {
 
     @Override
     public String getSelectQuery() {
-        return dbBundle.getString("NEWS.SELECT");
+        return dbBundle.getString(NEWS_SELECT);
     }
 
     @Override
     public String getCreateQuery() {
-        return dbBundle.getString("NEWS.INSERT");
+        return dbBundle.getString(NEWS_INSERT);
     }
 
     @Override
     public String getUpdateQuery() {
-        return dbBundle.getString("NEWS.UPDATE");
+        return dbBundle.getString(NEWS_UPDATE);
     }
 
     @Override
     public String getDeleteQuery() {
-        return dbBundle.getString("NEWS.DELETE");
+        return dbBundle.getString(NEWS_DELETE);
     }
 
     @Override
@@ -61,15 +65,16 @@ public class NewsSqlDao extends AbstractSqlDao<News, Long> {
         try {
             while (rs.next()) {
                 PersistNews news = new PersistNews();
-                news.setId(rs.getLong("id"));
-                news.setName(rs.getString("name"));
-                news.setDate(rs.getDate("date"));
-                news.setContent(rs.getString("content"));
-                news.setImage(rs.getString("image"));
+                news.setId(rs.getLong(ID));
+                news.setName(rs.getString(NAME));
+                news.setDate(rs.getDate(DATE));
+                news.setContent(rs.getString(CONTENT));
+                news.setImage(rs.getString(IMAGE));
                 result.add(news);
             }
-        } catch (SQLException e) {
-            throw new DaoException("DishDaoSql Exception");
+            LOGGER.info("ResultSet parsed.");
+        }catch(SQLException e){
+            throw new DaoException("Exception in parseResultSet method",e);
         }
         return result;
     }
@@ -81,8 +86,10 @@ public class NewsSqlDao extends AbstractSqlDao<News, Long> {
             statement.setDate(2, (Date) object.getDate());
             statement.setString(3, object.getContent());
             statement.setString(4, object.getImage());
+            LOGGER.info("Statement for insert prepared");
         } catch (SQLException e) {
-            throw new DaoException("DishSqlDao Exception");
+            LOGGER.error("Exception in prepareStatementForInsert method");
+            throw new DaoException("Exception in prepareStatementForInsert method",e);
         }
     }
 
@@ -94,8 +101,10 @@ public class NewsSqlDao extends AbstractSqlDao<News, Long> {
             statement.setString(3, object.getContent());
             statement.setString(4, object.getImage());
             statement.setLong(5, object.getId());
+            LOGGER.info("Statement for update prepared.");
         } catch (SQLException e) {
-            throw new DaoException("DishSqlDao Exception");
+            LOGGER.error("Exception in prepareStatementForUpdate method");
+            throw new DaoException("Exception in prepareStatementForUpdate method",e);
         }
     }
 

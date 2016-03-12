@@ -5,6 +5,9 @@ import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import java.sql.Connection;
 
+/**
+ * Interface describes connection pool.
+ */
 public interface ConnectionPool {
 
     Connection getConnection() throws ConnectionPoolException ;

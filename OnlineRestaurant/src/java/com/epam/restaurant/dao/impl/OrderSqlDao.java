@@ -8,6 +8,7 @@ import com.epam.restaurant.dao.connectionpool.impl.ConnectionPoolImpl;
 import com.epam.restaurant.dao.exception.DaoException;
 import com.epam.restaurant.entity.Order;
 import com.epam.restaurant.entity.User;
+import org.apache.log4j.Logger;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -17,11 +18,15 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.ResourceBundle;
 
+import static com.epam.restaurant.dao.name.ParameterName.*;
+
 /**
  * Dao implementation for MySQL database and Order entity.
  */
 public class OrderSqlDao extends AbstractSqlDao<Order, Long> {
-    private ResourceBundle dbBundle = ResourceBundle.getBundle("db.db");
+    private static final Logger LOGGER = Logger.getLogger(OrderSqlDao.class);
+
+    private ResourceBundle dbBundle = ResourceBundle.getBundle(BUNDLE);
 
     /**
      * Connection to database
@@ -30,7 +35,9 @@ public class OrderSqlDao extends AbstractSqlDao<Order, Long> {
 
     private final static OrderSqlDao instance = new OrderSqlDao();
 
-    public static GenericDao getInstance(){return instance;}
+    public static GenericDao getInstance() {
+        return instance;
+    }
 
     private class PersistOrder extends Order {
         public void setId(int id) {
@@ -40,22 +47,22 @@ public class OrderSqlDao extends AbstractSqlDao<Order, Long> {
 
     @Override
     public String getSelectQuery() {
-        return dbBundle.getString("ORDER.SELECT");
+        return dbBundle.getString(ORDER_SELECT);
     }
 
     @Override
     public String getCreateQuery() {
-        return dbBundle.getString("ORDER.INSERT");
+        return dbBundle.getString(ORDER_INSERT);
     }
 
     @Override
     public String getUpdateQuery() {
-        return dbBundle.getString("ORDER.UPDATE");
+        return dbBundle.getString(ORDER_UPDATE);
     }
 
     @Override
     public String getDeleteQuery() {
-        return dbBundle.getString("ORDER.DELETE");
+        return dbBundle.getString(ORDER_DELETE);
     }
 
     @Override
@@ -63,17 +70,18 @@ public class OrderSqlDao extends AbstractSqlDao<Order, Long> {
         LinkedList<Order> result = new LinkedList<>();
 
         try {
-            while (rs.next()){
+            while (rs.next()) {
                 PersistOrder order = new PersistOrder();
-                order.setId(rs.getLong("id"));
-                order.setUserId(rs.getLong("user_id"));
-                order.setCreatedAt(rs.getDate("created_at"));
-                order.setTotal(rs.getBigDecimal("total"));
-                order.setPaid(rs.getBoolean("paid"));
+                order.setId(rs.getLong(ID));
+                order.setUserId(rs.getLong(USER_ID));
+                order.setCreatedAt(rs.getDate(CREATED_AT));
+                order.setTotal(rs.getBigDecimal(TOTAL));
+                order.setPaid(rs.getBoolean(PAID));
                 result.add(order);
             }
+            LOGGER.info("ResultSet parsed.");
         } catch (SQLException e) {
-            throw new DaoException("OrderSqlDao Exception");
+            throw new DaoException("Exception in parseResultSet method", e);
         }
         return result;
     }
@@ -83,10 +91,12 @@ public class OrderSqlDao extends AbstractSqlDao<Order, Long> {
         try {
             statement.setLong(1, object.getUserId());
             statement.setDate(2, new java.sql.Date(object.getCreatedAt().getTime()));
-            statement.setBigDecimal(3,object.getTotal());
+            statement.setBigDecimal(3, object.getTotal());
             statement.setBoolean(4, object.isPaid());
+            LOGGER.info("Statement for insert prepared");
         } catch (SQLException e) {
-            throw new DaoException("OrderSqlDao Exception");
+            LOGGER.error("Exception in prepareStatementForInsert method");
+            throw new DaoException("Exception in prepareStatementForInsert method", e);
         }
     }
 
@@ -95,11 +105,13 @@ public class OrderSqlDao extends AbstractSqlDao<Order, Long> {
         try {
             statement.setLong(1, object.getUserId());
             statement.setDate(2, new java.sql.Date(object.getCreatedAt().getTime()));
-            statement.setBigDecimal(3,object.getTotal());
-            statement.setBoolean(4,object.isPaid());
+            statement.setBigDecimal(3, object.getTotal());
+            statement.setBoolean(4, object.isPaid());
             statement.setLong(5, object.getId());
+            LOGGER.info("Statement for update prepared.");
         } catch (SQLException e) {
-            throw new DaoException("OrderSqlDao Exception");
+            LOGGER.error("Exception in prepareStatementForUpdate method");
+            throw new DaoException("Exception in prepareStatementForUpdate method", e);
         }
 
     }
@@ -112,33 +124,36 @@ public class OrderSqlDao extends AbstractSqlDao<Order, Long> {
 
     public Order getByUserId(Long name) throws DaoException {
         List<Order> list;
-        Connection connection=null;
-        try  {
+        Connection connection = null;
+        try {
             connection = pool.getConnection();
-            String sql = dbBundle.getString("ORDER.FROM_USER_ID");
+            String sql = dbBundle.getString(ORDER_FROM_USER_ID);
             PreparedStatement statement = connection.prepareStatement(sql);
             statement.setLong(1, name);
             ResultSet rs = statement.executeQuery();
             list = parseResultSet(rs);
 
-        } catch (ConnectionPoolException|SQLException e) {
-            throw new DaoException("OrderSqlDao Exception");
-        }finally {
+            if (list == null || list.size() == 0) {
+                return null;
+            }
+
+            if (list.size() > 1) {
+                LOGGER.error("Received more than one record");
+                throw new DaoException("Received more than one record.");
+            }
+        } catch (ConnectionPoolException | SQLException e) {
+            LOGGER.error("Exception");
+            throw new DaoException("Exception");
+        } finally {
             try {
-                if(connection != null) {
+                if (connection != null) {
                     pool.returnConnection(connection);
+                    LOGGER.info("Connection returned ");
                 }
             } catch (ConnectionPoolException e) {
-                throw new DaoException("OrderSqlDao Exception");
+                LOGGER.error("Exception during returning connection");
+                throw new DaoException("Dao Exception");
             }
-        }
-
-        if (list == null || list.size() == 0) {
-            return null;
-        }
-
-        if (list.size() > 1) {
-            throw new DaoException("Received more than one record.");
         }
 
         return list.iterator().next();
