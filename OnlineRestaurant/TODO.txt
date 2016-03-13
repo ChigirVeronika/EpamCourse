@@ -1,6 +1,14 @@
 TODO:
 
 
+@Before
+    public void setUp() throws Exception {
+
+    }
+
+    @After
+    public void tearDown() throws Exception {
+    }
 
 //        connection = pool.getConnection();
 //        not included address

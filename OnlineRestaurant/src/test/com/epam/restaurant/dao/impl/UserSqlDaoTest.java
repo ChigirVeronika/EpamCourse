@@ -27,15 +27,6 @@ public class UserSqlDaoTest {
     ConnectionPool pool = ConnectionPoolImpl.getInstance();
     Connection connection;
 
-    @Before
-    public void setUp() throws Exception {
-
-    }
-
-    @After
-    public void tearDown() throws Exception {
-    }
-
     @Test
     public void testGetSelectQuery() throws Exception {
         assertEquals("SELECT id, name, surname, login, password, email, role, pay_card_id FROM restaurant.user", dbBundle.getString("USER.SELECT"));

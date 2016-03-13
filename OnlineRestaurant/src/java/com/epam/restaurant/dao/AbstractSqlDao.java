@@ -5,6 +5,7 @@ import com.epam.restaurant.dao.connectionpool.exception.ConnectionPoolException;
 import com.epam.restaurant.dao.connectionpool.impl.ConnectionPoolImpl;
 import com.epam.restaurant.dao.exception.DaoException;
 import com.epam.restaurant.dao.factory.SqlDaoFactory;
+import org.apache.log4j.Logger;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -19,6 +20,7 @@ import java.util.List;
  * @param <PK> primary key type
  */
 public abstract class AbstractSqlDao<T extends Identified<PK>, PK extends Long> implements GenericDao<T, PK> {
+    private static final Logger LOGGER = Logger.getLogger(AbstractSqlDao.class);
     /**
      * Connection to database
      */
@@ -55,6 +57,7 @@ public abstract class AbstractSqlDao<T extends Identified<PK>, PK extends Long> 
             prepareStatementForInsert(statement, object);
             int count = statement.executeUpdate();
             if (count != 1) {
+                LOGGER.error("On persist modify more than 1 record: "+ count);
                 throw new DaoException("On persist modify more than 1 record: " + count);
             }
 
@@ -65,18 +68,24 @@ public abstract class AbstractSqlDao<T extends Identified<PK>, PK extends Long> 
 
             List<T> list = parseResultSet(rs);
             if ((list == null) || (list.size() != 1)) {
-                throw new DaoException("Exception on findByPK new persist data.");
+                LOGGER.error("Exception on findByPK new persist data");
+                throw new DaoException("Exception on findByPK new persist data");
             }
             persistInstance = list.iterator().next();
+            LOGGER.info("Method persist executed" +
+                    "");
         } catch (ConnectionPoolException | SQLException e) {
+            LOGGER.error("Exception");
             throw new DaoException("Exception", e);
         } finally {
             try {
                 if (connection != null) {
                     pool.returnConnection(connection);
+                    LOGGER.info("Connection returned");
                 }
             } catch (ConnectionPoolException e) {
-                throw new DaoException("", e);
+                LOGGER.error("Exception during returning connection");
+                throw new DaoException("Exception", e);
             }
         }
 
