@@ -4,10 +4,14 @@ import com.epam.restaurant.dao.connectionpool.ConnectionPool;
 import com.epam.restaurant.dao.connectionpool.impl.ConnectionPoolImpl;
 import com.epam.restaurant.dao.exception.DaoException;
 import com.epam.restaurant.entity.User;
+import com.epam.restaurant.util.HashUtil;
+import com.epam.restaurant.util.ValidationUtil;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.security.NoSuchAlgorithmException;
+import java.security.spec.InvalidKeySpecException;
 import java.sql.*;
 import java.util.*;
 
@@ -34,22 +38,33 @@ public class UserSqlDaoTest {
 
     @Test
     public void testGetSelectQuery() throws Exception {
-        assertEquals(dbBundle.getString("USER.SELECT"), "SELECT id, name, surname, login, password, email, role, pay_card_id FROM restaurant.user");
+        assertEquals("SELECT id, name, surname, login, password, email, role, pay_card_id FROM restaurant.user", dbBundle.getString("USER.SELECT"));
     }
 
     @Test
     public void testGetCreateQuery() throws Exception {
-        assertEquals(dbBundle.getString("USER.INSERT"), "INSERT INTO restaurant.user (name, surname, login, password, email, role, pay_card_id) VALUES (?, ?, ?, ?, ?, ?, ?)");
+        assertEquals("INSERT INTO restaurant.user (name, surname, login, password, email, role, pay_card_id) VALUES (?, ?, ?, ?, ?, ?, ?)", dbBundle.getString("USER.INSERT"));
     }
 
     @Test
     public void testGetUpdateQuery() throws Exception {
-        assertEquals(dbBundle.getString("USER.UPDATE"), "UPDATE restaurant.user SET name = ?, surname = ?, login = ?, password  = ?, email = ?, role = ?, pay_card_id = ? WHERE id = ?");
+        assertEquals("UPDATE restaurant.user SET name = ?, surname = ?, login = ?, password  = ?, email = ?, role = ?, pay_card_id = ? WHERE id = ?", dbBundle.getString("USER.UPDATE"));
     }
 
     @Test
     public void testGetDeleteQuery() throws Exception {
-        assertEquals(dbBundle.getString("USER.DELETE"), "DELETE FROM restaurant.user WHERE id = ?");
+        assertEquals("DELETE FROM restaurant.user WHERE id = ?", dbBundle.getString("USER.DELETE"));
+    }
+
+    User user = new User("TestName", "TestSurname", "TestEmail", "TestPayCard", "TestLogin", "TestPassword");
+
+    @Test
+    public void testCreate() throws DaoException, InvalidKeySpecException, NoSuchAlgorithmException {
+        userSqlDao.persist(user);
+        assertNotNull(user);
+        assertEquals("TestName", user.getName());
+        assertEquals("TestSurname", user.getSurname());
+        assertEquals("TestEmail", user.getEmail());
     }
 
     @Test
@@ -77,16 +92,6 @@ public class UserSqlDaoTest {
         userSqlDao.prepareStatementForUpdate(st, user);
         assertNotNull(st);
         pool.returnConnection(connection);
-
-
-//        connection = pool.getConnection();
-//        not included address
-//        String s1=st.toString().substring(46);
-//        String sql2 = "UPDATE restaurant.user SET name = 'peter', surname = 'petrov', login = 'peter', password  = '321', email = 'peter@mail.ru', role = 'USER', pay_card_id = '3' WHERE id = 17";
-//        PreparedStatement st2 = connection.prepareStatement(sql2);
-//        String s2=st2.toString().substring(46);
-//        assertEquals(s1,s2);
-//        pool.returnConnection(connection);
     }
 
     @Test
@@ -97,27 +102,19 @@ public class UserSqlDaoTest {
         PreparedStatement st = connection.prepareStatement(sql);
         userSqlDao.prepareStatementForInsert(st, user);
         assertNotNull(st);
-
-        //not included address
-//        String s1=st.toString().substring(46);
-//        String sql2 = "INSERT INTO restaurant.user (name, surname, login, password, email, role, pay_card_id) VALUES ('peter', 'petrov', 'peter', '321', 'peter@mail.ru', 'USER', '3')";
-//        PreparedStatement st2 = connection.prepareStatement(sql2);
-//        String s2=st2.toString().substring(46);
-//        assertEquals(s1,s2);
         pool.returnConnection(connection);
     }
 
     @Test
     public void testGetByLogin() throws Exception {
-        User user = userSqlDao.getByLogin("vera");
+        User user = userSqlDao.getByLogin("veronika");
         assertNotNull(user);
-        assertEquals("vera", user.getName());
+        assertEquals("veronika", user.getName());
         assertEquals("chigir", user.getSurname());
-        assertEquals("vera", user.getLogin());
-        assertEquals("123", user.getHash());
-        assertEquals("test", user.getEmail());
+        assertEquals("veronika", user.getLogin());
+        assertEquals("vera@gmail.com",user.getEmail());
         assertEquals("ADMIN", user.getRole().toString());
-        assertEquals("1", user.getPayCard());
+        assertEquals("1234123456785678", user.getPayCard());
     }
 
     @Test

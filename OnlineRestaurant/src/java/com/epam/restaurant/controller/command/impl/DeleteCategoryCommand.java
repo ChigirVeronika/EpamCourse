@@ -33,16 +33,19 @@ public class DeleteCategoryCommand implements Command {
         }
         try {
             String name = request.getParameter(NAME);
-
+            System.out.println(name);
             Category category = categoryService.getByName(name);
-
+            System.out.println(category.getName());
             if (category != null) {
                 //if there dishes of this category
                 List<Dish> dishList = categoryService.getAllFromCategory(category.getId());
-                if (dishList != null) {
+                System.out.println(dishList.toString());
+                if (dishList != null && dishList.size()>0) {
                     result = JspPageName.ERROR_JSP;
+                    System.out.println("NOT EMPTY");
                     return result;
                 } else {
+                    System.out.println("EMPTY");
                     categoryService.delete(category);
                 }
             }
