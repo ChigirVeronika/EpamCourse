@@ -4664,3 +4664,32 @@ com.epam.restaurant.controller.command.exception.CommandException: Cant't execut
 2016-03-13 14:47:02 INFO  DishSqlDao:83 - ResultSet parsed.
 2016-03-13 14:47:02 INFO  DishSqlDao:144 - Method getAllCategories executed
 2016-03-13 14:47:02 INFO  DishSqlDao:152 - Connection returned
+2016-03-13 15:08:28 INFO  ConnectionPoolImpl:64 - Pool has been initialized
+2016-03-13 15:08:28 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-13 15:08:28 INFO  UserSqlDao:90 - ResultSet parsed
+2016-03-13 15:08:28 INFO  UserSqlDao:159 - Connection returned successfully
+2016-03-13 15:08:29 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-13 15:08:29 INFO  OrderSqlDao:82 - ResultSet parsed.
+2016-03-13 15:08:29 INFO  OrderSqlDao:151 - Connection returned 
+2016-03-13 15:08:32 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-13 15:08:32 INFO  CategorySqlDao:86 - ResultSet parsed
+2016-03-13 15:08:39 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-13 15:08:39 INFO  CategorySqlDao:86 - ResultSet parsed
+2016-03-13 15:08:39 INFO  CategorySqlDao:129 - Method getByName executed
+2016-03-13 15:08:39 INFO  CategorySqlDao:145 - Connection returned
+2016-03-13 15:08:39 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-13 15:08:39 INFO  DishSqlDao:83 - ResultSet parsed.
+2016-03-13 15:08:39 INFO  DishSqlDao:144 - Method getAllCategories executed
+2016-03-13 15:08:39 INFO  DishSqlDao:152 - Connection returned
+2016-03-13 15:08:39 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-13 15:08:39 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-13 15:08:39 INFO  CategorySqlDao:86 - ResultSet parsed
+2016-03-13 15:10:29 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-13 15:10:29 INFO  NewsSqlDao:75 - ResultSet parsed.
+2016-03-13 15:10:46 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-13 15:10:46 INFO  CategorySqlDao:86 - ResultSet parsed
+2016-03-13 15:11:02 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-13 15:11:02 INFO  NewsSqlDao:75 - ResultSet parsed.
+2016-03-13 15:39:50 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-13 15:39:50 INFO  CategorySqlDao:86 - ResultSet parsed
+2016-03-13 22:36:38 INFO  ConnectionPoolImpl:64 - Pool has been initialized
