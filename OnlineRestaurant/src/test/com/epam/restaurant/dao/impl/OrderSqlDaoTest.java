@@ -3,7 +3,6 @@ package com.epam.restaurant.dao.impl;
 import com.epam.restaurant.dao.connectionpool.ConnectionPool;
 import com.epam.restaurant.dao.connectionpool.impl.ConnectionPoolImpl;
 import com.epam.restaurant.entity.Order;
-import com.epam.restaurant.entity.User;
 import org.junit.Test;
 
 import java.math.BigDecimal;
@@ -17,7 +16,7 @@ import java.util.ResourceBundle;
 import static org.junit.Assert.*;
 
 /**
- * Created by Вероника on 02.03.2016.
+ *
  */
 public class OrderSqlDaoTest {
 
@@ -80,11 +79,5 @@ public class OrderSqlDaoTest {
         dao.prepareStatementForUpdate(st, order);
         assertNotNull(st);
         pool.returnConnection(connection);
-    }
-
-    @Test
-    public void testGetByUserId() throws Exception {
-        Order order = dao.getByUserId(1L);
-        assertNotNull(order);
     }
 }

@@ -2,13 +2,16 @@ package com.epam.restaurant.dao.impl;
 
 import com.epam.restaurant.dao.connectionpool.ConnectionPool;
 import com.epam.restaurant.dao.connectionpool.impl.ConnectionPoolImpl;
+import com.epam.restaurant.entity.Order;
 import com.epam.restaurant.entity.OrderDish;
 import com.epam.restaurant.entity.User;
 import org.junit.Test;
 
+import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.Date;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -61,21 +64,29 @@ public class OrderDishSqlDaoTest {
 
     @Test
     public void testPrepareStatementForInsert() throws Exception {
-
+        connection = pool.getConnection();
+        OrderDish orderDish = new OrderDish(20l,20l,20);
+        String sql = dbBundle.getString("ORDER_DISH.INSERT");
+        PreparedStatement st = connection.prepareStatement(sql);
+        dao.prepareStatementForInsert(st, orderDish);
+        assertNotNull(st);
+        pool.returnConnection(connection);
     }
 
     @Test
     public void testPrepareStatementForUpdate() throws Exception {
-
-    }
-
-    @Test
-    public void testCreate() throws Exception {
-
+        connection = pool.getConnection();
+        OrderDish orderDish = new OrderDish(20l,20l,10);
+        String sql = dbBundle.getString("ORDER_DISH.UPDATE");
+        PreparedStatement st = connection.prepareStatement(sql);
+        dao.prepareStatementForUpdate(st, orderDish);
+        assertNotNull(st);
+        pool.returnConnection(connection);
     }
 
     @Test
     public void testGetAllFromOrder() throws Exception {
-
+        List<OrderDish> list = dao.getAllFromOrder(1l);
+        assertNotNull(list);
     }
 }

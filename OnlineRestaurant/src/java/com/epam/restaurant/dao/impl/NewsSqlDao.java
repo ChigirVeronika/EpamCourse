@@ -9,10 +9,10 @@ import com.epam.restaurant.entity.Dish;
 import com.epam.restaurant.entity.News;
 import org.apache.log4j.Logger;
 
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -84,7 +84,7 @@ public class NewsSqlDao extends AbstractSqlDao<News, Long> {
     protected void prepareStatementForInsert(PreparedStatement statement, News object) throws DaoException {
         try {
             statement.setString(1, object.getName());
-            statement.setDate(2, (Date) object.getDate());
+            statement.setDate(2, new java.sql.Date(object.getDate().getTime()));
             statement.setString(3, object.getContent());
             statement.setString(4, object.getImage());
             LOGGER.info("Statement for insert prepared");
@@ -98,7 +98,7 @@ public class NewsSqlDao extends AbstractSqlDao<News, Long> {
     protected void prepareStatementForUpdate(PreparedStatement statement, News object) throws DaoException {
         try {
             statement.setString(1, object.getName());
-            statement.setDate(2, (Date) object.getDate());
+            statement.setDate(2, new java.sql.Date(object.getDate().getTime()));
             statement.setString(3, object.getContent());
             statement.setString(4, object.getImage());
             statement.setLong(5, object.getId());

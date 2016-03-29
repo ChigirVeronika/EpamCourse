@@ -4941,3 +4941,319 @@ com.epam.restaurant.controller.command.exception.CommandException: Cant't execut
 2016-03-18 23:15:25 INFO  ConnectionPoolImpl:75 - Connection is taken.
 2016-03-18 23:15:25 INFO  OrderSqlDao:96 - Statement for insert prepared
 2016-03-18 23:23:28 INFO  ConnectionPoolImpl:64 - Pool has been initialized
+2016-03-29 17:26:11 INFO  ConnectionPoolImpl:64 - Pool has been initialized
+2016-03-29 17:26:11 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 17:26:11 INFO  DishSqlDao:83 - ResultSet parsed
+2016-03-29 18:11:33 INFO  ConnectionPoolImpl:64 - Pool has been initialized
+2016-03-29 18:11:33 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 18:11:34 INFO  DishSqlDao:100 - Statement for insert prepared
+2016-03-29 18:33:55 INFO  ConnectionPoolImpl:64 - Pool has been initialized
+2016-03-29 18:33:55 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 18:35:42 INFO  ConnectionPoolImpl:64 - Pool has been initialized
+2016-03-29 18:35:42 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 18:35:42 INFO  CategorySqlDao:86 - ResultSet parsed
+2016-03-29 19:13:56 INFO  ConnectionPoolImpl:64 - Pool has been initialized
+2016-03-29 19:13:56 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:13:57 INFO  CategorySqlDao:112 - Statement for insert prepared
+2016-03-29 19:15:48 INFO  ConnectionPoolImpl:64 - Pool has been initialized
+2016-03-29 19:15:48 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:15:49 INFO  CategorySqlDao:86 - ResultSet parsed
+2016-03-29 19:15:49 INFO  CategorySqlDao:129 - Method getByName executed
+2016-03-29 19:15:49 INFO  CategorySqlDao:145 - Connection returned
+2016-03-29 19:18:22 INFO  ConnectionPoolImpl:64 - Pool has been initialized
+2016-03-29 19:18:25 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:18:25 INFO  CategorySqlDao:86 - ResultSet parsed
+2016-03-29 19:18:25 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:18:25 INFO  CategorySqlDao:86 - ResultSet parsed
+2016-03-29 19:18:25 INFO  CategorySqlDao:129 - Method getByName executed
+2016-03-29 19:18:25 INFO  CategorySqlDao:145 - Connection returned
+2016-03-29 19:18:25 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:18:25 INFO  CategorySqlDao:100 - Statement for update prepared
+2016-03-29 19:18:25 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:18:25 INFO  CategorySqlDao:112 - Statement for insert prepared
+2016-03-29 19:18:25 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:18:25 INFO  DishSqlDao:83 - ResultSet parsed
+2016-03-29 19:18:25 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:18:25 INFO  DishSqlDao:83 - ResultSet parsed
+2016-03-29 19:18:25 INFO  DishSqlDao:144 - Method getAllCategories executed
+2016-03-29 19:18:25 INFO  DishSqlDao:152 - Connection returned
+2016-03-29 19:18:25 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:18:25 INFO  DishSqlDao:118 - Statement for update prepared.
+2016-03-29 19:18:25 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:18:25 INFO  DishSqlDao:100 - Statement for insert prepared
+2016-03-29 19:18:25 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:18:25 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:18:25 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:18:25 INFO  OrderSqlDao:79 - ResultSet parsed
+2016-03-29 19:18:25 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:18:25 INFO  OrderSqlDao:79 - ResultSet parsed
+2016-03-29 19:18:25 INFO  OrderSqlDao:133 - Method getAllFromOrder executed
+2016-03-29 19:18:25 INFO  OrderSqlDao:141 - Connection returned 
+2016-03-29 19:18:25 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:18:25 INFO  OrderSqlDao:106 - Statement for update prepared
+2016-03-29 19:18:25 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:18:25 INFO  OrderSqlDao:92 - Statement for insert prepared
+2016-03-29 19:18:25 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:18:25 INFO  OrderSqlDao:82 - ResultSet parsed
+2016-03-29 19:18:25 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:18:25 INFO  OrderSqlDao:82 - ResultSet parsed
+2016-03-29 19:18:25 INFO  OrderSqlDao:151 - Connection returned 
+2016-03-29 19:18:25 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:18:25 INFO  OrderSqlDao:111 - Statement for update prepared
+2016-03-29 19:18:25 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:18:25 INFO  OrderSqlDao:96 - Statement for insert prepared
+2016-03-29 19:18:25 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:18:26 INFO  UserSqlDao:90 - ResultSet parsed
+2016-03-29 19:18:26 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:18:26 INFO  UserSqlDao:90 - ResultSet parsed
+2016-03-29 19:18:26 INFO  UserSqlDao:159 - Connection returned successfully
+2016-03-29 19:18:26 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:18:26 INFO  UserSqlDao:90 - ResultSet parsed
+2016-03-29 19:18:26 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:18:26 INFO  UserSqlDao:126 - Statement for insert prepared
+2016-03-29 19:18:27 ERROR AbstractSqlDao:79 - Exception
+2016-03-29 19:18:27 INFO  AbstractSqlDao:85 - Connection returned
+2016-03-29 19:18:27 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:18:27 INFO  UserSqlDao:90 - ResultSet parsed
+2016-03-29 19:18:27 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:18:27 INFO  UserSqlDao:109 - Statement for update prepared
+2016-03-29 19:18:27 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:18:27 INFO  UserSqlDao:126 - Statement for insert prepared
+2016-03-29 19:27:14 INFO  ConnectionPoolImpl:64 - Pool has been initialized
+2016-03-29 19:27:18 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:27:18 INFO  CategorySqlDao:86 - ResultSet parsed
+2016-03-29 19:27:18 INFO  CategorySqlDao:129 - Method getByName executed
+2016-03-29 19:27:18 INFO  CategorySqlDao:145 - Connection returned
+2016-03-29 19:27:18 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:27:18 INFO  CategorySqlDao:112 - Statement for insert prepared
+2016-03-29 19:27:18 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:27:18 INFO  CategorySqlDao:100 - Statement for update prepared
+2016-03-29 19:27:18 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:27:18 INFO  CategorySqlDao:86 - ResultSet parsed
+2016-03-29 19:27:18 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:27:18 INFO  DishSqlDao:100 - Statement for insert prepared
+2016-03-29 19:27:18 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:27:18 INFO  DishSqlDao:118 - Statement for update prepared.
+2016-03-29 19:27:18 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:27:18 INFO  DishSqlDao:83 - ResultSet parsed
+2016-03-29 19:27:18 INFO  DishSqlDao:144 - Method getAllCategories executed
+2016-03-29 19:27:18 INFO  DishSqlDao:152 - Connection returned
+2016-03-29 19:27:18 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:27:18 INFO  DishSqlDao:83 - ResultSet parsed
+2016-03-29 19:27:18 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:27:18 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:27:18 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:27:18 INFO  OrderSqlDao:92 - Statement for insert prepared
+2016-03-29 19:27:18 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:27:18 INFO  OrderSqlDao:106 - Statement for update prepared
+2016-03-29 19:27:18 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:27:18 INFO  OrderSqlDao:79 - ResultSet parsed
+2016-03-29 19:27:18 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:27:18 INFO  OrderSqlDao:79 - ResultSet parsed
+2016-03-29 19:27:18 INFO  OrderSqlDao:133 - Method getAllFromOrder executed
+2016-03-29 19:27:18 INFO  OrderSqlDao:141 - Connection returned 
+2016-03-29 19:27:18 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:27:18 INFO  OrderSqlDao:82 - ResultSet parsed
+2016-03-29 19:27:18 INFO  OrderSqlDao:151 - Connection returned 
+2016-03-29 19:27:18 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:27:18 INFO  OrderSqlDao:96 - Statement for insert prepared
+2016-03-29 19:27:18 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:27:18 INFO  OrderSqlDao:111 - Statement for update prepared
+2016-03-29 19:27:18 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:27:18 INFO  OrderSqlDao:82 - ResultSet parsed
+2016-03-29 19:27:18 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:27:18 INFO  UserSqlDao:90 - ResultSet parsed
+2016-03-29 19:27:18 INFO  UserSqlDao:159 - Connection returned successfully
+2016-03-29 19:27:18 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:27:18 INFO  UserSqlDao:90 - ResultSet parsed
+2016-03-29 19:27:18 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:27:18 INFO  UserSqlDao:90 - ResultSet parsed
+2016-03-29 19:27:18 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:27:18 INFO  UserSqlDao:126 - Statement for insert prepared
+2016-03-29 19:27:18 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:27:18 INFO  UserSqlDao:109 - Statement for update prepared
+2016-03-29 19:27:18 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:27:18 INFO  UserSqlDao:90 - ResultSet parsed
+2016-03-29 19:30:45 INFO  ConnectionPoolImpl:64 - Pool has been initialized
+2016-03-29 19:30:45 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:30:45 INFO  NewsSqlDao:105 - Statement for update prepared
+2016-03-29 19:30:45 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:30:45 INFO  NewsSqlDao:90 - Statement for insert prepared
+2016-03-29 19:32:04 INFO  ConnectionPoolImpl:64 - Pool has been initialized
+2016-03-29 19:32:04 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:32:05 INFO  NewsSqlDao:90 - Statement for insert prepared
+2016-03-29 19:32:05 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:32:05 INFO  NewsSqlDao:105 - Statement for update prepared
+2016-03-29 19:32:29 INFO  ConnectionPoolImpl:64 - Pool has been initialized
+2016-03-29 19:32:29 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:32:29 INFO  CategorySqlDao:100 - Statement for update prepared
+2016-03-29 19:32:29 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:32:29 INFO  CategorySqlDao:112 - Statement for insert prepared
+2016-03-29 19:32:29 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:32:29 INFO  CategorySqlDao:86 - ResultSet parsed
+2016-03-29 19:32:29 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:32:29 INFO  CategorySqlDao:86 - ResultSet parsed
+2016-03-29 19:32:29 INFO  CategorySqlDao:129 - Method getByName executed
+2016-03-29 19:32:29 INFO  CategorySqlDao:145 - Connection returned
+2016-03-29 19:32:29 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:32:29 INFO  DishSqlDao:118 - Statement for update prepared.
+2016-03-29 19:32:29 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:32:29 INFO  DishSqlDao:100 - Statement for insert prepared
+2016-03-29 19:32:29 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:32:29 INFO  DishSqlDao:83 - ResultSet parsed
+2016-03-29 19:32:29 INFO  DishSqlDao:144 - Method getAllCategories executed
+2016-03-29 19:32:29 INFO  DishSqlDao:152 - Connection returned
+2016-03-29 19:32:29 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:32:29 INFO  DishSqlDao:83 - ResultSet parsed
+2016-03-29 19:32:29 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:32:29 INFO  NewsSqlDao:105 - Statement for update prepared
+2016-03-29 19:32:29 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:32:29 INFO  NewsSqlDao:90 - Statement for insert prepared
+2016-03-29 19:32:29 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:32:29 INFO  OrderSqlDao:106 - Statement for update prepared
+2016-03-29 19:32:29 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:32:29 INFO  OrderSqlDao:92 - Statement for insert prepared
+2016-03-29 19:32:29 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:32:29 INFO  OrderSqlDao:79 - ResultSet parsed
+2016-03-29 19:32:29 INFO  OrderSqlDao:133 - Method getAllFromOrder executed
+2016-03-29 19:32:29 INFO  OrderSqlDao:141 - Connection returned 
+2016-03-29 19:32:29 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:32:29 INFO  OrderSqlDao:79 - ResultSet parsed
+2016-03-29 19:32:29 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:32:29 INFO  OrderSqlDao:111 - Statement for update prepared
+2016-03-29 19:32:29 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:32:29 INFO  OrderSqlDao:96 - Statement for insert prepared
+2016-03-29 19:32:29 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:32:29 INFO  OrderSqlDao:82 - ResultSet parsed
+2016-03-29 19:32:29 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:32:29 INFO  OrderSqlDao:82 - ResultSet parsed
+2016-03-29 19:32:29 INFO  OrderSqlDao:151 - Connection returned 
+2016-03-29 19:32:29 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:32:29 INFO  UserSqlDao:109 - Statement for update prepared
+2016-03-29 19:32:29 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:32:29 INFO  UserSqlDao:126 - Statement for insert prepared
+2016-03-29 19:32:29 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:32:29 INFO  UserSqlDao:90 - ResultSet parsed
+2016-03-29 19:32:29 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:32:29 INFO  UserSqlDao:90 - ResultSet parsed
+2016-03-29 19:32:29 INFO  UserSqlDao:159 - Connection returned successfully
+2016-03-29 19:32:29 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:32:29 INFO  UserSqlDao:90 - ResultSet parsed
+2016-03-29 19:32:29 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:32:29 INFO  UserSqlDao:90 - ResultSet parsed
+2016-03-29 19:36:17 INFO  ConnectionPoolImpl:64 - Pool has been initialized
+2016-03-29 19:36:17 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:36:17 INFO  CategorySqlDao:112 - Statement for insert prepared
+2016-03-29 19:36:17 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:36:17 INFO  CategorySqlDao:100 - Statement for update prepared
+2016-03-29 19:36:17 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:36:17 INFO  CategorySqlDao:86 - ResultSet parsed
+2016-03-29 19:36:17 INFO  CategorySqlDao:129 - Method getByName executed
+2016-03-29 19:36:17 INFO  CategorySqlDao:145 - Connection returned
+2016-03-29 19:36:17 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:36:17 INFO  CategorySqlDao:86 - ResultSet parsed
+2016-03-29 19:36:17 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:36:17 INFO  DishSqlDao:100 - Statement for insert prepared
+2016-03-29 19:36:17 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:36:17 INFO  DishSqlDao:118 - Statement for update prepared.
+2016-03-29 19:36:17 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:36:17 INFO  DishSqlDao:83 - ResultSet parsed
+2016-03-29 19:36:17 INFO  DishSqlDao:144 - Method getAllCategories executed
+2016-03-29 19:36:17 INFO  DishSqlDao:152 - Connection returned
+2016-03-29 19:36:17 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:36:17 INFO  DishSqlDao:83 - ResultSet parsed
+2016-03-29 19:36:17 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:36:17 INFO  NewsSqlDao:90 - Statement for insert prepared
+2016-03-29 19:36:17 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:36:17 INFO  NewsSqlDao:105 - Statement for update prepared
+2016-03-29 19:36:17 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:36:17 INFO  OrderSqlDao:92 - Statement for insert prepared
+2016-03-29 19:36:17 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:36:17 INFO  OrderSqlDao:106 - Statement for update prepared
+2016-03-29 19:36:17 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:36:17 INFO  OrderSqlDao:79 - ResultSet parsed
+2016-03-29 19:36:17 INFO  OrderSqlDao:133 - Method getAllFromOrder executed
+2016-03-29 19:36:17 INFO  OrderSqlDao:141 - Connection returned 
+2016-03-29 19:36:17 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:36:17 INFO  OrderSqlDao:79 - ResultSet parsed
+2016-03-29 19:36:17 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:36:17 INFO  OrderSqlDao:96 - Statement for insert prepared
+2016-03-29 19:36:17 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:36:17 INFO  OrderSqlDao:111 - Statement for update prepared
+2016-03-29 19:36:17 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:36:17 INFO  OrderSqlDao:82 - ResultSet parsed
+2016-03-29 19:36:17 INFO  OrderSqlDao:151 - Connection returned 
+2016-03-29 19:36:17 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:36:17 INFO  OrderSqlDao:82 - ResultSet parsed
+2016-03-29 19:36:17 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:36:17 INFO  UserSqlDao:126 - Statement for insert prepared
+2016-03-29 19:36:17 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:36:17 INFO  UserSqlDao:109 - Statement for update prepared
+2016-03-29 19:36:17 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:36:17 INFO  UserSqlDao:90 - ResultSet parsed
+2016-03-29 19:36:17 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:36:17 INFO  UserSqlDao:90 - ResultSet parsed
+2016-03-29 19:36:17 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:36:17 INFO  UserSqlDao:90 - ResultSet parsed
+2016-03-29 19:36:17 INFO  UserSqlDao:159 - Connection returned successfully
+2016-03-29 19:36:17 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:36:17 INFO  UserSqlDao:90 - ResultSet parsed
+2016-03-29 19:36:53 INFO  ConnectionPoolImpl:64 - Pool has been initialized
+2016-03-29 19:36:53 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:36:53 INFO  OrderSqlDao:82 - ResultSet parsed
+2016-03-29 19:36:53 ERROR OrderSqlDao:141 - Received more than one record
+2016-03-29 19:36:53 INFO  OrderSqlDao:151 - Connection returned 
+2016-03-29 19:37:26 INFO  ConnectionPoolImpl:64 - Pool has been initialized
+2016-03-29 19:37:27 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:37:27 INFO  CategorySqlDao:100 - Statement for update prepared
+2016-03-29 19:37:27 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:37:27 INFO  CategorySqlDao:112 - Statement for insert prepared
+2016-03-29 19:37:27 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:37:27 INFO  CategorySqlDao:86 - ResultSet parsed
+2016-03-29 19:37:27 INFO  CategorySqlDao:129 - Method getByName executed
+2016-03-29 19:37:27 INFO  CategorySqlDao:145 - Connection returned
+2016-03-29 19:37:27 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:37:27 INFO  CategorySqlDao:86 - ResultSet parsed
+2016-03-29 19:37:27 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:37:27 INFO  DishSqlDao:118 - Statement for update prepared.
+2016-03-29 19:37:27 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:37:27 INFO  DishSqlDao:100 - Statement for insert prepared
+2016-03-29 19:37:27 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:37:27 INFO  DishSqlDao:83 - ResultSet parsed
+2016-03-29 19:37:27 INFO  DishSqlDao:144 - Method getAllCategories executed
+2016-03-29 19:37:27 INFO  DishSqlDao:152 - Connection returned
+2016-03-29 19:37:27 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:37:27 INFO  DishSqlDao:83 - ResultSet parsed
+2016-03-29 19:37:27 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:37:27 INFO  NewsSqlDao:105 - Statement for update prepared
+2016-03-29 19:37:27 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:37:27 INFO  NewsSqlDao:90 - Statement for insert prepared
+2016-03-29 19:37:27 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:37:27 INFO  OrderSqlDao:106 - Statement for update prepared
+2016-03-29 19:37:27 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:37:27 INFO  OrderSqlDao:92 - Statement for insert prepared
+2016-03-29 19:37:27 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:37:27 INFO  OrderSqlDao:79 - ResultSet parsed
+2016-03-29 19:37:27 INFO  OrderSqlDao:133 - Method getAllFromOrder executed
+2016-03-29 19:37:27 INFO  OrderSqlDao:141 - Connection returned 
+2016-03-29 19:37:27 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:37:27 INFO  OrderSqlDao:79 - ResultSet parsed
+2016-03-29 19:37:27 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:37:27 INFO  OrderSqlDao:111 - Statement for update prepared
+2016-03-29 19:37:27 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:37:27 INFO  OrderSqlDao:96 - Statement for insert prepared
+2016-03-29 19:37:28 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:37:28 INFO  OrderSqlDao:82 - ResultSet parsed
+2016-03-29 19:37:28 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:37:28 INFO  UserSqlDao:109 - Statement for update prepared
+2016-03-29 19:37:28 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:37:28 INFO  UserSqlDao:126 - Statement for insert prepared
+2016-03-29 19:37:28 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:37:28 INFO  UserSqlDao:90 - ResultSet parsed
+2016-03-29 19:37:28 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:37:28 INFO  UserSqlDao:90 - ResultSet parsed
+2016-03-29 19:37:28 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:37:28 INFO  UserSqlDao:90 - ResultSet parsed
+2016-03-29 19:37:28 INFO  UserSqlDao:159 - Connection returned successfully
+2016-03-29 19:37:28 INFO  ConnectionPoolImpl:75 - Connection is taken.
+2016-03-29 19:37:28 INFO  UserSqlDao:90 - ResultSet parsed

@@ -54,8 +54,6 @@ public class MainController extends HttpServlet {
 
         if (requestDispatcher != null) {
             requestDispatcher.forward(request, response);
-        }else{
-            throw new ServletException("Can't get RequestDispatcher");
         }
 
     }

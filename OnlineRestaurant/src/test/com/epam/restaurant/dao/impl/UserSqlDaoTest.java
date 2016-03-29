@@ -53,15 +53,6 @@ public class UserSqlDaoTest {
     User user = new User("TestName", "TestSurname", "TestEmail", "TestPayCard", "TestLogin", "TestPassword");
 
     @Test
-    public void testCreate() throws DaoException, InvalidKeySpecException, NoSuchAlgorithmException {
-        dao.persist(user);
-        assertNotNull(user);
-        assertEquals("TestName", user.getName());
-        assertEquals("TestSurname", user.getSurname());
-        assertEquals("TestEmail", user.getEmail());
-    }
-
-    @Test
     public void testParseResultSet() throws Exception {
         connection = pool.getConnection();
         List<User> list;
@@ -113,7 +104,7 @@ public class UserSqlDaoTest {
 
     @Test
     public void testGetByPK() throws DaoException {
-        Long l = new Long(5L);
+        Long l = new Long(26L);
         User user = dao.getByPK(l);
         assertNotNull(user);
         assertEquals("veronika", user.getName());
