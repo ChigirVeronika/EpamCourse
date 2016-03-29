@@ -29,7 +29,7 @@ public class NewsCommand implements Command {
 
             request.setAttribute(NEWS_LIST, newsList);
         } catch (ServiceException e) {
-            throw new CommandException("NewsCommand Exception");
+            throw new CommandException("NewsCommand Exception", e);
         }
 
         return result;

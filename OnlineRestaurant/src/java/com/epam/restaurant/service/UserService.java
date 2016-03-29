@@ -34,7 +34,7 @@ public class UserService {
             return user;
 
         } catch (DaoException e) {
-            throw new ServiceException("UserService Exception");
+            throw new ServiceException("UserService Exception", e);
         }
     }
 
@@ -44,7 +44,7 @@ public class UserService {
             return user;
 
         } catch (DaoException e) {
-            throw new ServiceException("UserService Exception");
+            throw new ServiceException("UserService Exception", e);
         }
     }
 
@@ -55,9 +55,9 @@ public class UserService {
                 return user;
             }
         } catch (NoSuchAlgorithmException e) {
-            throw new ServiceException("UserService Exception");
+            throw new ServiceException("UserService Exception", e);
         } catch (InvalidKeySpecException e) {
-            throw new ServiceException("UserService Exception");
+            throw new ServiceException("UserService Exception", e);
         }
         return null;
     }
@@ -74,7 +74,7 @@ public class UserService {
                 throw new ServiceException("UserService Exception");
             }
         } catch (DaoException | NoSuchAlgorithmException | InvalidKeySpecException e) {
-            throw new ServiceException("UserService Exception");
+            throw new ServiceException("UserService Exception", e);
         }
     }
 
@@ -86,7 +86,7 @@ public class UserService {
                 throw new ServiceException("UserService Exception");
             }
         } catch (DaoException e) {
-            throw new ServiceException("UserService Exception");
+            throw new ServiceException("UserService Exception", e);
         }
     }
 }

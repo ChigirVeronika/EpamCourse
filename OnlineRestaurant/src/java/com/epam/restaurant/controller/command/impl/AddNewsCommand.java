@@ -39,7 +39,7 @@ public class AddNewsCommand implements Command {
             News news = newsService.create(newsName, date, newsContent, newsImage);
             System.out.println(news.toString());
         } catch (ServiceException e) {
-            throw new CommandException("Cant't execute AddDishCommand");
+            throw new CommandException("Cant't execute AddDishCommand", e);
         }
 
 

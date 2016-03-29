@@ -53,7 +53,7 @@ public class AddDishCommand implements Command {
             }
 
         } catch (ServiceException e) {
-            throw new CommandException("Cant't execute AddDishCommand");
+            throw new CommandException("Cant't execute AddDishCommand", e);
         }
 
         return result;

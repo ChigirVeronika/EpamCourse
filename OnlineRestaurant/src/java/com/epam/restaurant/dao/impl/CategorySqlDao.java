@@ -137,7 +137,7 @@ public class CategorySqlDao extends AbstractSqlDao<Category, Long> {
             }
         } catch (ConnectionPoolException | SQLException e) {
             LOGGER.error("Exception");
-            throw new DaoException("Exception");
+            throw new DaoException("Exception", e);
         } finally {
             try {
                 if (connection != null) {
@@ -146,7 +146,7 @@ public class CategorySqlDao extends AbstractSqlDao<Category, Long> {
                 }
             } catch (ConnectionPoolException e) {
                 LOGGER.error("Exception during returning connection");
-                throw new DaoException("Dao Exception");
+                throw new DaoException("Dao Exception", e);
             }
         }
         return list.iterator().next();

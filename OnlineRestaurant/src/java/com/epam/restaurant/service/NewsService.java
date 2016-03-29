@@ -41,7 +41,7 @@ public class NewsService {
             System.out.println(newsn.toString());
             return newsn;
         } catch (DaoException e) {
-            throw new ServiceException("NewsServiceException");
+            throw new ServiceException("NewsServiceException", e);
         }
     }
 }

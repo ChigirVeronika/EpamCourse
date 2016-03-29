@@ -45,7 +45,7 @@ public class UpdateOrderCommand implements Command {
                 }
             }
         } catch (ServiceException e) {
-            throw new CommandException("");
+            throw new CommandException("UpdateOrderCommand Exception", e);
         }
 
         return result;

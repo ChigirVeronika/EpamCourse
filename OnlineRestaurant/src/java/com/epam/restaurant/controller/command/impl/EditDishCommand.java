@@ -56,7 +56,7 @@ public class EditDishCommand implements Command {
                 result = JspPageName.CONCRETE_MENU_JSP;
             }
         } catch (ServiceException e) {
-            throw new CommandException("Cant't execute EditDishCommand");
+            throw new CommandException("Cant't execute EditDishCommand", e);
         }
 
         return result;

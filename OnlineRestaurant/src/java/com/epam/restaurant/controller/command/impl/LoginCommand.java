@@ -61,7 +61,7 @@ public class LoginCommand implements Command {
 
             }
         } catch (Exception e) {
-            throw new CommandException("Cant't execute LoginCommand");
+            throw new CommandException("Cant't execute LoginCommand", e);
         }
         return result;
     }

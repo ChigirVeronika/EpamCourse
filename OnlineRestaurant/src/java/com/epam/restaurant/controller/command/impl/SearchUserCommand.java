@@ -38,7 +38,7 @@ public class SearchUserCommand implements Command {
                 request.setAttribute(MESSAGE, NOT_FOUND);
             }
         } catch (ServiceException e) {
-            throw new CommandException("Cant't execute SearchUserCommand");
+            throw new CommandException("Cant't execute SearchUserCommand", e);
         }
 
         return result;

@@ -7,6 +7,9 @@ import java.util.ResourceBundle;
  */
 public class ResourceBundleUtil {
 
+    private static final String UNDERLINE = "_";
+    private static final String EN = "en";
+
     /**
      * Get resource bundle for specific language
      *
@@ -16,8 +19,8 @@ public class ResourceBundleUtil {
     public static ResourceBundle getResourceBundle(String language) {
         String path = "i18n.restaurant";
 
-        if (language != null && !language.equals("en")) {
-            path += "_" + language;
+        if (language != null && !language.equals(EN)) {
+            path += UNDERLINE + language;
         }
 
         return ResourceBundle.getBundle(path);

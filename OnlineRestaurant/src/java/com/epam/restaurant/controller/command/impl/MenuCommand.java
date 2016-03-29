@@ -31,7 +31,7 @@ public class MenuCommand implements Command {
                 request.setAttribute(CATEGORIES, categoryList);
             }
         } catch (ServiceException e) {
-            throw new CommandException("Cant't execute MenuCommand");
+            throw new CommandException("Cant't execute MenuCommand", e);
         }
         return page;
     }

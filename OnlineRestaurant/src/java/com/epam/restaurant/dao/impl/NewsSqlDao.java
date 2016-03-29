@@ -16,6 +16,7 @@ import java.sql.SQLException;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.ResourceBundle;
+
 import static com.epam.restaurant.dao.name.ParameterName.*;
 
 /**
@@ -72,9 +73,9 @@ public class NewsSqlDao extends AbstractSqlDao<News, Long> {
                 news.setImage(rs.getString(IMAGE));
                 result.add(news);
             }
-            LOGGER.info("ResultSet parsed.");
-        }catch(SQLException e){
-            throw new DaoException("Exception in parseResultSet method",e);
+            LOGGER.info("ResultSet parsed");
+        } catch (SQLException e) {
+            throw new DaoException("Exception in parseResultSet method", e);
         }
         return result;
     }
@@ -89,7 +90,7 @@ public class NewsSqlDao extends AbstractSqlDao<News, Long> {
             LOGGER.info("Statement for insert prepared");
         } catch (SQLException e) {
             LOGGER.error("Exception in prepareStatementForInsert method");
-            throw new DaoException("Exception in prepareStatementForInsert method",e);
+            throw new DaoException("Exception in prepareStatementForInsert method", e);
         }
     }
 
@@ -101,10 +102,10 @@ public class NewsSqlDao extends AbstractSqlDao<News, Long> {
             statement.setString(3, object.getContent());
             statement.setString(4, object.getImage());
             statement.setLong(5, object.getId());
-            LOGGER.info("Statement for update prepared.");
+            LOGGER.info("Statement for update prepared");
         } catch (SQLException e) {
             LOGGER.error("Exception in prepareStatementForUpdate method");
-            throw new DaoException("Exception in prepareStatementForUpdate method",e);
+            throw new DaoException("Exception in prepareStatementForUpdate method", e);
         }
     }
 

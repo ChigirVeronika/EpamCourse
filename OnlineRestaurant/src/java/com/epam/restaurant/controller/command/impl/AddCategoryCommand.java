@@ -36,7 +36,7 @@ public class AddCategoryCommand implements Command {
 
             categoryService.create(name, description);
         } catch (ServiceException e) {
-            throw new CommandException("Cant't execute AddCategoryCommand");
+            throw new CommandException("Cant't execute AddCategoryCommand", e);
         }
 
         return result;

@@ -39,7 +39,7 @@ public class UnbanCommand implements Command {
                 userService.update(user);
             }
         } catch (ServiceException e) {
-            throw new CommandException("Cant't execute UnbanCommand");
+            throw new CommandException("Cant't execute UnbanCommand", e);
         }
 
         return result;

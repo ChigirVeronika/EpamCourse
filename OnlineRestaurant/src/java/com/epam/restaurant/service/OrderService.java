@@ -31,7 +31,7 @@ public class OrderService {
         try {
             return orderDao.persist(order);
         } catch (DaoException e) {
-            throw new ServiceException("OrderServiceException");
+            throw new ServiceException("OrderServiceException", e);
         }
     }
 
@@ -39,7 +39,7 @@ public class OrderService {
         try {
             orderDao.delete(order);
         } catch (DaoException e) {
-            throw new ServiceException("OrderServiceException");
+            throw new ServiceException("OrderServiceException", e);
         }
     }
 
@@ -47,7 +47,7 @@ public class OrderService {
         try {
             orderDao.update(order);
         } catch (DaoException e) {
-            throw new ServiceException("OrderServiceException");
+            throw new ServiceException("OrderServiceException", e);
         }
     }
 
@@ -67,7 +67,7 @@ public class OrderService {
                 order.setOrderDishes(orderDishList);
             }
         } catch (DaoException e) {
-            throw new ServiceException("OrderServiceException");
+            throw new ServiceException("OrderServiceException", e);
         }
 
         return order;

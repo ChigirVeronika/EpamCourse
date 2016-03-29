@@ -21,8 +21,13 @@ public class HashUtil {
     private static final int PBKDF2_ITERATIONS = 1000;
 
     private static final int ITERATION_INDEX = 0;
-    public static final int SALT_INDEX = 1;
-    public static final int HASH_INDEX = 2;
+    private static final int SALT_INDEX = 1;
+    private static final int HASH_INDEX = 2;
+    private static final String COLON = ":";
+    private static final String ZERO = "%0";
+    private static final String D = "d";
+
+
 
     /**
      * Returns a salted PBKDF2 hash of the password.
@@ -49,7 +54,7 @@ public class HashUtil {
 
         byte[] hash = pbkdf2(password, salt, PBKDF2_ITERATIONS, HASH_BYTE_SIZE);
 
-        return PBKDF2_ITERATIONS + ":" + toHex(salt) + ":" + toHex(hash);
+        return PBKDF2_ITERATIONS + COLON + toHex(salt) + COLON + toHex(hash);
     }
 
     /**
@@ -73,7 +78,7 @@ public class HashUtil {
      */
     public static boolean validatePassword(char[] password, String correctHash)
             throws NoSuchAlgorithmException, InvalidKeySpecException {
-        String[] params = correctHash.split(":");
+        String[] params = correctHash.split(COLON);
         int iterations = Integer.parseInt(params[ITERATION_INDEX]);
         byte[] salt = fromHex(params[SALT_INDEX]);
         byte[] hash = fromHex(params[HASH_INDEX]);
@@ -109,7 +114,7 @@ public class HashUtil {
         String hex = bi.toString(16);
         int paddingLength = (array.length * 2) - hex.length();
         if (paddingLength > 0) {
-            return String.format("%0" + paddingLength + "d", 0) + hex;
+            return String.format(ZERO + paddingLength + D, 0) + hex;
         } else {
             return hex;
         }

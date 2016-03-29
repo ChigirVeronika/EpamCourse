@@ -38,7 +38,7 @@ public class BanCommand implements Command {
                 userService.update(user);
             }
         } catch (ServiceException e) {
-            throw new CommandException("BanCommand Exception");
+            throw new CommandException("BanCommand Exception", e);
         }
 
         return result;

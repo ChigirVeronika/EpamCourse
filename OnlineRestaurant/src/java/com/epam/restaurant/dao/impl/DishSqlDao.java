@@ -80,9 +80,9 @@ public class DishSqlDao extends AbstractSqlDao<Dish, Long> {
                 dish.setImage(rs.getString(IMAGE));
                 result.add(dish);
             }
-            LOGGER.info("ResultSet parsed.");
-        }catch(SQLException e){
-            throw new DaoException("Exception in parseResultSet method",e);
+            LOGGER.info("ResultSet parsed");
+        } catch (SQLException e) {
+            throw new DaoException("Exception in parseResultSet method", e);
         }
         return result;
     }
@@ -100,7 +100,7 @@ public class DishSqlDao extends AbstractSqlDao<Dish, Long> {
             LOGGER.info("Statement for insert prepared");
         } catch (SQLException e) {
             LOGGER.error("Exception in prepareStatementForInsert method");
-            throw new DaoException("Exception in prepareStatementForInsert method",e);
+            throw new DaoException("Exception in prepareStatementForInsert method", e);
         }
     }
 
@@ -118,7 +118,7 @@ public class DishSqlDao extends AbstractSqlDao<Dish, Long> {
             LOGGER.info("Statement for update prepared.");
         } catch (SQLException e) {
             LOGGER.error("Exception in prepareStatementForUpdate method");
-            throw new DaoException("Exception in prepareStatementForUpdate method",e);
+            throw new DaoException("Exception in prepareStatementForUpdate method", e);
         }
     }
 
@@ -144,7 +144,7 @@ public class DishSqlDao extends AbstractSqlDao<Dish, Long> {
             LOGGER.info("Method getAllCategories executed");
         } catch (ConnectionPoolException | SQLException e) {
             LOGGER.error("Exception");
-            throw new DaoException("Exception");
+            throw new DaoException("Exception", e);
         } finally {
             try {
                 if (connection != null) {
@@ -153,7 +153,7 @@ public class DishSqlDao extends AbstractSqlDao<Dish, Long> {
                 }
             } catch (ConnectionPoolException e) {
                 LOGGER.error("Exception during returning connection");
-                throw new DaoException("Exception");
+                throw new DaoException("DaoException", e);
             }
         }
         return result;

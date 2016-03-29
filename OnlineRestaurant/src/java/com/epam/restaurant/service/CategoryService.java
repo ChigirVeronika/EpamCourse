@@ -40,7 +40,7 @@ public class CategoryService {
         try {
             return categoryDao.getByPK(id);
         } catch (DaoException e) {
-            throw new ServiceException("CategoryService Exception");
+            throw new ServiceException("CategoryService Exception", e);
         }
     }
 
@@ -48,7 +48,7 @@ public class CategoryService {
         try {
             return dishDao.getAllFromCategory(categoryId);
         } catch (DaoException e) {
-            throw new ServiceException("CategoryService Exception");
+            throw new ServiceException("CategoryService Exception", e);
         }
     }
 
@@ -56,7 +56,7 @@ public class CategoryService {
         try {
             return categoryDao.getByName(name);
         } catch (DaoException e) {
-            throw new ServiceException("CategoryService Exception");
+            throw new ServiceException("CategoryService Exception", e);
         }
     }
 
@@ -69,7 +69,7 @@ public class CategoryService {
                 throw new ServiceException("CategoryService Exception");
             }
         } catch (DaoException e) {
-            throw new ServiceException("CategoryService Exception");
+            throw new ServiceException("CategoryService Exception", e);
         }
     }
 
@@ -81,7 +81,7 @@ public class CategoryService {
                 throw new ServiceException("CategoryService Exception");
             }
         } catch (DaoException e) {
-            throw new ServiceException("CategoryService Exception");
+            throw new ServiceException("CategoryService Exception", e);
         }
     }
 
@@ -89,7 +89,7 @@ public class CategoryService {
         try {
             categoryDao.delete(category);
         } catch (DaoException e) {
-            throw new ServiceException("CategoryService Exception");
+            throw new ServiceException("CategoryService Exception", e);
         }
     }
 

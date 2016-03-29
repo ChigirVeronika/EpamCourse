@@ -44,7 +44,7 @@ public class DishService {
                 throw new ServiceException("DishServiceException");
             }
         } catch (DaoException e) {
-            throw new ServiceException("DishServiceException");
+            throw new ServiceException("DishServiceException", e);
         }
     }
 
@@ -52,7 +52,7 @@ public class DishService {
         try {
             dishDao.delete(dish);
         } catch (DaoException e) {
-            throw new ServiceException("DishServiceException");
+            throw new ServiceException("DishServiceException", e);
         }
     }
 
@@ -64,7 +64,7 @@ public class DishService {
                 throw new ServiceException("DishServiceException");
             }
         } catch (DaoException e) {
-            throw new ServiceException("DishServiceException");
+            throw new ServiceException("DishServiceException", e);
         }
     }
 }

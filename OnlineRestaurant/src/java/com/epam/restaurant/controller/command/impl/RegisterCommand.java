@@ -46,7 +46,7 @@ public class RegisterCommand implements Command {
                 request.setAttribute(REQUIRED_MESSAGE, rb.getString(REGISTER_WRONG));
             }
         } catch (ServiceException e) {
-            throw new CommandException("Registration failed");
+            throw new CommandException("Registration failed", e);
         }
 
         return result;

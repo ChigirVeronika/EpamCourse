@@ -53,7 +53,7 @@ public class CheckoutCommand implements Command {
             Order newOrder = orderService.create(currentUser.getId(), new Date());
             request.getSession().setAttribute(ORDER, newOrder);
         } catch (ServiceException e) {
-            throw new CommandException("Cant't executeCheckoutCommand");
+            throw new CommandException("Cant't executeCheckoutCommand", e);
         }
 
         return result;

@@ -76,7 +76,7 @@ public class OrderDishSqlDao extends AbstractSqlDao<OrderDish, Long> {
                 orderDish.setQuantity(rs.getInt(QUANTITY));
                 result.add(orderDish);
             }
-            LOGGER.info("ResultSet parsed.");
+            LOGGER.info("ResultSet parsed");
         } catch (SQLException e) {
             throw new DaoException("Exception in parseResultSet method", e);
         }
@@ -103,7 +103,7 @@ public class OrderDishSqlDao extends AbstractSqlDao<OrderDish, Long> {
             statement.setLong(2, object.getOrderId());
             statement.setInt(3, object.getQuantity());
             statement.setLong(4, object.getId());
-            LOGGER.info("Statement for update prepared.");
+            LOGGER.info("Statement for update prepared");
         } catch (SQLException e) {
             LOGGER.error("Exception in prepareStatementForUpdate method");
             throw new DaoException("Exception in prepareStatementForUpdate method", e);
@@ -133,7 +133,7 @@ public class OrderDishSqlDao extends AbstractSqlDao<OrderDish, Long> {
             LOGGER.info("Method getAllFromOrder executed");
         } catch (ConnectionPoolException | SQLException e) {
             LOGGER.error("Exception");
-            throw new DaoException("Exception");
+            throw new DaoException("Exception", e);
         } finally {
             try {
                 if (connection != null) {
@@ -142,7 +142,7 @@ public class OrderDishSqlDao extends AbstractSqlDao<OrderDish, Long> {
                 }
             } catch (ConnectionPoolException e) {
                 LOGGER.error("Exception during returning connection");
-                throw new DaoException("Exception");
+                throw new DaoException("Exception", e);
             }
         }
         return result;

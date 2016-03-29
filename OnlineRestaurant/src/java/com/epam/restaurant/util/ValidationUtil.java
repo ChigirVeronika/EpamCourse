@@ -16,7 +16,7 @@ public class ValidationUtil {
     private static final String USER_SURNAME = "^[A-Za-z-]+$";
     private static final String USER_EMAIL = "^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3})+$";
     private static final String USER_PAYCARD = "^[0-9]+$";
-    private static final String USER_LOGIN = "^[0-9a-zA-Z ]+$";
+    private static final String USER_LOGIN = "^[0-9a-zA-Z-]+$";
     private static final String USER_PASSWORD = "^[0-9a-zA-Z]+$";
 
     private static final String DISH_NAME = "^[0-9a-zA-Z ]+";

@@ -79,7 +79,7 @@ public class OrderSqlDao extends AbstractSqlDao<Order, Long> {
                 order.setPaid(rs.getBoolean(PAID));
                 result.add(order);
             }
-            LOGGER.info("ResultSet parsed.");
+            LOGGER.info("ResultSet parsed");
         } catch (SQLException e) {
             throw new DaoException("Exception in parseResultSet method", e);
         }
@@ -108,7 +108,7 @@ public class OrderSqlDao extends AbstractSqlDao<Order, Long> {
             statement.setBigDecimal(3, object.getTotal());
             statement.setBoolean(4, object.isPaid());
             statement.setLong(5, object.getId());
-            LOGGER.info("Statement for update prepared.");
+            LOGGER.info("Statement for update prepared");
         } catch (SQLException e) {
             LOGGER.error("Exception in prepareStatementForUpdate method");
             throw new DaoException("Exception in prepareStatementForUpdate method", e);
@@ -143,7 +143,7 @@ public class OrderSqlDao extends AbstractSqlDao<Order, Long> {
             }
         } catch (ConnectionPoolException | SQLException e) {
             LOGGER.error("Exception");
-            throw new DaoException("Exception");
+            throw new DaoException("Exception", e);
         } finally {
             try {
                 if (connection != null) {
@@ -152,7 +152,7 @@ public class OrderSqlDao extends AbstractSqlDao<Order, Long> {
                 }
             } catch (ConnectionPoolException e) {
                 LOGGER.error("Exception during returning connection");
-                throw new DaoException("Dao Exception");
+                throw new DaoException("Dao Exception",e);
             }
         }
 

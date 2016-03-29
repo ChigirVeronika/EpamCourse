@@ -146,7 +146,7 @@ public class UserSqlDao extends AbstractSqlDao<User, Long> {
             }
             if (list.size() > 1) {
                 LOGGER.error("Received more than one record");
-                throw new SQLException("Received more than one record.");
+                throw new SQLException("Received more than one record");
             }
 
         } catch (ConnectionPoolException | SQLException e) {
@@ -160,7 +160,7 @@ public class UserSqlDao extends AbstractSqlDao<User, Long> {
                 }
             } catch (ConnectionPoolException e) {
                 LOGGER.error("Exception during returning connection");
-                throw new DaoException("Dao Exception");
+                throw new DaoException("Dao Exception", e);
             }
         }
         return list.iterator().next();
