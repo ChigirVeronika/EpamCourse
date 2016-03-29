@@ -29,7 +29,7 @@ public class DishService {
         try {
             return dishDao.getByPK(dishId);
         } catch (DaoException e) {
-            throw new ServiceException("DishServiceException");
+            throw new ServiceException("DishServiceException", e);
         }
     }
 

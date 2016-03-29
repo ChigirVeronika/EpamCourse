@@ -3,6 +3,7 @@ package com.epam.restaurant.controller.command.impl;
 import com.epam.restaurant.controller.command.Command;
 import com.epam.restaurant.controller.command.exception.CommandException;
 import com.epam.restaurant.controller.name.JspPageName;
+import com.epam.restaurant.entity.News;
 import com.epam.restaurant.service.NewsService;
 import com.epam.restaurant.service.exception.ServiceException;
 
@@ -35,8 +36,8 @@ public class AddNewsCommand implements Command {
             String newsImage = request.getParameter(NEWS_IMAGE);
             Date date = new Date();
 
-            newsService.create(newsName, date, newsContent, newsImage);
-
+            News news = newsService.create(newsName, date, newsContent, newsImage);
+            System.out.println(news.toString());
         } catch (ServiceException e) {
             throw new CommandException("Cant't execute AddDishCommand");
         }

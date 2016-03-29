@@ -66,14 +66,15 @@ public abstract class AbstractSqlDao<T extends Identified<PK>, PK extends Long> 
             statement = connection.prepareStatement(sql);
             ResultSet rs = statement.executeQuery();
 
+
+
             List<T> list = parseResultSet(rs);
             if ((list == null) || (list.size() != 1)) {
                 LOGGER.error("Exception on findByPK new persist data");
                 throw new DaoException("Exception on findByPK new persist data");
             }
             persistInstance = list.iterator().next();
-            LOGGER.info("Method persist executed" +
-                    "");
+            LOGGER.info("Method persist executed");
         } catch (ConnectionPoolException | SQLException e) {
             LOGGER.error("Exception");
             throw new DaoException("Exception", e);

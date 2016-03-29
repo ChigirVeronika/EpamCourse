@@ -1,5 +1,6 @@
 package com.epam.restaurant.entity;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 import java.math.BigDecimal;
@@ -96,5 +97,20 @@ public class DishTest {
         Dish dish = new Dish();
         dish.setName("name");
         assertEquals("name",dish.getName());
+    }
+
+    @Test
+    public void testEquals() throws Exception {
+        Dish d1  = new Dish();
+        Dish d2 = new Dish();
+        Assert.assertTrue(d1.equals(d2) && d2.equals(d1));
+    }
+
+    @Test
+    public void testHashCode() throws Exception {
+        Dish d1  = new Dish();
+        Dish d2 = new Dish();
+        Assert.assertEquals(d1, d2);
+        Assert.assertTrue( d1.hashCode()==d2.hashCode() );
     }
 }

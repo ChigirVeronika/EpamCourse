@@ -21,7 +21,7 @@
             </div>
 
             <div class="inner cover">
-            <c:if test="${user != null && user.role == 'ADMIN'}">
+                <!--<c:if test="${user != null && user.role == 'ADMIN'}">
             <button type="submit" class="btn btn-default" data-toggle="modal" data-target="#addNews">
                 <fmt:message key="news.add" bundle="${lang}"/>
             </button>
@@ -48,7 +48,7 @@
                     </div>
                 </form>
             </div>
-            </c:if>
+            </c:if>-->
 
                 <table border id="results">
                     <c:forEach var="one_news" items = "${newsList}">
@@ -59,7 +59,7 @@
                             <td>${one_news.getDate()}</td>
                         </tr>
                         <tr>
-                            <td><img src="images/${one_news.getImage()}" height="100"/></td>
+                            <td><img src="images/${one_news.getImage()}" alt="${one_news.getName()}" height="160" data-tooltip="DESCRIPTION"/></td>
                         </tr>
                         <br>
                     </c:forEach>

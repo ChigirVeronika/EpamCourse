@@ -14,29 +14,29 @@ import static org.junit.Assert.*;
  */
 public class DishSqlDaoTest {
 
-    UserSqlDao userSqlDao = (UserSqlDao) UserSqlDao.getInstance();
+    DishSqlDao dao = (DishSqlDao) DishSqlDao.getInstance();
     ResourceBundle dbBundle = ResourceBundle.getBundle("db.db");
     ConnectionPool pool = ConnectionPoolImpl.getInstance();
     Connection connection;
 
     @Test
     public void testGetSelectQuery() throws Exception {
-
+        assertEquals("SELECT id,dish_id,order_id,quantity FROM restaurant.order_dish", dao.getSelectQuery());
     }
 
     @Test
     public void testGetCreateQuery() throws Exception {
-
+        assertEquals("INSERT INTO restaurant.order_dish (dish_id,order_id,quantity) VALUES (?,?,?)", dao.getCreateQuery());
     }
 
     @Test
     public void testGetUpdateQuery() throws Exception {
-
+        assertEquals("UPDATE restaurant.order_dish SET dish_id=?,order_id=?,quantity=? WHERE id = ?", dao.getUpdateQuery());
     }
 
     @Test
     public void testGetDeleteQuery() throws Exception {
-
+        assertEquals("DELETE FROM restaurant.order_dish WHERE id = ?", dao.getDeleteQuery());
     }
 
     @Test

@@ -36,7 +36,10 @@ public class NewsService {
             throws ServiceException {
         News news = new News(name, date, content, image);
         try {
-            return newsDao.persist(news);
+            System.out.println("IN CREATE IN NEW SERVICE");
+            News newsn = newsDao.persist(news);
+            System.out.println(newsn.toString());
+            return newsn;
         } catch (DaoException e) {
             throw new ServiceException("NewsServiceException");
         }
