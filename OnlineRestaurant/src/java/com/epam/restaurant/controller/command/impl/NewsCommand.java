@@ -23,6 +23,13 @@ public class NewsCommand implements Command {
      */
     private static final NewsService newsService = NewsService.getInstance();
 
+    /**
+     * Set all news to request.
+     * If everything is fine, return news page value.
+     *
+     * @return page to forward to
+     * @throws CommandException if can't get all news
+     */
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws CommandException {
         String result = JspPageName.NEWS_JSP;

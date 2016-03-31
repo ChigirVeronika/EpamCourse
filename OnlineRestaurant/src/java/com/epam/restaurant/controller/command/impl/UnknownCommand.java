@@ -13,6 +13,11 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class UnknownCommand implements Command {
 
+    /**
+     * Handle situations if there is no such command in application.
+     *
+     * @return error page
+     */
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws CommandException {
         return JspPageName.ERROR_JSP;

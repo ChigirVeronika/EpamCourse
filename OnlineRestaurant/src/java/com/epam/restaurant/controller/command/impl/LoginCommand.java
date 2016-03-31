@@ -32,6 +32,15 @@ public class LoginCommand implements Command {
      */
     private static final OrderService orderService = OrderService.getInstance();
 
+    /**
+     * Get from request login and password.
+     * If user is not blocked or null, login him and get his order
+     * and return hello page.
+     * Else return login page again.
+     *
+     * @return page to forward to
+     * @throws CommandException if can't login
+     */
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws CommandException {
         String login = request.getParameter(LOGIN);

@@ -25,6 +25,13 @@ public class RegisterCommand implements Command {
      */
     private static UserService userService = UserService.getInstance();
 
+    /**
+     * Get from request user parameters and create new user.
+     * If everything is fine, return hello page value.
+     *
+     * @return page to forward to
+     * @throws CommandException if can't create new user
+     */
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws CommandException {
         String name = request.getParameter(NAME);

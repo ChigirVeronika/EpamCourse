@@ -25,6 +25,14 @@ public class UpdateOrderCommand implements Command {
      */
     private static final OrderDishService orderDishService = OrderDishService.getInstance();
 
+    /**
+     * At first, check session expiration. If it's expired, return login page.
+     * If not, get from request order and update it.
+     * If everything is fine, return order page value.
+     *
+     * @return page to forward to
+     * @throws CommandException if can't update order
+     */
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws CommandException {
         String result = JspPageName.ORDER_JSP;

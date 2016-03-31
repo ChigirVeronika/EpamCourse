@@ -17,6 +17,13 @@ import static com.epam.restaurant.controller.name.RequestParameterName.*;
  */
 public class LogoutCommand implements Command {
 
+    /**
+     * Get current session and invalidate it.
+     * Return index page.
+     *
+     * @return page to forward to
+     * @throws CommandException if can't logout
+     */
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws CommandException {
         HttpSession currentSession = request.getSession(false);
