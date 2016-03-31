@@ -49,7 +49,6 @@ public class ShowCategory  extends TagSupport {
                     out.println("</div>");
                     out.println("</div>");
                     out.println("</td></tr>");
-                    out.println("<br><br>");
 
                 }
             }catch (Exception e){

@@ -12,7 +12,7 @@
 <head>
     <jsp:include page="layout/resources.jsp" />
 </head>
-<body>
+<body onkeydown="return Disable()">
 <div class="site-wrapper">
     <div class="site-wrapper-inner">
         <div class="cover-container">
@@ -37,9 +37,7 @@
                 </a>
             </p>
 
-            <div class="trendfoot">
-                <jsp:include page="layout/footer.jsp"/>
-            </div>
+
         </div>
     </div>
 </div>

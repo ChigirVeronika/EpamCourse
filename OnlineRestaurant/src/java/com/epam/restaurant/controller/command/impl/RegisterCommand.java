@@ -34,7 +34,9 @@ public class RegisterCommand implements Command {
         String result = JspPageName.REGISTER_JSP;
         try {
             if (userService.get(login) == null) {
+                System.out.println("no such login yet");
                 User user = userService.create(name, surname, email, payCard, login, password);
+                System.out.println(user.toString());
                 result = JspPageName.LOGIN_JSP;//зарегался - теперь залогинься
             } else {
                 String path = I18N;

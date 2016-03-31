@@ -14,7 +14,7 @@
 <head>
     <jsp:include page="layout/resources.jsp" />
 </head>
-<body>
+<body onkeydown="return Disable()">
 <div class="site-wrapper">
     <div class="site-wrapper-inner">
         <div class="cover-container">
@@ -38,6 +38,7 @@
                             <mytag:categories/>
                         </div>
                         <div class = "col-sm-8">
+
                             <div class="row">
                                 <div class = "col-xs-7">
                                     <img src = "images/<c:out value="${dish.image}" />" alt = "image" height="150"/>
@@ -172,9 +173,6 @@
                 </div>
             </div>
 
-            <div class="trendfoot">
-                <jsp:include page="layout/footer.jsp"/>
-            </div>
         </div>
     </div>
 </div>

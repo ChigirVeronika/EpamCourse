@@ -10,13 +10,18 @@ import java.io.UnsupportedEncodingException;
  * Change string to utf-8 charset.
  */
 public class CharsetUtil {
+
     private static final Logger LOGGER = Logger.getLogger(CharsetUtil.class);
 
     private static String UTF_8 = "UTF-8";
     private static String ISO = "ISO-8859-1";
 
+    /**
+     *
+     * @param inputString
+     * @return
+     */
     public static String encodeToUTF8(String inputString) {
-
         String value = new String();
         byte ptext[];
         try {

@@ -34,6 +34,7 @@ public class BanCommand implements Command {
             String userLogin = request.getParameter(LOGIN);
             User user = userService.get(userLogin);
             if (user != null) {
+                System.out.println(user.toString());
                 user.setRole(User.Role.BLOCKED);
                 userService.update(user);
             }

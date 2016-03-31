@@ -15,6 +15,8 @@ public final class RequestParameterName {
     public static final String REGISTER_WRONG = "register.wrong";
     public static final String UTF8 = "utf-8";
 
+    public static final String CATEGORY_WITH_DISHES = "category.with_dishes";
+
     public static final String NAME = "name";
     public static final String SURNAME = "surname";
     public static final String LOGIN = "login";

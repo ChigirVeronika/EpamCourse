@@ -24,7 +24,7 @@ function addDishFormValidation(){
 
 function dishNameValidation(name){
     document.AddDish.name.focus();
-    var letters = /^[0-9a-zA-Z]+$/;
+    var letters = /^[0-9a-zA-ZА-Яа-я\-\s]+$/;
     if(value!=="") {
         if(value.length>1&&value.length<40){
             if(value.match(letters)){
@@ -65,7 +65,7 @@ function dishQuantityValidation(){
 
 function dishImageValidation(){
     document.AddDish.image.focus();
-    var letters = /^[a-zA-Z]+\.[a-zA-Z]+$/;
+    var letters = /^[a-zA-ZА-Яа-я\-]+\.[a-zA-Z]+$/;
     if(value!=="") {
         if(value.match(letters)){
             document.getElementById('dishImage-msg').innerHTML="";

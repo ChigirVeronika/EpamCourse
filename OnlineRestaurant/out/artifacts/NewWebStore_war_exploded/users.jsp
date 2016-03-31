@@ -71,9 +71,7 @@
                 <h2><fmt:message key="users.error" bundle="${lang}"/></h2>
             </c:if>
 
-            <div class="trendfoot">
-                <jsp:include page="layout/footer.jsp"/>
-            </div>
+
         </div>
     </div>
 </div>

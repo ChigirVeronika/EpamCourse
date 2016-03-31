@@ -12,17 +12,17 @@ import java.util.regex.Pattern;
  */
 public class ValidationUtil {
 
-    private static final String USER_NAME = "^[A-Za-z-]+$";
-    private static final String USER_SURNAME = "^[A-Za-z-]+$";
+    private static final String USER_NAME = "^[A-Za-zА-Яа-я]+$";
+    private static final String USER_SURNAME = "^[A-Za-zА-Яа-я\\-]+$";
     private static final String USER_EMAIL = "^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3})+$";
     private static final String USER_PAYCARD = "^[0-9]+$";
-    private static final String USER_LOGIN = "^[0-9a-zA-Z-]+$";
-    private static final String USER_PASSWORD = "^[0-9a-zA-Z]+$";
+    private static final String USER_LOGIN = "^[0-9a-zA-ZА-Яа-я\\-]+$";
 
-    private static final String DISH_NAME = "^[0-9a-zA-Z ]+";
+    private static final String DISH_NAME = "^[0-9a-zA-ZА-Яа-я\\-\\s]+";
     private static final String DISH_PRICE = "^[0-9]+\\.*[0-9]*$";
     private static final String DISH_QUANTITY = "^[0-9]+$";
-    private static final String DISH_IMAGE = "^[a-zA-Z]+\\.[a-zA-Z]+$";
+    private static final String DISH_IMAGE = "^[a-zA-Z\\-]+\\.[a-zA-Z]+$";
+
     private static final String EMPTY_STRING = "";
 
     private static boolean validValue(String pattern, String value) {
@@ -82,9 +82,6 @@ public class ValidationUtil {
             return false;
         }
         if (!validValue(USER_LOGIN, user.getLogin())) {
-            return false;
-        }
-        if (!validValue(USER_PASSWORD, user.getHash())) {
             return false;
         }
         return true;

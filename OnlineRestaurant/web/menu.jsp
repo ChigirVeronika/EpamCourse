@@ -15,7 +15,7 @@
     <jsp:include page="layout/resources.jsp" />
 </head>
 
-<body>
+<body onkeydown="return Disable()">
 <div class="site-wrapper">
     <div class="site-wrapper-inner">
         <div class="cover-container">
@@ -39,6 +39,13 @@
                             <mytag:categories/>
                         </div>
                         <div class="col-sm-8">
+
+                            <c:if test="${message ne null}">
+                                <div class="row"><h4><span class="label label-danger">
+							        <c:out value='${message}'/>
+						        </span></h4></div>
+                            </c:if>
+
                             <div class="row">
                                 <p><fmt:message key="lorem.short" bundle="${lang}"/></p>
                             </div>
@@ -61,9 +68,6 @@
                     <jsp:include page="add_category_modal.jsp"/>
                     <jsp:include page="edit_category_modal.jsp"/>
                 </div>
-            </div>
-            <div class="trendfoot">
-                <jsp:include page="layout/footer.jsp" />
             </div>
         </div>
     </div>

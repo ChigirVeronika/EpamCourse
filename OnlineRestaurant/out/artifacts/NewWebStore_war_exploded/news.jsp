@@ -12,7 +12,7 @@
 <head>
     <jsp:include page="layout/resources.jsp" />
 </head>
-<body>
+<body onkeydown="return Disable()">
 <div class="site-wrapper">
     <div class="site-wrapper-inner">
         <div class="cover-container">
@@ -21,45 +21,17 @@
             </div>
 
             <div class="inner cover">
-                <!--<c:if test="${user != null && user.role == 'ADMIN'}">
-            <button type="submit" class="btn btn-default" data-toggle="modal" data-target="#addNews">
-                <fmt:message key="news.add" bundle="${lang}"/>
-            </button>
-            <div class="modal fade" id="addNews" role="dialog">
-                <form name="AddNews" action="/main" method="POST" onsubmit="return addNewsFormValidation()">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            </div>
-                            <div class="modal-body">
-                                <input type="text" name="name" class="form-control" placeholder="<fmt:message key="dish.add.name" bundle="${lang}"/>"/>
-                                <span class="lable label-danger"  id="newsName-msg"></span>
-                                <br>
-                                <input type="text" name="image" class="form-control" placeholder="<fmt:message key="dish.add.image" bundle="${lang}"/>"/>
-                                <span class="lable label-danger"  id="newsImage-msg"></span>
-                                <br>
-                                <textarea class="form-control" name="content" id="message-text" placeholder="<fmt:message key="dish.add.description" bundle="${lang}"/>"></textarea>
-                                <span class="lable label-danger" id="newsContent-msg"></span>
-                                <input type="hidden" name="command" value="add_news_command"/>
-                                <button type="submit" class="btn btn-default"><fmt:message key="news.add" bundle="${lang}"/></button>
-                            </div>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            </c:if>-->
 
                 <table border id="results">
                     <c:forEach var="one_news" items = "${newsList}">
                         <tr>
-                            <td>${one_news.getName()}</td><td rowspan="3">${one_news.getContent()}</td>
+                            <td>${one_news.name}</td><td rowspan="3">${one_news.content}</td>
                         </tr>
                         <tr>
-                            <td>${one_news.getDate()}</td>
+                            <td>${one_news.date}</td>
                         </tr>
                         <tr>
-                            <td><img src="images/${one_news.getImage()}" alt="${one_news.getName()}" height="160" data-tooltip="DESCRIPTION"/></td>
+                            <td><img src="images/${one_news.image}" alt="${one_news.name}" height="110" data-tooltip="DESCRIPTION"/></td>
                         </tr>
                         <br>
                     </c:forEach>

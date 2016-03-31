@@ -26,7 +26,7 @@
     }
 </style>
 
-<body>
+<body onkeydown="return Disable()">
 <div class="site-wrapper">
     <div class="site-wrapper-inner">
         <div class="cover-container">
@@ -38,9 +38,6 @@
                 <mytag:order/>
             </div>
 
-            <div class="trendfoot">
-                <jsp:include page="layout/footer.jsp"/>
-            </div>
         </div>
     </div>
 </div>

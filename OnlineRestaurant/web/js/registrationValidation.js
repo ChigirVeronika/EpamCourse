@@ -26,7 +26,7 @@ function registrationFormValidation() {
 
 function userNameValidation(value){
     document.Registration.name.focus();
-    var letters = /^[A-Za-z]+$/;
+    var letters = /^[A-Za-zА-Яа-я]+$/;
     if(value!=="") {
         if(value.length>1&&value.length<26){
             if(value.match(letters)){
@@ -41,7 +41,7 @@ function userNameValidation(value){
 
 function userSurnameValidation(value){
     document.Registration.surname.focus();
-    var letters = /^[A-Za-z]+$/;
+    var letters = /^[A-Za-zА-Яа-я\-]+$/;
     if(value!=="") {
         if(value.length>1&&value.length<26){
             if(value.match(letters)){
@@ -84,7 +84,7 @@ function userCardValidation(value){
 
 function userLoginValidation(value){
     document.Registration.login.focus();
-    var letters = /^[0-9a-zA-Z]+$/;
+    var letters = /^[0-9a-zA-ZА-Яа-я\-\s]+$/;
     if(value!=="") {
         if(value.length>5&&value.length<31) {
             if (value.match(letters)) {

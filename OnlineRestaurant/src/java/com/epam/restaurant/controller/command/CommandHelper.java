@@ -40,7 +40,6 @@ public final class CommandHelper {
         commandMap.put(CommandName.UPDATE_ORDER_COMMAND, new UpdateOrderCommand());
 
         commandMap.put(CommandName.NEWS_COMMAND, new NewsCommand());
-        commandMap.put(CommandName.ADD_NEWS_COMMAND, new AddNewsCommand());
     }
 
     public Command getCommand(String commandName) {

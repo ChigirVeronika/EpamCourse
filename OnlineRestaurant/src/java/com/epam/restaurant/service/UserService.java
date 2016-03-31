@@ -66,8 +66,6 @@ public class UserService {
         User user;
         try {
             user = new User(name, surname, email, payCard, login, HashUtil.createHash(password));
-//            user = new User(CharsetUtil.StringToUtf8(name), CharsetUtil.StringToUtf8(surname),//todo
-//                    email, payCard, CharsetUtil.StringToUtf8(login), HashUtil.createHash(password));
             if (ValidationUtil.userValid(user)) {
                 return userDao.persist(user);
             } else {
@@ -80,11 +78,7 @@ public class UserService {
 
     public void update(User user) throws ServiceException {
         try {
-            if (ValidationUtil.userValid(user)) {
                 userDao.update(user);
-            } else {
-                throw new ServiceException("UserService Exception");
-            }
         } catch (DaoException e) {
             throw new ServiceException("UserService Exception", e);
         }

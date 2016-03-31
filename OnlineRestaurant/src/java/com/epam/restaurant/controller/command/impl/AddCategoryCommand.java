@@ -17,8 +17,18 @@ import static com.epam.restaurant.util.SessionUtil.*;
  */
 public class AddCategoryCommand implements Command {
 
+    /**
+     * Service provides work with database (category table)
+     */
     private static final CategoryService categoryService = CategoryService.getInstance();
 
+    /**
+     *
+     * @param request
+     * @param response
+     * @return
+     * @throws CommandException
+     */
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws CommandException {
         String result;

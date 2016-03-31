@@ -17,6 +17,7 @@ import java.util.List;
 public class CategoryService {
 
     private static final CategorySqlDao categoryDao = (CategorySqlDao) SqlDaoFactory.getInstance().getDao(SqlDaoFactory.DaoType.CATEGORY);
+
     private static final DishSqlDao dishDao = (DishSqlDao) SqlDaoFactory.getInstance().getDao(SqlDaoFactory.DaoType.DISH);
 
     private static CategoryService instance = new CategoryService();

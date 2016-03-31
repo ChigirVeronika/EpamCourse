@@ -3,6 +3,7 @@ package com.epam.restaurant.controller.command.impl;
 import com.epam.restaurant.controller.command.Command;
 import com.epam.restaurant.controller.command.exception.CommandException;
 import com.epam.restaurant.controller.name.JspPageName;
+import com.epam.restaurant.controller.name.RequestParameterName;
 import com.epam.restaurant.entity.Category;
 import com.epam.restaurant.entity.Dish;
 import com.epam.restaurant.service.CategoryService;
@@ -12,6 +13,7 @@ import org.apache.log4j.Logger;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
+import java.util.ResourceBundle;
 
 import static com.epam.restaurant.util.SessionUtil.*;
 import static com.epam.restaurant.controller.name.RequestParameterName.*;
@@ -38,7 +40,15 @@ public class DeleteCategoryCommand implements Command {
                 //if there dishes of this category
                 List<Dish> dishList = categoryService.getAllFromCategory(category.getId());
                 if (dishList != null && dishList.size()>0) {
-                    result = JspPageName.ERROR_JSP;
+                    //result = JspPageName.ERROR_JSP;
+
+                    String path = RequestParameterName.I18N;
+                    String curLan = (String) request.getSession().getAttribute(LANGUAGE);
+                    if (curLan != null && !curLan.equals(EN))
+                        path += UNDERLINE + curLan;
+                    ResourceBundle rb = ResourceBundle.getBundle(path);
+
+                    request.setAttribute(MESSAGE, rb.getString(CATEGORY_WITH_DISHES));
                     return result;
                 } else {
                     categoryService.delete(category);

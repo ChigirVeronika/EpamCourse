@@ -1,6 +1,4 @@
-/**
- * Created by Вероника on 07.03.2016.
- */
+
 function editCategoryFormValidation(){
     var name = document.EditCategory.name.value;
     var description = document.EditCategory.description.value;
@@ -15,7 +13,7 @@ function editCategoryFormValidation(){
 
 function categoryNameOldValidation(value){
     document.EditCategory.name.focus();
-    var letters = /^[0-9a-zA-Z]+$/;
+    var letters = /^[0-9a-zA-ZА-Яа-я\-\s]+$/;
     if(value!=="") {
         if(value.length>1&&value.length<40){
             if(value.match(letters)){
@@ -52,13 +50,13 @@ function addCategoryFormValidation(){
 
 function categoryNameValidation(value){
     document.AddCategory.name.focus();
-    var letters = /^[0-9a-zA-Z]+$/;
+    var letters = /^[0-9a-zA-ZА-Яа-я\-\s]+$/;
     if(value!=="") {
         if(value.length>1&&value.length<40){
-            if(value.match(letters)){
+            //if(value.match(letters)){
                 document.getElementById('categoryName-msg').innerHTML="";
                 return true;
-            }
+            //}
         }
     }
     document.getElementById('categoryName-msg').innerHTML="Please, enter valid category name";

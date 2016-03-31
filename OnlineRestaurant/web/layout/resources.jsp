@@ -16,6 +16,7 @@
 <script src="../js/dishValidation.js"></script>
 <script src="../js/pagination.js"></script>
 <script src="../js/tooltip.js"></script>
+<script src="../js/keyboardDeprecation.js"/>
 
 <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
 <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
