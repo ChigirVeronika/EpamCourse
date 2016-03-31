@@ -18,6 +18,9 @@ import static com.epam.restaurant.controller.name.RequestParameterName.*;
  */
 public class SearchUserCommand implements Command {
 
+    /**
+     * Service provides work with database (user table)
+     */
     private static final UserService userService = UserService.getInstance();
 
     @Override

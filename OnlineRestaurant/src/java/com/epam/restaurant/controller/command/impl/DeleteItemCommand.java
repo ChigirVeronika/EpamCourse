@@ -17,8 +17,19 @@ import static com.epam.restaurant.controller.name.RequestParameterName.*;
  */
 public class DeleteItemCommand implements Command {
 
+    /**
+     * Service provides work with database (order_dish table)
+     */
     private static final OrderDishService orderDishService = OrderDishService.getInstance();
 
+    /**
+     * At first, check session expiration. If it's expired, return login page.
+     * If not, get from request item id and delete it.
+     * If everything is fine, return order page value.
+     *
+     * @return page to forward to
+     * @throws CommandException if can't delete order item
+     */
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws CommandException {
         String result = JspPageName.ORDER_JSP;

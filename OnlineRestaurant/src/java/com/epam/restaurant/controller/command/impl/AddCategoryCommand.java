@@ -23,11 +23,12 @@ public class AddCategoryCommand implements Command {
     private static final CategoryService categoryService = CategoryService.getInstance();
 
     /**
+     * At first, check session expiration. If it's expired, return login page.
+     * If not, get from request name and description and create new category.
+     * If everything is fine, return menu page value.
      *
-     * @param request
-     * @param response
-     * @return
-     * @throws CommandException
+     * @return page to forward to
+     * @throws CommandException if can't create new category
      */
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws CommandException {

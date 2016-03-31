@@ -20,6 +20,9 @@ import static com.epam.restaurant.controller.name.RequestParameterName.*;
  */
 public class UpdateOrderCommand implements Command {
 
+    /**
+     * Service provides work with database (order_dish table)
+     */
     private static final OrderDishService orderDishService = OrderDishService.getInstance();
 
     @Override

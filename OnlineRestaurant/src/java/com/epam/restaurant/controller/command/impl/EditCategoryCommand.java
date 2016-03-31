@@ -18,8 +18,21 @@ import static com.epam.restaurant.controller.name.RequestParameterName.*;
  * Change category parameters by user with role ADMIN.
  */
 public class EditCategoryCommand implements Command {
+
+    /**
+     * Service provides work with database (category table)
+     */
     private static final CategoryService categoryService = CategoryService.getInstance();
 
+    /**
+     * At first, check session expiration. If it's expired, return login page.
+     * If not, get from request old and new names and description.
+     * Get current category abd update it.
+     * If everything is fine, return menu page value.
+     *
+     * @return page to forward to
+     * @throws CommandException if can't update category
+     */
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws CommandException {
 

@@ -9,8 +9,12 @@ import java.util.Map;
  * Command pattern realization for all commands.
  */
 public final class CommandHelper {
+
     private static final CommandHelper instance = new CommandHelper();
 
+    /**
+     * Contains all commands and their names
+     */
     private final Map<CommandName, Command> commandMap = new HashMap<>();
 
     public CommandHelper() {
@@ -42,6 +46,11 @@ public final class CommandHelper {
         commandMap.put(CommandName.NEWS_COMMAND, new NewsCommand());
     }
 
+    /**
+     * Get command corresponding to input object -  command name
+     * @param commandName represents command name in upper case
+     * @return command corresponding to command name or unknown command if there id no such command name
+     */
     public Command getCommand(String commandName) {
         CommandName name = CommandName.valueOf(commandName.toUpperCase());
         Command command;

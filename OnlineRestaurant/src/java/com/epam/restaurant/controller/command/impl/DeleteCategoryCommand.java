@@ -22,8 +22,20 @@ import static com.epam.restaurant.controller.name.RequestParameterName.*;
  * Delete category from category list by user with role ADMIN.
  */
 public class DeleteCategoryCommand implements Command {
+
+    /**
+     * Service provides work with database (category table)
+     */
     private static final CategoryService categoryService = CategoryService.getInstance();
 
+    /**
+     * At first, check session expiration. If it's expired, return login page.
+     * If not, get from request name and check if category is not empty.
+     * If everything is fine, delete category and return menu page value.
+     *
+     * @return page to forward to
+     * @throws CommandException if can't delete category
+     */
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws CommandException {
 
@@ -40,7 +52,6 @@ public class DeleteCategoryCommand implements Command {
                 //if there dishes of this category
                 List<Dish> dishList = categoryService.getAllFromCategory(category.getId());
                 if (dishList != null && dishList.size()>0) {
-                    //result = JspPageName.ERROR_JSP;
 
                     String path = RequestParameterName.I18N;
                     String curLan = (String) request.getSession().getAttribute(LANGUAGE);

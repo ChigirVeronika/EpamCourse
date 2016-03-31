@@ -20,6 +20,9 @@ import static com.epam.restaurant.controller.name.RequestParameterName.*;
  */
 public class RegisterCommand implements Command {
 
+    /**
+     * Service provides work with database (user table)
+     */
     private static UserService userService = UserService.getInstance();
 
     @Override

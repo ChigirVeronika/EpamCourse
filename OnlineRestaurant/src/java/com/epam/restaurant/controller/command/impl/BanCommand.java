@@ -19,8 +19,20 @@ import static com.epam.restaurant.util.SessionUtil.*;
  * Handle 'Ban' button on the ADMIN user page
  */
 public class BanCommand implements Command {
+
+    /**
+     * Service provides work with database (user table)
+     */
     private static final UserService userService = UserService.getInstance();
 
+    /**
+     * At first, check session expiration. If it's expired, return login page.
+     * If not, get from request user and block it.
+     * If everything is fine, return users page value.
+     *
+     * @return page to forward to
+     * @throws CommandException if can't ban user
+     */
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws CommandException {
         String result = JspPageName.USERS_JSP;

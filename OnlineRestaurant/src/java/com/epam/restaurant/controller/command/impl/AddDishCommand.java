@@ -21,10 +21,24 @@ import static com.epam.restaurant.controller.name.RequestParameterName.*;
  */
 public class AddDishCommand implements Command {
 
+    /**
+     * Service provides work with database (category table)
+     */
     private static final CategoryService categoryService = CategoryService.getInstance();
 
+    /**
+     * Service provides work with database (dish table)
+     */
     private static final DishService dishService = DishService.getInstance();
 
+    /**
+     * At first, check session expiration. If it's expired, return login page.
+     * If not, get from request dish parameters and create new dish.
+     * If everything is fine, return concrete category page value.
+     *
+     * @return page to forward to
+     * @throws CommandException if can't create new dish
+     */
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws CommandException {
         String result = JspPageName.CONCRETE_CATEGORY_JSP;

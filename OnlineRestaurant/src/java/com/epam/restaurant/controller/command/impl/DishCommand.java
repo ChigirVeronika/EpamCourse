@@ -20,10 +20,24 @@ import static com.epam.restaurant.controller.name.RequestParameterName.*;
  * Show page with concrete dish.
  */
 public class DishCommand implements Command {
+
+    /**
+     * Service provides work with database (dish table)
+     */
     private static final DishService dishService = DishService.getInstance();
 
+    /**
+     * Service provides work with database (category table)
+     */
     private static final CategoryService categoryService = CategoryService.getInstance();
 
+    /**
+     * Get from request dish id and get concrete dish.
+     * If everything is fine, return this dish page value.
+     *
+     * @return page to forward to
+     * @throws CommandException if can't get dish
+     */
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws CommandException {
         String result = JspPageName.DISH_JSP;

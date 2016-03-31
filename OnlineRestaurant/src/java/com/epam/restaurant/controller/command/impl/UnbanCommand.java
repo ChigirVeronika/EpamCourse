@@ -20,6 +20,9 @@ import static com.epam.restaurant.util.SessionUtil.*;
  */
 public class UnbanCommand implements Command {
 
+    /**
+     * Service provides work with database (user table)
+     */
     private static final UserService userService = UserService.getInstance();
 
     @Override

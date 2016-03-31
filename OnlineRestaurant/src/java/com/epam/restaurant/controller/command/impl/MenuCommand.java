@@ -20,8 +20,18 @@ import static com.epam.restaurant.controller.name.RequestParameterName.*;
  */
 public class MenuCommand implements Command {
 
+    /**
+     * Service provides work with database (category table)
+     */
     private static final CategoryService categoryService = CategoryService.getInstance();
 
+    /**
+     * Set all categories to request.
+     * If everything is fine, return menu page value.
+     *
+     * @return page to forward to
+     * @throws CommandException if can't get all categories
+     */
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws CommandException {
         String page = JspPageName.MENU_JSP;

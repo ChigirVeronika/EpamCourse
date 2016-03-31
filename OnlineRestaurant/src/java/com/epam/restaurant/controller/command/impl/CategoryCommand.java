@@ -20,8 +20,19 @@ import static com.epam.restaurant.controller.name.RequestParameterName.*;
  */
 public class CategoryCommand implements Command {
 
+    /**
+     * Service provides work with database (category table)
+     */
     private static final CategoryService categoryService = CategoryService.getInstance();
 
+    /**
+     * Get from request category id. Get all categories and all dishes from concrete category.
+     * Set them as attributes to request.
+     * If everything is fine, return category page value.
+     *
+     * @return page to forward to
+     * @throws CommandException if can't get categories ar dishes
+     */
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws CommandException {
         String result = JspPageName.CATEGORY_JSP;

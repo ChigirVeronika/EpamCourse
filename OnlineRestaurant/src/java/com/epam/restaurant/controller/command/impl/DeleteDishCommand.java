@@ -18,8 +18,19 @@ import static com.epam.restaurant.controller.name.RequestParameterName.*;
  */
 public class DeleteDishCommand implements Command {
 
+    /**
+     * Service provides work with database (dish table)
+     */
     private static final DishService dishService = DishService.getInstance();
 
+    /**
+     * At first, check session expiration. If it's expired, return login page.
+     * If not, get from request dish id and delete it.
+     * If everything is fine, return menu page value.
+     *
+     * @return page to forward to
+     * @throws CommandException if can't delete dish
+     */
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws CommandException {
         String result = JspPageName.CONCRETE_CATEGORY_JSP;

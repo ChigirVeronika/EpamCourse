@@ -18,6 +18,9 @@ import static com.epam.restaurant.controller.name.RequestParameterName.*;
  */
 public class NewsCommand implements Command {
 
+    /**
+     * Service provides work with database (news table)
+     */
     private static final NewsService newsService = NewsService.getInstance();
 
     @Override

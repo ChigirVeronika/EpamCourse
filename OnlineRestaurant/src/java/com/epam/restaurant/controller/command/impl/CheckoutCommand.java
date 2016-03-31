@@ -22,10 +22,26 @@ import static com.epam.restaurant.controller.name.RequestParameterName.*;
  * Checkout USER order.
  */
 public class CheckoutCommand implements Command {
+
+    /**
+     * Service provides work with database (order table)
+     */
     private static final OrderService orderService = OrderService.getInstance();
 
+    /**
+     * Service provides work with database (order_dish table)
+     */
     private static final OrderDishService orderDishService = OrderDishService.getInstance();
 
+    /**
+     * At first, check session expiration. If it's expired, return login page.
+     * If not, get from request user and his order. Update order status and delete current order.
+     * Create new empty order.
+     * If everything is fine, return concrete checkout page value.
+     *
+     * @return page to forward to
+     * @throws CommandException if can't execute checkout
+     */
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws CommandException {
         String result = JspPageName.CHECKOUT_JSP;

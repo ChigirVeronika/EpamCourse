@@ -24,12 +24,30 @@ import static com.epam.restaurant.controller.name.RequestParameterName.*;
  */
 public class AddToOrderCommand implements Command {
 
+    /**
+     * Service provides work with database (order table)
+     */
     private static final OrderService orderService = OrderService.getInstance();
 
+    /**
+     * Service provides work with database (dish table)
+     */
     private static final DishService dishService = DishService.getInstance();
 
+    /**
+     * Service provides work with database (order_dish table)
+     */
     private static final OrderDishService orderDishService = OrderDishService.getInstance();
 
+    /**
+     * At first, check session expiration. If it's expired, return login page.
+     * If not, get from request user and his order. Create order if it still doesn't exist.
+     * Get dish id from request and add corresponding dish to order.
+     * If everything is fine, return concrete order page value.
+     *
+     * @return page to forward to
+     * @throws CommandException if can't add to order
+     */
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws CommandException {
         String result = JspPageName.ORDER_JSP;
