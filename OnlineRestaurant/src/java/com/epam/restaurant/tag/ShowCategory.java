@@ -20,6 +20,12 @@ public class ShowCategory  extends TagSupport {
 
     private static String IMAGE_URL = "images/";
 
+    /**
+     * Prints tag which shows list of dishes from one category
+     *
+     * @return SKIP_BODY constant because of empty body
+     * @throws JspException by default
+     */
     public int doStartTag() throws JspException{
         String currentLanguage = (String) pageContext.getSession().getAttribute(RequestParameterName.LANGUAGE);
         ResourceBundle resourceBundle = ResourceBundleUtil.getResourceBundle(currentLanguage);

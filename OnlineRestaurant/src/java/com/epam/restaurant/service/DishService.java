@@ -14,6 +14,10 @@ import java.math.BigDecimal;
  * Perform service operations with dish object.
  */
 public class DishService {
+
+    /**
+     * Dao for dish dao objects
+     */
     private static DishSqlDao dishDao = (DishSqlDao) SqlDaoFactory.getInstance().getDao(SqlDaoFactory.DaoType.DISH);
 
     private static DishService instance = new DishService();
@@ -25,6 +29,13 @@ public class DishService {
         return instance;
     }
 
+    /**
+     * Get dish from data source by id
+     *
+     * @param dishId dish id
+     * @return dish
+     * @throws ServiceException
+     */
     public Dish getById(Long dishId) throws ServiceException {
         try {
             return dishDao.getByPK(dishId);
@@ -33,6 +44,19 @@ public class DishService {
         }
     }
 
+    /**
+     * Create new record in data source with specific params
+     *
+     * @param name
+     * @param description
+     * @param ingredients
+     * @param price
+     * @param quantity
+     * @param categoryId
+     * @param image
+     * @return created dish
+     * @throws ServiceException
+     */
     public Dish create(String name, String description, String ingredients,
                        BigDecimal price, int quantity, Long categoryId, String image)
             throws ServiceException {
@@ -48,6 +72,12 @@ public class DishService {
         }
     }
 
+    /**
+     * Delete record from data source
+     *
+     * @param dish
+     * @throws ServiceException
+     */
     public void delete(Dish dish) throws ServiceException {
         try {
             dishDao.delete(dish);
@@ -56,6 +86,12 @@ public class DishService {
         }
     }
 
+    /**
+     * Update record in data source
+     *
+     * @param dish
+     * @throws ServiceException
+     */
     public void update(Dish dish) throws ServiceException {
         try {
             if (ValidationUtil.dishValid(dish)) {

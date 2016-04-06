@@ -15,8 +15,15 @@ import org.apache.log4j.Logger;
  * Tag print table with all categories to jsp.
  */
 public class ShowCategories extends TagSupport {
+
     private static final Logger LOGGER = Logger.getLogger(ShowCategories.class);
 
+    /**
+     * Prints tag which shows list of categories
+     *
+     * @return SKIP_BODY constant because of empty body
+     * @throws JspException by default
+     */
     public int doStartTag() throws JspException {
         List<Category> categoryList = (List<Category>) pageContext.getRequest().getAttribute(RequestParameterName.CATEGORIES);
 

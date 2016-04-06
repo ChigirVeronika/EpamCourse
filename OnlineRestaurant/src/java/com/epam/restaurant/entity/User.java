@@ -10,15 +10,52 @@ import java.io.Serializable;
 public class User implements Serializable, Identified<Long>{
     public static final long serialVersionUID = 1;
 
+    /**
+     * Unique user id, PK in database
+     */
     private long id;
+
+    /**
+     * User name
+     */
     private String name;
+
+    /**
+     * User surname
+     */
     private String surname;
+
+    /**
+     * User email address
+     */
     private String email;
+
+    /**
+     * User pay card number
+     */
     private String payCard;
+
+    /**
+     * User unique login
+     */
     private String login;
+
+    /**
+     * User password hash
+     */
     private String hash;
+
+    /**
+     * User role
+     */
     private Role role;
 
+    /**
+     * Possible roles in restaurant:
+     * USER - common user of web store. Can browse categories, products, add them in shopping cart, etc.
+     * ADMIN - administrator of web store. Can block/unblock users, add new products, etc.
+     * BLOCKED - blocked user for some reasons, with no access to web store.
+     */
     public enum Role{
         USER,ADMIN,BLOCKED
     }

@@ -7,6 +7,13 @@ import java.math.BigDecimal;
  */
 public class TotalUtil {
 
+    /**
+     * Multiply one item price on quantity
+     *
+     * @param itemQuantity quantity of dish
+     * @param itemPrice price of dish
+     * @return total
+     */
     public static BigDecimal calculateCost(int itemQuantity, BigDecimal itemPrice) {
         BigDecimal itemCost;
         BigDecimal totalCost = BigDecimal.ZERO;
@@ -15,6 +22,9 @@ public class TotalUtil {
         return totalCost;
     }
 
+    /**
+     * Multiply BigInteger on int value
+     */
     public static BigDecimal multiply(int itemQuantity, BigDecimal itemPrice) {
         BigDecimal itemCost  = itemPrice.multiply(new BigDecimal(itemQuantity));
         return itemCost;

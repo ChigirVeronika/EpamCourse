@@ -116,6 +116,13 @@ public class CategorySqlDao extends AbstractSqlDao<Category, Long> {
         }
     }
 
+    /**
+     * Get category by name
+     *
+     * @param name category name
+     * @return category
+     * @throws DaoException
+     */
     public Category getByName(String name) throws DaoException {
         List<Category> list;
         Connection connection = null;

@@ -12,6 +12,10 @@ import java.util.List;
  * Perform service operations with orderDish object.
  */
 public class OrderDishService {
+
+    /**
+     * Dao for orderDish dao objects
+     */
     private static final OrderDishSqlDao orderDishDao = (OrderDishSqlDao) SqlDaoFactory.getInstance().getDao(SqlDaoFactory.DaoType.ORDERDISH);
 
     private static final OrderDishService instance = new OrderDishService();
@@ -23,6 +27,13 @@ public class OrderDishService {
         return instance;
     }
 
+    /**
+     * Get concrete order dish by id from data source
+     *
+     * @param dishId
+     * @return order dish
+     * @throws ServiceException
+     */
     public OrderDish getById(Long dishId) throws ServiceException {
         try {
             return orderDishDao.getByPK(dishId);
@@ -31,6 +42,15 @@ public class OrderDishService {
         }
     }
 
+    /**
+     * Create new record in data source with specific params
+     *
+     * @param dishId
+     * @param orderId
+     * @param quantity
+     * @return
+     * @throws ServiceException
+     */
     public OrderDish create(long dishId, long orderId, int quantity)
             throws ServiceException {
         OrderDish orderDish = new OrderDish(dishId, orderId, quantity);
@@ -41,6 +61,12 @@ public class OrderDishService {
         }
     }
 
+    /**
+     * Delete record from data source
+     *
+     * @param orderDish
+     * @throws ServiceException
+     */
     public void delete(OrderDish orderDish) throws ServiceException {
         try {
             orderDishDao.delete(orderDish);
@@ -49,6 +75,12 @@ public class OrderDishService {
         }
     }
 
+    /**
+     * Update record in data source
+     *
+     * @param orderDish
+     * @throws ServiceException
+     */
     public void update(OrderDish orderDish) throws ServiceException {
         try {
             orderDishDao.update(orderDish);
@@ -57,6 +89,13 @@ public class OrderDishService {
         }
     }
 
+    /**
+     * Get all items from concrete order
+     *
+     * @param orderId
+     * @return list of order dishes
+     * @throws ServiceException
+     */
     public List<OrderDish> getAllFromOrder(Long orderId) throws ServiceException {
         try {
             return orderDishDao.getAllFromOrder(orderId);

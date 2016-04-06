@@ -128,6 +128,13 @@ public class DishSqlDao extends AbstractSqlDao<Dish, Long> {
         return persist(dish);
     }
 
+    /**
+     * Get all dishes from concrete category
+     *
+     * @param key category id
+     * @return list of dishes of concrete category
+     * @throws DaoException
+     */
     public List<Dish> getAllFromCategory(Long key) throws DaoException {
         List<Dish> result;
         Connection connection = null;

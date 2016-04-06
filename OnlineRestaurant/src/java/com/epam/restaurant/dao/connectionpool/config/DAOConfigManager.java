@@ -4,6 +4,9 @@ import org.apache.log4j.Logger;
 
 import java.util.ResourceBundle;
 
+/**
+ * Manager for ConnectionPoolImpl class
+ */
 public class DAOConfigManager {
     private static final Logger LOGGER = Logger.getLogger( DAOConfigManager.class);
 
@@ -24,6 +27,12 @@ public class DAOConfigManager {
         DAOConfigManager.resourceBundle = resourceBundle;
     }
 
+    /**
+     * Get property from resource bundle for database config information
+     *
+     * @param property property name
+     * @return property
+     */
     public static String getProperty(String property) {
         if (resourceBundle == null) {
             resourceBundle = ResourceBundle.getBundle(BUNDLE);

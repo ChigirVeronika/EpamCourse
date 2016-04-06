@@ -130,6 +130,12 @@ public class UserSqlDao extends AbstractSqlDao<User, Long> {
         }
     }
 
+    /**
+     * Get user from MySQL database with specific login
+     * @param login user login
+     * @return user with specific login or null if user with such login doesn't exist
+     * @throws DaoException
+     */
     public User getByLogin(String login) throws DaoException {
         List<User> list;
         Connection connection = null;

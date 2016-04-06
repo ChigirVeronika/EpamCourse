@@ -13,6 +13,10 @@ import java.util.List;
  * Perform service operations with news object.
  */
 public class NewsService {
+
+    /**
+     * Dao for news dao objects
+     */
     private static final NewsSqlDao newsDao = (NewsSqlDao) SqlDaoFactory.getInstance().getDao(SqlDaoFactory.DaoType.NEWS);
 
     private static NewsService instance = new NewsService();
@@ -24,6 +28,12 @@ public class NewsService {
         return instance;
     }
 
+    /**
+     * Get all news from news table
+     *
+     * @return list of news
+     * @throws ServiceException
+     */
     public List<News> getAllNews() throws ServiceException {
         try {
             return newsDao.getAll();
@@ -32,6 +42,16 @@ public class NewsService {
         }
     }
 
+    /**
+     * Create new record in data source with specific params
+     *
+     * @param name
+     * @param date
+     * @param content
+     * @param image
+     * @return
+     * @throws ServiceException
+     */
     public News create(String name, Date date, String content, String image)
             throws ServiceException {
         News news = new News(name, date, content, image);

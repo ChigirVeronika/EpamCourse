@@ -17,6 +17,9 @@ import java.security.spec.InvalidKeySpecException;
  */
 public class UserService {
 
+    /**
+     * Dao for user dao objects
+     */
     private static UserSqlDao userDao = (UserSqlDao) SqlDaoFactory.getInstance().getDao(SqlDaoFactory.DaoType.USER);
 
     private static UserService instance = new UserService();
@@ -28,6 +31,13 @@ public class UserService {
         return instance;
     }
 
+    /**
+     * Get user by login
+     *
+     * @param login user login
+     * @return user
+     * @throws ServiceException
+     */
     public User get(String login) throws ServiceException {
         try {
             User user = userDao.getByLogin(login);
@@ -38,6 +48,13 @@ public class UserService {
         }
     }
 
+    /**
+     * Get user by his id
+     *
+     * @param id user id
+     * @return user
+     * @throws ServiceException
+     */
     public User getById(Long id) throws ServiceException {
         try {
             User user = userDao.getByPK(id);
@@ -48,6 +65,14 @@ public class UserService {
         }
     }
 
+    /**
+     * Login user to application
+     *
+     * @param login user login
+     * @param password user password hash
+     * @return user
+     * @throws ServiceException
+     */
     public User login(String login, String password) throws ServiceException {
         User user = get(login);
         try {
@@ -62,6 +87,18 @@ public class UserService {
         return null;
     }
 
+    /**
+     * Create new record in data source with specific params
+     *
+     * @param name user name
+     * @param surname user surname
+     * @param email user email
+     * @param payCard user pay card number
+     * @param login user login
+     * @param password user password
+     * @return created user
+     * @throws ServiceException
+     */
     public User create(String name, String surname, String email, String payCard, String login, String password) throws ServiceException {
         User user;
         try {
@@ -76,6 +113,12 @@ public class UserService {
         }
     }
 
+    /**
+     * Update record in data source
+     *
+     * @param user user to update
+     * @throws ServiceException
+     */
     public void update(User user) throws ServiceException {
         try {
                 userDao.update(user);

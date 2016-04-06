@@ -4,6 +4,7 @@ package com.epam.restaurant.dao.name;
  * Contains parameters names for dao implementation classes.
  */
 public final class ParameterName {
+
     public static final String ID = "id";
     public static final String NAME = "name";
     public static final String DESCRIPTION = "description";

@@ -107,7 +107,6 @@ public class Element {
         if (closeName != null ? !closeName.equals(element.closeName) : element.closeName != null) return false;
         if (elements != null ? !elements.equals(element.elements) : element.elements != null) return false;
         return !(attributes != null ? !attributes.equals(element.attributes) : element.attributes != null);
-
     }
 
     @Override

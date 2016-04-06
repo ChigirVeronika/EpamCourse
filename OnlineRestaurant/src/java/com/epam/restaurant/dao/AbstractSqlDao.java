@@ -14,35 +14,74 @@ import java.sql.SQLException;
 import java.util.List;
 
 /**
- * Abstarct class that perform basic CRUD operations with JDBC.
+ * Abstract class that perform basic CRUD operations with JDBC.
  *
  * @param <T>  persistance object type
  * @param <PK> primary key type
  */
 public abstract class AbstractSqlDao<T extends Identified<PK>, PK extends Long> implements GenericDao<T, PK> {
+
     private static final Logger LOGGER = Logger.getLogger(AbstractSqlDao.class);
+
     /**
      * Connection to database
      */
     private ConnectionPool pool = ConnectionPoolImpl.getInstance();
 
+    /**
+     * Return select query
+     * SELECT * FROM [Table]
+     */
     public abstract String getSelectQuery();
 
+    /**
+     * Return sql query to insert new item
+     * INSERT INTO [Table] ([column, column, ...]) VALUES (?, ?, ...);
+     */
     public abstract String getCreateQuery();
 
+    /**
+     * Return sql query to update item
+     * UPDATE [Table] SET [column = ?, column = ?, ...] WHERE id = ?;
+     */
     public abstract String getUpdateQuery();
 
+    /**
+     * Return sql query for delete some row
+     * DELETE FROM [Table] WHERE id= ?;
+     */
     public abstract String getDeleteQuery();
 
+    /**
+     * Parse result set and return list of items in this set
+     *
+     * @param rs Result set to parse
+     */
     protected abstract List<T> parseResultSet(ResultSet rs) throws DaoException;
 
+    /**
+     * Set arguments for insert query
+     *
+     * @param statement insert statement without parameters
+     * @param object from which we take parameters
+     * @throws DaoException
+     */
     protected abstract void prepareStatementForInsert(PreparedStatement statement, T object) throws DaoException;
 
+    /**
+     * Set arguments for update query
+     *
+     * @param statement insert statement without parameters
+     * @param object from which we take parameters
+     * @throws DaoException
+     */
     protected abstract void prepareStatementForUpdate(PreparedStatement statement, T object) throws DaoException;
 
     /**
-     * @param object
-     * @return
+     * Create new record from object
+     *
+     * @param object create new record from this object
+     * @return created object
      * @throws DaoException
      */
     @Override
@@ -57,7 +96,7 @@ public abstract class AbstractSqlDao<T extends Identified<PK>, PK extends Long> 
             prepareStatementForInsert(statement, object);
             int count = statement.executeUpdate();
             if (count != 1) {
-                LOGGER.error("On persist modify more than 1 record: "+ count);
+                LOGGER.error("On persist modify more than 1 record: " + count);
                 throw new DaoException("On persist modify more than 1 record: " + count);
             }
 
@@ -65,7 +104,6 @@ public abstract class AbstractSqlDao<T extends Identified<PK>, PK extends Long> 
             sql = getSelectQuery() + " WHERE id = last_insert_id();";
             statement = connection.prepareStatement(sql);
             ResultSet rs = statement.executeQuery();
-
 
 
             List<T> list = parseResultSet(rs);
@@ -93,6 +131,12 @@ public abstract class AbstractSqlDao<T extends Identified<PK>, PK extends Long> 
         return persistInstance;
     }
 
+    /**
+     * Return object with primary key 'key' or null
+     * @param key primary key of object
+     * @return object with primary key 'key' or null
+     * @throws DaoException
+     */
     @Override
     public T getByPK(PK key) throws DaoException {
         List<T> list;
@@ -129,6 +173,11 @@ public abstract class AbstractSqlDao<T extends Identified<PK>, PK extends Long> 
         return list.iterator().next();
     }
 
+    /**
+     * Update object in database
+     * @param object to update
+     * @throws DaoException
+     */
     @Override
     public void update(T object) throws DaoException {
         String sql = getUpdateQuery();
@@ -156,6 +205,11 @@ public abstract class AbstractSqlDao<T extends Identified<PK>, PK extends Long> 
 
     }
 
+    /**
+     * Delete record from database
+     * @param object to delete
+     * @throws DaoException
+     */
     @Override
     public void delete(T object) throws DaoException {
         String sql = getDeleteQuery();
@@ -186,6 +240,11 @@ public abstract class AbstractSqlDao<T extends Identified<PK>, PK extends Long> 
         }
     }
 
+    /**
+     * Return list of all items from database
+     * @return list of all items
+     * @throws DaoException
+     */
     @Override
     public List<T> getAll() throws DaoException {
         List<T> list;

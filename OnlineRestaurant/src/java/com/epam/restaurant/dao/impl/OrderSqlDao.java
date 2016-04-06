@@ -122,6 +122,12 @@ public class OrderSqlDao extends AbstractSqlDao<Order, Long> {
         return persist(order);
     }
 
+    /**
+     * Get order from MySQL database with specific user id
+     * @param name order user id
+     * @return order with specific user id or null if order with such user id doesn't exist
+     * @throws DaoException
+     */
     public Order getByUserId(Long name) throws DaoException {
         List<Order> list;
         Connection connection = null;

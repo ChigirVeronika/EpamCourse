@@ -116,6 +116,12 @@ public class OrderDishSqlDao extends AbstractSqlDao<OrderDish, Long> {
         return orderDish;
     }
 
+    /**
+     * Get all order dishes from MySQL database from order with specific id
+     * @param key order id
+     * @return list of all order dishes
+     * @throws DaoException
+     */
     public List<OrderDish> getAllFromOrder(Long key) throws DaoException {
         List<OrderDish> result;
 

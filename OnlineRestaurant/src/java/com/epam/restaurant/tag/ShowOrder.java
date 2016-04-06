@@ -17,6 +17,13 @@ import java.util.ResourceBundle;
  * Tag prints all order items.
  */
 public class ShowOrder extends TagSupport {
+
+    /**
+     * Prints tag which shows list of items in user's order
+     *
+     * @return SKIP_BODY constant because of empty body
+     * @throws JspException by default
+     */
     public int doStartTag() throws JspException {
 
         //get resource bundle for current language

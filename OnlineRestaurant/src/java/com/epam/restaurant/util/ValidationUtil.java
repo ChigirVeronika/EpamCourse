@@ -25,6 +25,13 @@ public class ValidationUtil {
 
     private static final String EMPTY_STRING = "";
 
+    /**
+     * Check if value matched pattern
+     *
+     * @param pattern
+     * @param value
+     * @return true if matched, false if not
+     */
     private static boolean validValue(String pattern, String value) {
         Pattern patternForName = Pattern.compile(pattern);
         Matcher matcherName = patternForName.matcher(value);
@@ -35,6 +42,12 @@ public class ValidationUtil {
         }
     }
 
+    /**
+     * Check if category object is valid
+     *
+     * @param category
+     * @return true if valid, false if not
+     */
     public static boolean categoryValid(Category category) {
         if (category.getName().equals(EMPTY_STRING)) {
             return false;
@@ -45,6 +58,12 @@ public class ValidationUtil {
         return true;
     }
 
+    /**
+     * Check if dish object is valid
+     *
+     * @param dish
+     * @return true if valid, false if not
+     */
     public static boolean dishValid(Dish dish) {
         if (!validValue(DISH_NAME, dish.getName())) {
             return false;
@@ -68,6 +87,12 @@ public class ValidationUtil {
         return true;
     }
 
+    /**
+     * Check if user object is valid
+     *
+     * @param user
+     * @return true if valid, false if not
+     */
     public static boolean userValid(User user) {
         if (!validValue(USER_NAME, user.getName())) {
             return false;

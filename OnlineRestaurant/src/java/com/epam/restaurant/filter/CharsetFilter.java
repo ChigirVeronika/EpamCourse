@@ -7,6 +7,7 @@ import java.io.IOException;
  * Filter charset.
  */
 public class CharsetFilter implements Filter {
+
     private String encoding;
     private ServletContext context;
 
@@ -18,6 +19,15 @@ public class CharsetFilter implements Filter {
         context = filterConfig.getServletContext();
     }
 
+    /**
+     * Filter charset
+     *
+     * @param servletRequest
+     * @param servletResponse
+     * @param filterChain chain of filters
+     * @throws IOException
+     * @throws ServletException
+     */
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         servletRequest.setCharacterEncoding(encoding);

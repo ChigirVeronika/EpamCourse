@@ -1,6 +1,7 @@
 package com.epam.restaurant.dao.connectionpool;
 
 import com.epam.restaurant.dao.connectionpool.exception.ConnectionPoolException;
+
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import java.sql.Connection;
@@ -10,13 +11,35 @@ import java.sql.Connection;
  */
 public interface ConnectionPool {
 
-    Connection getConnection() throws ConnectionPoolException ;
+    /**
+     * Get connection from connection pool
+     *
+     * @return new connection
+     * @throws ConnectionPoolException
+     */
+    Connection getConnection() throws ConnectionPoolException;
 
+    /**
+     * Return connection to connection pool
+     *
+     * @param connection returning connection
+     * @throws ConnectionPoolException
+     */
     void returnConnection(Connection connection) throws ConnectionPoolException;
 
+    /**
+     * Ends work of connection pool
+     *
+     * @throws ConnectionPoolException
+     */
     @PreDestroy
     void releasePool() throws ConnectionPoolException;
 
+    /**
+     * Initialize connection pool
+     *
+     * @throws ConnectionPoolException
+     */
     @PostConstruct
     void initialize() throws ConnectionPoolException;
 }

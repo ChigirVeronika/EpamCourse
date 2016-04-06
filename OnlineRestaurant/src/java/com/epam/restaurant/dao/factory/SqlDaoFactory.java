@@ -7,17 +7,29 @@ import org.apache.log4j.Logger;
 /**
  * Factory pattern realization in dao layer.
  */
-public class SqlDaoFactory{
+public class SqlDaoFactory {
+
     private static final Logger LOGGER = Logger.getLogger(SqlDaoFactory.class);
 
     private final static SqlDaoFactory instance = new SqlDaoFactory();
 
-    public static SqlDaoFactory getInstance(){
-        return  instance;
+    /**
+     * Get instance of DAO factory
+     *
+     * @return instance of this singleton class
+     */
+    public static SqlDaoFactory getInstance() {
+        return instance;
     }
 
-    public GenericDao getDao(DaoType type){
-        switch (type){
+    /**
+     * Get concrete dao
+     *
+     * @param type dao type
+     * @return dao
+     */
+    public GenericDao getDao(DaoType type) {
+        switch (type) {
             case DISH:
                 return DishSqlDao.getInstance();
             case USER:
@@ -35,7 +47,10 @@ public class SqlDaoFactory{
         return null;
     }
 
-    public enum DaoType{
+    /**
+     * Types of dao
+     */
+    public enum DaoType {
         DISH, USER, CATEGORY, ORDER, ORDERDISH, NEWS
     }
 
