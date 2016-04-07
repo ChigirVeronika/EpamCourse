@@ -47,7 +47,7 @@
                             </c:if>
 
                             <div class="row">
-                                <p><fmt:message key="lorem.short" bundle="${lang}"/></p>
+                                <p><fmt:message key="menumain.short" bundle="${lang}"/></p>
                             </div>
                             <div class="row">
                                 <br>
@@ -55,12 +55,10 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <fmt:message key="lorem.short" bundle="${lang}"/>
-                                    <fmt:message key="lorem.short" bundle="${lang}"/>
+                                    <fmt:message key="menumain.long" bundle="${lang}"/>
                                 </div>
                                 <div class="col-md-6">
-                                    <fmt:message key="lorem.short" bundle="${lang}"/>
-                                    <fmt:message key="lorem.short" bundle="${lang}"/>
+                                    <fmt:message key="menumain.long2" bundle="${lang}"/>
                                 </div>
                             </div>
                         </div>

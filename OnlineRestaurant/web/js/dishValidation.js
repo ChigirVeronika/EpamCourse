@@ -65,7 +65,7 @@ function dishQuantityValidation(){
 
 function dishImageValidation(){
     document.AddDish.image.focus();
-    var letters = /^[a-zA-ZА-Яа-я\-]+\.[a-zA-Z]+$/;
+    var letters = /^[0-9a-zA-ZА-Яа-я\-]+\.[a-zA-Z]+$/;
     if(value!=="") {
         if(value.match(letters)){
             document.getElementById('dishImage-msg').innerHTML="";

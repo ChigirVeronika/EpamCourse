@@ -4,10 +4,11 @@
 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 <meta name="description" content="">
 <meta name="author" content="">
-<link rel="icon" href="../../favicon.ico">
+<link rel="icon" href="../images/icon2.ico">
 
 <!-- Bootstrap core CSS -->
 <link href="../css/bootstrap.css" rel="stylesheet">
+
 
 <!-- Custom styles for this template -->
 <link href="../css/style.css" rel="stylesheet">
@@ -15,7 +16,6 @@
 <script src="../js/categoryValidation.js"></script>
 <script src="../js/dishValidation.js"></script>
 <script src="../js/pagination.js"></script>
-<script src="../js/tooltip.js"></script>
 <script src="../js/keyboardDeprecation.js"/>
 
 <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->

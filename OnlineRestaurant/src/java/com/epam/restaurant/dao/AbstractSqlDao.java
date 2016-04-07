@@ -147,7 +147,7 @@ public abstract class AbstractSqlDao<T extends Identified<PK>, PK extends Long> 
             String sql = getSelectQuery();
             sql += " WHERE id = ?";
             PreparedStatement statement = connection.prepareStatement(sql);
-            statement.setInt(1, Integer.valueOf(String.valueOf(key)));//TODO Im not sure
+            statement.setInt(1, Integer.valueOf(String.valueOf(key)));
             ResultSet rs = statement.executeQuery();
 
             list = parseResultSet(rs);

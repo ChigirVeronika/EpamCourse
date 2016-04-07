@@ -21,7 +21,7 @@ public class ValidationUtil {
     private static final String DISH_NAME = "^[0-9a-zA-ZА-Яа-я\\-\\s]+";
     private static final String DISH_PRICE = "^[0-9]+\\.*[0-9]*$";
     private static final String DISH_QUANTITY = "^[0-9]+$";
-    private static final String DISH_IMAGE = "^[a-zA-Z\\-]+\\.[a-zA-Z]+$";
+    private static final String DISH_IMAGE = "^[0-9a-zA-ZА-Яа-я\\-]+\\.[a-zA-Z]+$";
 
     private static final String EMPTY_STRING = "";
 
